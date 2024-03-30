@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import Cart
 
 @main
 struct CartAppApp: App {
+    
+    @StateObject var vm = CartViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CartView()
+                .environmentObject(vm)
         }
     }
 }

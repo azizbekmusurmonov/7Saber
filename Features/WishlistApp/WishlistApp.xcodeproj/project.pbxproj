@@ -16,6 +16,10 @@
 		529DA93B2BB7B38400629C86 /* Wishlist.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9322BB7B38300629C86 /* Wishlist.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		529DA9462BB7B3B400629C86 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DA9452BB7B3B400629C86 /* WishlistView.swift */; };
 		529DA9482BB7B3ED00629C86 /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DA9472BB7B3ED00629C86 /* WishlistViewModel.swift */; };
+		FA4F20AE2BB7E97E00457A3E /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20AD2BB7E97E00457A3E /* NetworkManager.framework */; };
+		FA4F20AF2BB7E97E00457A3E /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20AD2BB7E97E00457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA4F20E52BB7EBAD00457A3E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20E42BB7EBAD00457A3E /* Core.framework */; };
+		FA4F20E62BB7EBAD00457A3E /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20E42BB7EBAD00457A3E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,18 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA4F20B02BB7E97E00457A3E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA4F20AF2BB7E97E00457A3E /* NetworkManager.framework in Embed Frameworks */,
+				FA4F20E62BB7EBAD00457A3E /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +68,8 @@
 		529DA9352BB7B38300629C86 /* Wishlist.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Wishlist.docc; sourceTree = "<group>"; };
 		529DA9452BB7B3B400629C86 /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
 		529DA9472BB7B3ED00629C86 /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
+		FA4F20AD2BB7E97E00457A3E /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA4F20E42BB7EBAD00457A3E /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4F20AE2BB7E97E00457A3E /* NetworkManager.framework in Frameworks */,
+				FA4F20E52BB7EBAD00457A3E /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +99,7 @@
 				529DA9182BB7B36C00629C86 /* WishlistApp */,
 				529DA9332BB7B38300629C86 /* Wishlist */,
 				529DA9172BB7B36C00629C86 /* Products */,
+				FA4F20AC2BB7E97E00457A3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +139,15 @@
 				529DA9472BB7B3ED00629C86 /* WishlistViewModel.swift */,
 			);
 			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		FA4F20AC2BB7E97E00457A3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA4F20E42BB7EBAD00457A3E /* Core.framework */,
+				FA4F20AD2BB7E97E00457A3E /* NetworkManager.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +191,7 @@
 				529DA92E2BB7B38300629C86 /* Sources */,
 				529DA92F2BB7B38300629C86 /* Frameworks */,
 				529DA9302BB7B38300629C86 /* Resources */,
+				FA4F20B02BB7E97E00457A3E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

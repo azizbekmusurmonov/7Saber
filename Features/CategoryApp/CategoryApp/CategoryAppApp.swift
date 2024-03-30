@@ -10,9 +10,13 @@ import CategoryTarget
 
 @main
 struct CategoryAppApp: App {
+    
+    @StateObject var vm = CategoryViewModel()
+    
     var body: some Scene {
         WindowGroup {
             CategoryTargetView()
+                .environmentObject(vm)
         }
     }
 }

@@ -10,9 +10,12 @@ import Profile
 
 @main
 struct ProfileAppApp: App {
+    
+    @StateObject var vm = ProfileViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ProfileView()
+            ProfileView().environmentObject(vm)
         }
     }
 }

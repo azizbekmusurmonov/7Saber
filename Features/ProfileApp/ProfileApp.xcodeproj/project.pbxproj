@@ -16,6 +16,10 @@
 		524092602BB7BDF600A75FC0 /* Profile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 524092572BB7BDF600A75FC0 /* Profile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		524092662BB7BE0300A75FC0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524092652BB7BE0300A75FC0 /* ProfileViewModel.swift */; };
 		524092682BB7BE5100A75FC0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524092672BB7BE5100A75FC0 /* ProfileView.swift */; };
+		FA4F209F2BB7E96000457A3E /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F209E2BB7E96000457A3E /* NetworkManager.framework */; };
+		FA4F20A02BB7E96000457A3E /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F209E2BB7E96000457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA4F20D92BB7EB7D00457A3E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20D82BB7EB7D00457A3E /* Core.framework */; };
+		FA4F20DA2BB7EB7D00457A3E /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20D82BB7EB7D00457A3E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,18 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA4F20A12BB7E96000457A3E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA4F20A02BB7E96000457A3E /* NetworkManager.framework in Embed Frameworks */,
+				FA4F20DA2BB7EB7D00457A3E /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +68,8 @@
 		5240925A2BB7BDF600A75FC0 /* Profile.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Profile.docc; sourceTree = "<group>"; };
 		524092652BB7BE0300A75FC0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		524092672BB7BE5100A75FC0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FA4F209E2BB7E96000457A3E /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA4F20D82BB7EB7D00457A3E /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4F209F2BB7E96000457A3E /* NetworkManager.framework in Frameworks */,
+				FA4F20D92BB7EB7D00457A3E /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +99,7 @@
 				5240923D2BB7BDD200A75FC0 /* ProfileApp */,
 				524092582BB7BDF600A75FC0 /* Profile */,
 				5240923C2BB7BDD200A75FC0 /* Products */,
+				FA4F209D2BB7E96000457A3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +139,15 @@
 				524092672BB7BE5100A75FC0 /* ProfileView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		FA4F209D2BB7E96000457A3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA4F20D82BB7EB7D00457A3E /* Core.framework */,
+				FA4F209E2BB7E96000457A3E /* NetworkManager.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +191,7 @@
 				524092532BB7BDF600A75FC0 /* Sources */,
 				524092542BB7BDF600A75FC0 /* Frameworks */,
 				524092552BB7BDF600A75FC0 /* Resources */,
+				FA4F20A12BB7E96000457A3E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -451,6 +482,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,6 +518,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

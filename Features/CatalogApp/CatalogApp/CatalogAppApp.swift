@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import Catalog
 
 @main
 struct CatalogAppApp: App {
+    
+    @StateObject var vm = CatalogViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CatalogView()
+                .environmentObject(vm)
         }
     }
 }
