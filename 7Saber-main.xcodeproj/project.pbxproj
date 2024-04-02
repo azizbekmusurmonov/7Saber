@@ -24,10 +24,8 @@
 		529DA8F22BB7B30000629C86 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA8EA2BB7B2A300629C86 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		529DA9432BB7B3A400629C86 /* Wishlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9422BB7B3A400629C86 /* Wishlist.framework */; };
 		529DA9442BB7B3A400629C86 /* Wishlist.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9422BB7B3A400629C86 /* Wishlist.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA4F208E2BB7E90300457A3E /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F208B2BB7E8D100457A3E /* NetworkManager.framework */; };
-		FA4F208F2BB7E90300457A3E /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F208B2BB7E8D100457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA4F21802BB8030300457A3E /* Registration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F217F2BB802A700457A3E /* Registration.framework */; };
-		FA4F21812BB8030300457A3E /* Registration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F217F2BB802A700457A3E /* Registration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA77A2AE2BBBAA6100843673 /* Registration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2AD2BBBAA6100843673 /* Registration.framework */; };
+		FA77A2AF2BBBAA6100843673 /* Registration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2AD2BBBAA6100843673 /* Registration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,39 +113,39 @@
 			remoteGlobalIDString = 529DA9DF2BB7B8DC00629C86;
 			remoteInfo = CategoryTarget;
 		};
-		FA4F208A2BB7E8D100457A3E /* PBXContainerItemProxy */ = {
+		FA77A2312BBBA91700843673 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FA4F20862BB7E8D000457A3E /* NetworkManager.xcodeproj */;
+			containerPortal = FA77A22D2BBBA91600843673 /* NetworkManager.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = FA4F207A2BB7E8D000457A3E;
+			remoteGlobalIDString = FA77A2212BBBA91600843673;
 			remoteInfo = NetworkManager;
 		};
-		FA4F20CF2BB7EB3900457A3E /* PBXContainerItemProxy */ = {
+		FA77A24F2BBBA94F00843673 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FA4F20CB2BB7EB3800457A3E /* Core.xcodeproj */;
+			containerPortal = FA77A24B2BBBA94E00843673 /* Core.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = FA4F20BF2BB7EB3800457A3E;
+			remoteGlobalIDString = FA77A23F2BBBA94E00843673;
 			remoteInfo = Core;
 		};
-		FA4F211A2BB7F00300457A3E /* PBXContainerItemProxy */ = {
+		FA77A26E2BBBA99400843673 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FA4F21162BB7F00200457A3E /* AppResources.xcodeproj */;
+			containerPortal = FA77A26A2BBBA99300843673 /* AppResources.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = FA4F210A2BB7F00200457A3E;
+			remoteGlobalIDString = FA77A25E2BBBA99300843673;
 			remoteInfo = AppResources;
 		};
-		FA4F215C2BB7FFAA00457A3E /* PBXContainerItemProxy */ = {
+		FA77A28E2BBBA9CC00843673 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FA4F21582BB7FFA900457A3E /* RegistrationApp.xcodeproj */;
+			containerPortal = FA77A28A2BBBA9CB00843673 /* RegistrationApp.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = FA4F21472BB7FFA800457A3E;
+			remoteGlobalIDString = FA77A2792BBBA9C900843673;
 			remoteInfo = RegistrationApp;
 		};
-		FA4F217E2BB802A700457A3E /* PBXContainerItemProxy */ = {
+		FA77A2AC2BBBAA6100843673 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FA4F21582BB7FFA900457A3E /* RegistrationApp.xcodeproj */;
+			containerPortal = FA77A28A2BBBA9CB00843673 /* RegistrationApp.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = FA4F21632BB7FFC200457A3E;
+			remoteGlobalIDString = FA77A2952BBBA9EB00843673;
 			remoteInfo = Registration;
 		};
 /* End PBXContainerItemProxy section */
@@ -162,9 +160,8 @@
 				5240926D2BB7BEC100A75FC0 /* Profile.framework in Embed Frameworks */,
 				524092312BB7BCC800A75FC0 /* Catalog.framework in Embed Frameworks */,
 				524091E32BB7BB3D00A75FC0 /* Cart.framework in Embed Frameworks */,
-				FA4F208F2BB7E90300457A3E /* NetworkManager.framework in Embed Frameworks */,
 				524091A72BB7B9E100A75FC0 /* CategoryTarget.framework in Embed Frameworks */,
-				FA4F21812BB8030300457A3E /* Registration.framework in Embed Frameworks */,
+				FA77A2AF2BBBAA6100843673 /* Registration.framework in Embed Frameworks */,
 				529DA8F22BB7B30000629C86 /* Home.framework in Embed Frameworks */,
 				529DA9442BB7B3A400629C86 /* Wishlist.framework in Embed Frameworks */,
 			);
@@ -186,10 +183,10 @@
 		529DA8B82BB7B23000629C86 /* HomeApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HomeApp.xcodeproj; path = HomeApp/HomeApp.xcodeproj; sourceTree = "<group>"; };
 		529DA9272BB7B36D00629C86 /* WishlistApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WishlistApp.xcodeproj; path = WishlistApp/WishlistApp.xcodeproj; sourceTree = "<group>"; };
 		529DA9C22BB7B89A00629C86 /* CategoryApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CategoryApp.xcodeproj; path = CategoryApp/CategoryApp.xcodeproj; sourceTree = "<group>"; };
-		FA4F20862BB7E8D000457A3E /* NetworkManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkManager.xcodeproj; path = ../../Projects/NetworkManager/NetworkManager.xcodeproj; sourceTree = "<group>"; };
-		FA4F20CB2BB7EB3800457A3E /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = ../../Projects/Core/Core.xcodeproj; sourceTree = "<group>"; };
-		FA4F21162BB7F00200457A3E /* AppResources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppResources.xcodeproj; path = ../../Projects/AppResources/AppResources.xcodeproj; sourceTree = "<group>"; };
-		FA4F21582BB7FFA900457A3E /* RegistrationApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RegistrationApp.xcodeproj; path = ../../Projects/RegistrationApp/RegistrationApp.xcodeproj; sourceTree = "<group>"; };
+		FA77A22D2BBBA91600843673 /* NetworkManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkManager.xcodeproj; path = NetworkManager/NetworkManager.xcodeproj; sourceTree = "<group>"; };
+		FA77A24B2BBBA94E00843673 /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = Core/Core.xcodeproj; sourceTree = "<group>"; };
+		FA77A26A2BBBA99300843673 /* AppResources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppResources.xcodeproj; path = AppResources/AppResources.xcodeproj; sourceTree = "<group>"; };
+		FA77A28A2BBBA9CB00843673 /* RegistrationApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RegistrationApp.xcodeproj; path = RegistrationApp/RegistrationApp.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,9 +197,8 @@
 				5240926C2BB7BEC100A75FC0 /* Profile.framework in Frameworks */,
 				524092302BB7BCC800A75FC0 /* Catalog.framework in Frameworks */,
 				524091E22BB7BB3D00A75FC0 /* Cart.framework in Frameworks */,
-				FA4F208E2BB7E90300457A3E /* NetworkManager.framework in Frameworks */,
 				524091A62BB7B9E100A75FC0 /* CategoryTarget.framework in Frameworks */,
-				FA4F21802BB8030300457A3E /* Registration.framework in Frameworks */,
+				FA77A2AE2BBBAA6100843673 /* Registration.framework in Frameworks */,
 				529DA8F12BB7B30000629C86 /* Home.framework in Frameworks */,
 				529DA9432BB7B3A400629C86 /* Wishlist.framework in Frameworks */,
 			);
@@ -280,7 +276,7 @@
 		5281035A2BB2661A00F789A4 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				FA4F21582BB7FFA900457A3E /* RegistrationApp.xcodeproj */,
+				FA77A28A2BBBA9CB00843673 /* RegistrationApp.xcodeproj */,
 				5240924C2BB7BDD300A75FC0 /* ProfileApp.xcodeproj */,
 				524091FE2BB7BBE800A75FC0 /* CatalogApp.xcodeproj */,
 				524091C22BB7BA4900A75FC0 /* CartApp.xcodeproj */,
@@ -328,42 +324,42 @@
 		FA4F206F2BB7E88F00457A3E /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				FA4F21162BB7F00200457A3E /* AppResources.xcodeproj */,
-				FA4F20CB2BB7EB3800457A3E /* Core.xcodeproj */,
-				FA4F20862BB7E8D000457A3E /* NetworkManager.xcodeproj */,
+				FA77A26A2BBBA99300843673 /* AppResources.xcodeproj */,
+				FA77A24B2BBBA94E00843673 /* Core.xcodeproj */,
+				FA77A22D2BBBA91600843673 /* NetworkManager.xcodeproj */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		FA4F20872BB7E8D000457A3E /* Products */ = {
+		FA77A22E2BBBA91600843673 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA4F208B2BB7E8D100457A3E /* NetworkManager.framework */,
+				FA77A2322BBBA91700843673 /* NetworkManager.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA4F20CC2BB7EB3800457A3E /* Products */ = {
+		FA77A24C2BBBA94E00843673 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA4F20D02BB7EB3900457A3E /* Core.framework */,
+				FA77A2502BBBA94F00843673 /* Core.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA4F21172BB7F00200457A3E /* Products */ = {
+		FA77A26B2BBBA99300843673 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA4F211B2BB7F00300457A3E /* AppResources.framework */,
+				FA77A26F2BBBA99400843673 /* AppResources.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FA4F21592BB7FFA900457A3E /* Products */ = {
+		FA77A28B2BBBA9CB00843673 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA4F215D2BB7FFAA00457A3E /* RegistrationApp.app */,
-				FA4F217F2BB802A700457A3E /* Registration.framework */,
+				FA77A28F2BBBA9CC00843673 /* RegistrationApp.app */,
+				FA77A2AD2BBBAA6100843673 /* Registration.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -417,8 +413,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = FA4F21172BB7F00200457A3E /* Products */;
-					ProjectRef = FA4F21162BB7F00200457A3E /* AppResources.xcodeproj */;
+					ProductGroup = FA77A26B2BBBA99300843673 /* Products */;
+					ProjectRef = FA77A26A2BBBA99300843673 /* AppResources.xcodeproj */;
 				},
 				{
 					ProductGroup = 524091C32BB7BA4900A75FC0 /* Products */;
@@ -433,24 +429,24 @@
 					ProjectRef = 529DA9C22BB7B89A00629C86 /* CategoryApp.xcodeproj */;
 				},
 				{
-					ProductGroup = FA4F20CC2BB7EB3800457A3E /* Products */;
-					ProjectRef = FA4F20CB2BB7EB3800457A3E /* Core.xcodeproj */;
+					ProductGroup = FA77A24C2BBBA94E00843673 /* Products */;
+					ProjectRef = FA77A24B2BBBA94E00843673 /* Core.xcodeproj */;
 				},
 				{
 					ProductGroup = 529DA8B92BB7B23000629C86 /* Products */;
 					ProjectRef = 529DA8B82BB7B23000629C86 /* HomeApp.xcodeproj */;
 				},
 				{
-					ProductGroup = FA4F20872BB7E8D000457A3E /* Products */;
-					ProjectRef = FA4F20862BB7E8D000457A3E /* NetworkManager.xcodeproj */;
+					ProductGroup = FA77A22E2BBBA91600843673 /* Products */;
+					ProjectRef = FA77A22D2BBBA91600843673 /* NetworkManager.xcodeproj */;
 				},
 				{
 					ProductGroup = 5240924D2BB7BDD300A75FC0 /* Products */;
 					ProjectRef = 5240924C2BB7BDD300A75FC0 /* ProfileApp.xcodeproj */;
 				},
 				{
-					ProductGroup = FA4F21592BB7FFA900457A3E /* Products */;
-					ProjectRef = FA4F21582BB7FFA900457A3E /* RegistrationApp.xcodeproj */;
+					ProductGroup = FA77A28B2BBBA9CB00843673 /* Products */;
+					ProjectRef = FA77A28A2BBBA9CB00843673 /* RegistrationApp.xcodeproj */;
 				},
 				{
 					ProductGroup = 529DA9282BB7B36D00629C86 /* Products */;
@@ -549,39 +545,39 @@
 			remoteRef = 529DA9F22BB7B9AF00629C86 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FA4F208B2BB7E8D100457A3E /* NetworkManager.framework */ = {
+		FA77A2322BBBA91700843673 /* NetworkManager.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = NetworkManager.framework;
-			remoteRef = FA4F208A2BB7E8D100457A3E /* PBXContainerItemProxy */;
+			remoteRef = FA77A2312BBBA91700843673 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FA4F20D02BB7EB3900457A3E /* Core.framework */ = {
+		FA77A2502BBBA94F00843673 /* Core.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Core.framework;
-			remoteRef = FA4F20CF2BB7EB3900457A3E /* PBXContainerItemProxy */;
+			remoteRef = FA77A24F2BBBA94F00843673 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FA4F211B2BB7F00300457A3E /* AppResources.framework */ = {
+		FA77A26F2BBBA99400843673 /* AppResources.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = AppResources.framework;
-			remoteRef = FA4F211A2BB7F00300457A3E /* PBXContainerItemProxy */;
+			remoteRef = FA77A26E2BBBA99400843673 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FA4F215D2BB7FFAA00457A3E /* RegistrationApp.app */ = {
+		FA77A28F2BBBA9CC00843673 /* RegistrationApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = RegistrationApp.app;
-			remoteRef = FA4F215C2BB7FFAA00457A3E /* PBXContainerItemProxy */;
+			remoteRef = FA77A28E2BBBA9CC00843673 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		FA4F217F2BB802A700457A3E /* Registration.framework */ = {
+		FA77A2AD2BBBAA6100843673 /* Registration.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Registration.framework;
-			remoteRef = FA4F217E2BB802A700457A3E /* PBXContainerItemProxy */;
+			remoteRef = FA77A2AC2BBBAA6100843673 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
