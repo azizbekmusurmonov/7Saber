@@ -19,6 +19,8 @@
 		FA77A2A92BBBAA1200843673 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A82BBBAA1200843673 /* NetworkManager.framework */; };
 		FA77A2AA2BBBAA1200843673 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A82BBBAA1200843673 /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA77A2B12BBBAA8B00843673 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77A2B02BBBAA8B00843673 /* RegistrationView.swift */; };
+		FA77A38C2BBD9AB500843673 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A38B2BBD9AB500843673 /* AssetKit.framework */; };
+		FA77A38D2BBD9AB500843673 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A38B2BBD9AB500843673 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				FA77A2A62BBBAA0D00843673 /* Core.framework in Embed Frameworks */,
+				FA77A38D2BBD9AB500843673 /* AssetKit.framework in Embed Frameworks */,
 				FA77A2AA2BBBAA1200843673 /* NetworkManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -68,6 +71,7 @@
 		FA77A2A42BBBAA0D00843673 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA77A2A82BBBAA1200843673 /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA77A2B02BBBAA8B00843673 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		FA77A38B2BBD9AB500843673 /* AssetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AssetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA77A2A52BBBAA0D00843673 /* Core.framework in Frameworks */,
+				FA77A38C2BBD9AB500843673 /* AssetKit.framework in Frameworks */,
 				FA77A2A92BBBAA1200843673 /* NetworkManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +146,7 @@
 		FA77A2A32BBBAA0C00843673 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA77A38B2BBD9AB500843673 /* AssetKit.framework */,
 				FA77A2A82BBBAA1200843673 /* NetworkManager.framework */,
 				FA77A2A42BBBAA0D00843673 /* Core.framework */,
 			);

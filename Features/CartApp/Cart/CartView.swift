@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AssetKit
 
 public struct CartView: View {
     
@@ -14,7 +15,19 @@ public struct CartView: View {
     public init() { }
     
     public var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ScrollView {
+                VStack {
+                    Image(uiImage: Asset.Image.pic.image)
+                        .resizable()
+                        
+                        .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
+                    
+                    Text("d.smclkdsdsc")
+                        .foregroundColor(.red)
+                }
+            }
+        }
     }
 }
 

@@ -20,6 +20,8 @@
 		FA4F20AA2BB7E97900457A3E /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20A82BB7E97900457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA4F20E22BB7EBA100457A3E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20E12BB7EBA100457A3E /* Core.framework */; };
 		FA4F20E32BB7EBA100457A3E /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20E12BB7EBA100457A3E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA77A39C2BBDA0E200843673 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A39B2BBDA0E200843673 /* AssetKit.framework */; };
+		FA77A39D2BBDA0E200843673 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A39B2BBDA0E200843673 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				FA4F20AA2BB7E97900457A3E /* NetworkManager.framework in Embed Frameworks */,
+				FA77A39D2BBDA0E200843673 /* AssetKit.framework in Embed Frameworks */,
 				FA4F20E32BB7EBA100457A3E /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -70,6 +73,7 @@
 		529DA9EF2BB7B95F00629C86 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		FA4F20A82BB7E97900457A3E /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4F20E12BB7EBA100457A3E /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA77A39B2BBDA0E200843673 /* AssetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AssetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA4F20A92BB7E97900457A3E /* NetworkManager.framework in Frameworks */,
+				FA77A39C2BBDA0E200843673 /* AssetKit.framework in Frameworks */,
 				FA4F20E22BB7EBA100457A3E /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +149,7 @@
 		FA4F20A72BB7E97900457A3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA77A39B2BBDA0E200843673 /* AssetKit.framework */,
 				FA4F20E12BB7EBA100457A3E /* Core.framework */,
 				FA4F20A82BB7E97900457A3E /* NetworkManager.framework */,
 			);
@@ -432,9 +438,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Ismatillokhon.CategoryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,9 +473,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Ismatillokhon.CategoryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -148,6 +148,13 @@
 			remoteGlobalIDString = FA77A2952BBBA9EB00843673;
 			remoteInfo = Registration;
 		};
+		FA77A3792BBD998D00843673 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA77A3742BBD998C00843673 /* AssetKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA77A3682BBD998C00843673;
+			remoteInfo = AssetKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -187,6 +194,7 @@
 		FA77A24B2BBBA94E00843673 /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = Core/Core.xcodeproj; sourceTree = "<group>"; };
 		FA77A26A2BBBA99300843673 /* AppResources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppResources.xcodeproj; path = AppResources/AppResources.xcodeproj; sourceTree = "<group>"; };
 		FA77A28A2BBBA9CB00843673 /* RegistrationApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RegistrationApp.xcodeproj; path = RegistrationApp/RegistrationApp.xcodeproj; sourceTree = "<group>"; };
+		FA77A3742BBD998C00843673 /* AssetKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AssetKit.xcodeproj; path = ../../AssetKit/AssetKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +332,7 @@
 		FA4F206F2BB7E88F00457A3E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FA77A3742BBD998C00843673 /* AssetKit.xcodeproj */,
 				FA77A26A2BBBA99300843673 /* AppResources.xcodeproj */,
 				FA77A24B2BBBA94E00843673 /* Core.xcodeproj */,
 				FA77A22D2BBBA91600843673 /* NetworkManager.xcodeproj */,
@@ -360,6 +369,14 @@
 			children = (
 				FA77A28F2BBBA9CC00843673 /* RegistrationApp.app */,
 				FA77A2AD2BBBAA6100843673 /* Registration.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA77A3752BBD998C00843673 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA77A37A2BBD998D00843673 /* AssetKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -415,6 +432,10 @@
 				{
 					ProductGroup = FA77A26B2BBBA99300843673 /* Products */;
 					ProjectRef = FA77A26A2BBBA99300843673 /* AppResources.xcodeproj */;
+				},
+				{
+					ProductGroup = FA77A3752BBD998C00843673 /* Products */;
+					ProjectRef = FA77A3742BBD998C00843673 /* AssetKit.xcodeproj */;
 				},
 				{
 					ProductGroup = 524091C32BB7BA4900A75FC0 /* Products */;
@@ -578,6 +599,13 @@
 			fileType = wrapper.framework;
 			path = Registration.framework;
 			remoteRef = FA77A2AC2BBBAA6100843673 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA77A37A2BBD998D00843673 /* AssetKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AssetKit.framework;
+			remoteRef = FA77A3792BBD998D00843673 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
