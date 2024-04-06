@@ -25,7 +25,100 @@ public enum Asset {
   public enum Color {
   }
   public enum Image {
-    public static let pic = ImageAsset(name: "pic")
+    public enum Cart {
+      public static let minusCart = ImageAsset(name: "minusCart")
+      public static let plusCart = ImageAsset(name: "plusCart")
+    }
+    public enum Home {
+      public static let closeHome = ImageAsset(name: "closeHome")
+      public static let locationHome = ImageAsset(name: "locationHome")
+      public static let minusHome = ImageAsset(name: "minusHome")
+      public static let plusHome = ImageAsset(name: "plusHome")
+      public static let searchHome = ImageAsset(name: "searchHome")
+    }
+    public enum Icons {
+      public enum CheckBox {
+        public static let checkBo = ImageAsset(name: "checkBo")
+        public static let checkBox = ImageAsset(name: "checkBox")
+        public static let checkBoxFilled = ImageAsset(name: "checkBoxFilled")
+      }
+      public static let radioFilled = ImageAsset(name: "Radio Filled")
+      public static let arrowDown = ImageAsset(name: "arrowDown")
+      public static let arrowDownLeft = ImageAsset(name: "arrowDownLeft")
+      public static let arrowDownRight = ImageAsset(name: "arrowDownRight")
+      public static let arrowLeft = ImageAsset(name: "arrowLeft")
+      public static let arrowRight = ImageAsset(name: "arrowRight")
+      public static let arrowUp = ImageAsset(name: "arrowUp")
+      public static let arrowUpLeft = ImageAsset(name: "arrowUpLeft")
+      public static let arrowUpRight = ImageAsset(name: "arrowUpRight")
+      public static let calendar = ImageAsset(name: "calendar")
+      public static let checkCircleBroken = ImageAsset(name: "checkCircleBroken")
+      public static let checkSquareBroken = ImageAsset(name: "checkSquareBroken")
+      public static let chevronDown = ImageAsset(name: "chevronDown")
+      public static let chevronLeft = ImageAsset(name: "chevronLeft")
+      public static let chevronRight = ImageAsset(name: "chevronRight")
+      public static let chevronUp = ImageAsset(name: "chevronUp")
+      public static let clock = ImageAsset(name: "clock")
+      public static let closeX = ImageAsset(name: "closeX")
+      public static let closeXCircle = ImageAsset(name: "closeXCircle")
+      public static let creditCard = ImageAsset(name: "creditCard")
+      public static let done = ImageAsset(name: "done")
+      public static let doneFilled = ImageAsset(name: "doneFilled")
+      public static let edit = ImageAsset(name: "edit")
+      public static let eye = ImageAsset(name: "eye")
+      public static let eyeOff = ImageAsset(name: "eyeOff")
+      public static let fastShopping = ImageAsset(name: "fastShopping")
+      public static let globe = ImageAsset(name: "globe")
+      public static let heart = ImageAsset(name: "heart")
+      public static let heartFill = ImageAsset(name: "heartFill")
+      public static let home = ImageAsset(name: "home")
+      public static let loading = ImageAsset(name: "loading")
+      public static let location = ImageAsset(name: "location")
+      public static let menu = ImageAsset(name: "menu")
+      public static let minus = ImageAsset(name: "minus")
+      public static let phoneCall01 = ImageAsset(name: "phone-call-01")
+      public static let placeholder = ImageAsset(name: "placeholder")
+      public static let plus = ImageAsset(name: "plus")
+      public static let plusCircle = ImageAsset(name: "plusCircle")
+      public static let radio = ImageAsset(name: "radio")
+      public static let receiptCheck = ImageAsset(name: "receiptCheck")
+      public static let `repeat` = ImageAsset(name: "repeat")
+      public static let repeat04 = ImageAsset(name: "repeat04")
+      public static let search = ImageAsset(name: "search")
+      public static let settings = ImageAsset(name: "settings")
+      public static let share = ImageAsset(name: "share")
+      public static let shoppingBag = ImageAsset(name: "shoppingBag")
+      public static let trash = ImageAsset(name: "trash")
+      public static let trash2 = ImageAsset(name: "trash2")
+    }
+    public enum Logo {
+      public static let logoBlack = ImageAsset(name: "logoBlack")
+      public static let logoWhite = ImageAsset(name: "logoWhite")
+    }
+    public enum Navigation {
+      public static let arrowLeftNav = ImageAsset(name: "arrowLeftNav")
+      public static let basketNav = ImageAsset(name: "basketNav")
+      public static let cancelNav = ImageAsset(name: "cancelNav")
+      public static let catalogNav = ImageAsset(name: "catalogNav")
+      public static let logoBlackNav = ImageAsset(name: "logoBlackNav")
+      public static let logoWhiteNav = ImageAsset(name: "logoWhiteNav")
+      public static let searchNav = ImageAsset(name: "searchNav")
+      public static let userProfileNav = ImageAsset(name: "userProfileNav")
+    }
+    public enum Profile {
+      public static let logOut = ImageAsset(name: "logOut")
+    }
+    public enum TabBars {
+      public static let cart = ImageAsset(name: "cart")
+      public static let catalog = ImageAsset(name: "catalog")
+      public static let home = ImageAsset(name: "home")
+      public static let profile = ImageAsset(name: "profile")
+      public static let wishlist = ImageAsset(name: "wishlist")
+    }
+    public enum Wishlist {
+      public static let closeWish = ImageAsset(name: "closeWish")
+      public static let folder = ImageAsset(name: "folder")
+    }
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

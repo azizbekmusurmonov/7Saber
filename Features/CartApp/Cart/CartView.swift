@@ -18,7 +18,7 @@ public struct CartView: View {
         VStack {
             ScrollView {
                 VStack {
-                    Image(uiImage: Asset.Image.pic.image)
+                    Image("")
                         .resizable()
                         
                         .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)

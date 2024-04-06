@@ -55,11 +55,11 @@
 		FAACC0B72BBE52A7003CCE22 /* AssetKit */ = {
 			isa = PBXGroup;
 			children = (
+				FAACC0C72BBE52C0003CCE22 /* swiftgen.yml */,
 				FAACC0CD2BBE52E4003CCE22 /* XCAssets+Generated.swift */,
 				FAACC0B82BBE52A7003CCE22 /* AssetKit.h */,
 				FAACC0CA2BBE52CA003CCE22 /* Color.xcassets */,
 				FAACC0C92BBE52CA003CCE22 /* Image.xcassets */,
-				FAACC0C72BBE52C0003CCE22 /* swiftgen.yml */,
 				FAACC0B92BBE52A7003CCE22 /* AssetKit.docc */,
 			);
 			path = AssetKit;
@@ -83,6 +83,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAACC0BE2BBE52A7003CCE22 /* Build configuration list for PBXNativeTarget "AssetKit" */;
 			buildPhases = (
+				FA9DAD842BBEA3E80066B9FB /* SwiftGen */,
 				FAACC0B02BBE52A7003CCE22 /* Headers */,
 				FAACC0B12BBE52A7003CCE22 /* Sources */,
 				FAACC0B22BBE52A7003CCE22 /* Frameworks */,
@@ -141,6 +142,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FA9DAD842BBEA3E80066B9FB /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Build Phase - Begin SwiftGen\"\n./runSwiftGen.sh\necho \"Build Phase - End SwiftGen\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FAACC0B12BBE52A7003CCE22 /* Sources */ = {
