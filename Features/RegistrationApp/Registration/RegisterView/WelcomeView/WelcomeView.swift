@@ -12,7 +12,6 @@ struct WelcomeView: View {
     
     let welcomeText: String
     
-    
     init(welcomeText: String) { // Initialize the parameter
         self.welcomeText = welcomeText
     }

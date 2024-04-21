@@ -9,15 +9,21 @@ import SwiftUI
 
 struct CodeView: View {
     
-    @StateObject var vm = CodeViewModel()
+    @EnvironmentObject var vm: RegisterMobillAppViewModel
     
     var body: some View {
         ZStack {
             VStack {
-                NavigationBar(showButton: vm.showButton)
+                NavigationBar(showButton: vm.codeLeftButton, leftButtonAction: {
+                    
+                    withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                        vm.isCodeViewPresented = false
+                    }
+                })
                 WelcomeView(welcomeText: "Enter confirmation code to \ncontinue the proccess")
                     .padding(.top, 150)
                 CodeTextFieldButton()
+                    .environmentObject(vm)
                     .onAppear {
                         vm.startTimer()
                     }
@@ -26,6 +32,7 @@ struct CodeView: View {
                     }
                 Spacer()
             }
+            
         }
     }
 }

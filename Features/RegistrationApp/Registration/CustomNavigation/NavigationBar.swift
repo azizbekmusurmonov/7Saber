@@ -11,14 +11,16 @@ import AssetKit
 struct NavigationBar: View {
     
     var showButton: Bool
-    @StateObject var vm = RegisterMobillAppViewModel()
+    var leftButtonAction: () -> Void
+    @EnvironmentObject var vm: RegisterMobillAppViewModel
     
     var body: some View {
         ZStack {
             HStack {
                 if showButton {
                     Button(action: {
-                        print("left button Tapped")
+
+                        leftButtonAction()
                     }, label: {
                         Image(uiImage: Asset.Image.Icons.arrowLeft.image)
                             .resizable()
@@ -29,10 +31,6 @@ struct NavigationBar: View {
                 Spacer()
                 Button(action: {
                     print("SKIP button Tapped")
-                    
-                    withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-                        self.vm.isCodeViewPresented = false
-                    }
                 }, label: {
                     Text("SKIP")
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
@@ -48,5 +46,5 @@ struct NavigationBar: View {
 }
 
 #Preview {
-    NavigationBar(showButton: true)
+    NavigationBar(showButton: true, leftButtonAction: { })
 }

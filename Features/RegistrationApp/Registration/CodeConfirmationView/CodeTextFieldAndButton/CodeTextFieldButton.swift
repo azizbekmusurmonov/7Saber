@@ -9,8 +9,7 @@ import SwiftUI
 
 struct CodeTextFieldButton: View {
     
-    @StateObject var vm = CodeViewModel()
-    @StateObject var registerVM = RegisterMobillAppViewModel()
+    @EnvironmentObject var vm: RegisterMobillAppViewModel
     
     var body: some View {
         ZStack {
@@ -33,7 +32,7 @@ struct CodeTextFieldButton: View {
                     } //TextField
                     .overlay(Rectangle().frame(height: 1).padding(.top, 8).foregroundColor(.gray), alignment: .bottom)
                     
-                    Text("We have sent to your phone number \(registerVM.numberText) \na 5-digit number, please enter that code to confirm.") // numberText
+                    Text("We have sent to your phone number \(vm.numberText) \na 5-digit number, please enter that code to confirm.") // numberText
                         .font(.system(size: 11))
                         .foregroundColor(.gray)
                         .lineLimit(nil)
@@ -41,6 +40,7 @@ struct CodeTextFieldButton: View {
                     
                     Text("\(String(format: "%02d:%02d", vm.remainingSeconds / 60, vm.remainingSeconds % 60))") // timerText
                             .font(.system(size: 11))
+                            .padding(.top, 7)
                     
                     Button(action: { // sendAgain Button
                         print("Send Again tapped")
@@ -58,11 +58,12 @@ struct CodeTextFieldButton: View {
                             .font(.system(size: 13))
                             .foregroundColor(.black)
                     }
-                    .frame(width: 150, height: 40)
+                    .frame(width: 128, height: 40)
                     .background(Color(red: 246/255, green: 246/255, blue: 246/255))
                     .cornerRadius(100)
                     .opacity((vm.remainingSeconds != 0) ? 0 : 1)
                     .animation(.easeInOut(duration: .animationDuration.normal))
+                    .padding(.top, 21)
                     
                     Button(action: { //ENTER Button
                         print("NEXT Button Tapped")
@@ -73,7 +74,9 @@ struct CodeTextFieldButton: View {
                     .background(vm.codeText.isEmpty ? Color.gray : Color(red: 10/255, green: 10/255, blue: 10/255))
                     .foregroundColor(.white)
                     .cornerRadius(100)
-                    .padding(.top, 20)
+                    .padding(.top, (vm.remainingSeconds != 0) ? -62 : 21)
+                    .animation(.easeInOut(duration: .animationDuration.normal))
+
                     Spacer()
                 }
                 .padding(.leading, 40)

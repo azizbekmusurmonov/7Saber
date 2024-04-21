@@ -16,15 +16,21 @@ public struct RegisterMobillAppView: View {
     public var body: some View {
         ZStack {
             VStack {
-                NavigationBar(showButton: vm.showButton)
+                NavigationBar(showButton: vm.registerLeftButton, leftButtonAction: {
+                    
+                })
                 WelcomeView(welcomeText: "Enter your phone number \nor email to continue")
                     .padding(.top, 150)
-                TextFieldNextButton(vm: vm)
+                TextFieldNextButton(nextButtonPressed: {
+                    vm.nextButtonTapped()
+                })
+                    .environmentObject(vm)
                     .padding(.top, 40)
                 Spacer()
             }.opacity(!vm.isCodeViewPresented ? 1 : 0)
             
-            CodeView().environmentObject(vm)
+            CodeView()
+                .environmentObject(vm)
                 .opacity(!vm.isCodeViewPresented ? 0 : 1)
         }
     }

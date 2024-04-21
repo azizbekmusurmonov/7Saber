@@ -9,7 +9,9 @@ import SwiftUI
 
 struct TextFieldNextButton: View {
     
-    @StateObject var vm = RegisterMobillAppViewModel()
+    @EnvironmentObject var vm: RegisterMobillAppViewModel
+    
+    let nextButtonPressed: () -> Void
     
     var body: some View {
         ZStack {
@@ -34,10 +36,12 @@ struct TextFieldNextButton: View {
                     Button(action: {
                         print("NEXT Button Tapped")
                         
+                        nextButtonPressed()
+                        
                         withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                             vm.isCodeViewPresented = true
                         }
-                        
+
                     }, label: {
                         Text("NEXT")
                     })
@@ -56,5 +60,5 @@ struct TextFieldNextButton: View {
 }
 
 #Preview {
-    TextFieldNextButton()
+    TextFieldNextButton(nextButtonPressed: { })
 }
