@@ -19,7 +19,7 @@ public struct RegistrationView: View {
                 customNavigationBar()
                     .frame(height: 60)
                 HStack(alignment: .top) {
-                    xButton
+                    customXButton()
                         .padding(.top, 46)
                         .padding(.leading, 8)
                     VStack(alignment: .leading) {
@@ -38,25 +38,13 @@ public struct RegistrationView: View {
                 Spacer()
             }.opacity(!vm.isCodeViewPresented ? 1 : 0)
             
-            CodeView().environmentObject(vm)
+            CodeViewResponsiv().environmentObject(vm)
                 .opacity(!vm.isCodeViewPresented ? 0 : 1)
         }
     }
 }
 
 extension RegistrationView {
-    
-    private var xButton: some View { // xButton
-        Button(action: {
-            print("button tapped")
-        }, label: {
-            Image(systemName: "xmark")
-                .resizable()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.gray)
-        })
-        .frame(width: 36, height: 44)
-    }
     
     private var welcome: some View { //welcome
         Text("WELCOME")
@@ -108,13 +96,3 @@ extension RegistrationView {
 //#Preview {
 //    RegistrationView()
 //}
-
-extension TimeInterval {
-    
-    static let animationDuration = AnimationDuration()
-    struct AnimationDuration {
-        let short = 0.3
-        let normal = 0.5
-        let long = 1.0
-    }
-}

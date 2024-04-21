@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+import AssetKit
 
-public struct CodeView: View {
+public struct CodeViewResponsiv: View {
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var vm: RegistrationViewModel
@@ -21,9 +22,9 @@ public struct CodeView: View {
                     VStack {
                         leftChevronButton
                             .padding(.leading, 8)
-                        xButton
+                        customXButton()
                             .padding(.leading, 8)
-                            .padding(.top, 6)
+                            .padding(.top, -2)
                     }
                     VStack(alignment: .leading) {
                         welcome
@@ -73,7 +74,7 @@ public struct CodeView: View {
 }
 
 
-extension CodeView {
+extension CodeViewResponsiv {
     
     private var leftChevronButton: some View {
         Button(action: {
@@ -84,7 +85,7 @@ extension CodeView {
                 }
             }
         }, label: {
-            Image(systemName: "chevron.left")
+            Image(uiImage: Asset.Image.Icons.arrowLeft.image)
                 .resizable()
                 .frame(width: 20, height: 20)
                 .foregroundColor(.gray)
@@ -96,7 +97,7 @@ extension CodeView {
         Button(action: {
             print("button tapped")
         }, label: {
-            Image(systemName: "xmark")
+            Image(uiImage: Asset.Image.Icons.closeX.image)
                 .resizable()
                 .frame(width: 20, height: 20)
                 .foregroundColor(.gray)
