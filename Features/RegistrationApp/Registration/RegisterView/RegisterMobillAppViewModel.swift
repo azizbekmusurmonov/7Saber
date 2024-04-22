@@ -35,10 +35,10 @@ public class RegisterMobillAppViewModel: ObservableObject {
         
         request.httpBody = param.percentEncoded()
         
-        URLSession.shared.dataTaskPublisher(for: url)
+        URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { (data, response) in
                 guard let response = response as? HTTPURLResponse,
-                      response.statusCode == 200 else { return data }
+                      response.statusCode >= 200, response.statusCode <= 300 else { return data }
                 
                 return data
             }

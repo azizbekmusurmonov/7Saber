@@ -3,4 +3,69 @@
    uuid = "098A7116-D6DB-4C68-867C-E9B7C527C8AC"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B657076-BA01-4ACD-BEF1-D5EE7643EB3B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/RegistrationApp/Registration/RegisterView/RegisterMobillAppViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "nextButtonTapped()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0B657076-BA01-4ACD-BEF1-D5EE7643EB3B - 9075b40f6df2044e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data, __C.NSURLResponse) -&gt; Foundation.Data in Registration.RegisterMobillAppViewModel.nextButtonTapped() -&gt; ()"
+                  moduleName = "Registration"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/asadbekyoldoshev/Desktop/7Saber/Features/RegistrationApp/Registration/RegisterView/RegisterMobillAppViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "0B657076-BA01-4ACD-BEF1-D5EE7643EB3B - 9075b40f6df2044e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data, __C.NSURLResponse) -&gt; Foundation.Data in Registration.RegisterMobillAppViewModel.nextButtonTapped() -&gt; ()"
+                  moduleName = "Registration"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/asadbekyoldoshev/Desktop/7Saber/Features/RegistrationApp/Registration/RegisterView/RegisterMobillAppViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "0B657076-BA01-4ACD-BEF1-D5EE7643EB3B - 9075b40f6df2044e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data, __C.NSURLResponse) -&gt; Foundation.Data in Registration.RegisterMobillAppViewModel.nextButtonTapped() -&gt; ()"
+                  moduleName = "Registration"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/asadbekyoldoshev/Desktop/7Saber/Features/RegistrationApp/Registration/RegisterView/RegisterMobillAppViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "340">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
