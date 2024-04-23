@@ -35,7 +35,7 @@ final public class NetworkService {
         
         let (data, response) = try await URLSession.shared.data(for: request)
         
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+        guard let response = response as? HTTPURLResponse, response.statusCode >= 200, response.statusCode < 300 else {
             let statusCode = (response as? HTTPURLResponse)?.statusCode ?? .zero
             print("⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ FAIL", urlString, statusCode)
             throw NetworkError.incorrectStatusCode(statusCode)
