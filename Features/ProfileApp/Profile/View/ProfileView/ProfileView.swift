@@ -13,7 +13,42 @@ public struct ProfileView: View {
     
     @EnvironmentObject var vm: ProfileViewModel
     @StateObject var profileData = ProfileViewModel()
-
+    
+    @State var sections: [SectionModel] = [
+        SectionModel(headertitle: "ACCOUNT",
+                     cells: [
+                        ProfilecellModel(title: "Personal information", hasRightIcon: true, number: ""),
+                        ProfilecellModel(title: "Addresses", hasRightIcon: true, number: ""),
+                        ProfilecellModel(title: "Payment methods", hasRightIcon: true, number: "")
+                     ]),
+        SectionModel(headertitle: "ORDERS",
+                     cells: [
+                        ProfilecellModel(title: "Current orders", hasRightIcon: true, number: "3"),
+                        ProfilecellModel(title: "Order history", hasRightIcon: true, number: ""),
+                        
+                     ]),
+        SectionModel(headertitle: "SETTINGS",
+                     cells: [
+                        ProfilecellModel(title: "Push notifications", hasRightIcon: true, number: ""),
+                        ProfilecellModel(title: "Privacy", hasRightIcon: true, number: ""),
+                        ProfilecellModel(title: "Language", hasRightIcon: true, number: ""),
+                        ProfilecellModel(title: "Country / Region", hasRightIcon: true, number: "")
+                     ]),
+        SectionModel(headertitle: "HELP CENTER",
+                     cells: [
+                        ProfilecellModel(title: "Push notifications", hasRightIcon: true, number: ""),
+                        ProfilecellModel(title: "Privacy", hasRightIcon: true, number: ""),
+                        ProfilecellModel(title: "Language", hasRightIcon: true, number: ""),
+                        ProfilecellModel(title: "Country / Region", hasRightIcon: true, number: "")
+                     ]),
+        SectionModel(headertitle: "LEGAL",
+                     cells: [
+                        ProfilecellModel(title: "General Terms & Conditions", hasRightIcon: true, number: ""),
+                        ProfilecellModel(title: "Terms of Use", hasRightIcon: true, number: ""),
+                        ProfilecellModel(title: "Privacy Policy", hasRightIcon: true, number: "")
+                     ])
+    ]
+    
     public init() { }
     
     public var body: some View {
@@ -56,9 +91,9 @@ public struct ProfileView: View {
                             Text("EDIT PROFILE")
                                 .padding()
                                 .font(.footnote)
-                                
+                            
                             Image(uiImage: Asset.Image.Icons.edit.image)
-                                
+                            
                         }
                         .frame(height: 40)
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
@@ -68,32 +103,12 @@ public struct ProfileView: View {
                         .padding(.leading, 12)
                     }
                 }
+                
                 Spacer()
-//                List {
-                    ProfileTabHeader(title: "ACCOUNT")
-                    ProfileTab(title: "Personal information")
-                    ProfileTab(title: "Addresses")
-                    ProfileTab(title: "Payment methods")
-                    
-                    ProfileTabHeader(title: "ORDERS")
-                    ProfileTab(title: "Current orders")
-                    ProfileTab(title: "Order history")
-                    
-                    ProfileTabHeader(title: "SETTINGS")
-                    ProfileTab(title: "Push notifications")
-                    ProfileTab(title: "Privacy")
-                    ProfileTab(title: "Language")
-                    ProfileTab(title: "Country / Region")
-                    
-                    ProfileTabHeader(title: "LEGAL")
-                    ProfileTab(title: "General Terms & Conditions")
-                    ProfileTab(title: "Terms of Use")
-                    ProfileTab(title: "Privacy Policy")
-//                }
-//                .listStyle(PlainListStyle())
+                profileList
                 
                 Button(action: {
-                    
+                   
                 }) {
                     HStack(spacing: .zero) {
                         Text("LOG OUT")
@@ -113,7 +128,8 @@ public struct ProfileView: View {
                 .frame(width: 313, height: 56)
                 .cornerRadius(24)
                 .padding(.top, 20)
-
+                
+                
                 Button(action: {
                     
                 }) {
@@ -134,9 +150,48 @@ public struct ProfileView: View {
                 .frame(width: 313, height: 56)
                 .background(Asset.Color.Button.grayCol.swiftUIColor)
                 .cornerRadius(24)
-
+                
             }
         }
+    }
+}
+
+extension ProfileView {
+    
+    var profileList: some View {
+        VStack(alignment: .leading) {
+            
+            ForEach(0..<sections.count, id: \.self) { index in
+                Text(sections[index].headertitle)
+                    .font(.largeTitle)
+                    .bold()
+                
+                
+                ForEach(0..<sections[index].cells.count) { cellIndex in
+                    Button(action: {
+                        print(sections[index].cells[cellIndex])
+                        
+                    }) {
+                        HStack {
+                            Text(sections[index].cells[cellIndex].title)
+                                .font(.title2)
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                            
+                            if sections[index].cells[cellIndex].hasRightIcon {
+                                Image(systemName: "chevron.right")
+                                    .resizable()
+                                    .frame(width: 5.59, height: 12)
+                                    .foregroundColor(.black)
+                            }
+                        }
+                    }
+                    Divider()
+                }
+            }
+        }
+        .padding()
     }
 }
 
