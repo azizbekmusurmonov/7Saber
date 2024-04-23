@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B5D0B142BD7DCA900345C11 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D0B132BD7DCA900345C11 /* HttpMethod.swift */; };
+		7B5D0B162BD7DF3C00345C11 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D0B152BD7DF3C00345C11 /* NetworkError.swift */; };
 		FA77A2262BBBA91600843673 /* NetworkManager.docc in Sources */ = {isa = PBXBuildFile; fileRef = FA77A2252BBBA91600843673 /* NetworkManager.docc */; };
 		FA77A2272BBBA91600843673 /* NetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FA77A2242BBBA91600843673 /* NetworkManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA77A2342BBBA93100843673 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77A2332BBBA93100843673 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B5D0B132BD7DCA900345C11 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		7B5D0B152BD7DF3C00345C11 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FA77A2212BBBA91600843673 /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA77A2242BBBA91600843673 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		FA77A2252BBBA91600843673 /* NetworkManager.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NetworkManager.docc; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 				FA77A2242BBBA91600843673 /* NetworkManager.h */,
 				FA77A2252BBBA91600843673 /* NetworkManager.docc */,
 				FA77A2332BBBA93100843673 /* NetworkManager.swift */,
+				7B5D0B152BD7DF3C00345C11 /* NetworkError.swift */,
+				7B5D0B132BD7DCA900345C11 /* HttpMethod.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA77A2342BBBA93100843673 /* NetworkManager.swift in Sources */,
+				7B5D0B162BD7DF3C00345C11 /* NetworkError.swift in Sources */,
+				7B5D0B142BD7DCA900345C11 /* HttpMethod.swift in Sources */,
 				FA77A2262BBBA91600843673 /* NetworkManager.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
