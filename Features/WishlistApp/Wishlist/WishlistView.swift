@@ -14,7 +14,18 @@ public struct WishlistView: View {
     public init() { }
     
     public var body: some View {
-        Text(vm.text)
-            .font(.largeTitle)
+        ZStack {
+            VStack {
+                NavigationBar()
+                WishListIsEmpty()
+                Spacer()
+            }
+        }
+    }
+}
+
+struct MyPreviewProvider_Previews: PreviewProvider {
+    static var previews: some View {
+        WishlistView()
     }
 }
