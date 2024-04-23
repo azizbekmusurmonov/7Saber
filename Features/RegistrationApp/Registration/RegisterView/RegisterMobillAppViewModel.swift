@@ -22,6 +22,10 @@ public class RegisterMobillAppViewModel: ObservableObject {
     
     public init () { }
     
+    func nextButtonTapped() {
+        
+    }
+    
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if self.remainingSeconds > 0 {
