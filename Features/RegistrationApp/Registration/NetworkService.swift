@@ -53,3 +53,8 @@ final public class NetworkService {
     }
 }
 
+public enum HttpMethod: String {
+    case post
+    case get
+}
+
