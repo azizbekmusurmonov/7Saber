@@ -45,10 +45,11 @@ struct CodeTextFieldButton: View {
                     Button(action: { // sendAgain Button
                         print("Send Again tapped")
                             
-                        vm.remainingSeconds = 55
+                        vm.remainingSeconds = 60
                         vm.stopTimer()
                         vm.startTimer()
-                        
+                      
+                        vm.sendCode()
                     }) {
                         Image(systemName: "repeat")
                             .resizable()

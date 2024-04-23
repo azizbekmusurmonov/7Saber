@@ -19,13 +19,11 @@ public class RegisterMobillAppViewModel: ObservableObject {
     @Published var codeText: String = ""
     @Published var codeTextFieldIsEditing: Bool = false
     @Published var timer: Timer?
-    @Published var remainingSeconds = 3
-    
-    var cancelable = Set<AnyCancellable>()
+    @Published var remainingSeconds = 60
     
     public init () { }
     
-    func nextButtonTapped() {
+    func sendCode() {
         let urlString = "https://lab.7saber.uz/api/auth/send-code"
         
         var urlComponents = URLComponents(string: urlString)!

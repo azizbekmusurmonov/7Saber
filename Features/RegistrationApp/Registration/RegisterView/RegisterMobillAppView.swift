@@ -22,7 +22,12 @@ public struct RegisterMobillAppView: View {
                 WelcomeView(welcomeText: "Enter your phone number \nor email to continue")
                     .padding(.top, 150)
                 TextFieldNextButton(nextButtonPressed: {
-                    vm.nextButtonTapped()
+                    
+                    vm.remainingSeconds = 60
+                    vm.stopTimer()
+                    vm.startTimer()
+                    
+                    vm.sendCode()
                 })
                     .environmentObject(vm)
                     .padding(.top, 40)

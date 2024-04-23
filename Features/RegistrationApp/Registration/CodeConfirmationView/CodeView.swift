@@ -24,12 +24,6 @@ struct CodeView: View {
                     .padding(.top, 150)
                 CodeTextFieldButton()
                     .environmentObject(vm)
-                    .onAppear {
-                        vm.startTimer()
-                    }
-                    .onDisappear {
-                        vm.stopTimer()
-                    }
                 Spacer()
             }
             
