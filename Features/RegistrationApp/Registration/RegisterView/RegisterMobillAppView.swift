@@ -23,7 +23,7 @@ public struct RegisterMobillAppView: View {
                     .padding(.top, 150)
                 TextFieldNextButton(nextButtonPressed: {
                     
-                    vm.remainingSeconds = 60
+                    vm.remainingSeconds = 120
                     vm.stopTimer()
                     vm.startTimer()
                     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AssetKit
 
 struct TextFieldNextButton: View {
     
@@ -20,8 +21,13 @@ struct TextFieldNextButton: View {
                     ZStack(alignment: .leading) {
                         Text("Phone number or Email")
                             .foregroundColor(.gray)
-                            .font(.system(size: vm.numberTextFieldIsEditing ? 11 : 16))
-                            .offset(y: vm.numberTextFieldIsEditing ? -26 : 0)
+                            .font(
+                                .system(
+                                    size:
+                                        vm.numberTextFieldIsEditing || !vm.numberText.isEmpty ? 11 : 16
+                                )
+                            )
+                            .offset(y: vm.numberTextFieldIsEditing || !vm.numberText.isEmpty ? -26 : 0)
                         
                         TextField("", text: $vm.numberText, onEditingChanged: { editing in
                             withAnimation(.easeInOut(duration: .animationDuration.normal)) {
@@ -46,7 +52,7 @@ struct TextFieldNextButton: View {
                         Text("NEXT")
                     })
                     .frame(width: 313, height: 56)
-                    .background(vm.numberText.isEmpty ? Color.gray : Color(red: 10/255, green: 10/255, blue: 10/255))
+                    .background(vm.numberText.isEmpty ? Asset.Color.Button.Black.disable.swiftUIColor : Color.black)
                     .foregroundColor(.white)
                     .cornerRadius(100)
                     .padding(.top, 20)

@@ -19,7 +19,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
     @Published var codeText: String = ""
     @Published var codeTextFieldIsEditing: Bool = false
     @Published var timer: Timer?
-    @Published var remainingSeconds = 60
+    @Published var remainingSeconds = 120
     
     public init () { }
     

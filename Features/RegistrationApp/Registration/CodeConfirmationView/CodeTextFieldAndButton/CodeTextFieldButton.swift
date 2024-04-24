@@ -18,8 +18,13 @@ struct CodeTextFieldButton: View {
                     ZStack(alignment: .leading) {
                         Text("Code")
                             .foregroundColor(.gray)
-                            .font(.system(size: vm.codeTextFieldIsEditing ? 11 : 16))
-                            .offset(y: vm.codeTextFieldIsEditing ? -26 : 0)
+                            .font(
+                                .system(
+                                    size:
+                                        vm.codeTextFieldIsEditing || !vm.codeText.isEmpty ? 11 : 16
+                                )
+                            )
+                            .offset(y: vm.codeTextFieldIsEditing || !vm.codeText.isEmpty ? -26 : 0)
                         
                         TextField("", text: $vm.codeText, onEditingChanged: { editing in
                             withAnimation(.easeInOut(duration: .animationDuration.normal)) {
