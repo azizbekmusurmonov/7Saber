@@ -67,5 +67,4 @@
         publicAccess: true
         forceProvidesNamespaces: true
         enumName: Asset
-#        enumName: AssetColorProvider
        output: XCAssets+Generated.swift
