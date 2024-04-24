@@ -17,35 +17,35 @@ public struct ProfileView: View {
     @State var sections: [SectionModel] = [
         SectionModel(headertitle: "ACCOUNT",
                      cells: [
-                        ProfilecellModel(title: "Personal information", hasRightIcon: true, number: ""),
-                        ProfilecellModel(title: "Addresses", hasRightIcon: true, number: ""),
-                        ProfilecellModel(title: "Payment methods", hasRightIcon: true, number: "")
+                        ProfilecellModel(title: "Personal information", hasRightIcon: true, number: "", pushToView: PersonalInfoView()),
+                        ProfilecellModel(title: "Addresses", hasRightIcon: true, number: "", pushToView: AddressView()),
+                        ProfilecellModel(title: "Payment methods", hasRightIcon: true, number: "", pushToView: PaymentMethodView())
                      ]),
         SectionModel(headertitle: "ORDERS",
                      cells: [
-                        ProfilecellModel(title: "Current orders", hasRightIcon: true, number: "3"),
-                        ProfilecellModel(title: "Order history", hasRightIcon: true, number: ""),
+                        ProfilecellModel(title: "Current orders", hasRightIcon: true, number: "3", pushToView: CurrentOrdersView()),
+                        ProfilecellModel(title: "Order history", hasRightIcon: true, number: "", pushToView: OrderHistoryView()),
                         
                      ]),
         SectionModel(headertitle: "SETTINGS",
                      cells: [
-                        ProfilecellModel(title: "Push notifications", hasRightIcon: true, number: ""),
-                        ProfilecellModel(title: "Privacy", hasRightIcon: true, number: ""),
-                        ProfilecellModel(title: "Language", hasRightIcon: true, number: ""),
-                        ProfilecellModel(title: "Country / Region", hasRightIcon: true, number: "")
+                        ProfilecellModel(title: "Push notifications", hasRightIcon: true, number: "", pushToView: PushNotificationView()),
+                        ProfilecellModel(title: "Privacy", hasRightIcon: true, number: "", pushToView: PrivacyView()),
+                        ProfilecellModel(title: "Language", hasRightIcon: true, number: "", pushToView: LanguageView()),
+                        ProfilecellModel(title: "Country / Region", hasRightIcon: true, number: "", pushToView: CountryRegionView())
                      ]),
         SectionModel(headertitle: "HELP CENTER",
                      cells: [
-                        ProfilecellModel(title: "Push notifications", hasRightIcon: true, number: ""),
-                        ProfilecellModel(title: "Privacy", hasRightIcon: true, number: ""),
-                        ProfilecellModel(title: "Language", hasRightIcon: true, number: ""),
-                        ProfilecellModel(title: "Country / Region", hasRightIcon: true, number: "")
+                        ProfilecellModel(title: "Push notifications", hasRightIcon: true, number: "", pushToView: PushNotificationView()),
+                        ProfilecellModel(title: "Privacy", hasRightIcon: true, number: "", pushToView: PrivacyView()),
+                        ProfilecellModel(title: "Language", hasRightIcon: true, number: "", pushToView: LanguageView()),
+                        ProfilecellModel(title: "Country / Region", hasRightIcon: true, number: "", pushToView: CountryRegionView())
                      ]),
         SectionModel(headertitle: "LEGAL",
                      cells: [
-                        ProfilecellModel(title: "General Terms & Conditions", hasRightIcon: true, number: ""),
-                        ProfilecellModel(title: "Terms of Use", hasRightIcon: true, number: ""),
-                        ProfilecellModel(title: "Privacy Policy", hasRightIcon: true, number: "")
+                        ProfilecellModel(title: "General Terms & Conditions", hasRightIcon: true, number: "", pushToView: GeneralTermsView()),
+                        ProfilecellModel(title: "Terms of Use", hasRightIcon: true, number: "", pushToView: TermsUseView()),
+                        ProfilecellModel(title: "Privacy Policy", hasRightIcon: true, number: "", pushToView: PrivacyPolicyView())
                      ])
     ]
     
@@ -105,10 +105,11 @@ public struct ProfileView: View {
                 }
                 
                 Spacer()
+                
                 profileList
                 
                 Button(action: {
-                   
+                   print("log out")
                 }) {
                     HStack(spacing: .zero) {
                         Text("LOG OUT")
@@ -131,7 +132,7 @@ public struct ProfileView: View {
                 
                 
                 Button(action: {
-                    
+                    print("delete acc")
                 }) {
                     HStack(spacing: .zero) {
                         Text("DELETE ACOUNT")
@@ -169,7 +170,8 @@ extension ProfileView {
                 
                 ForEach(0..<sections[index].cells.count) { cellIndex in
                     Button(action: {
-                        print(sections[index].cells[cellIndex])
+                        
+                        
                         
                     }) {
                         HStack {

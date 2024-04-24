@@ -40,7 +40,7 @@ public struct BaseNavigationBar: View {
                     Spacer()
                     
                     Text(title)
-                        .font(.title)
+                        .font(.title2)
                     Spacer()
                 }
                 
@@ -71,7 +71,7 @@ extension BaseNavigationBar {
                 }) {
                     Image(uiImage: leftImage) //left image
                         .resizable()
-                        .frame(width: 32, height: 32)
+                        .frame(width: 20, height: 20)
                         .padding(12)
                 }
             } else {
