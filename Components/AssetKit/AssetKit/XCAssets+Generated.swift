@@ -26,6 +26,7 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 public enum Asset {
   public enum Color {
     public enum Button {
+      public static let blackCol = ColorAsset(name: "BlackCol")
       public enum Black {
         public static let disable = ColorAsset(name: "disable")
       }
@@ -34,6 +35,7 @@ public enum Asset {
     public enum Text {
       public static let primaryCol = ColorAsset(name: "PrimaryCol")
       public static let secondaryCol = ColorAsset(name: "SecondaryCol")
+      public static let whiteCol = ColorAsset(name: "WhiteCol")
     }
   }
   public enum Image {
@@ -92,6 +94,7 @@ public enum Asset {
       public static let placeholder = ImageAsset(name: "placeholder")
       public static let plus = ImageAsset(name: "plus")
       public static let plusCircle = ImageAsset(name: "plusCircle")
+      public static let plusCrcleWhite = ImageAsset(name: "plusCrcleWhite")
       public static let radio = ImageAsset(name: "radio")
       public static let receiptCheck = ImageAsset(name: "receiptCheck")
       public static let `repeat` = ImageAsset(name: "repeat")
