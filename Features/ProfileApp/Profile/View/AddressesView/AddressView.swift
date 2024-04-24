@@ -6,10 +6,23 @@
 //
 
 import SwiftUI
+import Core
+import AssetKit
 
 struct AddressView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: .zero) {
+            BaseNavigationBar(title: "ADDRESSES ", leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed:  {
+                print("leftButtonPressed")
+            })
+            Spacer()
+            
+            ScrollView {
+                VStack(alignment: .leading, spacing: .zero) {
+                    
+                }
+            }
+        }
     }
 }
 

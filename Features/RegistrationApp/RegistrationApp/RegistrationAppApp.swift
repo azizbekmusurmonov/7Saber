@@ -12,7 +12,7 @@ import Registration
 struct RegistrationAppApp: App {
     var body: some Scene {
         WindowGroup {
-            RegistrationView()
+            RegisterMobillAppView()
         }
     }
 }

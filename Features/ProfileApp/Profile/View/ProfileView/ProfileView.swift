@@ -172,7 +172,6 @@ extension ProfileView {
                     Button(action: {
                         
                         
-                        
                     }) {
                         HStack {
                             Text(sections[index].cells[cellIndex].title)

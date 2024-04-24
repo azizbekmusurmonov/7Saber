@@ -12,11 +12,11 @@ import AssetKit
 struct PersonalInfoView: View {
     
     
-    @State var fullName = "Azizbek"
+    @State var fullName = "Azizbek Musurmonov"
     @State var phoneNumber = "+998"
-    @State var email = ""
+    @State var email = "azizbekmusurmonov004@gmail.com"
     @State var sex = "Male"
-    @State var birthday = ""
+    @State var birthday = "MARCH 14, 2004"
     
     var body: some View {
         VStack(spacing: .zero) {
@@ -55,27 +55,28 @@ struct PersonalInfoView: View {
                         }) {
                             Text("Cancel")
                                 .padding()
+                                .frame(width: 200)
                                 .font(.footnote)
                                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         }
                         .background(Asset.Color.Button.grayCol.swiftUIColor)
-                        .frame(width: 100, height: 56)
+                        .frame(width: 180, height: 56)
                         .cornerRadius(24)
-                        .padding(.top, 20)
+                        .padding(.leading)
                         
                         Button(action: {
                             
                         }) {
                             Text("Save")
                                 .padding()
+                                .frame(width: 180)
                                 .font(.footnote)
                                 .foregroundColor(Asset.Color.Text.whiteCol.swiftUIColor)
                         }
                         
                         .background(Asset.Color.Button.blackCol.swiftUIColor)
-                        .frame(width: 100, height: 56)
                         .cornerRadius(24)
-                        .padding(.top, 20)
+                        .padding(.leading)
                     }
                    
                     .padding()
