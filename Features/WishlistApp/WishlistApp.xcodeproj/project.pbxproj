@@ -20,6 +20,7 @@
 		845CD3F22BD800240059BD4F /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845CD3F12BD800240059BD4F /* AssetKit.framework */; };
 		845CD3F32BD800240059BD4F /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 845CD3F12BD800240059BD4F /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		845CD3F62BD807280059BD4F /* WishListIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CD3F52BD807280059BD4F /* WishListIsEmpty.swift */; };
+		845CD3F82BD932BB0059BD4F /* Wishlistitems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CD3F72BD932BB0059BD4F /* Wishlistitems.swift */; };
 		FA4F20AE2BB7E97E00457A3E /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20AD2BB7E97E00457A3E /* NetworkManager.framework */; };
 		FA4F20AF2BB7E97E00457A3E /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20AD2BB7E97E00457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA4F20E52BB7EBAD00457A3E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20E42BB7EBAD00457A3E /* Core.framework */; };
@@ -79,6 +80,7 @@
 		845CD3EF2BD7FF940059BD4F /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		845CD3F12BD800240059BD4F /* AssetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AssetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		845CD3F52BD807280059BD4F /* WishListIsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListIsEmpty.swift; sourceTree = "<group>"; };
+		845CD3F72BD932BB0059BD4F /* Wishlistitems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wishlistitems.swift; sourceTree = "<group>"; };
 		FA4F20AD2BB7E97E00457A3E /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4F20E42BB7EBAD00457A3E /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA77A39E2BBDA0EC00843673 /* AssetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AssetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				529DA9342BB7B38300629C86 /* Wishlist.h */,
 				529DA9352BB7B38300629C86 /* Wishlist.docc */,
 				529DA9452BB7B3B400629C86 /* WishlistView.swift */,
+				845CD3F72BD932BB0059BD4F /* Wishlistitems.swift */,
 				529DA9472BB7B3ED00629C86 /* WishlistViewModel.swift */,
 				845CD3F42BD8070A0059BD4F /* WishlistIsEmpty */,
 				845CD3EE2BD7FF660059BD4F /* CustomNavigation */,
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				529DA9362BB7B38300629C86 /* Wishlist.docc in Sources */,
+				845CD3F82BD932BB0059BD4F /* Wishlistitems.swift in Sources */,
 				529DA9462BB7B3B400629C86 /* WishlistView.swift in Sources */,
 				845CD3F62BD807280059BD4F /* WishListIsEmpty.swift in Sources */,
 				529DA9482BB7B3ED00629C86 /* WishlistViewModel.swift in Sources */,

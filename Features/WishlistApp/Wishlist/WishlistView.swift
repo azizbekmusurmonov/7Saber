@@ -14,11 +14,18 @@ public struct WishlistView: View {
     public init() { }
     
     public var body: some View {
+        
         ZStack {
             VStack {
                 NavigationBar()
-                WishListIsEmpty()
-                Spacer()
+                ScrollView {
+                    
+                    ItemsView()
+                    
+                    WishListIsEmpty()
+                    Spacer()
+                    
+                }
             }
         }
     }

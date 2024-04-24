@@ -62,7 +62,7 @@ struct TabBarView: View {
                         Text("Profile")
                     }
                     .onAppear {
-                        self.profileVM.count = 100
+                     //   self.profileVM.count = 100
                     }
             }
         }
@@ -79,6 +79,6 @@ struct Blur: UIViewRepresentable {
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
 }
 
-#Preview {
-    TabBarView()
-}
+//#Preview {
+//    TabBarView()
+//}
