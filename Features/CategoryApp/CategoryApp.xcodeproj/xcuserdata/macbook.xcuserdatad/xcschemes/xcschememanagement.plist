@@ -7,12 +7,12 @@
 		<key>CategoryApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>12</integer>
 		</dict>
 		<key>CategoryTarget.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>5</integer>
 		</dict>
 	</dict>
 </dict>
