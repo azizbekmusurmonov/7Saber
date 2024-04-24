@@ -52,108 +52,113 @@ public struct ProfileView: View {
     public init() { }
     
     public var body: some View {
-        
-        VStack(spacing: .zero) {
-            BaseNavigationBar(title: "PROFILE",
-                              leftImage: Asset.Image.Logo.logoBlack.image,
-                              rightImage: Asset.Image.Navigation.cancelNav.image
-            )
-        }
-        
-        ScrollView {
-            VStack(spacing: .zero) {
-                HStack(spacing: .zero) {
-                    Image("Fon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 146, height: 146)
-                        .clipShape(Circle())
-                        .padding()
-                    
-                    Divider()
-                    Spacer()
-                    
+       
+        NavigationView {
+            VStack {
+                VStack(spacing: .zero) {
+                    BaseNavigationBar(title: "PROFILE",
+                                      leftImage: Asset.Image.Logo.logoBlack.image,
+                                      rightImage: Asset.Image.Navigation.cancelNav.image
+                    )
+                }
+                
+                ScrollView {
                     VStack(spacing: .zero) {
-                        Text("Azizbek Musurmonov")
-                            .font(.headline)
-                            .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
-                            .padding(2)
-                        Text("azizbekmusurmonov004@gmail.com")
-                            .font(.caption2)
-                            .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                        HStack(spacing: .zero) {
+                            Image("Fon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 146, height: 146)
+                                .clipShape(Circle())
+                                .padding()
+                            
+                            Divider()
+                            Spacer()
+                            
+                            VStack(spacing: .zero) {
+                                Text("Azizbek Musurmonov")
+                                    .font(.headline)
+                                    .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
+                                    .padding(2)
+                                Text("azizbekmusurmonov004@gmail.com")
+                                    .font(.caption2)
+                                    .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                                
+                                    .padding(10)
+                                Divider()
+                                
+                                Button(action: {
+                                    
+                                }) {
+                                    Text("EDIT PROFILE")
+                                        .padding()
+                                        .font(.footnote)
+                                    
+                                    Image(uiImage: Asset.Image.Icons.edit.image)
+                                    
+                                }
+                                .frame(height: 40)
+                                .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
+                                .background(Asset.Color.Button.grayCol.swiftUIColor)
+                                .cornerRadius(24)
+                                .padding()
+                                .padding(.leading, 12)
+                            }
+                        }
                         
-                            .padding(10)
-                        Divider()
+                        Spacer()
+                        
+                        profileList
                         
                         Button(action: {
-                            
+                           print("log out")
                         }) {
-                            Text("EDIT PROFILE")
-                                .padding()
-                                .font(.footnote)
-                            
-                            Image(uiImage: Asset.Image.Icons.edit.image)
-                            
+                            HStack(spacing: .zero) {
+                                Text("LOG OUT")
+                                    .padding()
+                                    .font(.footnote)
+                                    .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
+                                
+                                Spacer()
+                                
+                                Spacer()
+                                
+                                Image(uiImage: Asset.Image.Profile.logOut.image)
+                                    .padding()
+                            }
                         }
-                        .frame(height: 40)
-                        .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
+                        .background(Asset.Color.Button.grayCol.swiftUIColor)
+                        .frame(width: 313, height: 56)
+                        .cornerRadius(24)
+                        .padding(.top, 20)
+                        
+                        
+                        Button(action: {
+                            print("delete acc")
+                        }) {
+                            HStack(spacing: .zero) {
+                                Text("DELETE ACOUNT")
+                                    .padding()
+                                    .font(.footnote)
+                                    .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
+                                
+                                Spacer()
+                                
+                                Spacer()
+                                
+                                Image(uiImage: Asset.Image.Icons.trash2.image)
+                                    .padding()
+                            }
+                        }
+                        .frame(width: 313, height: 56)
                         .background(Asset.Color.Button.grayCol.swiftUIColor)
                         .cornerRadius(24)
-                        .padding()
-                        .padding(.leading, 12)
+                        
                     }
                 }
-                
-                Spacer()
-                
-                profileList
-                
-                Button(action: {
-                   print("log out")
-                }) {
-                    HStack(spacing: .zero) {
-                        Text("LOG OUT")
-                            .padding()
-                            .font(.footnote)
-                            .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
-                        
-                        Spacer()
-                        
-                        Spacer()
-                        
-                        Image(uiImage: Asset.Image.Profile.logOut.image)
-                            .padding()
-                    }
-                }
-                .background(Asset.Color.Button.grayCol.swiftUIColor)
-                .frame(width: 313, height: 56)
-                .cornerRadius(24)
-                .padding(.top, 20)
-                
-                
-                Button(action: {
-                    print("delete acc")
-                }) {
-                    HStack(spacing: .zero) {
-                        Text("DELETE ACOUNT")
-                            .padding()
-                            .font(.footnote)
-                            .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
-                        
-                        Spacer()
-                        
-                        Spacer()
-                        
-                        Image(uiImage: Asset.Image.Icons.trash2.image)
-                            .padding()
-                    }
-                }
-                .frame(width: 313, height: 56)
-                .background(Asset.Color.Button.grayCol.swiftUIColor)
-                .cornerRadius(24)
-                
             }
         }
+       
     }
 }
 
@@ -169,10 +174,10 @@ extension ProfileView {
                 
                 
                 ForEach(0..<sections[index].cells.count) { cellIndex in
-                    Button(action: {
-                        
-                        
-                    }) {
+                    
+                    NavigationLink {
+                        PersonalInfoView()
+                    } label: {
                         HStack {
                             Text(sections[index].cells[cellIndex].title)
                                 .font(.title2)

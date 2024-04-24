@@ -18,32 +18,47 @@ struct PersonalInfoView: View {
     @State var sex = "Male"
     @State var birthday = "MARCH 14, 2004"
     
+    @State var showImagePicker: Bool = false
+    @State var profileImage = UIImage(named: "Fon")
+    
+    @Environment(\.dismiss) var pop
+    
     var body: some View {
         VStack(spacing: .zero) {
             BaseNavigationBar(title: "PERSONAL INFORMATION", leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed:  {
                 print("leftButtonPressed")
+                pop()
             })
+            .padding()
             Spacer()
             
             ScrollView {
                 VStack(spacing: .zero) {
                     HStack(spacing: .zero) {
-                        Image("Fon")
+                        Image(uiImage: profileImage!)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 146, height: 146)
                             .clipShape(Circle())
-                            .padding()
+                            .overlay {
+                                Circle()
+                                    .fill(.black.opacity(0.5))
+                            }
                             .overlay(
-                                
                                 Button(action: {
-                                    
+                                    showImagePicker.toggle()
                                 }) {
                                     Image(uiImage: Asset.Image.Icons.plusCrcleWhite.image)
                                         .resizable()
                                         .frame(width: 32, height: 32)
                                 }
                             )
+                            .padding()
+                            .sheet(isPresented: $showImagePicker) {
+                                ImagePicker(sourceType: .photoLibrary) { image in
+                                    self.profileImage = image
+                                }
+                            }
                         Spacer()
                     }
                     
@@ -81,9 +96,11 @@ struct PersonalInfoView: View {
                    
                     .padding()
                 }
+                .padding()
             }
-            
+            .padding()
         }
+        .navigationBarBackButtonHidden()
     }
 }
 
