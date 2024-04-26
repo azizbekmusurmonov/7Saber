@@ -12,10 +12,8 @@ import AssetKit
 struct AddressView: View {
     var body: some View {
         VStack(spacing: .zero) {
-            BaseNavigationBar(title: "ADDRESSES ", leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed:  {
-                print("leftButtonPressed")
-            })
-            Spacer()
+           
+            navBar
             
             ScrollView {
                 VStack(alignment: .leading, spacing: .zero) {
@@ -24,6 +22,19 @@ struct AddressView: View {
             }
         }
     }
+}
+
+extension AddressView {
+    
+    var navBar: some View {
+        VStack(spacing: .zero) {
+            BaseNavigationBar(title: "ADDRESSES ", leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed:  {
+                print("leftButtonPressed")
+            })
+            Spacer()
+        }
+    }
+    
 }
 
 #Preview {

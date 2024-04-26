@@ -25,42 +25,13 @@ struct PersonalInfoView: View {
     
     var body: some View {
         VStack(spacing: .zero) {
-            BaseNavigationBar(title: "PERSONAL INFORMATION", leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed:  {
-                print("leftButtonPressed")
-                pop()
-            })
-            .padding()
-            Spacer()
+            
+            navBar
             
             ScrollView {
                 VStack(spacing: .zero) {
-                    HStack(spacing: .zero) {
-                        Image(uiImage: profileImage!)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 146, height: 146)
-                            .clipShape(Circle())
-                            .overlay {
-                                Circle()
-                                    .fill(.black.opacity(0.5))
-                            }
-                            .overlay(
-                                Button(action: {
-                                    showImagePicker.toggle()
-                                }) {
-                                    Image(uiImage: Asset.Image.Icons.plusCrcleWhite.image)
-                                        .resizable()
-                                        .frame(width: 32, height: 32)
-                                }
-                            )
-                            .padding()
-                            .sheet(isPresented: $showImagePicker) {
-                                ImagePicker(sourceType: .photoLibrary) { image in
-                                    self.profileImage = image
-                                }
-                            }
-                        Spacer()
-                    }
+                    
+                    fonImage
                     
                     personInfoList
                     
@@ -70,12 +41,11 @@ struct PersonalInfoView: View {
                         }) {
                             Text("Cancel")
                                 .padding()
-                                .frame(width: 200)
+                                .frame(width: 180)
                                 .font(.footnote)
                                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         }
                         .background(Asset.Color.Button.grayCol.swiftUIColor)
-                        .frame(width: 180, height: 56)
                         .cornerRadius(24)
                         .padding(.leading)
                         
@@ -91,14 +61,11 @@ struct PersonalInfoView: View {
                         
                         .background(Asset.Color.Button.blackCol.swiftUIColor)
                         .cornerRadius(24)
+                        .padding(.trailing)
                         .padding(.leading)
                     }
-                   
-                    .padding()
                 }
-                .padding()
             }
-            .padding()
         }
         .navigationBarBackButtonHidden()
     }
@@ -106,6 +73,44 @@ struct PersonalInfoView: View {
 
 extension PersonalInfoView {
     
+    var navBar: some View {
+        VStack(spacing: .zero) {
+            BaseNavigationBar(title: "PERSONAL INFORMATION", leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed:  {
+                print("leftButtonPressed")
+                pop()
+            })
+        }
+    }
+    
+    var fonImage: some View {
+        HStack(spacing: .zero) {
+            Image(uiImage: profileImage!)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 146, height: 146)
+                .clipShape(Circle())
+                .overlay {
+                    Circle()
+                        .fill(.black.opacity(0.5))
+                }
+                .overlay(
+                    Button(action: {
+                        showImagePicker.toggle()
+                    }) {
+                        Image(uiImage: Asset.Image.Icons.plusCrcleWhite.image)
+                            .resizable()
+                            .frame(width: 32, height: 32)
+                    }
+                )
+                .padding()
+                .sheet(isPresented: $showImagePicker) {
+                    ImagePicker(sourceType: .photoLibrary) { image in
+                        self.profileImage = image
+                    }
+                }
+            Spacer()
+        }
+    }
     
     var personInfoList: some View {
         VStack(alignment: .leading) {

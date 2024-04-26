@@ -38,6 +38,7 @@
 		FAB4228D2BC8B80F002C7260 /* GeneralTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4228C2BC8B80F002C7260 /* GeneralTermsView.swift */; };
 		FAB4228F2BC8B832002C7260 /* TermsUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4228E2BC8B832002C7260 /* TermsUseView.swift */; };
 		FAB422912BC8B842002C7260 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB422902BC8B842002C7260 /* PrivacyPolicyView.swift */; };
+		FABA5AD12BDB9B3100796390 /* AddressesIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5AD02BDB9B3100796390 /* AddressesIsEmpty.swift */; };
 		FABEE4442BC2A9E000E48054 /* ProfileBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEE4432BC2A9DF00E48054 /* ProfileBundle.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		FAB4228C2BC8B80F002C7260 /* GeneralTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTermsView.swift; sourceTree = "<group>"; };
 		FAB4228E2BC8B832002C7260 /* TermsUseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsUseView.swift; sourceTree = "<group>"; };
 		FAB422902BC8B842002C7260 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		FABA5AD02BDB9B3100796390 /* AddressesIsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesIsEmpty.swift; sourceTree = "<group>"; };
 		FABEE4432BC2A9DF00E48054 /* ProfileBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBundle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB4227C2BC8B77B002C7260 /* AddressView.swift */,
+				FABA5AD02BDB9B3100796390 /* AddressesIsEmpty.swift */,
 				FA568B132BD951C900B87B59 /* AddressesViewModel.swift */,
 			);
 			path = AddressesView;
@@ -471,6 +474,7 @@
 				FAB4226A2BC571C8002C7260 /* ProfileImageView.swift in Sources */,
 				FA568B142BD951C900B87B59 /* AddressesViewModel.swift in Sources */,
 				524092662BB7BE0300A75FC0 /* ProfileViewModel.swift in Sources */,
+				FABA5AD12BDB9B3100796390 /* AddressesIsEmpty.swift in Sources */,
 				FAB4228B2BC8B802002C7260 /* CountryRegionView.swift in Sources */,
 				FAB4228D2BC8B80F002C7260 /* GeneralTermsView.swift in Sources */,
 				FAB422812BC8B79E002C7260 /* CurrentOrdersView.swift in Sources */,
