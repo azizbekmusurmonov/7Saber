@@ -14,89 +14,6 @@ public struct ProfileView: View {
     @EnvironmentObject var vm: ProfileViewModel
     @StateObject var profileData = ProfileViewModel()
     
-    @State var sections: [SectionModel] = [
-        SectionModel(headertitle: "ACCOUNT",
-                     cells: [
-                        ProfilecellModel(title: "Personal information",
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: PersonalInfoView()),
-                        ProfilecellModel(title: "Addresses", 
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: AddressView()),
-                        ProfilecellModel(title: "Payment methods", 
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: PaymentMethodView())
-                     ]),
-        SectionModel(headertitle: "ORDERS",
-                     cells: [
-                        ProfilecellModel(title: "Current orders", 
-                                         hasRightIcon: true,
-                                         number: "3",
-                                         pushToView: CurrentOrdersView()),
-                        ProfilecellModel(title: "Order history", 
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: OrderHistoryView()),
-                        
-                     ]),
-        SectionModel(headertitle: "SETTINGS",
-                     cells: [
-                        ProfilecellModel(title: "Push notifications",
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: PushNotificationView()),
-                        ProfilecellModel(title: "Privacy", 
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: PrivacyView()),
-                        ProfilecellModel(title: "Language", 
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: LanguageView()),
-                        ProfilecellModel(title: "Country / Region", 
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: CountryRegionView())
-                     ]),
-        SectionModel(headertitle: "HELP CENTER",
-                     cells: [
-                        ProfilecellModel(title: "Push notifications",
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: PushNotificationView()),
-                        ProfilecellModel(title: "Privacy", 
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: PrivacyView()),
-                        ProfilecellModel(title: "Language", 
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: LanguageView()),
-                        ProfilecellModel(title: "Country / Region", 
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: CountryRegionView())
-                     ]),
-        SectionModel(headertitle: "LEGAL",
-                     cells: [
-                        ProfilecellModel(title: "General Terms & Conditions",
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: GeneralTermsView()),
-                        ProfilecellModel(title: "Terms of Use", 
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: TermsUseView()),
-                        ProfilecellModel(title: "Privacy Policy", 
-                                         hasRightIcon: true,
-                                         number: "",
-                                         pushToView: PrivacyPolicyView())
-                     ])
-    ]
-    
     public init() { }
     
     public var body: some View {
@@ -140,36 +57,39 @@ extension ProfileView {
         
         VStack(alignment: .leading) {
             
-            ForEach(0..<sections.count, id: \.self) { index in
+            ForEach(0..<ProfileConstans.shared.profileSectionData.count, id: \.self) { index in
+                let sections = ProfileConstans.shared.profileSectionData
                 Text(sections[index].headertitle)
                     .font(.largeTitle)
                     .bold()
                 
                 
                 ForEach(0..<sections[index].cells.count) { cellIndex in
+                    let destinationView = sections[index].cells[cellIndex].pushToView // Explicitly define destination view
                     
-                    NavigationLink {
-//                        sections[index].cells[cellIndex].pushToView
-                        AddressView()
-                    } label: {
-                        HStack {
-                            
-                            Text(sections[index].cells[cellIndex].title)
-                                .font(.title2)
-                                .foregroundColor(.black)
-                            
-                            Spacer()
-                            
-                            if sections[index].cells[cellIndex].hasRightIcon {
-                                Image(systemName: "chevron.right")
-                                    .resizable()
-                                    .frame(width: 5.59, height: 12)
+                    NavigationLink(
+                        destination: sections[index].cells[cellIndex].pushToView,
+                        label: {
+                            HStack {
+                                Text(sections[index].cells[cellIndex].title)
+                                    .font(.title2)
                                     .foregroundColor(.black)
+                                
+                                Spacer()
+                                
+                                if sections[index].cells[cellIndex].hasRightIcon {
+                                    Image(systemName: "chevron.right")
+                                        .resizable()
+                                        .frame(width: 5.59, height: 12)
+                                        .foregroundColor(.black)
+                                }
                             }
                         }
-                    }
+                    )
                     Divider()
                 }
+
+
             }
         }
         .padding()

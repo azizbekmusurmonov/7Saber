@@ -29,6 +29,11 @@ public enum Asset {
       public static let blackCol = ColorAsset(name: "BlackCol")
       public static let grayCol = ColorAsset(name: "GrayCol")
     }
+    public enum Surface {
+      public enum Card {
+        public static let color = ColorAsset(name: "Color")
+      }
+    }
     public enum Text {
       public static let primaryCol = ColorAsset(name: "PrimaryCol")
       public static let secondaryCol = ColorAsset(name: "SecondaryCol")
@@ -36,6 +41,10 @@ public enum Asset {
     }
   }
   public enum Image {
+    public enum BankImage {
+      public static let agrobank = ImageAsset(name: "agrobank")
+      public static let masterCard = ImageAsset(name: "masterCard")
+    }
     public enum Cart {
       public static let minusCart = ImageAsset(name: "minusCart")
       public static let plusCart = ImageAsset(name: "plusCart")
