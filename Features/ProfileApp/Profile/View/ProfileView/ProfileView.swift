@@ -150,7 +150,7 @@ extension ProfileView {
                     
                     NavigationLink {
 //                        sections[index].cells[cellIndex].pushToView
-                        PersonalInfoView()
+                        AddressView()
                     } label: {
                         HStack {
                             
