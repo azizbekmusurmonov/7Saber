@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Home
 
 public struct RegisterMobillAppView: View {
     
@@ -16,9 +17,16 @@ public struct RegisterMobillAppView: View {
     public var body: some View {
         ZStack {
             VStack {
-                NavigationBar(showButton: vm.registerLeftButton, leftButtonAction: {
-                    
-                })
+                NavigationBar(
+                    showButton: vm.registerLeftButton,
+                    leftButtonAction: {
+                        
+                    },
+                    skipButtonAction: {
+                        
+                        
+                    }
+                )
                 WelcomeView(welcomeText: "Enter your phone number \nor email to continue")
                     .padding(.top, 150)
                 TextFieldNextButton(nextButtonPressed: {

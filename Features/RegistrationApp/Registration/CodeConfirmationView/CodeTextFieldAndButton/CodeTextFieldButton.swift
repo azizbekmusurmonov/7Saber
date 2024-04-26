@@ -50,7 +50,7 @@ struct CodeTextFieldButton: View {
                     Button(action: { // sendAgain Button
                         print("Send Again tapped")
                             
-                        vm.remainingSeconds = 60
+                        vm.remainingSeconds = 120
                         vm.stopTimer()
                         vm.startTimer()
                       
