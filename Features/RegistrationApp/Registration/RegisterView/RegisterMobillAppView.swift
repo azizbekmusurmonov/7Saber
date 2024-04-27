@@ -19,13 +19,8 @@ public struct RegisterMobillAppView: View {
             VStack {
                 NavigationBar(
                     showButton: vm.registerLeftButton,
-                    leftButtonAction: {
-                        
-                    },
-                    skipButtonAction: {
-                        
-                        
-                    }
+                    leftButtonAction: { },
+                    skipButtonAction: { }
                 )
                 WelcomeView(welcomeText: "Enter your phone number \nor email to continue")
                     .padding(.top, 150)
