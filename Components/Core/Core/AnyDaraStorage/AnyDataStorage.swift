@@ -7,41 +7,41 @@
 
 import UIKit
 
-protocol AnyDataStorage {
+public protocol AnyDataStorage {
     func save(_ data: Any?, for key: StorageKeys)
     func remove(from key: StorageKeys)
     func update(_ data: Any, for key: StorageKeys)
     func get(from key: StorageKeys) -> Any?
 }
 
-class DataStorage {
+public final class DataStorage {
     
-    static let shared = DataStorage()
+    public static let shared = DataStorage()
     
-    var token = ""
+    public var token = ""
     
-    var storage: AnyDataStorage = UserDefaults.standard
+    public var storage: AnyDataStorage = UserDefaults.standard
 }
 
 extension UserDefaults: AnyDataStorage {
     
-    func save(_ data: Any?, for key: StorageKeys) {
+    public func save(_ data: Any?, for key: StorageKeys) {
         UserDefaults.standard.setValue(data, forKey: key.rawValue)
     }
     
-    func remove(from key: StorageKeys) {
+    public func remove(from key: StorageKeys) {
         UserDefaults.standard.removeObject(forKey: key.rawValue)
     }
     
-    func update(_ data: Any, for key: StorageKeys) {
+    public func update(_ data: Any, for key: StorageKeys) {
         UserDefaults.standard.setValue(data, forKey: key.rawValue)
     }
     
-    func get(from key: StorageKeys) -> Any? {
+    public func get(from key: StorageKeys) -> Any? {
         UserDefaults.standard.object(forKey: key.rawValue)
     }
 }
 
-enum StorageKeys: String {
+public enum StorageKeys: String {
     case isRegistrate
 }
