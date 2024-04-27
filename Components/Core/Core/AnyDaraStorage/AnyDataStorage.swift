@@ -20,7 +20,7 @@ public final class DataStorage {
     
     public var token = ""
     
-    public var storage: AnyDataStorage = UserDefaults.standard
+    public static let storage: AnyDataStorage = UserDefaults.standard
 }
 
 extension UserDefaults: AnyDataStorage {
