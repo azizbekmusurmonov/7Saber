@@ -27,7 +27,7 @@ public struct RegisterMobillAppView: View {
                     leftButtonAction: { },
                     skipButtonAction: { 
                         skipButtonTapped()
-                        DataStorage.shared.storage.save(true, for: .isRegistrate )
+                        DataStorage.storage.save(true, for: .isRegistrate )
                     }
                 )
                 WelcomeView(welcomeText: "Enter your phone number \nor email to continue")

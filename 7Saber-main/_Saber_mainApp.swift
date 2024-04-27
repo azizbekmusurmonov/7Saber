@@ -17,7 +17,7 @@ struct _Saber_mainApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if (DataStorage.shared.storage.get(from: .isRegistrate) as? Bool) == true || skipButtonPressed  {
+            if (DataStorage.storage.get(from: .isRegistrate) as? Bool) == true || skipButtonPressed  {
                 TabBarView()
             } else {
                 RegisterMobillAppView(skipButtonTapped: {
