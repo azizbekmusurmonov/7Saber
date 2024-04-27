@@ -7,12 +7,17 @@
 
 import SwiftUI
 import Home
+import Core
 
 public struct RegisterMobillAppView: View {
     
-    @StateObject var vm = RegisterMobillAppViewModel()
+    @StateObject var vm = RegisterMobillAppViewModel() 
     
-    public init () {  }
+    let skipButtonTapped: () -> ()
+    
+    public init (skipButtonTapped: @escaping () -> ()) {
+        self.skipButtonTapped = skipButtonTapped
+    }
     
     public var body: some View {
         ZStack {
@@ -20,7 +25,10 @@ public struct RegisterMobillAppView: View {
                 NavigationBar(
                     showButton: vm.registerLeftButton,
                     leftButtonAction: { },
-                    skipButtonAction: { }
+                    skipButtonAction: { 
+                        skipButtonTapped()
+                        DataStorage.shared.storage.save(true, for: .isRegistrate )
+                    }
                 )
                 WelcomeView(welcomeText: "Enter your phone number \nor email to continue")
                     .padding(.top, 150)
@@ -45,5 +53,5 @@ public struct RegisterMobillAppView: View {
 }
 
 #Preview {
-    RegisterMobillAppView()
+    RegisterMobillAppView(skipButtonTapped: { })
 }
