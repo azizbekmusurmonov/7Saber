@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B1513B72BDCDB6D00A72A6C /* AnyDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1513B62BDCDB6D00A72A6C /* AnyDataStorage.swift */; };
 		FA568B0E2BD7CC3D00B87B59 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA568B0D2BD7CC3D00B87B59 /* AssetKit.framework */; };
 		FA568B0F2BD7CC3D00B87B59 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA568B0D2BD7CC3D00B87B59 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA568B172BD957A800B87B59 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA568B162BD957A800B87B59 /* ImagePicker.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B1513B62BDCDB6D00A72A6C /* AnyDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDataStorage.swift; sourceTree = "<group>"; };
 		FA568B0D2BD7CC3D00B87B59 /* AssetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AssetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA568B162BD957A800B87B59 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		FA69E8132BC17118005113B2 /* BaseNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationBar.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B1513B52BDCDB4500A72A6C /* AnyDaraStorage */ = {
+			isa = PBXGroup;
+			children = (
+				7B1513B62BDCDB6D00A72A6C /* AnyDataStorage.swift */,
+			);
+			path = AnyDaraStorage;
+			sourceTree = "<group>";
+		};
 		FA568B0C2BD7CC3D00B87B59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		FA77A2412BBBA94E00843673 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7B1513B52BDCDB4500A72A6C /* AnyDaraStorage */,
 				FA568B152BD9579F00B87B59 /* ImagePicker */,
 				FA69E8112BC170DE005113B2 /* UIElements */,
 				FA77A2512BBBA96C00843673 /* Extensions */,
@@ -208,6 +219,7 @@
 				FA77A2442BBBA94E00843673 /* Core.docc in Sources */,
 				FA69E8142BC17118005113B2 /* BaseNavigationBar.swift in Sources */,
 				FA77A2532BBBA97500843673 /* Color+Extensions.swift in Sources */,
+				7B1513B72BDCDB6D00A72A6C /* AnyDataStorage.swift in Sources */,
 				FAB4226C2BC6D8C2002C7260 /* ProfileTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
