@@ -19,6 +19,8 @@ struct CodeView: View {
                     withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                         vm.isCodeViewPresented = false
                     }
+                }, skipButtonAction: {
+                    
                 })
                 WelcomeView(welcomeText: "Enter confirmation code to \ncontinue the proccess")
                     .padding(.top, 150)
