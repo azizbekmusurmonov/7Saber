@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CodeView: View {
+struct CodeViewAccountNotExists: View {
     
     @EnvironmentObject var vm: RegisterMobillAppViewModel
     
@@ -22,7 +22,7 @@ struct CodeView: View {
                 }, skipButtonAction: {
                     
                 })
-                WelcomeView(welcomeText: "Enter confirmation code to \ncontinue the proccess")
+                WelcomeView(welcome: "WELCOME", welcomeText: "Enter confirmation code to \ncontinue the proccess")
                     .padding(.top, 150)
                 CodeTextFieldButton()
                     .environmentObject(vm)
@@ -34,5 +34,5 @@ struct CodeView: View {
 }
 
 #Preview {
-    CodeView()
+    CodeViewAccountNotExists()
 }

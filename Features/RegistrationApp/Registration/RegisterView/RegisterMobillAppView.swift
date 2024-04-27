@@ -30,7 +30,7 @@ public struct RegisterMobillAppView: View {
                         DataStorage.storage.save(true, for: .isRegistrate )
                     }
                 )
-                WelcomeView(welcomeText: "Enter your phone number \nor email to continue")
+                WelcomeView(welcome: "WELCOME", welcomeText: "Enter your phone number \nor email to continue")
                     .padding(.top, 150)
                 TextFieldNextButton(nextButtonPressed: {
                     
@@ -38,6 +38,7 @@ public struct RegisterMobillAppView: View {
                     vm.stopTimer()
                     vm.startTimer()
                     
+                    vm.getUser() 
                     vm.sendCode()
                 })
                     .environmentObject(vm)
@@ -45,9 +46,15 @@ public struct RegisterMobillAppView: View {
                 Spacer()
             }.opacity(!vm.isCodeViewPresented ? 1 : 0)
             
-            CodeView()
-                .environmentObject(vm)
-                .opacity(!vm.isCodeViewPresented ? 0 : 1)
+            if vm.userExists {
+                CodeViewAccountExists()
+                    .environmentObject(vm)
+                    .opacity(vm.isCodeViewPresented ? 1 : 0)
+            } else {
+                CodeViewAccountNotExists()
+                    .environmentObject(vm)
+                    .opacity(vm.isCodeViewPresented ? 1 : 0)
+            }
         }
     }
 }

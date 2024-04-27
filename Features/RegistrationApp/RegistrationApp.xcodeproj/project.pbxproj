@@ -14,12 +14,14 @@
 		7B0C2A402BD449DE00284C1C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A3F2BD449DE00284C1C /* WelcomeView.swift */; };
 		7B0C2A432BD4574900284C1C /* TextFieldNextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A422BD4574900284C1C /* TextFieldNextButton.swift */; };
 		7B0C2A452BD458B100284C1C /* RegisterMobillAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A442BD458B100284C1C /* RegisterMobillAppViewModel.swift */; };
-		7B0C2A492BD465D300284C1C /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A482BD465D300284C1C /* CodeView.swift */; };
+		7B0C2A492BD465D300284C1C /* CodeViewAccountNotExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A482BD465D300284C1C /* CodeViewAccountNotExists.swift */; };
 		7B0C2A4E2BD4697F00284C1C /* CodeTextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A4D2BD4697F00284C1C /* CodeTextFieldButton.swift */; };
 		7B0C2A522BD46CE100284C1C /* ExtentionToTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A512BD46CE100284C1C /* ExtentionToTimeInterval.swift */; };
+		7B1513BD2BDD8A7E00A72A6C /* CodeViewAccountExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1513BC2BDD8A7E00A72A6C /* CodeViewAccountExists.swift */; };
 		7B5D0B182BD7ECE400345C11 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */; };
 		7B5D0B192BD7ECE400345C11 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B5D0B1B2BD7EE5A00345C11 /* SendCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */; };
+		7B6468D32BDD93F0008814B4 /* GetUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6468D22BDD93F0008814B4 /* GetUserModel.swift */; };
 		7BF6FAE42BDBF2E400F4D9BA /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6FAE32BDBF2E400F4D9BA /* Home.framework */; };
 		7BF6FAE52BDBF2E400F4D9BA /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6FAE32BDBF2E400F4D9BA /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA77A27D2BBBA9C900843673 /* RegistrationAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77A27C2BBBA9C900843673 /* RegistrationAppApp.swift */; };
@@ -84,11 +86,13 @@
 		7B0C2A3F2BD449DE00284C1C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		7B0C2A422BD4574900284C1C /* TextFieldNextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldNextButton.swift; sourceTree = "<group>"; };
 		7B0C2A442BD458B100284C1C /* RegisterMobillAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMobillAppViewModel.swift; sourceTree = "<group>"; };
-		7B0C2A482BD465D300284C1C /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		7B0C2A482BD465D300284C1C /* CodeViewAccountNotExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewAccountNotExists.swift; sourceTree = "<group>"; };
 		7B0C2A4D2BD4697F00284C1C /* CodeTextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextFieldButton.swift; sourceTree = "<group>"; };
 		7B0C2A512BD46CE100284C1C /* ExtentionToTimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionToTimeInterval.swift; sourceTree = "<group>"; };
+		7B1513BC2BDD8A7E00A72A6C /* CodeViewAccountExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewAccountExists.swift; sourceTree = "<group>"; };
 		7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCodeModel.swift; sourceTree = "<group>"; };
+		7B6468D22BDD93F0008814B4 /* GetUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserModel.swift; sourceTree = "<group>"; };
 		7BF6FAE32BDBF2E400F4D9BA /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA77A2792BBBA9C900843673 /* RegistrationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegistrationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA77A27C2BBBA9C900843673 /* RegistrationAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAppApp.swift; sourceTree = "<group>"; };
@@ -165,8 +169,7 @@
 		7B0C2A472BD4658300284C1C /* CodeConfirmationView */ = {
 			isa = PBXGroup;
 			children = (
-				7B0C2A482BD465D300284C1C /* CodeView.swift */,
-				7B0C2A4C2BD4695500284C1C /* CodeTextFieldAndButton */,
+				7B0C2A482BD465D300284C1C /* CodeViewAccountNotExists.swift */,
 			);
 			path = CodeConfirmationView;
 			sourceTree = "<group>";
@@ -187,10 +190,35 @@
 			path = Extetions;
 			sourceTree = "<group>";
 		};
+		7B1513B82BDD893700A72A6C /* AccountNotExists */ = {
+			isa = PBXGroup;
+			children = (
+				7B0C2A472BD4658300284C1C /* CodeConfirmationView */,
+			);
+			path = AccountNotExists;
+			sourceTree = "<group>";
+		};
+		7B1513B92BDD8A4300A72A6C /* AccountExists */ = {
+			isa = PBXGroup;
+			children = (
+				7B1513BA2BDD8A6000A72A6C /* CodeConfirmationView */,
+			);
+			path = AccountExists;
+			sourceTree = "<group>";
+		};
+		7B1513BA2BDD8A6000A72A6C /* CodeConfirmationView */ = {
+			isa = PBXGroup;
+			children = (
+				7B1513BC2BDD8A7E00A72A6C /* CodeViewAccountExists.swift */,
+			);
+			path = CodeConfirmationView;
+			sourceTree = "<group>";
+		};
 		7B5D0B1C2BD7EF5400345C11 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */,
+				7B6468D22BDD93F0008814B4 /* GetUserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -237,11 +265,13 @@
 			children = (
 				FA77A2972BBBA9EB00843673 /* Registration.h */,
 				FA77A2982BBBA9EB00843673 /* Registration.docc */,
+				7B0C2A462BD4650500284C1C /* RegisterView */,
+				7B1513B82BDD893700A72A6C /* AccountNotExists */,
+				7B1513B92BDD8A4300A72A6C /* AccountExists */,
+				7B0C2A4C2BD4695500284C1C /* CodeTextFieldAndButton */,
 				7B0C2A502BD46CC800284C1C /* Extetions */,
 				7B5D0B1C2BD7EF5400345C11 /* Models */,
 				7B0C2A3B2BD4456A00284C1C /* CustomNavigation */,
-				7B0C2A462BD4650500284C1C /* RegisterView */,
-				7B0C2A472BD4658300284C1C /* CodeConfirmationView */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -382,12 +412,14 @@
 			files = (
 				7B0C2A3A2BD444AB00284C1C /* RegisterMobillAppView.swift in Sources */,
 				7B0C2A522BD46CE100284C1C /* ExtentionToTimeInterval.swift in Sources */,
-				7B0C2A492BD465D300284C1C /* CodeView.swift in Sources */,
+				7B0C2A492BD465D300284C1C /* CodeViewAccountNotExists.swift in Sources */,
 				7B0C2A3D2BD4457E00284C1C /* NavigationBar.swift in Sources */,
 				7B0C2A432BD4574900284C1C /* TextFieldNextButton.swift in Sources */,
 				7B0C2A402BD449DE00284C1C /* WelcomeView.swift in Sources */,
 				FA77A2992BBBA9EB00843673 /* Registration.docc in Sources */,
 				7B5D0B1B2BD7EE5A00345C11 /* SendCodeModel.swift in Sources */,
+				7B1513BD2BDD8A7E00A72A6C /* CodeViewAccountExists.swift in Sources */,
+				7B6468D32BDD93F0008814B4 /* GetUserModel.swift in Sources */,
 				7B0C2A4E2BD4697F00284C1C /* CodeTextFieldButton.swift in Sources */,
 				7B0C2A452BD458B100284C1C /* RegisterMobillAppViewModel.swift in Sources */,
 			);

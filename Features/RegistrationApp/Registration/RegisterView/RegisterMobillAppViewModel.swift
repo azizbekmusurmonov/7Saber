@@ -20,6 +20,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
     @Published var codeTextFieldIsEditing: Bool = false
     @Published var timer: Timer?
     @Published var remainingSeconds = 120
+    @Published var userExists = false
     
     public init () { }
     
@@ -50,8 +51,38 @@ public class RegisterMobillAppViewModel: ObservableObject {
             }
         }
     }
-
-
+    
+    func getUser() {
+        let urlString = "https://lab.7saber.uz/api/auth/get-user"
+        
+        var urlComponents = URLComponents(string: urlString)!
+        urlComponents.queryItems = [URLQueryItem(name: "email", value: numberText)]
+        
+        let copiedURLComponents = urlComponents
+        
+        Task.detached { [weak self] in
+            guard self != nil else { return }
+            
+            do {
+                let model = try await NetworkService.shared.request(
+                    url: copiedURLComponents.url!.absoluteString,
+                    decode: GetUserModel.self,
+                    method: .post
+                )
+                
+                print("Пользователь существует  ✅✅✅✅✅✅✅✅✅✅ ")
+                print("Имя пользователя:", model.fullName)
+                print("Email пользователя:", model.email)
+                
+                self?.userExists = true
+                
+            } catch {
+                
+                self?.userExists = false
+                print("Ошибка при получении пользователя:  ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ ", error.localizedDescription)
+            }
+        }
+    }
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
