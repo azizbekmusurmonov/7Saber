@@ -13,69 +13,47 @@ struct Item: Identifiable {
     var itemPrice: String
 }
 
-public struct ItemsView: View {
-    let items: [Item] = [
-        Item(imageURL: URL(string: "https://images.uzum.uz/cof0s4a1om4pepe05dsg/original.jpg")!, itemName: "T-shirt Basic", itemPrice: "120,000 som"),
-        Item(imageURL: URL(string: "https://images.uzum.uz/cgohb17g49devoad2r7g/original.jpg")!, itemName: "Another Item", itemPrice: "100,000 som"),
-        Item(imageURL: URL(string: "https://images.uzum.uz/cgpt0hfg49devoadb7ng/original.jpg")!, itemName: "Yet Another Item", itemPrice: "150,000 som"),
-        Item(imageURL: URL(string: "https://images.uzum.uz/cntrtiepom4ma10q7h3g/t_product_540_high.jpg")!, itemName: "One More Item", itemPrice: "90,000 som"),
-        Item(imageURL: URL(string: "https://images.uzum.uz/cm01etb2psag1e8tt8d0/original.jpg")!, itemName: "Last Item", itemPrice: "80,000 som")
-    ]
-    
-    public var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                ForEach(items) { item in
-                    ItemRow(item: item)
-                    Divider()
-                }
-            }
-            .padding()
-        }
-    }
-}
-
 struct ItemRow: View {
     var item: Item
     @State private var image: UIImage? = nil
     
     var body: some View {
         HStack {
-            if let image = image {
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 124, height: 155)
-                
-            } else {
-                ProgressView()
-                    .frame(width: 100, height: 100)
-            }
             
-            VStack(alignment: .leading) {
+            AsyncImage(
+                url: item.imageURL,
+                transaction: Transaction(animation: .default),
+                content: { phase in
+                    if let image = phase.image { image
+                        .resizable()
+                           .aspectRatio(contentMode: .fit)
+                           .frame(width: 124, height: 155)
+                    }
+                    else { ProgressView() }
+                }
+            )
+            
+            VStack(alignment: .leading,spacing: 0) {
                 Text(item.itemName)
-                    .font(.title3)
-                    .padding(.top, -25)
+                    .font(.system(size: 13))
                 
                 Text(item.itemPrice)
-                    .font(.subheadline)
-                    .padding(.top, -15)
-              
+                    .font(.system(size: 16))
+                  
+                Spacer()
                 Button(action: {
-                    // Action when "Select Size" button is tapped
-                }) {
-                    Text("Select Size")
-                        .font(.title2)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 5)
                     
-                        .background(Color.gray)
+                }) {
+                    Text("Select Size".uppercased())
+                        .font(.system(size: 13))
+                        .frame(width:111, height: 40)
+                        .padding(.horizontal, 10)
+                        .background(Color.gray.opacity(0.2))
                         .foregroundColor(.black)
                         .cornerRadius(25)
+                        .padding(.top,30)
                 }
-                .padding(.top, 50)
             }
-            .padding(.leading, 10)
             
             Spacer()
         }
@@ -93,12 +71,6 @@ struct ItemRow: View {
                 self.image = UIImage(data: data)
             }
         }.resume()
-    }
-}
-
-struct ItemsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ItemsView()
     }
 }
 

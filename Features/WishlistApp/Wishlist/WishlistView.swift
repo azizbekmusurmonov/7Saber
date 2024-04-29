@@ -14,17 +14,20 @@ public struct WishlistView: View {
     public init() { }
     
     public var body: some View {
-        
-        ZStack {
-            VStack {
-                NavigationBar()
+        VStack {
+            NavigationBar()
+            if vm.items.isEmpty {
+                WishListIsEmpty()
+                Spacer()
+            } else {
                 ScrollView {
-                    
-                    ItemsView()
-                    
-                    WishListIsEmpty()
-                    Spacer()
-                    
+                    VStack(spacing: 20) {
+                        ForEach(vm.items) { item in
+                            ItemRow(item: item)
+                            Divider()
+                        }
+                    }
+                    .padding()
                 }
             }
         }
