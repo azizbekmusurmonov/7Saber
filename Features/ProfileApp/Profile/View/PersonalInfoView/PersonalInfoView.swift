@@ -141,16 +141,36 @@ extension PersonalInfoView {
             Text("Sex")
                 .font(.caption)
                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
-            
-            TextField("", text: $sex)
-                .keyboardType(.default)
+            HStack(spacing: .zero) {
+                
+                TextField("", text: $sex)
+                             .keyboardType(.default)
+                
+                Button(action: {
+                    
+                }) {
+                    Image(uiImage: Asset.Image.Icons.chevronDown.image)
+                        .resizable()
+                        .frame(width: 10, height: 4.65)
+                }
+            }
             Divider()
             
             Text("Birthday")
                 .font(.caption)
                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+            HStack(spacing: .zero) {
+                TextField("Enter your birthday", text: $birthday)
+                
+                Button(action: {
+                    
+                }) {
+                    Image(uiImage: Asset.Image.Icons.calendar.image)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+            }
             
-            TextField("Enter your birthday", text: $birthday)
             Divider()
         }
         .padding()

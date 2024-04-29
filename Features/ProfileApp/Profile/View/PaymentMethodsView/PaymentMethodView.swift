@@ -12,15 +12,14 @@ import Core
 struct PaymentMethodView: View {
     
     @State var cards: [Card] = [
-    
-        Card(image: "Agrobank",
+        Card(image: "",
              cardNumber: "8600 23** **** **84",
-             expiryDate: "**/**"),
-        Card(image: "MasterCard",
+             expiryDate: "12/27"),
+        Card(image: "",
              cardNumber: "5623 43** **** **25",
-             expiryDate: "**/**")
-    
+             expiryDate: "12/24")
     ]
+
     
     @Environment(\.dismiss) var pop
     
@@ -31,15 +30,16 @@ struct PaymentMethodView: View {
             Spacer()
             if cards.isEmpty {
                 PaymentMethodViewIsEmpty()
+                Spacer()
             } else {
                 ScrollView {
                     VStack(spacing: .zero) {
                         ForEach(cards, id: \.self) { card in
                             PaymentMethodItemView(card: card)
+                                .cornerRadius(10)
+                                .padding()
                         }
-                        .padding()
                     }
-                    .padding()
                 }
             }
             addPaymentMethodButton

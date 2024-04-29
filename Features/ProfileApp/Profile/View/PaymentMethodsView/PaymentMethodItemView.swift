@@ -5,39 +5,40 @@
 //  Created by Azizbek Musurmonov   on 26/04/24.
 //
 
-import Foundation
 import SwiftUI
 import AssetKit
 import Core
 
 struct PaymentMethodItemView: View {
     
-    var card: Card
+    @State var card: Card
+    @State var isExpiryDateHidden = true
     
     var body: some View {
         VStack(alignment: .leading) {
-                
-                Text(card.image)
+            Image(uiImage: Asset.Image.BankImage.agrobank.image)
+                .resizable()
+                .frame(width: 72, height: 14)
             Spacer()
-                
-                Text(card.cardNumber)
-
-                HStack(spacing: .zero) {
+            Text(card.cardNumber)
+            HStack(spacing: .zero) {
+                if isExpiryDateHidden {
+                    Text("****")
+                } else {
                     Text(card.expiryDate)
-                    Spacer()
-                    Button(action: {
-                        
-                    }) {
-                        Text("SHOW")
-                            .font(.footnote)
-                            .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                }
+                Spacer()
+                Button(action: {
+                    isExpiryDateHidden.toggle()
+                }) {
+                    Text(isExpiryDateHidden ? "SHOW" : "HIDE")
+                        .font(.footnote)
+                        .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                 }
             }
         }
         .padding()
-        .frame(width: 360, height: 200)
-        .cornerRadius(20)
+        .frame(height: 200)
         .background(Asset.Color.Surface.Card.color.swiftUIColor)
     }
 }
-

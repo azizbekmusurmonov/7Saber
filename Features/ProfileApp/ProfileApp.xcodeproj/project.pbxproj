@@ -44,6 +44,9 @@
 		FABA5AD72BDBC1D500796390 /* PaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5AD62BDBC1D500796390 /* PaymentMethodViewModel.swift */; };
 		FABA5AD92BDBC38F00796390 /* PaymentMethodItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5AD82BDBC38F00796390 /* PaymentMethodItemView.swift */; };
 		FABA5ADB2BDBED2C00796390 /* ProfileConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5ADA2BDBED2C00796390 /* ProfileConstans.swift */; };
+		FABA5ADD2BDD81E700796390 /* OrderHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5ADC2BDD81E700796390 /* OrderHistoryViewModel.swift */; };
+		FABA5ADF2BDD82BA00796390 /* OrderHistoryCellsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5ADE2BDD82BA00796390 /* OrderHistoryCellsView.swift */; };
+		FABA5AE12BDDA00A00796390 /* OrderHistoryConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5AE02BDDA00A00796390 /* OrderHistoryConstans.swift */; };
 		FABEE4442BC2A9E000E48054 /* ProfileBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEE4432BC2A9DF00E48054 /* ProfileBundle.swift */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +122,9 @@
 		FABA5AD62BDBC1D500796390 /* PaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewModel.swift; sourceTree = "<group>"; };
 		FABA5AD82BDBC38F00796390 /* PaymentMethodItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodItemView.swift; sourceTree = "<group>"; };
 		FABA5ADA2BDBED2C00796390 /* ProfileConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConstans.swift; sourceTree = "<group>"; };
+		FABA5ADC2BDD81E700796390 /* OrderHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewModel.swift; sourceTree = "<group>"; };
+		FABA5ADE2BDD82BA00796390 /* OrderHistoryCellsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryCellsView.swift; sourceTree = "<group>"; };
+		FABA5AE02BDDA00A00796390 /* OrderHistoryConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryConstans.swift; sourceTree = "<group>"; };
 		FABEE4432BC2A9DF00E48054 /* ProfileBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBundle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,6 +263,9 @@
 			isa = PBXGroup;
 			children = (
 				FAB422822BC8B7B2002C7260 /* OrderHistoryView.swift */,
+				FABA5AE02BDDA00A00796390 /* OrderHistoryConstans.swift */,
+				FABA5ADC2BDD81E700796390 /* OrderHistoryViewModel.swift */,
+				FABA5ADE2BDD82BA00796390 /* OrderHistoryCellsView.swift */,
 			);
 			path = OrderHistoryView;
 			sourceTree = "<group>";
@@ -475,10 +484,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABA5AD92BDBC38F00796390 /* PaymentMethodItemView.swift in Sources */,
+				FABA5AE12BDDA00A00796390 /* OrderHistoryConstans.swift in Sources */,
 				FAB422912BC8B842002C7260 /* PrivacyPolicyView.swift in Sources */,
+				FABA5ADD2BDD81E700796390 /* OrderHistoryViewModel.swift in Sources */,
 				FAB4228F2BC8B832002C7260 /* TermsUseView.swift in Sources */,
 				FAB4227D2BC8B77B002C7260 /* AddressView.swift in Sources */,
 				FAB4227B2BC8B761002C7260 /* PersonalInfoView.swift in Sources */,
+				FABA5ADF2BDD82BA00796390 /* OrderHistoryCellsView.swift in Sources */,
 				FAB422892BC8B7F4002C7260 /* LanguageView.swift in Sources */,
 				FAB422832BC8B7B2002C7260 /* OrderHistoryView.swift in Sources */,
 				FAB422852BC8B7D4002C7260 /* PushNotificationView.swift in Sources */,

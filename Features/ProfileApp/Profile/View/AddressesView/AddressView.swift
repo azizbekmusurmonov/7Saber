@@ -12,14 +12,14 @@ import AssetKit
 struct AddressView: View {
     
     @State var items: [Item] = [
-//        Item(title: "MY OFFICE",
-//             location: "Mukimiy st. 59, Tashkent, Uzbekistan",
-//             seeOnMap: "SEE ON MAP"
-//            ),
-//        Item(title: "MY OFFICE",
-//             location: "Mukimiy st. 59, Tashkent, Uzbekistan",
-//             seeOnMap: "SEE ON MAP"
-//            )
+        Item(title: "MY OFFICE",
+             location: "Mukimiy st. 59, Tashkent, Uzbekistan",
+             seeOnMap: "SEE ON MAP"
+            ),
+        Item(title: "MY OFFICE",
+             location: "Mukimiy st. 59, Tashkent, Uzbekistan",
+             seeOnMap: "SEE ON MAP"
+            )
     ]
     
     @Environment(\.dismiss) var pop

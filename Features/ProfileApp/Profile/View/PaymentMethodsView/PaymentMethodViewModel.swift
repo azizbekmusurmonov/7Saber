@@ -19,5 +19,5 @@ public class PaymentMethodViewModel: ObservableObject {
 public struct Card: Hashable {
     public let image: String // Use Image type for image
     public let cardNumber: String
-    public let expiryDate: String // Corrected typo in property name
+    public var expiryDate: String // Corrected typo in property name
 }
