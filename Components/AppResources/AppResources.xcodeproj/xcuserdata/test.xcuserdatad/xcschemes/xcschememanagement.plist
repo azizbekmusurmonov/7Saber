@@ -4,15 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Catalog.xcscheme_^#shared#^_</key>
+		<key>AppResources.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
-		</dict>
-		<key>CatalogApp.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 </dict>
