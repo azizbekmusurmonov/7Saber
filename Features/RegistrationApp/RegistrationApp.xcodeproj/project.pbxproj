@@ -22,6 +22,12 @@
 		7B5D0B192BD7ECE400345C11 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B5D0B1B2BD7EE5A00345C11 /* SendCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */; };
 		7B6468D32BDD93F0008814B4 /* GetUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6468D22BDD93F0008814B4 /* GetUserModel.swift */; };
+		7BF15FC52BE2888B003BBDAA /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FC42BE2888B003BBDAA /* CreatePasswordView.swift */; };
+		7BF15FC72BE28B1E003BBDAA /* PrimeryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FC62BE28B1E003BBDAA /* PrimeryTextField.swift */; };
+		7BF15FC92BE2B8E0003BBDAA /* PrimeryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FC82BE2B8E0003BBDAA /* PrimeryButton.swift */; };
+		7BF15FCB2BE2BDA4003BBDAA /* SendAgainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FCA2BE2BDA4003BBDAA /* SendAgainButton.swift */; };
+		7BF15FCF2BE2DE6C003BBDAA /* FullNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FCE2BE2DE6C003BBDAA /* FullNameView.swift */; };
+		7BF15FD32BE359FF003BBDAA /* EnterPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FD22BE359FF003BBDAA /* EnterPasswordView.swift */; };
 		7BF6FAE42BDBF2E400F4D9BA /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6FAE32BDBF2E400F4D9BA /* Home.framework */; };
 		7BF6FAE52BDBF2E400F4D9BA /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF6FAE32BDBF2E400F4D9BA /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA77A27D2BBBA9C900843673 /* RegistrationAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77A27C2BBBA9C900843673 /* RegistrationAppApp.swift */; };
@@ -93,6 +99,12 @@
 		7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCodeModel.swift; sourceTree = "<group>"; };
 		7B6468D22BDD93F0008814B4 /* GetUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserModel.swift; sourceTree = "<group>"; };
+		7BF15FC42BE2888B003BBDAA /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
+		7BF15FC62BE28B1E003BBDAA /* PrimeryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeryTextField.swift; sourceTree = "<group>"; };
+		7BF15FC82BE2B8E0003BBDAA /* PrimeryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeryButton.swift; sourceTree = "<group>"; };
+		7BF15FCA2BE2BDA4003BBDAA /* SendAgainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAgainButton.swift; sourceTree = "<group>"; };
+		7BF15FCE2BE2DE6C003BBDAA /* FullNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameView.swift; sourceTree = "<group>"; };
+		7BF15FD22BE359FF003BBDAA /* EnterPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPasswordView.swift; sourceTree = "<group>"; };
 		7BF6FAE32BDBF2E400F4D9BA /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA77A2792BBBA9C900843673 /* RegistrationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegistrationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA77A27C2BBBA9C900843673 /* RegistrationAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAppApp.swift; sourceTree = "<group>"; };
@@ -131,12 +143,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7B0C2A3B2BD4456A00284C1C /* CustomNavigation */ = {
+		7B0C2A3B2BD4456A00284C1C /* CustomElements */ = {
 			isa = PBXGroup;
 			children = (
 				7B0C2A3C2BD4457E00284C1C /* NavigationBar.swift */,
+				7BF15FC62BE28B1E003BBDAA /* PrimeryTextField.swift */,
+				7BF15FC82BE2B8E0003BBDAA /* PrimeryButton.swift */,
 			);
-			path = CustomNavigation;
+			path = CustomElements;
 			sourceTree = "<group>";
 		};
 		7B0C2A3E2BD449D000284C1C /* WelcomeView */ = {
@@ -166,18 +180,11 @@
 			path = RegisterView;
 			sourceTree = "<group>";
 		};
-		7B0C2A472BD4658300284C1C /* CodeConfirmationView */ = {
-			isa = PBXGroup;
-			children = (
-				7B0C2A482BD465D300284C1C /* CodeViewAccountNotExists.swift */,
-			);
-			path = CodeConfirmationView;
-			sourceTree = "<group>";
-		};
 		7B0C2A4C2BD4695500284C1C /* CodeTextFieldAndButton */ = {
 			isa = PBXGroup;
 			children = (
 				7B0C2A4D2BD4697F00284C1C /* CodeTextFieldButton.swift */,
+				7BF15FCA2BE2BDA4003BBDAA /* SendAgainButton.swift */,
 			);
 			path = CodeTextFieldAndButton;
 			sourceTree = "<group>";
@@ -193,7 +200,9 @@
 		7B1513B82BDD893700A72A6C /* AccountNotExists */ = {
 			isa = PBXGroup;
 			children = (
-				7B0C2A472BD4658300284C1C /* CodeConfirmationView */,
+				7B0C2A482BD465D300284C1C /* CodeViewAccountNotExists.swift */,
+				7BF15FCD2BE2DE55003BBDAA /* FullNameView */,
+				7BF15FC32BE28865003BBDAA /* CreatPassword */,
 			);
 			path = AccountNotExists;
 			sourceTree = "<group>";
@@ -201,17 +210,10 @@
 		7B1513B92BDD8A4300A72A6C /* AccountExists */ = {
 			isa = PBXGroup;
 			children = (
-				7B1513BA2BDD8A6000A72A6C /* CodeConfirmationView */,
+				7B1513BC2BDD8A7E00A72A6C /* CodeViewAccountExists.swift */,
+				7BF15FD22BE359FF003BBDAA /* EnterPasswordView.swift */,
 			);
 			path = AccountExists;
-			sourceTree = "<group>";
-		};
-		7B1513BA2BDD8A6000A72A6C /* CodeConfirmationView */ = {
-			isa = PBXGroup;
-			children = (
-				7B1513BC2BDD8A7E00A72A6C /* CodeViewAccountExists.swift */,
-			);
-			path = CodeConfirmationView;
 			sourceTree = "<group>";
 		};
 		7B5D0B1C2BD7EF5400345C11 /* Models */ = {
@@ -221,6 +223,32 @@
 				7B6468D22BDD93F0008814B4 /* GetUserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7BF15FC32BE28865003BBDAA /* CreatPassword */ = {
+			isa = PBXGroup;
+			children = (
+				7BF15FC42BE2888B003BBDAA /* CreatePasswordView.swift */,
+			);
+			path = CreatPassword;
+			sourceTree = "<group>";
+		};
+		7BF15FCC2BE2DDB2003BBDAA /* CodeView */ = {
+			isa = PBXGroup;
+			children = (
+				7B1513B92BDD8A4300A72A6C /* AccountExists */,
+				7B1513B82BDD893700A72A6C /* AccountNotExists */,
+				7B0C2A4C2BD4695500284C1C /* CodeTextFieldAndButton */,
+			);
+			path = CodeView;
+			sourceTree = "<group>";
+		};
+		7BF15FCD2BE2DE55003BBDAA /* FullNameView */ = {
+			isa = PBXGroup;
+			children = (
+				7BF15FCE2BE2DE6C003BBDAA /* FullNameView.swift */,
+			);
+			path = FullNameView;
 			sourceTree = "<group>";
 		};
 		FA77A2702BBBA9C900843673 = {
@@ -266,12 +294,10 @@
 				FA77A2972BBBA9EB00843673 /* Registration.h */,
 				FA77A2982BBBA9EB00843673 /* Registration.docc */,
 				7B0C2A462BD4650500284C1C /* RegisterView */,
-				7B1513B82BDD893700A72A6C /* AccountNotExists */,
-				7B1513B92BDD8A4300A72A6C /* AccountExists */,
-				7B0C2A4C2BD4695500284C1C /* CodeTextFieldAndButton */,
+				7BF15FCC2BE2DDB2003BBDAA /* CodeView */,
 				7B0C2A502BD46CC800284C1C /* Extetions */,
 				7B5D0B1C2BD7EF5400345C11 /* Models */,
-				7B0C2A3B2BD4456A00284C1C /* CustomNavigation */,
+				7B0C2A3B2BD4456A00284C1C /* CustomElements */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -415,13 +441,19 @@
 				7B0C2A492BD465D300284C1C /* CodeViewAccountNotExists.swift in Sources */,
 				7B0C2A3D2BD4457E00284C1C /* NavigationBar.swift in Sources */,
 				7B0C2A432BD4574900284C1C /* TextFieldNextButton.swift in Sources */,
+				7BF15FC92BE2B8E0003BBDAA /* PrimeryButton.swift in Sources */,
+				7BF15FCB2BE2BDA4003BBDAA /* SendAgainButton.swift in Sources */,
 				7B0C2A402BD449DE00284C1C /* WelcomeView.swift in Sources */,
+				7BF15FC72BE28B1E003BBDAA /* PrimeryTextField.swift in Sources */,
 				FA77A2992BBBA9EB00843673 /* Registration.docc in Sources */,
 				7B5D0B1B2BD7EE5A00345C11 /* SendCodeModel.swift in Sources */,
+				7BF15FCF2BE2DE6C003BBDAA /* FullNameView.swift in Sources */,
 				7B1513BD2BDD8A7E00A72A6C /* CodeViewAccountExists.swift in Sources */,
 				7B6468D32BDD93F0008814B4 /* GetUserModel.swift in Sources */,
 				7B0C2A4E2BD4697F00284C1C /* CodeTextFieldButton.swift in Sources */,
 				7B0C2A452BD458B100284C1C /* RegisterMobillAppViewModel.swift in Sources */,
+				7BF15FD32BE359FF003BBDAA /* EnterPasswordView.swift in Sources */,
+				7BF15FC52BE2888B003BBDAA /* CreatePasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

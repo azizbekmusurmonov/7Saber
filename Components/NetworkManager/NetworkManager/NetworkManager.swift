@@ -15,6 +15,7 @@ final public class NetworkService {
     public func request<Model: Decodable>(
         url urlString: String,
         decode model: Model.Type,
+        query: [String] = [],
         method: HttpMethod = .get,
         parameters: [String: Any] = [:]
     ) async throws -> Model {

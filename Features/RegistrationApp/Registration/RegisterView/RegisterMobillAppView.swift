@@ -22,38 +22,50 @@ public struct RegisterMobillAppView: View {
     public var body: some View {
         ZStack {
             VStack {
+                // NAV BAR
                 NavigationBar(
-                    showButton: vm.registerLeftButton,
-                    leftButtonAction: { },
-                    skipButtonAction: { 
+                    showButton: vm.isCodeViewPresented,
+                    leftButtonAction: {
+                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                            vm.isCodeViewPresented.toggle()
+                        }
+                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                            vm.isFullNameViewPresent.toggle()
+                        }
+                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                            vm.isPasswordViewPresent.toggle()
+                        }
+                    },
+                    skipButtonAction: {
                         skipButtonTapped()
-                        DataStorage.storage.save(true, for: .isRegistrate )
+                        DataStorage.storage.save(true, for: .isRegistrate)
                     }
                 )
-                WelcomeView(welcome: "WELCOME", welcomeText: "Enter your phone number \nor email to continue")
-                    .padding(.top, 150)
-                TextFieldNextButton(nextButtonPressed: {
-                    
-                    vm.remainingSeconds = 120
-                    vm.stopTimer()
-                    vm.startTimer()
-                    
-                    vm.getUser() 
-                    vm.sendCode()
-                })
-                    .environmentObject(vm)
-                    .padding(.top, 40)
-                Spacer()
-            }.opacity(!vm.isCodeViewPresented ? 1 : 0)
-            
-            if vm.userExists {
-                CodeViewAccountExists()
-                    .environmentObject(vm)
-                    .opacity(vm.isCodeViewPresented ? 1 : 0)
-            } else {
-                CodeViewAccountNotExists()
-                    .environmentObject(vm)
-                    .opacity(vm.isCodeViewPresented ? 1 : 0)
+               
+                if !vm.isCodeViewPresented {
+                    WelcomeView(welcome: "WELCOME", welcomeText: "Enter your phone number \nor email to continue")
+                        .padding(.top, 150)
+                    TextFieldNextButton(nextButtonPressed: {
+                        
+                        vm.remainingSeconds = 120
+                        vm.stopTimer()
+                        vm.startTimer()
+//                        vm.sendCode()
+//                        vm.getUser()
+                    })
+                        .environmentObject(vm)
+                        .padding(.top, 40)
+                    Spacer()
+                } else {
+                    ZStack {
+                        CodeViewAccountExists()
+                            .environmentObject(vm)
+                            .opacity(vm.userExists ? 0 : 1)
+                        CodeViewAccountNotExists()
+                            .environmentObject(vm)
+                            .opacity(vm.userExists ? 1 : 0)
+                    }
+                }
             }
         }
     }

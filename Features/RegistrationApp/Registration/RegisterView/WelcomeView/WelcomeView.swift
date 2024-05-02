@@ -13,7 +13,7 @@ struct WelcomeView: View {
     let welcome: String
     let welcomeText: String
     
-    init(welcome: String, welcomeText: String) { // Initialize the parameter
+    init(welcome: String = "WELCOME", welcomeText: String) { // Initialize the parameter
         self.welcomeText = welcomeText
         self.welcome = welcome
     }
