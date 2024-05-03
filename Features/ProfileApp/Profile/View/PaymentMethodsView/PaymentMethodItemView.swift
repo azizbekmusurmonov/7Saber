@@ -16,7 +16,7 @@ struct PaymentMethodItemView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Image(uiImage: Asset.Image.BankImage.agrobank.image)
+            Image(uiImage: card.image)
                 .resizable()
                 .frame(width: 72, height: 14)
             Spacer()

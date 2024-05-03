@@ -47,7 +47,9 @@ struct AddressView: View {
                     }
                 }
             }
-            addNewAddressButton
+            AddButton(title: "ADD NEW ADDRESS", buttonPressed:{
+                print("button pressed")
+            } )
         }
         .navigationBarBackButtonHidden()
     }
@@ -61,29 +63,6 @@ extension AddressView {
                 self.pop()
             })
         }
-    }
-    
-    var addNewAddressButton: some View {
-        VStack(spacing: .zero) {
-            Button(action: {
-                
-            }) {
-                HStack(spacing: .zero) {
-                    Text("ADD NEW ADDRESS")
-                        .font(.footnote)
-                        .foregroundColor(Asset.Color.Text.whiteCol.swiftUIColor)
-                    Spacer()
-                    Image(uiImage: Asset.Image.Icons.plusCrcleWhite.image)
-                        .resizable()
-                        .frame(width: 18.33, height: 18.33)
-                }
-            }
-            .padding()
-            .frame(width: 361,height: 56)
-            .background(Asset.Color.Button.blackCol.swiftUIColor)
-            .cornerRadius(26)
-        }
-        .padding()
     }
 }
 

@@ -25,7 +25,9 @@
 		FA568B142BD951C900B87B59 /* AddressesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA568B132BD951C900B87B59 /* AddressesViewModel.swift */; };
 		FA77A3A52BBDA10600843673 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3A42BBDA10600843673 /* AssetKit.framework */; };
 		FA77A3A62BBDA10600843673 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3A42BBDA10600843673 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FAB4226A2BC571C8002C7260 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB422692BC571C8002C7260 /* ProfileImageView.swift */; };
+		FA817FFF2BE1DEB5002ABBFD /* OrderStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA817FFE2BE1DEB5002ABBFD /* OrderStatusView.swift */; };
+		FA8180022BE2737C002ABBFD /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8180012BE2737C002ABBFD /* AddButton.swift */; };
+		FA8180042BE28655002ABBFD /* CurrentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8180032BE28655002ABBFD /* CurrentModel.swift */; };
 		FAB4227B2BC8B761002C7260 /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4227A2BC8B761002C7260 /* PersonalInfoView.swift */; };
 		FAB4227D2BC8B77B002C7260 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4227C2BC8B77B002C7260 /* AddressView.swift */; };
 		FAB4227F2BC8B78C002C7260 /* PaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4227E2BC8B78C002C7260 /* PaymentMethodView.swift */; };
@@ -45,9 +47,13 @@
 		FABA5AD92BDBC38F00796390 /* PaymentMethodItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5AD82BDBC38F00796390 /* PaymentMethodItemView.swift */; };
 		FABA5ADB2BDBED2C00796390 /* ProfileConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5ADA2BDBED2C00796390 /* ProfileConstans.swift */; };
 		FABA5ADD2BDD81E700796390 /* OrderHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5ADC2BDD81E700796390 /* OrderHistoryViewModel.swift */; };
-		FABA5ADF2BDD82BA00796390 /* OrderHistoryCellsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5ADE2BDD82BA00796390 /* OrderHistoryCellsView.swift */; };
-		FABA5AE12BDDA00A00796390 /* OrderHistoryConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5AE02BDDA00A00796390 /* OrderHistoryConstans.swift */; };
+		FABA5ADF2BDD82BA00796390 /* OrderHistorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5ADE2BDD82BA00796390 /* OrderHistorySection.swift */; };
+		FABA5AE12BDDA00A00796390 /* OrderHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5AE02BDDA00A00796390 /* OrderHistoryModel.swift */; };
 		FABEE4442BC2A9E000E48054 /* ProfileBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEE4432BC2A9DF00E48054 /* ProfileBundle.swift */; };
+		FAC5D4602BE3ABDF003B61E5 /* DeleteAndLogOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5D45F2BE3ABDF003B61E5 /* DeleteAndLogOutButton.swift */; };
+		FAC5D4632BE3B158003B61E5 /* ProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5D4622BE3B158003B61E5 /* ProfileList.swift */; };
+		FAC5D4652BE3B205003B61E5 /* ProfileImageAndGmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5D4642BE3B205003B61E5 /* ProfileImageAndGmail.swift */; };
+		FAC5D4672BE3BAA2003B61E5 /* FonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5D4662BE3BAA2003B61E5 /* FonImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +109,9 @@
 		FA568B112BD9101A00B87B59 /* PersonalInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewModel.swift; sourceTree = "<group>"; };
 		FA568B132BD951C900B87B59 /* AddressesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewModel.swift; sourceTree = "<group>"; };
 		FA77A3A42BBDA10600843673 /* AssetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AssetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAB422692BC571C8002C7260 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		FA817FFE2BE1DEB5002ABBFD /* OrderStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusView.swift; sourceTree = "<group>"; };
+		FA8180012BE2737C002ABBFD /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		FA8180032BE28655002ABBFD /* CurrentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentModel.swift; sourceTree = "<group>"; };
 		FAB4227A2BC8B761002C7260 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
 		FAB4227C2BC8B77B002C7260 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		FAB4227E2BC8B78C002C7260 /* PaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodView.swift; sourceTree = "<group>"; };
@@ -123,9 +131,13 @@
 		FABA5AD82BDBC38F00796390 /* PaymentMethodItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodItemView.swift; sourceTree = "<group>"; };
 		FABA5ADA2BDBED2C00796390 /* ProfileConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConstans.swift; sourceTree = "<group>"; };
 		FABA5ADC2BDD81E700796390 /* OrderHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewModel.swift; sourceTree = "<group>"; };
-		FABA5ADE2BDD82BA00796390 /* OrderHistoryCellsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryCellsView.swift; sourceTree = "<group>"; };
-		FABA5AE02BDDA00A00796390 /* OrderHistoryConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryConstans.swift; sourceTree = "<group>"; };
+		FABA5ADE2BDD82BA00796390 /* OrderHistorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistorySection.swift; sourceTree = "<group>"; };
+		FABA5AE02BDDA00A00796390 /* OrderHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryModel.swift; sourceTree = "<group>"; };
 		FABEE4432BC2A9DF00E48054 /* ProfileBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBundle.swift; sourceTree = "<group>"; };
+		FAC5D45F2BE3ABDF003B61E5 /* DeleteAndLogOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAndLogOutButton.swift; sourceTree = "<group>"; };
+		FAC5D4622BE3B158003B61E5 /* ProfileList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
+		FAC5D4642BE3B205003B61E5 /* ProfileImageAndGmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageAndGmail.swift; sourceTree = "<group>"; };
+		FAC5D4662BE3BAA2003B61E5 /* FonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FonImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +202,7 @@
 		524092582BB7BDF600A75FC0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				FA8180002BE27360002ABBFD /* ProfileCore */,
 				FABEE4422BC2A97F00E48054 /* ViewModel */,
 				FABEE4412BC2A96E00E48054 /* Model */,
 				FABEE4402BC2A95300E48054 /* View */,
@@ -209,13 +222,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA8180002BE27360002ABBFD /* ProfileCore */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5D4612BE3AFAB003B61E5 /* Views */,
+				FAC5D45E2BE3AAF1003B61E5 /* Buttons */,
+			);
+			path = ProfileCore;
+			sourceTree = "<group>";
+		};
 		FAB4226D2BC8B29D002C7260 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
 				524092672BB7BE5100A75FC0 /* ProfileView.swift */,
 				FABA5ADA2BDBED2C00796390 /* ProfileConstans.swift */,
 				FA568B0A2BCC08F200B87B59 /* SectionModel.swift */,
-				FAB422692BC571C8002C7260 /* ProfileImageView.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -255,6 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				FAB422802BC8B79E002C7260 /* CurrentOrdersView.swift */,
+				FA817FFE2BE1DEB5002ABBFD /* OrderStatusView.swift */,
+				FA8180032BE28655002ABBFD /* CurrentModel.swift */,
 			);
 			path = CurrentOrdersView;
 			sourceTree = "<group>";
@@ -263,9 +286,9 @@
 			isa = PBXGroup;
 			children = (
 				FAB422822BC8B7B2002C7260 /* OrderHistoryView.swift */,
-				FABA5AE02BDDA00A00796390 /* OrderHistoryConstans.swift */,
+				FABA5AE02BDDA00A00796390 /* OrderHistoryModel.swift */,
 				FABA5ADC2BDD81E700796390 /* OrderHistoryViewModel.swift */,
-				FABA5ADE2BDD82BA00796390 /* OrderHistoryCellsView.swift */,
+				FABA5ADE2BDD82BA00796390 /* OrderHistorySection.swift */,
 			);
 			path = OrderHistoryView;
 			sourceTree = "<group>";
@@ -360,6 +383,41 @@
 				524092652BB7BE0300A75FC0 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FAC5D45E2BE3AAF1003B61E5 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				FA8180012BE2737C002ABBFD /* AddButton.swift */,
+				FAC5D45F2BE3ABDF003B61E5 /* DeleteAndLogOutButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		FAC5D4612BE3AFAB003B61E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5D4682BE3BAB6003B61E5 /* Profile */,
+				FAC5D4692BE3BACA003B61E5 /* PersonalInfo */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAC5D4682BE3BAB6003B61E5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5D4642BE3B205003B61E5 /* ProfileImageAndGmail.swift */,
+				FAC5D4622BE3B158003B61E5 /* ProfileList.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FAC5D4692BE3BACA003B61E5 /* PersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				FAC5D4662BE3BAA2003B61E5 /* FonImage.swift */,
+			);
+			path = PersonalInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,14 +542,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABA5AD92BDBC38F00796390 /* PaymentMethodItemView.swift in Sources */,
-				FABA5AE12BDDA00A00796390 /* OrderHistoryConstans.swift in Sources */,
+				FA8180042BE28655002ABBFD /* CurrentModel.swift in Sources */,
+				FABA5AE12BDDA00A00796390 /* OrderHistoryModel.swift in Sources */,
 				FAB422912BC8B842002C7260 /* PrivacyPolicyView.swift in Sources */,
 				FABA5ADD2BDD81E700796390 /* OrderHistoryViewModel.swift in Sources */,
 				FAB4228F2BC8B832002C7260 /* TermsUseView.swift in Sources */,
 				FAB4227D2BC8B77B002C7260 /* AddressView.swift in Sources */,
+				FAC5D4672BE3BAA2003B61E5 /* FonImage.swift in Sources */,
 				FAB4227B2BC8B761002C7260 /* PersonalInfoView.swift in Sources */,
-				FABA5ADF2BDD82BA00796390 /* OrderHistoryCellsView.swift in Sources */,
+				FABA5ADF2BDD82BA00796390 /* OrderHistorySection.swift in Sources */,
+				FAC5D4602BE3ABDF003B61E5 /* DeleteAndLogOutButton.swift in Sources */,
 				FAB422892BC8B7F4002C7260 /* LanguageView.swift in Sources */,
+				FA817FFF2BE1DEB5002ABBFD /* OrderStatusView.swift in Sources */,
 				FAB422832BC8B7B2002C7260 /* OrderHistoryView.swift in Sources */,
 				FAB422852BC8B7D4002C7260 /* PushNotificationView.swift in Sources */,
 				524092682BB7BE5100A75FC0 /* ProfileView.swift in Sources */,
@@ -499,9 +561,11 @@
 				FABEE4442BC2A9E000E48054 /* ProfileBundle.swift in Sources */,
 				FABA5AD72BDBC1D500796390 /* PaymentMethodViewModel.swift in Sources */,
 				FAB4227F2BC8B78C002C7260 /* PaymentMethodView.swift in Sources */,
+				FAC5D4632BE3B158003B61E5 /* ProfileList.swift in Sources */,
 				FA568B0B2BCC08F200B87B59 /* SectionModel.swift in Sources */,
 				FABA5ADB2BDBED2C00796390 /* ProfileConstans.swift in Sources */,
-				FAB4226A2BC571C8002C7260 /* ProfileImageView.swift in Sources */,
+				FAC5D4652BE3B205003B61E5 /* ProfileImageAndGmail.swift in Sources */,
+				FA8180022BE2737C002ABBFD /* AddButton.swift in Sources */,
 				FA568B142BD951C900B87B59 /* AddressesViewModel.swift in Sources */,
 				524092662BB7BE0300A75FC0 /* ProfileViewModel.swift in Sources */,
 				FABA5AD12BDB9B3100796390 /* AddressesIsEmpty.swift in Sources */,

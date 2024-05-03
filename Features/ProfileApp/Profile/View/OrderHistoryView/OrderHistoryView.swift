@@ -12,8 +12,7 @@ import Core
 struct OrderHistoryView: View {
     
     @Environment(\.dismiss) var pop
-//    @State var header: OrderHistoryViewModel
-//    @State var cell: Cells
+    @StateObject var vm = OrderHistoryViewModel()
     
     public init() { }
     
@@ -23,8 +22,12 @@ struct OrderHistoryView: View {
             Spacer()
             ScrollView {
                 VStack(spacing: 0) {
-                    
-                }        
+                    ForEach(0..<vm.orderHistoryData.count, id: \.self) { index in
+                        OrderHistorySection(item: vm.orderHistoryData[index])
+                        
+                    }
+                    Divider()
+                }
             }
         }
     }
@@ -35,11 +38,13 @@ extension OrderHistoryView {
     
     var navBar: some View {
         VStack(spacing: .zero) {
-            BaseNavigationBar(title: "ORDER HISTORY ", leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed: {
+            BaseNavigationBar(title: "ORDER HISTORY ",
+                              leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed: {
                 print("leftButtonPressed")
                 self.pop()
             })
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

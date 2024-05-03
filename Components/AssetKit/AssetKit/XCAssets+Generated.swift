@@ -29,6 +29,13 @@ public enum Asset {
       public static let blackCol = ColorAsset(name: "BlackCol")
       public static let grayCol = ColorAsset(name: "GrayCol")
     }
+    public enum Chips {
+      public enum Status {
+        public static let canceled = ColorAsset(name: "canceled")
+        public static let delivired = ColorAsset(name: "delivired")
+        public static let onProccess = ColorAsset(name: "onProccess")
+      }
+    }
     public enum Surface {
       public enum Card {
         public static let color = ColorAsset(name: "Color")
@@ -37,6 +44,11 @@ public enum Asset {
     public enum Text {
       public static let primaryCol = ColorAsset(name: "PrimaryCol")
       public static let secondaryCol = ColorAsset(name: "SecondaryCol")
+      public enum Status {
+        public static let canceledCol = ColorAsset(name: "canceledCol")
+        public static let deliviredCol = ColorAsset(name: "deliviredCol")
+        public static let proccessCol = ColorAsset(name: "proccessCol")
+      }
       public static let whiteCol = ColorAsset(name: "WhiteCol")
     }
   }

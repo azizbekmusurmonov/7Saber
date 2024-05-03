@@ -12,10 +12,10 @@ import Core
 struct PaymentMethodView: View {
     
     @State var cards: [Card] = [
-        Card(image: "",
+        Card(image: Asset.Image.BankImage.agrobank.image,
              cardNumber: "8600 23** **** **84",
              expiryDate: "12/27"),
-        Card(image: "",
+        Card(image: Asset.Image.BankImage.masterCard.image,
              cardNumber: "5623 43** **** **25",
              expiryDate: "12/24")
     ]
@@ -42,7 +42,9 @@ struct PaymentMethodView: View {
                     }
                 }
             }
-            addPaymentMethodButton
+            AddButton(title: "ADD PAYMENT METHOD", buttonPressed: {
+                print("pressed")
+            })
         }
         .navigationBarBackButtonHidden()
     }
@@ -60,30 +62,6 @@ extension PaymentMethodView {
             })
         }
     }
-    
-    var addPaymentMethodButton: some View {
-        VStack(spacing: .zero) {
-            Button(action: {
-                
-            }) {
-                HStack(spacing: .zero) {
-                    Text("ADD PAYMENT METHOD")
-                        .font(.footnote)
-                        .foregroundColor(Asset.Color.Text.whiteCol.swiftUIColor)
-                    Spacer()
-                    Image(uiImage: Asset.Image.Icons.plusCrcleWhite.image)
-                        .resizable()
-                        .frame(width: 18.33, height: 18.33)
-                }
-            }
-            .padding()
-            .frame(width: 361,height: 56)
-            .background(Asset.Color.Button.blackCol.swiftUIColor)
-            .cornerRadius(26)
-        }
-        .padding()
-    }
-    
 }
 
 #Preview {

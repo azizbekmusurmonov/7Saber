@@ -11,17 +11,27 @@ import AssetKit
 
 struct PersonalInfoView: View {
     
-    
     @State var fullName = "Azizbek Musurmonov"
     @State var phoneNumber = "+998"
     @State var email = "azizbekmusurmonov004@gmail.com"
-    @State var sex = "Male"
+    @State var image = UIImage()
+    @State var sex = Date.now
     @State var birthday = "MARCH 14, 2004"
     
-    @State var showImagePicker: Bool = false
-    @State var profileImage = UIImage(named: "Fon")
+    @State var showPicker = false
+    
+    @EnvironmentObject var vm: ProfileViewModel
+    
+    
+    var profileBundle: ProfileBundle {
+        return ProfileBundle(profileImage: image,
+                                 profileName: fullName,
+                                 gmailName: email)
+        }
     
     @Environment(\.dismiss) var pop
+    
+    public init() { }
     
     var body: some View {
         VStack(spacing: .zero) {
@@ -31,13 +41,13 @@ struct PersonalInfoView: View {
             ScrollView {
                 VStack(spacing: .zero) {
                     
-                    fonImage
+                    FonImage(personalBundle: .constant(profileBundle))
                     
                     personInfoList
                     
                     HStack(spacing: .zero) {
                         Button(action: {
-                            
+                            pop()
                         }) {
                             Text("Cancel")
                                 .padding()
@@ -46,7 +56,7 @@ struct PersonalInfoView: View {
                                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         }
                         .background(Asset.Color.Button.grayCol.swiftUIColor)
-                        .cornerRadius(24)
+                        .clipShape(.capsule)
                         .padding(.leading)
                         
                         Button(action: {
@@ -60,7 +70,7 @@ struct PersonalInfoView: View {
                         }
                         
                         .background(Asset.Color.Button.blackCol.swiftUIColor)
-                        .cornerRadius(24)
+                        .clipShape(.capsule)
                         .padding(.trailing)
                         .padding(.leading)
                     }
@@ -79,36 +89,6 @@ extension PersonalInfoView {
                 print("leftButtonPressed")
                 pop()
             })
-        }
-    }
-    
-    var fonImage: some View {
-        HStack(spacing: .zero) {
-            Image(uiImage: profileImage!)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 146, height: 146)
-                .clipShape(Circle())
-                .overlay {
-                    Circle()
-                        .fill(.black.opacity(0.5))
-                }
-                .overlay(
-                    Button(action: {
-                        showImagePicker.toggle()
-                    }) {
-                        Image(uiImage: Asset.Image.Icons.plusCrcleWhite.image)
-                            .resizable()
-                            .frame(width: 32, height: 32)
-                    }
-                )
-                .padding()
-                .sheet(isPresented: $showImagePicker) {
-                    ImagePicker(sourceType: .photoLibrary) { image in
-                        self.profileImage = image
-                    }
-                }
-            Spacer()
         }
     }
     
@@ -142,10 +122,7 @@ extension PersonalInfoView {
                 .font(.caption)
                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
             HStack(spacing: .zero) {
-                
-                TextField("", text: $sex)
-                             .keyboardType(.default)
-                
+                Spacer()
                 Button(action: {
                     
                 }) {
@@ -163,7 +140,7 @@ extension PersonalInfoView {
                 TextField("Enter your birthday", text: $birthday)
                 
                 Button(action: {
-                    
+                    showPicker.toggle()
                 }) {
                     Image(uiImage: Asset.Image.Icons.calendar.image)
                         .resizable()
@@ -173,6 +150,13 @@ extension PersonalInfoView {
             
             Divider()
         }
+        .overlay(alignment: .center, content: {
+            DatePicker("e", selection: $sex)
+                .datePickerStyle(.compact)
+                .frame(maxHeight: .infinity, alignment: .center)
+                .opacity(showPicker ? 1 : 0)
+                
+        })
         .padding()
     }
 }
