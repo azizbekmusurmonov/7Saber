@@ -16,7 +16,7 @@ struct ProfileList: View {
             ForEach(0..<ProfileConstans.shared.profileSectionData.count, id: \.self) { index in
                 let sections = ProfileConstans.shared.profileSectionData
                 Text(sections[index].headertitle)
-                    .font(.largeTitle)
+                    .font(.system(size: 23, weight: .bold))
                     .bold()
                 
                 ForEach(0..<sections[index].cells.count) { cellIndex in
@@ -27,7 +27,7 @@ struct ProfileList: View {
                         label: {
                             HStack {
                                 Text(sections[index].cells[cellIndex].title)
-                                    .font(.title2)
+                                    .font(.system(size: 16, weight: .medium))
                                     .foregroundColor(.black)
                                 
                                 Spacer()
@@ -39,6 +39,7 @@ struct ProfileList: View {
                                         .foregroundColor(.black)
                                 }
                             }
+                            .frame(height: 56)
                         }
                     )
                     Divider()

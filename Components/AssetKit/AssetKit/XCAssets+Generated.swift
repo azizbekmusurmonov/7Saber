@@ -130,6 +130,7 @@ public enum Asset {
     public enum Logo {
       public static let logoBlack = ImageAsset(name: "logoBlack")
       public static let logoWhite = ImageAsset(name: "logoWhite")
+      public static let person = ImageAsset(name: "person")
     }
     public enum Navigation {
       public static let arrowLeftNav = ImageAsset(name: "arrowLeftNav")

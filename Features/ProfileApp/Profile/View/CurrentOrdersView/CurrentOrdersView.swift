@@ -14,7 +14,15 @@ struct CurrentOrdersView: View {
     @Environment(\.dismiss) var pop
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: .zero) {
+            navBar
+            Spacer()
+            ScrollView {
+                VStack(spacing: .zero) {
+                    
+                }
+            }
+        }
     }
 }
 

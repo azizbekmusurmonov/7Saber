@@ -37,6 +37,7 @@ public struct DeleteAndLogOutButton: View {
             .frame(width: 313, height: 56)
             .background(Asset.Color.Button.grayCol.swiftUIColor)
             .clipShape(.capsule)
+            .padding(.top)
         }
     }
 }

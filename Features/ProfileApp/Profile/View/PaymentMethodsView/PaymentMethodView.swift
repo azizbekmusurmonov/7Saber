@@ -42,7 +42,8 @@ struct PaymentMethodView: View {
                     }
                 }
             }
-            AddButton(title: "ADD PAYMENT METHOD", buttonPressed: {
+            AddButton(title: "ADD PAYMENT METHOD",
+                      buttonPressed: {
                 print("pressed")
             })
         }
