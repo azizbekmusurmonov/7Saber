@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProfileBundle: Identifiable, Hashable {
     var id = UUID().uuidString
-    var profileImage: String
+    var profileImage: UIImage
     var profileName: String
     var gmailName: String
+    var phoneNumber: String?
 }
