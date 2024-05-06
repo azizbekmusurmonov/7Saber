@@ -62,7 +62,7 @@ struct TabBarView: View {
                         Text("Profile")
                     }
                     .onAppear {
-                        self.profileVM.count = 100
+//                        self.profileVM.count = 100
                     }
             }
         }
