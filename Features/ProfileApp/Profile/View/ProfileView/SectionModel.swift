@@ -16,5 +16,5 @@ public struct ProfilecellModel {
     let title: String
     let hasRightIcon: Bool
     let number: String
-    let pushToView: any View
+    let pushToView: AnyView
 }

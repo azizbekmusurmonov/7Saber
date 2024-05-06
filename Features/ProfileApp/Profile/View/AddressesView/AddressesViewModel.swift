@@ -6,10 +6,17 @@
 //
 
 import Foundation
+import Combine
 
-public struct AddressesViewModel {
-    private let title: String
-    private let location: String
-    private let SeeOnMap: String
-//    private let button:
+public class AddressesViewModel: ObservableObject {
+    
+    @Published public var items: [Item] = []
+    public init() { }
+   
+}
+
+public struct Item: Hashable {
+    public let title: String
+    public let location: String
+    public let seeOnMap: String
 }

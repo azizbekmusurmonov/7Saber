@@ -1,0 +1,28 @@
+//
+//  TextFieldView.swift
+//  Profile
+//
+//  Created by Azizbek Musurmonov   on 03/05/24.
+//
+
+import SwiftUI
+import AssetKit
+import Core
+
+struct TextFieldView: View {
+    
+    @State var header: String
+    @State var titleKey: String
+    @State var text: String
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(header)
+                .font(.caption)
+                .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+            
+            TextField(titleKey, text: $text)
+            Divider()
+        }
+    }
+}
