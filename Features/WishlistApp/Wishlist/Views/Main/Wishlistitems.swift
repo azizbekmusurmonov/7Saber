@@ -16,6 +16,7 @@ struct Item: Identifiable {
 struct ItemRow: View {
     var item: Item
     @State private var image: UIImage? = nil
+    let selectSizeTapHandler: () -> ()
     
     var body: some View {
         HStack {
@@ -42,7 +43,7 @@ struct ItemRow: View {
                   
                 Spacer()
                 Button(action: {
-                    
+                    selectSizeTapHandler()
                 }) {
                     Text("Select Size".uppercased())
                         .font(.system(size: 13))
@@ -56,7 +57,7 @@ struct ItemRow: View {
             }
             
             Spacer()
-        }
+        }.background(Color.white)
         .onAppear {
             loadImage()
         }
