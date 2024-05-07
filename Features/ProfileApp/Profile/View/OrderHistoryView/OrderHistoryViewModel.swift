@@ -41,5 +41,11 @@ enum OrderStatus: String {
         }
     }
     
-    
+    var textColor: Color {
+        switch self {
+        case .delivered: return Asset.Color.Text.Status.deliviredCol.swiftUIColor
+        case .onProccess: return Asset.Color.Text.Status.proccessCol.swiftUIColor
+        case .canceled: return Asset.Color.Text.Status.canceledCol.swiftUIColor
+        }
+    }
 }

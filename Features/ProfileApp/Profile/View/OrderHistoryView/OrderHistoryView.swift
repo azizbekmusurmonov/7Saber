@@ -14,6 +14,9 @@ struct OrderHistoryView: View {
     @Environment(\.dismiss) var pop
     @StateObject var vm = OrderHistoryViewModel()
     
+    @State var isTabBottomSheet = false
+    @State var detentHeight: CGFloat = 0
+    
     public init() { }
     
     var body: some View {
@@ -24,7 +27,23 @@ struct OrderHistoryView: View {
                 VStack(spacing: 0) {
                     ForEach(0..<vm.orderHistoryData.count, id: \.self) { index in
                         OrderHistorySection(item: vm.orderHistoryData[index])
-                        
+                    }
+                    .onTapGesture {
+                        isTabBottomSheet = true
+                    }
+                    .sheet(isPresented: self.$isTabBottomSheet) {
+                        if #available(iOS 16.0, *) {
+                            OrderBottomSheetView()
+                                .readHeight()
+                                .onPreferenceChange(HeightPreferenceKey.self) { height in
+                                    if let height {
+                                        self.detentHeight = height
+                                    }
+                                }
+                                .presentationDetents([.height(self.detentHeight)])
+                        } else {
+                            OrderBottomSheetView()
+                        }
                     }
                     Divider()
                 }
@@ -40,7 +59,6 @@ extension OrderHistoryView {
         VStack(spacing: .zero) {
             BaseNavigationBar(title: "ORDER HISTORY ",
                               leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed: {
-                print("leftButtonPressed")
                 self.pop()
             })
         }

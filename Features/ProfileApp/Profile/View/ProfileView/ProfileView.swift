@@ -14,7 +14,6 @@ public struct ProfileView: View {
     @EnvironmentObject var vm: ProfileViewModel
     @StateObject var profileData = ProfileViewModel()
     
-    
     public init() { }
     
     public var body: some View {

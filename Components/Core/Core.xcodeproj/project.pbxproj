@@ -15,6 +15,7 @@
 		FA77A2452BBBA94E00843673 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = FA77A2422BBBA94E00843673 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA77A2532BBBA97500843673 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77A2522BBBA97500843673 /* Color+Extensions.swift */; };
 		FAB4226C2BC6D8C2002C7260 /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4226B2BC6D8C2002C7260 /* ProfileTab.swift */; };
+		FAD6F6942BEA62DF00A2685E /* DeviceBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6F6932BEA62DF00A2685E /* DeviceBounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,7 @@
 		FA77A2432BBBA94E00843673 /* Core.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Core.docc; sourceTree = "<group>"; };
 		FA77A2522BBBA97500843673 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		FAB4226B2BC6D8C2002C7260 /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
+		FAD6F6932BEA62DF00A2685E /* DeviceBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBounds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				FA77A2522BBBA97500843673 /* Color+Extensions.swift */,
+				FAD6F6932BEA62DF00A2685E /* DeviceBounds.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			files = (
 				FA568B172BD957A800B87B59 /* ImagePicker.swift in Sources */,
 				FA77A2442BBBA94E00843673 /* Core.docc in Sources */,
+				FAD6F6942BEA62DF00A2685E /* DeviceBounds.swift in Sources */,
 				FA69E8142BC17118005113B2 /* BaseNavigationBar.swift in Sources */,
 				FA77A2532BBBA97500843673 /* Color+Extensions.swift in Sources */,
 				FAB4226C2BC6D8C2002C7260 /* ProfileTab.swift in Sources */,

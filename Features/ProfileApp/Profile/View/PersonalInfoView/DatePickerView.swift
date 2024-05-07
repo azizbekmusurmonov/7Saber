@@ -43,7 +43,7 @@ struct DatePickerView: View {
                     .datePickerStyle(.wheel)
                 }
         }
-        .opacity(showPicker ? 1.0 : 0.0)
+//        .opacity(showPicker ? 1.0 : 0.0)
         Divider()
     }
     

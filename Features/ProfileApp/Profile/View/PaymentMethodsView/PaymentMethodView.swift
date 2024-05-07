@@ -19,8 +19,10 @@ struct PaymentMethodView: View {
              cardNumber: "5623 43** **** **25",
              expiryDate: "12/24")
     ]
-
     
+    @State var isSheetViewActive = false
+    @State var detentHeight: CGFloat = 0
+
     @Environment(\.dismiss) var pop
     
     var body: some View {
@@ -44,8 +46,23 @@ struct PaymentMethodView: View {
             }
             AddButton(title: "ADD PAYMENT METHOD",
                       buttonPressed: {
-                print("pressed")
+                self.isSheetViewActive.toggle()
+                
             })
+            .sheet(isPresented: self.$isSheetViewActive) {
+                if #available(iOS 16.0, *) {
+                    PaymentAddCardView()
+                        .readHeight()
+                        .onPreferenceChange(HeightPreferenceKey.self) { height in
+                            if let height {
+                                self.detentHeight = height
+                            }
+                        }
+                        .presentationDetents([.height(self.detentHeight)])
+                } else {
+                    PaymentAddCardView()
+                }
+            }
         }
         .navigationBarBackButtonHidden()
     }

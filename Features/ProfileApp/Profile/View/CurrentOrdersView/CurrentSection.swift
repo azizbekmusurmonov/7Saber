@@ -1,24 +1,24 @@
 //
-//  OrderHistoryCellsView.swift
+//  CurrentSection.swift
 //  Profile
 //
-//  Created by Azizbek Musurmonov   on 28/04/24.
+//  Created by Azizbek Musurmonov   on 06/05/24.
 //
 
 import SwiftUI
 import AssetKit
 import Core
 
-struct OrderHistorySection: View {
+struct CurrentSection: View {
     
-    var item: OrderHistoryModel
+    var currentItem: CurrentViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(item.headertitle)
+            Text(currentItem.headertitle)
                 .font(.title)
                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
-            ForEach(item.cells, id: \.self) { cell in
+            ForEach(currentItem.cell, id: \.self) { cell in
                 HStack(spacing: 10) {
                     VStack(alignment: .leading) {
                         Text("ORDER ID")
@@ -39,22 +39,21 @@ struct OrderHistorySection: View {
                     Spacer()
                     
                     HStack {
-                        Text(cell.status.rawValue.uppercased())
+                        Text("ON PROCCESS")
                             .font(.footnote)
-                            .foregroundColor(cell.status.textColor)
+                            .foregroundColor(Asset.Color.Text.Status.proccessCol.swiftUIColor)
                             .padding(5)
                         
-                        Image(uiImage: cell.status.icon)
+                        Image(uiImage: Asset.Image.Icons.proccess.image)
                             .resizable()
                             .frame(width: 14, height: 14)
                     }
-                    .background(cell.status.color)
+                    .background(Asset.Color.Chips.Status.onProccess.swiftUIColor)
                     .clipShape(.capsule)
                     
                 }
                 .frame(height: 74)
                 Divider()
-                    .padding()
             }
         }
         .padding()
