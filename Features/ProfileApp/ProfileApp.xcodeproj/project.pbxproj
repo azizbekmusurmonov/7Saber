@@ -64,7 +64,6 @@
 		FAD6F6882BE88D9500A2685E /* CurrentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6F6872BE88D9500A2685E /* CurrentModel.swift */; };
 		FAD6F68A2BE8A18C00A2685E /* CurrentSheetBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6F6892BE8A18C00A2685E /* CurrentSheetBottomView.swift */; };
 		FAD6F68C2BE8A29000A2685E /* OrderBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6F68B2BE8A29000A2685E /* OrderBottomSheetView.swift */; };
-		FAD6F6922BE9203100A2685E /* DynamicBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6F6912BE9203100A2685E /* DynamicBottomSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,7 +158,6 @@
 		FAD6F6872BE88D9500A2685E /* CurrentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentModel.swift; sourceTree = "<group>"; };
 		FAD6F6892BE8A18C00A2685E /* CurrentSheetBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSheetBottomView.swift; sourceTree = "<group>"; };
 		FAD6F68B2BE8A29000A2685E /* OrderBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBottomSheetView.swift; sourceTree = "<group>"; };
-		FAD6F6912BE9203100A2685E /* DynamicBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicBottomSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,7 +486,6 @@
 		FAD6F6902BE9200800A2685E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FAD6F6912BE9203100A2685E /* DynamicBottomSheet.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -618,7 +615,6 @@
 				FA8180042BE28655002ABBFD /* CurrentViewModel.swift in Sources */,
 				FAC5D46F2BE4EF46003B61E5 /* SaveCancelButtons.swift in Sources */,
 				FAD6F6842BE8836300A2685E /* PaymentAddCardView.swift in Sources */,
-				FAD6F6922BE9203100A2685E /* DynamicBottomSheet.swift in Sources */,
 				FABA5AE12BDDA00A00796390 /* OrderHistoryModel.swift in Sources */,
 				FAB422912BC8B842002C7260 /* PrivacyPolicyView.swift in Sources */,
 				FABA5ADD2BDD81E700796390 /* OrderHistoryViewModel.swift in Sources */,
