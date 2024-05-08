@@ -51,7 +51,7 @@ public struct RegisterMobillAppView: View {
                         vm.stopTimer()
                         vm.startTimer()
 //                        vm.sendCode()
-//                        vm.getUser()
+                        vm.getUser()
                     })
                         .environmentObject(vm)
                         .padding(.top, 40)
@@ -60,10 +60,10 @@ public struct RegisterMobillAppView: View {
                     ZStack {
                         CodeViewAccountExists()
                             .environmentObject(vm)
-                            .opacity(vm.userExists ? 0 : 1)
+                            .opacity(vm.userExists ? 1 : 0)
                         CodeViewAccountNotExists()
                             .environmentObject(vm)
-                            .opacity(vm.userExists ? 1 : 0)
+                            .opacity(vm.userExists ? 0 : 1)
                     }
                 }
             }

@@ -9,20 +9,29 @@ import SwiftUI
 
 struct CodeViewAccountExists: View {
     
-    @EnvironmentObject var vm: RegisterMobillAppViewModel
+    @StateObject var vm = RegisterMobillAppViewModel()
     
     var body: some View {
         ZStack {
-            VStack {
-                WelcomeView(welcome: "WELCOME BACK", welcomeText: "Enter confirmation code to \ncontinue the proccess")
-                    .padding(.top, 150)
-                CodeTextFieldButton(enterButtonAction: {
-                    
-                })
-                    .environmentObject(vm)
-                Spacer()
-            }
             
+            if vm.isPasswordViewPresent {
+                EnterPasswordView()
+                    .environmentObject(vm)
+            } else {
+                VStack {
+                    WelcomeView(welcome: "WELCOME BACK", welcomeText: "Enter confirmation code to \ncontinue the proccess")
+                        .padding(.top, 150)
+                    
+                    CodeTextFieldButton(enterButtonAction: {
+                        
+                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                            vm.isPasswordViewPresent.toggle()
+                        }
+                    })
+                        .environmentObject(vm)
+                    Spacer()
+                }
+            }
         }
     }
 }
