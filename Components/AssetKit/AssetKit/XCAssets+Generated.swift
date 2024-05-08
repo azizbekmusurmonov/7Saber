@@ -32,13 +32,34 @@ public enum Asset {
       }
       public static let grayCol = ColorAsset(name: "GrayCol")
     }
+    public enum Chips {
+      public enum Status {
+        public static let canceled = ColorAsset(name: "canceled")
+        public static let delivired = ColorAsset(name: "delivired")
+        public static let onProccess = ColorAsset(name: "onProccess")
+      }
+    }
+    public enum Surface {
+      public enum Card {
+        public static let color = ColorAsset(name: "Color")
+      }
+    }
     public enum Text {
       public static let primaryCol = ColorAsset(name: "PrimaryCol")
       public static let secondaryCol = ColorAsset(name: "SecondaryCol")
+      public enum Status {
+        public static let canceledCol = ColorAsset(name: "canceledCol")
+        public static let deliviredCol = ColorAsset(name: "deliviredCol")
+        public static let proccessCol = ColorAsset(name: "proccessCol")
+      }
       public static let whiteCol = ColorAsset(name: "WhiteCol")
     }
   }
   public enum Image {
+    public enum BankImage {
+      public static let agrobank = ImageAsset(name: "agrobank")
+      public static let masterCard = ImageAsset(name: "masterCard")
+    }
     public enum Cart {
       public static let minusCart = ImageAsset(name: "minusCart")
       public static let plusCart = ImageAsset(name: "plusCart")
@@ -73,11 +94,13 @@ public enum Asset {
       public static let chevronRight = ImageAsset(name: "chevronRight")
       public static let chevronUp = ImageAsset(name: "chevronUp")
       public static let clock = ImageAsset(name: "clock")
+      public static let closeRed = ImageAsset(name: "closeRed")
       public static let closeX = ImageAsset(name: "closeX")
       public static let closeXCircle = ImageAsset(name: "closeXCircle")
       public static let creditCard = ImageAsset(name: "creditCard")
       public static let done = ImageAsset(name: "done")
       public static let doneFilled = ImageAsset(name: "doneFilled")
+      public static let doneGreen = ImageAsset(name: "doneGreen")
       public static let edit = ImageAsset(name: "edit")
       public static let eye = ImageAsset(name: "eye")
       public static let eyeOff = ImageAsset(name: "eyeOff")
@@ -95,6 +118,7 @@ public enum Asset {
       public static let plus = ImageAsset(name: "plus")
       public static let plusCircle = ImageAsset(name: "plusCircle")
       public static let plusCrcleWhite = ImageAsset(name: "plusCrcleWhite")
+      public static let proccess = ImageAsset(name: "proccess")
       public static let radio = ImageAsset(name: "radio")
       public static let receiptCheck = ImageAsset(name: "receiptCheck")
       public static let `repeat` = ImageAsset(name: "repeat")
@@ -109,6 +133,7 @@ public enum Asset {
     public enum Logo {
       public static let logoBlack = ImageAsset(name: "logoBlack")
       public static let logoWhite = ImageAsset(name: "logoWhite")
+      public static let person = ImageAsset(name: "person")
     }
     public enum Navigation {
       public static let arrowLeftNav = ImageAsset(name: "arrowLeftNav")

@@ -79,6 +79,3 @@ struct Blur: UIViewRepresentable {
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
 }
 
-#Preview {
-    TabBarView()
-}
