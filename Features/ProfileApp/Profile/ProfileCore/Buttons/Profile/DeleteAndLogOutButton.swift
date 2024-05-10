@@ -28,7 +28,6 @@ public struct DeleteAndLogOutButton: View {
                     
                     Spacer()
                     
-                    Spacer()
                     
                     Image(uiImage: icon)
                         .padding()

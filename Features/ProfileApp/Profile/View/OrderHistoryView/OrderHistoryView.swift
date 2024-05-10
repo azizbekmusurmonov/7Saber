@@ -32,18 +32,7 @@ struct OrderHistoryView: View {
                         isTabBottomSheet = true
                     }
                     .sheet(isPresented: self.$isTabBottomSheet) {
-                        if #available(iOS 16.0, *) {
-                            OrderBottomSheetView()
-                                .readHeight()
-                                .onPreferenceChange(HeightPreferenceKey.self) { height in
-                                    if let height {
-                                        self.detentHeight = height
-                                    }
-                                }
-                                .presentationDetents([.height(self.detentHeight)])
-                        } else {
-                            OrderBottomSheetView()
-                        }
+                        OrderBottomSheetView()
                     }
                     Divider()
                 }

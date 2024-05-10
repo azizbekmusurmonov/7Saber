@@ -15,7 +15,6 @@ struct CurrentOrdersView: View {
     @StateObject var vm = CurrentModel()
     
     @State var isTabSectionView = false
-    @State var detentHeight: CGFloat = 0
     
     public init() { }
     
@@ -32,18 +31,7 @@ struct CurrentOrdersView: View {
                         isTabSectionView = true
                     }
                     .sheet(isPresented: self.$isTabSectionView) {
-                        if #available(iOS 16.0, *) {
-                            CurrentSheetBottomView()
-                                .readHeight()
-                                .onPreferenceChange(HeightPreferenceKey.self) { height in
-                                    if let height {
-                                        self.detentHeight = height
-                                    }
-                                }
-                                .presentationDetents([.height(self.detentHeight)])
-                        } else {
-                            CurrentSheetBottomView()
-                        }
+                        CurrentSheetBottomView()
                     }
                     Divider()
                 }

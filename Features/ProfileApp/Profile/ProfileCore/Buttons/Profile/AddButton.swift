@@ -13,7 +13,7 @@ public struct AddButton: View {
     
     @State var title: String
     @State var buttonPressed: (() -> ())
-        
+    
     public var body: some View {
         VStack(spacing: .zero) {
             Button(action: {

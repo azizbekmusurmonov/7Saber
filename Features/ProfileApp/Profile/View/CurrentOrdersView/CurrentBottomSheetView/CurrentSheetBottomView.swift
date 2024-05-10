@@ -10,10 +10,15 @@ import SwiftUI
 struct CurrentSheetBottomView: View {
     var body: some View {
         VStack(spacing: .zero) {
-            HStack(spacing: .zero) {
-                Text("Hello")
+            ScrollView {
+                OrderIdView()
+                ShipToDataView()
+                PaymentItem()
+                OrderStatusProgress()
+                OrderedProductsView()
             }
         }
+        .padding(16)
     }
 }
 

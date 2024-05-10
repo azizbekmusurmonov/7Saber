@@ -36,9 +36,9 @@ struct AddressView: View {
                 Spacer()
             } else {
                 
-            ScrollView {
-                VStack(spacing: .zero) {
-                    
+                ScrollView {
+                    VStack(spacing: .zero) {
+                        
                         ForEach(items, id: \.self) { item in
                             AddressItemView(item: item)
                             Divider()

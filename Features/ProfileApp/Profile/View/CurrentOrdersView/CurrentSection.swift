@@ -56,6 +56,6 @@ struct CurrentSection: View {
                 Divider()
             }
         }
-        .padding()
+        .padding(.horizontal)
     }
 }

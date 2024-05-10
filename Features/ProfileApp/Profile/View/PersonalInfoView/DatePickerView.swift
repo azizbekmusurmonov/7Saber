@@ -36,14 +36,14 @@ struct DatePickerView: View {
             .onTapGesture {
                 showPicker.toggle()
             }
-                if showPicker {
-                    DatePicker(selection: $birthDate, displayedComponents: .date) {
-                        Text("")
-                    }
-                    .datePickerStyle(.wheel)
+            if showPicker {
+                DatePicker(selection: $birthDate, displayedComponents: .date) {
+                    Text("")
                 }
+                .datePickerStyle(.wheel)
+            }
         }
-//        .opacity(showPicker ? 1.0 : 0.0)
+        //        .opacity(showPicker ? 1.0 : 0.0)
         Divider()
     }
     

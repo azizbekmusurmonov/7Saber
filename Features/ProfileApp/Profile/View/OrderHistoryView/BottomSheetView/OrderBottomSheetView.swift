@@ -6,10 +6,22 @@
 //
 
 import SwiftUI
+import Core
+import AssetKit
 
 struct OrderBottomSheetView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: .zero) {
+            ScrollView {
+                VStack {
+                    BottomSheetsNavBar(title: "ORDER DETAILS")
+                    OrderIdView()
+                    ShipToDataView()
+                    PaymentItem()
+                    OrderedProductsView()
+                }
+            }
+        }
     }
 }
 

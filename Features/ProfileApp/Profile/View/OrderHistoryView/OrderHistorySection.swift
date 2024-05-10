@@ -57,6 +57,6 @@ struct OrderHistorySection: View {
                     .padding()
             }
         }
-        .padding()
+        .padding(.horizontal)
     }
 }
