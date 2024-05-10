@@ -23,7 +23,7 @@ struct CodeViewAccountExists: View {
                         .padding(.top, 150)
                     
                     CodeTextFieldButton(enterButtonAction: {
-                        
+                        vm.checkCode()
                         withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                             vm.isPasswordViewPresent.toggle()
                         }

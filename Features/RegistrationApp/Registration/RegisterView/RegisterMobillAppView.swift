@@ -28,15 +28,12 @@ public struct RegisterMobillAppView: View {
                     leftButtonAction: {
                         withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                             vm.isCodeViewPresented.toggle()
-                        }
-                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                             vm.isFullNameViewPresent.toggle()
-                        }
-                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                             vm.isPasswordViewPresent.toggle()
                         }
                     },
                     skipButtonAction: {
+                       
                         skipButtonTapped()
                         DataStorage.storage.save(true, for: .isRegistrate)
                     }
@@ -48,10 +45,8 @@ public struct RegisterMobillAppView: View {
                     TextFieldNextButton(nextButtonPressed: {
                         
                         vm.remainingSeconds = 120
-                        vm.stopTimer()
-                        vm.startTimer()
-//                        vm.sendCode()
                         vm.getUser()
+                        vm.sendCode()
                     })
                         .environmentObject(vm)
                         .padding(.top, 40)
@@ -67,6 +62,15 @@ public struct RegisterMobillAppView: View {
                     }
                 }
             }
+            .onChange(of: vm.message) { newValue in
+                guard let newValue else { return }
+                switch newValue {
+                case .success(message: let message):
+                    Snackbar.show(message: message, theme: .success)
+                case .error(message: let message):
+                    Snackbar.show(message: message, theme: .error)
+                }
+            }
         }
     }
 }
@@ -74,3 +78,4 @@ public struct RegisterMobillAppView: View {
 #Preview {
     RegisterMobillAppView(skipButtonTapped: { })
 }
+

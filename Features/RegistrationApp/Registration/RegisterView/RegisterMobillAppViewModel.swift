@@ -9,6 +9,11 @@ import SwiftUI
 import Combine
 import NetworkManager
 
+enum ShowMessage: Equatable {
+    case success(message: String)
+    case error(message: String)
+}
+
 public class RegisterMobillAppViewModel: ObservableObject {
     
     @Published var registerLeftButton: Bool = false
@@ -26,6 +31,8 @@ public class RegisterMobillAppViewModel: ObservableObject {
     @Published var userFullName: String = ""
     @Published var isFullNameViewPresent: Bool = false
     @Published var isPasswordViewPresent: Bool = false
+    
+    @Published var message: ShowMessage? = nil
     
     public init () { }
     
@@ -48,11 +55,16 @@ public class RegisterMobillAppViewModel: ObservableObject {
                     decode: SendCodeModel.self,
                     method: .post
                 )
+                await MainActor.run { [weak self] in
+                    self?.startTimer()
+                    self?.message = .success(message: model.message)
+                    
+                }
                 
-                print("✅✅✅✅✅✅✅✅✅✅ send-code SUCCESS")
-                print("SMS получен:", model.message)
             } catch {
-                print("⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ send-code FAILURE", error)
+                await MainActor.run { [weak self] in
+                    self?.message = .success(message: error.localizedDescription)
+                }
             }
         }
     }
@@ -68,23 +80,46 @@ public class RegisterMobillAppViewModel: ObservableObject {
                     decode: GetUserModel.self,
                     method: .post
                 )
-                
-                print("Пользователь существует  ✅✅✅✅✅✅✅✅✅✅ ")
-                print("Имя пользователя:", model.fullName)
-                print("Email пользователя:", model.email)
-                
+            
                 await MainActor.run { [weak self] in
                     self?.userExists = true
                 }
                 
             } catch {
-                self.userExists = false
+                await MainActor.run {
+                    self.userExists = false
+                }
                 print("Ошибка при получении пользователя:  ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ ", error.localizedDescription)
             }
         }
     }
     
+    func checkCode() {
+        let url = "https://lab.7saber.uz/api/auth/check-code"
+        
+        Task.detached { [weak self] in
+            guard let self else { return }
+            do {
+                let success = try await NetworkService.shared.request(
+                    url: url,
+                    decode: SendCodeModel.self,
+                    method: .post,
+                    parameters: ["phone": numberText, "code": codeText]
+                )
+                
+                await MainActor.run {
+                    self.message = .success(message: success.message)
+                }
+            } catch {
+                await MainActor.run {
+                    self.message = .error(message: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
     func startTimer() {
+        stopTimer()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if self.remainingSeconds > 0 {
                 self.remainingSeconds -= 1

@@ -22,7 +22,7 @@ struct CodeViewAccountNotExists: View {
                     WelcomeView(welcome: "WELCOME", welcomeText: "Enter confirmation code to \ncontinue the proccess")
                         .padding(.top, 150)
                     CodeTextFieldButton(enterButtonAction: {
-                        
+                        vm.checkCode()
                         withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                             vm.isFullNameViewPresent.toggle()
                         }

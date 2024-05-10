@@ -398,6 +398,8 @@
 			dependencies = (
 			);
 			name = "7Saber-main";
+			packageProductDependencies = (
+			);
 			productName = "7Saber-main";
 			productReference = 528103292BB265BC00F789A4 /* 7Saber-main.app */;
 			productType = "com.apple.product-type.application";
@@ -426,6 +428,8 @@
 				Base,
 			);
 			mainGroup = 528103202BB265BC00F789A4;
+			packageReferences = (
+			);
 			productRefGroup = 5281032A2BB265BC00F789A4 /* Products */;
 			projectDirPath = "";
 			projectReferences = (

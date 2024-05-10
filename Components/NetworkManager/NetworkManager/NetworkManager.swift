@@ -23,11 +23,14 @@ final public class NetworkService {
         
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue.uppercased()
+        request.allHTTPHeaderFields = ["Accept-Language": "uz", "Accept-Device": "web"]
         
         if !parameters.isEmpty, let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
             
             request.httpBody = httpBody
         }
+        
+        
         
         let (data, response) = try await URLSession.shared.data(for: request)
         
