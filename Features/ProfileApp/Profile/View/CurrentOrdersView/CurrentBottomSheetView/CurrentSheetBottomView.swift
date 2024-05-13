@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import AssetKit
+import Core
 
 struct CurrentSheetBottomView: View {
     var body: some View {
         VStack(spacing: .zero) {
             ScrollView {
+                BottomSheetsNavBar(title: "ORDER DETAILS")
                 OrderIdView()
                 ShipToDataView()
                 PaymentItem()
@@ -18,7 +21,7 @@ struct CurrentSheetBottomView: View {
                 OrderedProductsView()
             }
         }
-        .padding(16)
+//        .padding(16)
     }
 }
 

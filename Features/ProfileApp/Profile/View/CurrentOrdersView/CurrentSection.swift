@@ -39,16 +39,16 @@ struct CurrentSection: View {
                     Spacer()
                     
                     HStack {
-                        Text("ON PROCCESS")
+                        Text(cell.status.rawValue.uppercased())
                             .font(.footnote)
-                            .foregroundColor(Asset.Color.Text.Status.proccessCol.swiftUIColor)
+                            .foregroundColor(cell.status.textColor)
                             .padding(5)
                         
-                        Image(uiImage: Asset.Image.Icons.proccess.image)
+                        Image(uiImage: cell.status.icon)
                             .resizable()
                             .frame(width: 14, height: 14)
                     }
-                    .background(Asset.Color.Chips.Status.onProccess.swiftUIColor)
+                    .background(cell.status.color)
                     .clipShape(.capsule)
                     
                 }

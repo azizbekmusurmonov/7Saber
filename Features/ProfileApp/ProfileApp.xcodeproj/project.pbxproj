@@ -16,6 +16,9 @@
 		524092602BB7BDF600A75FC0 /* Profile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 524092572BB7BDF600A75FC0 /* Profile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		524092662BB7BE0300A75FC0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524092652BB7BE0300A75FC0 /* ProfileViewModel.swift */; };
 		524092682BB7BE5100A75FC0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524092672BB7BE5100A75FC0 /* ProfileView.swift */; };
+		FA272EEB2BF21BD600952AEF /* AddNewAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA272EEA2BF21BD600952AEF /* AddNewAddress.swift */; };
+		FA272EED2BF2225B00952AEF /* AddressTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA272EEC2BF2225B00952AEF /* AddressTextfields.swift */; };
+		FA272EEF2BF236FA00952AEF /* SelectCountryTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA272EEE2BF236FA00952AEF /* SelectCountryTextfield.swift */; };
 		FA4F209F2BB7E96000457A3E /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F209E2BB7E96000457A3E /* NetworkManager.framework */; };
 		FA4F20A02BB7E96000457A3E /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F209E2BB7E96000457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA4F20D92BB7EB7D00457A3E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20D82BB7EB7D00457A3E /* Core.framework */; };
@@ -124,6 +127,9 @@
 		5240925A2BB7BDF600A75FC0 /* Profile.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Profile.docc; sourceTree = "<group>"; };
 		524092652BB7BE0300A75FC0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		524092672BB7BE5100A75FC0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FA272EEA2BF21BD600952AEF /* AddNewAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAddress.swift; sourceTree = "<group>"; };
+		FA272EEC2BF2225B00952AEF /* AddressTextfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTextfields.swift; sourceTree = "<group>"; };
+		FA272EEE2BF236FA00952AEF /* SelectCountryTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryTextfield.swift; sourceTree = "<group>"; };
 		FA4F209E2BB7E96000457A3E /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4F20D82BB7EB7D00457A3E /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA568B0A2BCC08F200B87B59 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
@@ -255,6 +261,16 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		FA272EE92BF21BC100952AEF /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FA272EEA2BF21BD600952AEF /* AddNewAddress.swift */,
+				FA272EEC2BF2225B00952AEF /* AddressTextfields.swift */,
+				FA272EEE2BF236FA00952AEF /* SelectCountryTextfield.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 		FA4F209D2BB7E96000457A3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +316,7 @@
 		FAB4226F2BC8B333002C7260 /* AddressesView */ = {
 			isa = PBXGroup;
 			children = (
+				FA272EE92BF21BC100952AEF /* BottomSheet */,
 				FAB4227C2BC8B77B002C7260 /* AddressView.swift */,
 				FABA5AD22BDBAEBA00796390 /* AddressItemView.swift */,
 				FABA5AD02BDB9B3100796390 /* AddressesIsEmpty.swift */,
@@ -672,6 +689,7 @@
 				FABA5ADD2BDD81E700796390 /* OrderHistoryViewModel.swift in Sources */,
 				FAC5D46B2BE4ED7A003B61E5 /* PersonalInfoList.swift in Sources */,
 				FAB4228F2BC8B832002C7260 /* TermsUseView.swift in Sources */,
+				FA272EEF2BF236FA00952AEF /* SelectCountryTextfield.swift in Sources */,
 				FAB4227D2BC8B77B002C7260 /* AddressView.swift in Sources */,
 				FAF695A02BEC86B700BD5CC1 /* OrderedItem.swift in Sources */,
 				FAF695A32BEE3D5200BD5CC1 /* CardNumberView.swift in Sources */,
@@ -679,6 +697,7 @@
 				FAF695982BEBB06700BD5CC1 /* ShipToDataView.swift in Sources */,
 				FAC5D4732BE4F9B5003B61E5 /* DatePickerView.swift in Sources */,
 				FAD6F68A2BE8A18C00A2685E /* CurrentSheetBottomView.swift in Sources */,
+				FA272EED2BF2225B00952AEF /* AddressTextfields.swift in Sources */,
 				FAC5D4672BE3BAA2003B61E5 /* FonImage.swift in Sources */,
 				FAB4227B2BC8B761002C7260 /* PersonalInfoView.swift in Sources */,
 				FAD6F6882BE88D9500A2685E /* CurrentModel.swift in Sources */,
@@ -689,6 +708,7 @@
 				FAB422892BC8B7F4002C7260 /* LanguageView.swift in Sources */,
 				FA817FFF2BE1DEB5002ABBFD /* OrderStatusView.swift in Sources */,
 				FAB422832BC8B7B2002C7260 /* OrderHistoryView.swift in Sources */,
+				FA272EEB2BF21BD600952AEF /* AddNewAddress.swift in Sources */,
 				FAB422852BC8B7D4002C7260 /* PushNotificationView.swift in Sources */,
 				524092682BB7BE5100A75FC0 /* ProfileView.swift in Sources */,
 				FAF695A72BEE3EF000BD5CC1 /* CardDateView.swift in Sources */,

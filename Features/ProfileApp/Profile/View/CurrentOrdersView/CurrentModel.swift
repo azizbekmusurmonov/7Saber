@@ -13,9 +13,9 @@ final class CurrentModel: ObservableObject {
     @Published var currentData: [CurrentViewModel] = [
         CurrentViewModel(headertitle: "March 20, 2024",
                               cell: [
-                                Cell(orderId: "73489F27", total: "2 475 000 UZS"),
-                                Cell(orderId: "73489F27", total: "2 475 000 UZS"),
-                                Cell(orderId: "73489F27", total: "2 475 000 UZS")
+                                Cell(orderId: "73489F27", total: "2 475 000 UZS", status: .onProccess),
+                                Cell(orderId: "73489F27", total: "2 475 000 UZS", status: .onProccess),
+                                Cell(orderId: "73489F27", total: "2 475 000 UZS", status: .onProccess)
                               ])
     ]
     

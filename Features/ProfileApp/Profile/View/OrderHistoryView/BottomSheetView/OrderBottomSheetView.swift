@@ -20,6 +20,7 @@ struct OrderBottomSheetView: View {
                     PaymentItem()
                     OrderedProductsView()
                 }
+                .padding()
             }
         }
     }

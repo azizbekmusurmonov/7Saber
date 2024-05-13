@@ -22,6 +22,8 @@ struct AddressView: View {
             )
     ]
     
+    @State var addLocationView = false
+    
     @Environment(\.dismiss) var pop
     
     var body: some View {
@@ -48,8 +50,11 @@ struct AddressView: View {
                 }
             }
             AddButton(title: "ADD NEW ADDRESS", buttonPressed:{
-                print("button pressed")
+                addLocationView = true
             } )
+            .sheet(isPresented: $addLocationView) {
+                AddNewAddress()
+            }
         }
         .navigationBarBackButtonHidden()
     }
