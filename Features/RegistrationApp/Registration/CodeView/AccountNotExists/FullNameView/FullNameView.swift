@@ -39,7 +39,8 @@ struct FullNameView: View {
                             buttonText: "ENTER",
                             action: {
                                 withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-                                    vm.isPasswordViewPresent.toggle()
+//                                    vm.isPasswordViewPresent.toggle()
+                                    vm.registr()
                                 }
                             }
                         )

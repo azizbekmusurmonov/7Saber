@@ -19,7 +19,7 @@ struct SendAgainButton: View {
             vm.stopTimer()
             vm.startTimer()
           
-            vm.sendCode()
+//            vm.sendCode()
         }) {
             Image(systemName: "repeat")
                 .resizable()
