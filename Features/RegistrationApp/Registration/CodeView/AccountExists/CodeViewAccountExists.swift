@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CodeViewAccountExists: View {
     
-    @StateObject var vm = RegisterMobillAppViewModel()
+    @EnvironmentObject var vm: RegisterMobillAppViewModel
     
     var body: some View {
         ZStack {

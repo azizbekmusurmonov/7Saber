@@ -43,7 +43,6 @@ SegmentedController()
             }.padding(.top, 50)
              
         }
-        .scrollIndicators(.hidden)
         .navigationBarTitle("Catalog")
  
     }

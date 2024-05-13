@@ -11,7 +11,7 @@ import Core
 
 public struct RegisterMobillAppView: View {
     
-    @StateObject var vm = RegisterMobillAppViewModel() 
+    @EnvironmentObject var vm: RegisterMobillAppViewModel 
     
     let skipButtonTapped: () -> ()
     
@@ -69,6 +69,11 @@ public struct RegisterMobillAppView: View {
                     Snackbar.show(message: message, theme: .success)
                 case .error(message: let message):
                     Snackbar.show(message: message, theme: .error)
+                }
+            }
+            .onChange(of: vm.forcelyOpenTabBar) { newValue in
+                if newValue  {
+                    skipButtonTapped()
                 }
             }
         }

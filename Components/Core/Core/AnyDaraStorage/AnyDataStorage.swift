@@ -44,4 +44,5 @@ extension UserDefaults: AnyDataStorage {
 
 public enum StorageKeys: String {
     case isRegistrate
+    case token
 }

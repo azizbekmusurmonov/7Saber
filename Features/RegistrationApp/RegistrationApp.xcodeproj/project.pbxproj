@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52FAAF482BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAF472BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift */; };
 		7B0C2A262BD414A400284C1C /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0C2A252BD414A400284C1C /* AssetKit.framework */; };
 		7B0C2A272BD414A400284C1C /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0C2A252BD414A400284C1C /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B0C2A3A2BD444AB00284C1C /* RegisterMobillAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A392BD444AB00284C1C /* RegisterMobillAppView.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		52FAAF472BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessRegistratedModel.swift; sourceTree = "<group>"; };
 		7B0C2A252BD414A400284C1C /* AssetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AssetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0C2A392BD444AB00284C1C /* RegisterMobillAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMobillAppView.swift; sourceTree = "<group>"; };
 		7B0C2A3C2BD4457E00284C1C /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */,
 				7B6468D22BDD93F0008814B4 /* GetUserModel.swift */,
+				52FAAF472BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				7B6468D32BDD93F0008814B4 /* GetUserModel.swift in Sources */,
 				7B0C2A4E2BD4697F00284C1C /* CodeTextFieldButton.swift in Sources */,
 				7B0C2A452BD458B100284C1C /* RegisterMobillAppViewModel.swift in Sources */,
+				52FAAF482BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift in Sources */,
 				7BF15FD32BE359FF003BBDAA /* EnterPasswordView.swift in Sources */,
 				7BF15FC52BE2888B003BBDAA /* CreatePasswordView.swift in Sources */,
 			);
