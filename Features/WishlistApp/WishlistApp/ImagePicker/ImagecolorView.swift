@@ -1,9 +1,10 @@
 //
-//  ImageColorView.swift
+//  ImagecolorView.swift
 //  Core
 //
-//  Created by Ismatillokhon on 5/6/24.
+//  Created by admin on 5/9/24.
 //
+
 
 import SwiftUI
 import AssetKit
