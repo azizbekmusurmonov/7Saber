@@ -11,16 +11,8 @@ import AssetKit
 
 struct AddressView: View {
     
-    @State var items: [Item] = [
-        Item(title: "MY OFFICE",
-             location: "Mukimiy st. 59, Tashkent, Uzbekistan",
-             seeOnMap: "SEE ON MAP"
-            ),
-        Item(title: "MY OFFICE",
-             location: "Mukimiy st. 59, Tashkent, Uzbekistan",
-             seeOnMap: "SEE ON MAP"
-            )
-    ]
+    @EnvironmentObject var vm: AddressesViewModel
+    @StateObject var profileData = AddressesViewModel()
     
     @State var addLocationView = false
     
@@ -33,7 +25,7 @@ struct AddressView: View {
             navBar
             Spacer()
             
-            if items.isEmpty {
+            if vm.items.isEmpty {
                 AddressesIsEmpty()
                 Spacer()
             } else {
@@ -41,7 +33,7 @@ struct AddressView: View {
                 ScrollView {
                     VStack(spacing: .zero) {
                         
-                        ForEach(items, id: \.self) { item in
+                        ForEach(vm.items, id: \.self) { item in
                             AddressItemView(item: item)
                             Divider()
                         }

@@ -12,7 +12,9 @@ import Core
 struct CurrentOrdersView: View {
     
     @Environment(\.dismiss) var pop
-    @StateObject var vm = CurrentModel()
+    
+    @EnvironmentObject var vm: CurrentViewModel
+    @StateObject var data = CurrentViewModel()
     
     @State var isTabSectionView = false
     

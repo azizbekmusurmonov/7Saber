@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Core
+import AssetKit
 
 struct AddNewAddress: View {
     
@@ -25,31 +26,35 @@ struct AddNewAddress: View {
                     
                     
                     AddressTextfields(titleKey: "Address name")
-                    .padding()
-                    .frame(height: 50)
+                        .padding()
+                        .frame(height: 50)
                     
                     SelectCountryTextfield()
-                    .padding()
-                    .frame(height: 50)
+                        .padding()
+                        .frame(height: 50)
                     
                     AddressTextfields(titleKey: "Street address")
-                    .padding()
-                    .frame(height: 50)
+                        .padding()
+                        .frame(height: 50)
                     
                     HStack(spacing: .zero) {
                         AddressTextfields(titleKey: "Building")
+                            .keyboardType(.numberPad)
                             .padding()
                             .frame(height: 50)
                         AddressTextfields(titleKey: "Appartment")
+                            .keyboardType(.numberPad)
                             .padding()
                             .frame(height: 50)
                     }
                     
                     HStack(spacing: .zero) {
                         AddressTextfields(titleKey: "Floor")
+                            .keyboardType(.numberPad)
                             .padding()
                             .frame(height: 50)
                         AddressTextfields(titleKey: "House")
+                            .keyboardType(.numberPad)
                             .padding()
                             .frame(height: 50)
                     }
@@ -68,9 +73,10 @@ struct AddNewAddress: View {
                         .frame(height: 50)
                     
                     AddressTextfields(titleKey: "Phone number")
+                        .keyboardType(.numberPad)
                         .padding()
                         .frame(height: 50)
-                    }
+                }
             }
             
             Divider()

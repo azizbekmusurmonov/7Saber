@@ -11,7 +11,7 @@ import Core
 
 struct CurrentSection: View {
     
-    var currentItem: CurrentViewModel
+    var currentItem: CurrentModel
     
     var body: some View {
         VStack(alignment: .leading) {

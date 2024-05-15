@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-public class AddressesViewModel: ObservableObject {
+public class AddressesModel: ObservableObject {
     
     @Published public var items: [Item] = []
     public init() { }
@@ -16,6 +16,7 @@ public class AddressesViewModel: ObservableObject {
 }
 
 public struct Item: Hashable {
+    public var id = UUID().uuidString
     public let title: String
     public let location: String
     public let seeOnMap: String

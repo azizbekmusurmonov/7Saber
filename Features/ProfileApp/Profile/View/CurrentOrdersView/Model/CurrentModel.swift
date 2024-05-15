@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 import AssetKit
 
-public struct CurrentViewModel: Hashable {
+public struct CurrentModel: Hashable {
     let headertitle: String
     let cell: [Cell]
 }
