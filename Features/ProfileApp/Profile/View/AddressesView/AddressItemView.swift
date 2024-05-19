@@ -19,13 +19,13 @@ struct AddressItemView: View {
             HStack(spacing: .zero) {
                 VStack(alignment: .leading) {
                     Text(item.title)
-                        .font(.headline)
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     Text(item.location)
-                        .font(.subheadline)
+                        .font(.system(size: 13, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     Text(item.seeOnMap)
-                        .font(.title2)
+                        .font(.system(size: 13, weight: .medium))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                 }
                 Spacer()

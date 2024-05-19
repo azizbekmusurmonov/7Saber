@@ -21,7 +21,7 @@ struct PersonSexDataView: View {
             HStack(spacing: .zero) {
                 VStack(alignment: .leading) {
                     Text(header)
-                        .font(.caption)
+                        .font(.system(size: 11, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     
                     Text(data)

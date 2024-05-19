@@ -28,11 +28,11 @@ struct ProfileImageView: View {
                 
                 VStack(spacing: .zero) {
                     Text(bundle.profileName)
-                        .font(.headline)
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         .padding(2)
                     Text(bundle.gmailName)
-                        .font(.caption2)
+                        .font(.system(size: 13, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     
                         .padding(10)
@@ -42,6 +42,7 @@ struct ProfileImageView: View {
                         
                     }) {
                         Text("EDIT PROFILE")
+                            .font(.system(size: 13, weight: .regular))
                             .padding()
                             .font(.footnote)
                         

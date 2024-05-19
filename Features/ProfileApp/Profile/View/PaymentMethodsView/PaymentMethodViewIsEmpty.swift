@@ -18,10 +18,10 @@ struct PaymentMethodViewIsEmpty: View {
                         .resizable()
                         .frame(width: 26.67, height: 26.67)
                     Text("THERE IS NO CREDIT CARD")
-                        .font(.footnote)
+                        .font(.system(size: 13, weight: .medium))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     Text("Seems credit card has not been added yet(")
-                        .font(.footnote)
+                        .font(.system(size: 16, weight: .medium))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                 }
                 Spacer()

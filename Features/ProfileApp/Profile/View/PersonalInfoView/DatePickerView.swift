@@ -20,7 +20,7 @@ struct DatePickerView: View {
             HStack(spacing: 10) {
                 VStack(alignment: .leading) {
                     Text(header)
-                        .font(.caption)
+                        .font(.system(size: 11, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     Text(dateFormatter.string(from: birthDate))
                 }

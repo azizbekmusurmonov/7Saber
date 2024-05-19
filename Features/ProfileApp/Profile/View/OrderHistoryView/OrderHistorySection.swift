@@ -16,31 +16,31 @@ struct OrderHistorySection: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(item.headertitle)
-                .font(.title)
+                .font(.system(size: 16, weight: .medium))
                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
             ForEach(item.cells, id: \.self) { cell in
                 HStack(spacing: 10) {
                     VStack(alignment: .leading) {
                         Text("ORDER ID")
-                            .font(.footnote)
+                            .font(.system(size: 11, weight: .regular))
                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                         Text(cell.orderId)
-                            .font(.footnote)
+                            .font(.system(size: 13, weight: .regular))
                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     }
                     VStack(alignment: .leading) {
                         Text("TOTAL")
-                            .font(.footnote)
+                            .font(.system(size: 11, weight: .regular))
                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                         Text(cell.total)
-                            .font(.footnote)
+                            .font(.system(size: 13, weight: .regular))
                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     }
                     Spacer()
                     
                     HStack {
                         Text(cell.status.rawValue.uppercased())
-                            .font(.footnote)
+                            .font(.system(size: 11, weight: .regular))
                             .foregroundColor(cell.status.textColor)
                             .padding(5)
                         
