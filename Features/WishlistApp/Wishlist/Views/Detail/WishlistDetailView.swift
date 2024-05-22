@@ -16,14 +16,39 @@ public struct WishlistDetailView: View {
     @State var selectedColorIndex: Int = .zero
     
     public var body: some View {
-        VStack(spacing: .zero) {
+        VStack(alignment: .leading, spacing: .zero) {
             BottomSheetsNavBar(title: "SELECT SIZE")
+            VStack {
+                DetailInfoView(imageURL: "https://images.uzum.uz/cof0s4a1om4pepe05dsg/original.jpg", title: "T-shirt Basic", price: "375 000 UZS")
+            }.padding(.top, 10)
             
+            VStack {
+                
+                HStack {
+                    Text("Color")
+                        .font(.system(size: 15))
+                        .padding(.top, 10)
+                    Spacer()
+                }
+                ColorPickView()
+            }.padding(.leading, 16)
+            Divider()
             
-            DetailInfoView(imageURL: "", title: "T-shirt Basic", price: "375 000 UZS")
-            
-            ImageColorView(colors: [.red, .green, .blue, .yellow, .purple, .black, .gray], colorIndex: $selectedColorIndex)
-            
+            VStack {
+                
+                HStack {
+                    Text("Size")
+                        .font(.system(size: 15))
+                        .padding(.top, 10)
+                    Spacer()
+                }.padding(.leading, 16)
+                SizePickerView()
+            }
+            VStack {
+                ButtonPick(title: "ADD TO CARD", icon: Asset.Image.TabBars.cart.image, buttonPressed: {
+                    
+                })
+            }.padding(.leading, 25)
             
         }
     }

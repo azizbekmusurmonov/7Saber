@@ -1,8 +1,8 @@
 //
-//  agePicker.swift
+//  Imagepicker.swift
 //  Core
 //
-//  Created by Azizbek Musurmonov   on 24/04/24.
+//  Created by admin on 5/9/24.
 //
 
 import Foundation
