@@ -29,7 +29,6 @@ public struct SaveCancelButtons: View {
             }
             .background(color)
             .clipShape(.capsule)
-            .padding(.leading)
         }
     }
 }

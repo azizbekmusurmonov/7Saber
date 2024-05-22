@@ -33,7 +33,6 @@ struct DatePickerView: View {
                         .frame(width: 20, height: 20)
                 }
             }
-            .padding()
             .onTapGesture {
                 showPicker.toggle()
             }
