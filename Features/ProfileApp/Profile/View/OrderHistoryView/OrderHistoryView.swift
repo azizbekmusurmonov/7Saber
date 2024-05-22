@@ -12,7 +12,9 @@ import Core
 struct OrderHistoryView: View {
     
     @Environment(\.dismiss) var pop
-    @StateObject var vm = OrderHistoryViewModel()
+    
+    @EnvironmentObject var vm: OrderHistoryViewModel
+    @StateObject var data = CurrentViewModel()
     
     @State var isTabBottomSheet = false
     @State var detentHeight: CGFloat = 0
