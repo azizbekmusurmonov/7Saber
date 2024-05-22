@@ -33,9 +33,13 @@ struct DatePickerView: View {
                         .frame(width: 20, height: 20)
                 }
             }
+            .padding()
             .onTapGesture {
                 showPicker.toggle()
             }
+            
+        }
+        .overlay {
             if showPicker {
                 DatePicker(selection: $birthDate, displayedComponents: .date) {
                     Text("")
@@ -43,7 +47,7 @@ struct DatePickerView: View {
                 .datePickerStyle(.wheel)
             }
         }
-        //        .opacity(showPicker ? 1.0 : 0.0)
+//        .opacity(showPicker ? 0.8 : 0.2)
         Divider()
     }
     

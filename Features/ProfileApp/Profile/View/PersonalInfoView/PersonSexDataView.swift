@@ -38,6 +38,9 @@ struct PersonSexDataView: View {
                         .padding(.leading)
                 }
             }
+            .onTapGesture {
+                showOption = true
+            }
             .actionSheet(isPresented: $showOption) {
                 ActionSheet(
                     title: Text("Choose Sex"),

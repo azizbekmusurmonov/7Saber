@@ -30,7 +30,7 @@ struct PersonalInfoView: View {
                     
                     PersonalInfoList()
                     
-                    HStack(spacing: .zero) {
+                    HStack(spacing: 10) {
                         
                         SaveCancelButtons(title: "Cancel",
                                           color: Asset.Color.Button.grayCol.swiftUIColor,
@@ -47,6 +47,7 @@ struct PersonalInfoView: View {
                     }
                 }
             }
+            .padding()
         }
         .navigationBarBackButtonHidden()
     }
