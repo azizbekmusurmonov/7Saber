@@ -75,7 +75,7 @@ extension BaseNavigationBar {
                         .padding(12)
                 }
             } else {
-                Image(uiImage: leftImage) //left image
+                Image(uiImage: leftImage)
                     .resizable()
                     .frame(width: 32, height: 32)
                     .padding(12)
