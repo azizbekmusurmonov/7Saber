@@ -61,9 +61,9 @@ struct TabBarView: View {
                         Image(systemName: "5.circle")
                         Text("Profile")
                     }
-                    .onAppear {
+//                    .onAppear {
 //                        self.profileVM.count = 100
-                    }
+//                    }
             }
         }
     }

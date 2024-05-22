@@ -6,12 +6,25 @@
 //
 
 import SwiftUI
+import Core
+import Registration
 
 @main
 struct _Saber_mainApp: App {
+    
+    @StateObject var registerVM = RegisterMobillAppViewModel()
+    @State var skipButtonPressed: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            if (DataStorage.storage.get(from: .isRegistrate) as? Bool) == true || skipButtonPressed  {
+                TabBarView()
+            } else {
+                RegisterMobillAppView(skipButtonTapped: {
+                    skipButtonPressed = true
+                })
+                    .environmentObject(registerVM)
+            }
         }
     }
 }

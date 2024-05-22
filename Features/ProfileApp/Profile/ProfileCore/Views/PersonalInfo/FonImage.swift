@@ -37,9 +37,9 @@ struct FonImage: View {
                     )
                     .padding()
                     .sheet(isPresented: $showImagePicker) {
-                        ImagePicker(sourceType: .photoLibrary) { image in
-                            self.personalBundle.profileImage = image
-                        }
+//                        ImagePicker(sourceType: .photoLibrary) { image in
+//                            self.personalBundle.profileImage = image
+//                        }
                     }
                 Spacer()
             }

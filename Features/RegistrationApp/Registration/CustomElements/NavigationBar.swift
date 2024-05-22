@@ -12,6 +12,7 @@ struct NavigationBar: View {
     
     var showButton: Bool
     var leftButtonAction: () -> Void
+    var skipButtonAction: () -> Void
     @EnvironmentObject var vm: RegisterMobillAppViewModel
     
     var body: some View {
@@ -30,7 +31,8 @@ struct NavigationBar: View {
                 }
                 Spacer()
                 Button(action: {
-                    print("SKIP button Tapped")
+                    
+                    skipButtonAction()
                 }, label: {
                     Text("SKIP")
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
@@ -46,5 +48,5 @@ struct NavigationBar: View {
 }
 
 #Preview {
-    NavigationBar(showButton: true, leftButtonAction: { })
+    NavigationBar(showButton: true, leftButtonAction: { }, skipButtonAction:  { })
 }

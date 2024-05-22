@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AssetKit
 
 struct TextFieldNextButton: View {
     
@@ -16,39 +17,27 @@ struct TextFieldNextButton: View {
     var body: some View {
         ZStack {
             HStack {
-                VStack {
-                    ZStack(alignment: .leading) {
-                        Text("Phone number or Email")
-                            .foregroundColor(.gray)
-                            .font(.system(size: vm.numberTextFieldIsEditing ? 11 : 16))
-                            .offset(y: vm.numberTextFieldIsEditing ? -26 : 0)
-                        
-                        TextField("", text: $vm.numberText, onEditingChanged: { editing in
+                VStack(alignment: .leading) {
+                    
+                    PrimeryTextField(
+                        textFiledText: $vm.numberText,
+                        keyboardType: .constant(.emailAddress),
+                        placeholderText: "Phone number or Email"
+                    )
+                    
+                    PrimeryButton(
+                        buttonBacround: vm.numberText.isEmpty ? .constant(.gray) : .constant(.black),
+                        buttonText: "NEXT",
+                        action: {
+                            print("Button Tapped")
+                            
+                            nextButtonPressed()
+                            
                             withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-                                vm.numberTextFieldIsEditing = editing
+                                vm.isCodeViewPresented = true
                             }
-                        })
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .frame(width: 313, height: 48)
-                        .keyboardType(.emailAddress)
-                    }
-                    .overlay(Rectangle().frame(height: 1).padding(.top, 8).foregroundColor(.gray), alignment: .bottom)
-                    Button(action: {
-                        print("NEXT Button Tapped")
-                        
-                        nextButtonPressed()
-                        
-                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-                            vm.isCodeViewPresented = true
                         }
-
-                    }, label: {
-                        Text("NEXT")
-                    })
-                    .frame(width: 313, height: 56)
-                    .background(vm.numberText.isEmpty ? Color.gray : Color(red: 10/255, green: 10/255, blue: 10/255))
-                    .foregroundColor(.white)
-                    .cornerRadius(100)
+                    )
                     .padding(.top, 20)
                     Spacer()
                 }
@@ -59,6 +48,6 @@ struct TextFieldNextButton: View {
     }
 }
 
-#Preview {
-    TextFieldNextButton(nextButtonPressed: { })
-}
+//#Preview {
+//    TextFieldNextButton(nextButtonPressed: { })
+//}
