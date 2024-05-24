@@ -13,6 +13,7 @@ import CategoryTarget
 import Cart
 import Catalog
 import Profile
+import AssetKit
 
 struct TabBarView: View {
     
@@ -30,7 +31,7 @@ struct TabBarView: View {
             TabView {
                 HomeView()
                     .tabItem {
-                        Image(systemName: "1.circle")
+                        Image(uiImage: Asset.Image.TabBars.home.image)
                         Text("Home")
                     }
                     .environmentObject(homeVM)
@@ -38,27 +39,28 @@ struct TabBarView: View {
                 CatalogView()
                     .environmentObject(catalogVM)
                     .tabItem {
-                        Image(systemName: "2.circle")
+                        Image(uiImage: Asset.Image.TabBars.catalog.image)
                         Text("Catalog")
+                        
                     }
                 
                 CartView()
                     .environmentObject(cartVC)
                     .tabItem {
-                        Image(systemName: "3.circle")
+                        Image(uiImage: Asset.Image.TabBars.cart.image)
                         Text("Cart")
                     }
                 
                 WishlistView()
                     .environmentObject(wishlistVM)
                     .tabItem {
-                        Image(systemName: "4.circle")
+                        Image(uiImage: Asset.Image.TabBars.wishlist.image)
                         Text("Wishlist")
                     }
                 ProfileView()
                     .environmentObject(profileVM)
                     .tabItem {
-                        Image(systemName: "5.circle")
+                        Image(uiImage: Asset.Image.TabBars.profile.image)
                         Text("Profile")
                     }
                     .onAppear {
@@ -78,4 +80,3 @@ struct Blur: UIViewRepresentable {
     
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
 }
-

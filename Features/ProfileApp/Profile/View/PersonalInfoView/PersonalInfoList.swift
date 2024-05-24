@@ -24,7 +24,7 @@ struct PersonalInfoList: View {
             TextFieldView(header: "Phone number",
                           titleKey: "Enter your phone number",
                           text: "")
-            .keyboardType(.numberPad)
+            .keyboardType(.phonePad)
             
             TextFieldView(header: "E-mail",
                           titleKey: "Enter e-mail",
