@@ -54,7 +54,6 @@ struct ProfileImageView: View {
                     .background(Asset.Color.Button.grayCol.swiftUIColor)
                     .clipShape(.capsule)
                     .padding()
-                    .padding(.leading, 12)
                 }
             }
             
