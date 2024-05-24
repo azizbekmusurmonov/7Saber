@@ -10,6 +10,11 @@ import Combine
 import NetworkManager
 import Core
 
+enum SendCodeType: String {
+    case email
+    case phone
+}
+
 enum ShowMessage: Equatable {
     case success(message: String)
     case error(message: String)
@@ -17,18 +22,14 @@ enum ShowMessage: Equatable {
 
 public class RegisterMobillAppViewModel: ObservableObject {
     
-    @Published var registerLeftButton: Bool = false
     @Published var numberText: String = ""
     @Published var isCodeViewPresented = false
-    @Published var numberTextFieldIsEditing: Bool = false
     @Published var codeText: String = ""
-    @Published var codeTextFieldIsEditing: Bool = false
     @Published var timer: Timer?
     @Published var remainingSeconds = 120
     @Published var userExists = false
     @Published var userPassword: String = ""
     @Published var userRetryPassword: String = ""
-    @Published var passwordImageEye: Bool = true
     @Published var userFullName: String = ""
     @Published var isFullNameViewPresent: Bool = false
     @Published var isPasswordViewPresent: Bool = false
@@ -38,15 +39,33 @@ public class RegisterMobillAppViewModel: ObservableObject {
     
     public init () { }
     
-    func sendCode() {
+    func getCodeButtonPressed() {
+        remainingSeconds = 120
+        if !numberText.isEmpty {
+            if (numberText.contains("@gmail.com") || numberText.contains("@icloud.com")) {
+                getUser(by: .email)
+                sendCode(by: .email)
+                
+                withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                    isCodeViewPresented = true
+                }
+            } else if numberText.contains("+998") && numberText.count >= 9 {
+                getUser(by: .phone)
+                sendCode(by: .phone)
+                
+                withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                    isCodeViewPresented = true
+                }
+            } else {
+                message = .error(message: "Please enter phone or mail")
+            }
+        }
+    }
+    
+   
+    
+    func sendCode(by type: SendCodeType) {
         let urlString = "https://lab.7saber.uz/api/auth/send-code"
-        
-        var urlComponents = URLComponents(string: urlString)!
-        urlComponents.queryItems = [URLQueryItem(name: "phone", value: numberText)]
-        
-        print("numberText", numberText)
-        // Создаем копию urlComponents
-        let copiedURLComponents = urlComponents
         
         Task.detached { [weak self] in
             guard self != nil else { return }
@@ -54,14 +73,14 @@ public class RegisterMobillAppViewModel: ObservableObject {
             do {
                 // Используем копию urlComponents
                 let model = try await NetworkService.shared.request(
-                    url: copiedURLComponents.url!.absoluteString,
+                    url: urlString,
                     decode: SendCodeModel.self,
-                    method: .post
+                    method: .post,
+                    queryParameters: [type.rawValue: self?.numberText ?? ""]
                 )
                 await MainActor.run { [weak self] in
                     self?.startTimer()
                     self?.message = .success(message: model.message)
-                    
                 }
                 
             } catch {
@@ -81,7 +100,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
         }
     }
     
-    func getUser() {
+    func getUser(by type: SendCodeType) {
         let url = "https://lab.7saber.uz/api/auth/get-user"
         
         Task.detached { [weak self] in
@@ -91,7 +110,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
                     url: url,
                     decode: UserModel.self,
                     method: .post,
-                    queryParameters: ["phone": numberText]
+                    queryParameters: [type.rawValue: numberText]
                 )
             
                 await MainActor.run { [weak self] in
@@ -108,7 +127,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
     }
     
     func checkCode() {
-        let url = "https://lab.7saber.uz/api/auth/check-code"
+        let url = "https://lab.7saber.uz/api/auth/check-code-email"
         
         Task.detached { [weak self] in
             guard let self else { return }
@@ -117,7 +136,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
                     url: url,
                     decode: SendCodeModel.self,
                     method: .post,
-                    queryParameters: ["phone": "+998900031433", "code": codeText]
+                    queryParameters: ["email": numberText, "code": codeText]
                 )
                 
                 await MainActor.run { [weak self] in
@@ -207,31 +226,3 @@ public class RegisterMobillAppViewModel: ObservableObject {
     }
     
 }
-
-extension Dictionary {
-    public func percentEncoded() -> Data? {
-        map { key, value in
-            let escapedKey = "\(key)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
-            let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
-            return escapedKey + "=" + escapedValue
-        }
-        .joined(separator: "&")
-        .data(using: .utf8)
-    }
-}
-
-extension CharacterSet {
-    static let urlQueryValueAllowed: CharacterSet = {
-        let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
-        let subDelimitersToEncode = "!$&'()*+,;="
-        
-        var allowed: CharacterSet = .urlQueryAllowed
-        allowed.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
-        return allowed
-    }()
-}
-
-
-
-
-

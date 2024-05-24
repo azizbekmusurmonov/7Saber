@@ -6,14 +6,30 @@
 //
 
 import SwiftUI
+import Core
 
 struct CreatePasswordView: View {
     
     @EnvironmentObject var vm: RegisterMobillAppViewModel
     
+    let skipButtonTapped: () -> ()
+    
     var body: some View {
         ZStack {
             VStack {
+                
+                NavigationBar(
+                    showButton: vm.isCodeViewPresented,
+                    leftButtonAction: {
+                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                            vm.isPasswordViewPresent.toggle()
+                        }
+                    },
+                    skipButtonAction: {
+                        skipButtonTapped()
+                        DataStorage.storage.save(true, for: .isRegistrate)
+                    }
+                )
                 
                 WelcomeView(welcomeText: "Create a password")
                     .padding(.top, 150)
@@ -47,10 +63,15 @@ struct CreatePasswordView: View {
                     Spacer()
                 }
             }
+            .onChange(of: vm.forcelyOpenTabBar) { newValue in
+                if newValue  {
+                    skipButtonTapped()
+                }
+            }
         }
     }
 }
 
 #Preview {
-    CreatePasswordView()
+    CreatePasswordView(skipButtonTapped: {})
 }

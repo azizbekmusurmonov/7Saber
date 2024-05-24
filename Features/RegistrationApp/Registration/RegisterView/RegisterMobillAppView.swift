@@ -6,57 +6,50 @@
 //
 
 import SwiftUI
-import Home
+//import Home
 import Core
 
 public struct RegisterMobillAppView: View {
     
-    @EnvironmentObject var vm: RegisterMobillAppViewModel 
+    @EnvironmentObject var vm: RegisterMobillAppViewModel
     
     let skipButtonTapped: () -> ()
     
-    public init (skipButtonTapped: @escaping () -> ()) {
+    public init(skipButtonTapped: @escaping () -> ()) {
         self.skipButtonTapped = skipButtonTapped
     }
     
     public var body: some View {
         ZStack {
             VStack {
-                // NAV BAR
-                NavigationBar(
-                    showButton: vm.isCodeViewPresented,
-                    leftButtonAction: {
-                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-                            vm.isCodeViewPresented.toggle()
-                            vm.isFullNameViewPresent.toggle()
-                            vm.isPasswordViewPresent.toggle()
-                        }
-                    },
-                    skipButtonAction: {
-                       
-                        skipButtonTapped()
-                        DataStorage.storage.save(true, for: .isRegistrate)
-                    }
-                )
-               
                 if !vm.isCodeViewPresented {
+                    
+                    // NAV BAR
+                    NavigationBar(
+                        showButton: vm.isCodeViewPresented,
+                        leftButtonAction: { },
+                        skipButtonAction: {
+                            skipButtonTapped()
+                            DataStorage.storage.save(true, for: .isRegistrate)
+                        }
+                    )
+                    
                     WelcomeView(welcome: "WELCOME", welcomeText: "Enter your phone number \nor email to continue")
                         .padding(.top, 150)
                     TextFieldNextButton(nextButtonPressed: {
-                        
-                        vm.remainingSeconds = 120
-                        vm.getUser()
-                        vm.sendCode()
+                        if !vm.numberText.isEmpty {
+                            vm.getCodeButtonPressed()
+                        }
                     })
                         .environmentObject(vm)
                         .padding(.top, 40)
                     Spacer()
                 } else {
                     ZStack {
-                        CodeViewAccountExists()
+                        CodeViewAccountExists(skipButtonTapped: {})
                             .environmentObject(vm)
                             .opacity(vm.userExists ? 1 : 0)
-                        CodeViewAccountNotExists()
+                        CodeViewAccountNotExists(skipButtonTapped: {})
                             .environmentObject(vm)
                             .opacity(vm.userExists ? 0 : 1)
                     }
@@ -79,6 +72,7 @@ public struct RegisterMobillAppView: View {
         }
     }
 }
+
 
 #Preview {
     RegisterMobillAppView(skipButtonTapped: { })

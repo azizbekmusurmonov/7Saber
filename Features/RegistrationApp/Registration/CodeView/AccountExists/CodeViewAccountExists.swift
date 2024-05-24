@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Core
 
 struct CodeViewAccountExists: View {
     
     @EnvironmentObject var vm: RegisterMobillAppViewModel
+    
+    let skipButtonTapped: () -> ()
     
     var body: some View {
         ZStack {
@@ -19,17 +22,37 @@ struct CodeViewAccountExists: View {
                     .environmentObject(vm)
             } else {
                 VStack {
+                    
+                    NavigationBar(
+                        showButton: vm.isCodeViewPresented,
+                        leftButtonAction: {
+                            withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                                vm.isCodeViewPresented.toggle()
+                            }
+                        },
+                        skipButtonAction: {
+                            skipButtonTapped()
+                            DataStorage.storage.save(true, for: .isRegistrate)
+                        }
+                    )
+                    
                     WelcomeView(welcome: "WELCOME BACK", welcomeText: "Enter confirmation code to \ncontinue the proccess")
                         .padding(.top, 150)
                     
                     CodeTextFieldButton(enterButtonAction: {
-                        vm.checkCode()
-                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-                            vm.isPasswordViewPresent.toggle()
+                        if !vm.codeText.isEmpty {
+                            withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                                vm.isPasswordViewPresent.toggle()
+                            }
                         }
                     })
                         .environmentObject(vm)
                     Spacer()
+                }
+                .onChange(of: vm.forcelyOpenTabBar) { newValue in
+                    if newValue  {
+                        skipButtonTapped()
+                    }
                 }
             }
         }
@@ -37,5 +60,5 @@ struct CodeViewAccountExists: View {
 }
 
 #Preview {
-    CodeViewAccountExists()
+    CodeViewAccountExists(skipButtonTapped: { })
 }
