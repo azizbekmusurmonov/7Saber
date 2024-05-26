@@ -44,7 +44,6 @@ struct ProfileImageView: View {
                         Text("EDIT PROFILE")
                             .font(.system(size: 13, weight: .regular))
                             .padding()
-                            .font(.footnote)
                         
                         Image(uiImage: Asset.Image.Icons.edit.image)
                         
