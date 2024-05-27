@@ -4,7 +4,7 @@
 //
 //  Created by Asadbek Yoldoshev on 21/04/24.
 //
-
+//yoldoshev5007@icloud.com
 import SwiftUI
 import Combine
 import NetworkManager
@@ -34,35 +34,41 @@ public class RegisterMobillAppViewModel: ObservableObject {
     @Published var isFullNameViewPresent: Bool = false
     @Published var isPasswordViewPresent: Bool = false
     @Published var forcelyOpenTabBar: Bool = false
+    @Published var isLoading: Bool = false
     
     @Published var message: ShowMessage? = nil
     
     public init () { }
     
-    func getCodeButtonPressed() {
+    func getEmailOrNumberButtonPressed() {
         remainingSeconds = 120
         if !numberText.isEmpty {
-            if (numberText.contains("@gmail.com") || numberText.contains("@icloud.com")) {
+            if (numberText.contains("@gmail.com") || numberText.contains("@icloud.com") || numberText.contains("@qiradio.com")) {
                 getUser(by: .email)
-                sendCode(by: .email)
+                
+                if userExists {
+                    
+                } else {
+                    sendCode(by: .email)
+                }
                 
                 withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                     isCodeViewPresented = true
                 }
-            } else if numberText.contains("+998") && numberText.count >= 9 {
+            } else if numberText.contains("+998") && numberText.count == 13 {
                 getUser(by: .phone)
                 sendCode(by: .phone)
                 
                 withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                     isCodeViewPresented = true
                 }
+            } else if numberText.isNumber && numberText.count == 9 {
+                message = .error(message: "Please enter your phone number with +998")
             } else {
                 message = .error(message: "Please enter phone or mail")
             }
         }
     }
-    
-   
     
     func sendCode(by type: SendCodeType) {
         let urlString = "https://lab.7saber.uz/api/auth/send-code"
@@ -76,7 +82,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
                     url: urlString,
                     decode: SendCodeModel.self,
                     method: .post,
-                    queryParameters: [type.rawValue: self?.numberText ?? ""]
+                    body: [type.rawValue: self?.numberText ?? ""]
                 )
                 await MainActor.run { [weak self] in
                     self?.startTimer()
@@ -91,15 +97,6 @@ public class RegisterMobillAppViewModel: ObservableObject {
         }
     }
     
-    struct UserEntity: Codable {
-        let user: UserModel
-        
-        init(from decoder: any Decoder) throws {
-            let container: KeyedDecodingContainer<RegisterMobillAppViewModel.UserEntity.CodingKeys> = try decoder.container(keyedBy: RegisterMobillAppViewModel.UserEntity.CodingKeys.self)
-            self.user = try container.decode(UserModel.self, forKey: RegisterMobillAppViewModel.UserEntity.CodingKeys.user)
-        }
-    }
-    
     func getUser(by type: SendCodeType) {
         let url = "https://lab.7saber.uz/api/auth/get-user"
         
@@ -110,15 +107,16 @@ public class RegisterMobillAppViewModel: ObservableObject {
                     url: url,
                     decode: UserModel.self,
                     method: .post,
-                    queryParameters: [type.rawValue: numberText]
+                    body:  [type.rawValue: numberText]
                 )
             
                 await MainActor.run { [weak self] in
                     self?.userExists = true
+                    self?.isLoading = true
                 }
-                
             } catch {
                 await MainActor.run {
+                    self.isLoading = true
                     self.userExists = false
                 }
                 print("Ошибка при получении пользователя:  ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ ", error.localizedDescription)
@@ -143,10 +141,42 @@ public class RegisterMobillAppViewModel: ObservableObject {
                     self?.message = .success(message: model.message)
                     if self?.userExists == true {
                         self?.forcelyOpenTabBar = true
+                        
+                    }
+                    withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                        self?.isFullNameViewPresent.toggle()
                     }
                 }
             } catch {
                 
+                await MainActor.run { [weak self] in
+                    self?.message = .error(message: error.localizedDescription)
+                    
+                }
+            }
+        }
+    }
+    
+    func phoneRegistration() {
+        let url = "https://lab.7saber.uz/api/auth/registration/phone"
+        
+        Task.detached { [weak self] in
+            guard let self else { return }
+            do {
+                let model = try await NetworkService.shared.request(
+                    url: url,
+                    decode: RegestrationModel.self,
+                    method: .post,
+                    body: ["phone" : numberText, "code" : codeText] 
+                )
+                
+                await MainActor.run { [weak self] in
+                    self?.message = .success(message: "Siz muvaffaqiyatli ro'yxatdan o'tdingiz")
+                    DataStorage.storage.save(model.token, for: .token)
+                    DataStorage.storage.save(true, for: .isRegistrate)
+                    self?.forcelyOpenTabBar = true
+                }
+            } catch {
                 await MainActor.run { [weak self] in
                     self?.message = .error(message: error.localizedDescription)
                 }
@@ -154,59 +184,89 @@ public class RegisterMobillAppViewModel: ObservableObject {
         }
     }
     
-    func registr() {
-        let urlString = "https://lab.7saber.uz/api/auth/registration"
-        var request = URLRequest(url: URL(string: urlString)!)
+    func emailRegistration() {
+        let url = "https://lab.7saber.uz/api/auth/registration/email"
         
-        // set header
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        // set HTTP Method
-        request.httpMethod = "POST"
-        
-        // set body parameters
-        let parameters: [String: Any] = [
-            "fullName": userFullName,
-            "phone": numberText,
-            "code": codeText
-        ]
-        request.httpBody = parameters.percentEncoded()
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error { // Check if there's an error first
-                print("⛔️⛔️⛔️⛔️⛔️⛔️⛔️error", error)
-                // Handle the error appropriately, maybe even return from the closure
-                return
-            }
-
-            guard
-                let data = data,
-                let response = response as? HTTPURLResponse
-            else {
-                print("⛔️⛔️⛔️⛔️⛔️⛔️⛔️error: invalid data or response")
-                // Handle the case where data or response is nil
-                return
-            }
-
-            guard (200 ... 299) ~= response.statusCode else {
-                print("statusCode should be 2xx, but is \(response.statusCode)")
-                // Handle non-2xx status codes
-                return
-            }
-
+        Task.detached { [weak self] in
+            guard let self else { return }
             do {
-                let model = try JSONDecoder().decode(SuccessRegistratedModel.self, from: data)
+                let model = try await NetworkService.shared.request(
+                    url: url,
+                    decode: RegestrationModel.self,
+                    method: .post,
+                    body: ["fullName": userFullName, "email": numberText, "password": userPassword, "code": codeText]
+                )
                 
-                DataStorage.storage.save(model.token, for: .token)
-                DataStorage.storage.save(true, for: .isRegistrate)
-                self.forcelyOpenTabBar = true
+                await MainActor.run { [weak self] in
+                    self?.message = .success(message: "Siz muvaffaqiyatli ro'yxatdan o'tdingiz")
+                    DataStorage.storage.save(model.token, for: .token)
+                    DataStorage.storage.save(true, for: .isRegistrate)
+                    self?.forcelyOpenTabBar = true
+                }
             } catch {
-                print("Error deserializing JSON: \(error)")
-                
+                await MainActor.run { [weak self] in
+                    self?.message = .error(message: error.localizedDescription)
+                }
             }
         }
-
-        task.resume()
-
+    }
+    
+    func loginForNumber() {
+        let url = "https://lab.7saber.uz/api/auth/login"
+        
+        Task.detached { [weak self] in
+            guard let self else { return }
+            
+            do {
+                let model = try await NetworkService.shared.request(
+                    url: url,
+                    decode: LoginModel.self,
+                    method: .post,
+                    body: ["phone" : numberText, "code" : codeText]
+                )
+                
+                await MainActor.run { [weak self] in
+                    self?.message = .success(message: "Siz muvaffaqiyatli akkauntizga kirdingiz")
+                    DataStorage.storage.save(model.token, for: .token)
+                    DataStorage.storage.save(true, for: .isRegistrate)
+                    self?.forcelyOpenTabBar = true
+                }
+            } catch {
+                await MainActor.run { [weak self] in
+                    self?.message = .error(message: "Kod xa'to kiritildi iltimos tekshirib boshqattan urinib ko'ring")
+                    self?.isLoading = true
+                }
+            }
+        }
+    }
+    
+    func loginForEmail() {
+        let url = "https://lab.7saber.uz/api/auth/login"
+        
+        Task.detached { [weak self] in
+            guard let self else { return }
+            
+            do {
+                let model = try await NetworkService.shared.request(
+                    url: url,
+                    decode: LoginModel.self,
+                    method: .post,
+                    body: ["email" : numberText, "password" : userPassword]
+                )
+                
+                await MainActor.run { [weak self] in
+                    self?.message = .success(message: "Siz muvaffaqiyatli akkauntizga kirdingiz")
+                    DataStorage.storage.save(model.token, for: .token)
+                    DataStorage.storage.save(true, for: .isRegistrate)
+                    self?.forcelyOpenTabBar = true
+                }
+            } catch {
+                await MainActor.run { [weak self] in
+                    self?.message = .error(message: "Parol xa'to kiritildi iltimos tekshirib boshqattan urinib ko'ring")
+                    self?.isLoading = true
+                }
+            }
+        }
     }
     
     func startTimer() {

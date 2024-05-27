@@ -28,6 +28,7 @@ struct CodeViewAccountNotExists: View {
                         leftButtonAction: {
                             withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                                 vm.isCodeViewPresented.toggle()
+                                vm.isLoading.toggle()
                             }
                         },
                         skipButtonAction: {
@@ -40,9 +41,16 @@ struct CodeViewAccountNotExists: View {
                         .padding(.top, 150)
                     CodeTextFieldButton(enterButtonAction: {
                         if !vm.codeText.isEmpty {
-                            withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-                                vm.isFullNameViewPresent.toggle()
+                            if (vm.numberText.contains("@gmail.com") || vm.numberText.contains("@icloud.com") || vm.numberText.contains("@qiradio.com")) {
+                                
+                                vm.checkCode()        
+                                
+                            } else if vm.numberText.contains("+998") && vm.numberText.count >= 9 {
+                                
+                                vm.phoneRegistration()
                             }
+                        } else {
+                            vm.message = .error(message: "Please enter  the code")
                         }
                     })
                     .environmentObject(vm)

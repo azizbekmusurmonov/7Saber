@@ -28,6 +28,7 @@ struct CodeViewAccountExists: View {
                         leftButtonAction: {
                             withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                                 vm.isCodeViewPresented.toggle()
+                                vm.isLoading.toggle()
                             }
                         },
                         skipButtonAction: {
@@ -40,13 +41,15 @@ struct CodeViewAccountExists: View {
                         .padding(.top, 150)
                     
                     CodeTextFieldButton(enterButtonAction: {
-                        if !vm.codeText.isEmpty {
-                            withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-                                vm.isPasswordViewPresent.toggle()
-                            }
-                        }
+                        vm.isLoading = true
+                        vm.loginForNumber()
+                        vm.isLoading = false
                     })
                         .environmentObject(vm)
+                    
+                    if !vm.isLoading {
+                        iOSSpinner()
+                    }
                     Spacer()
                 }
                 .onChange(of: vm.forcelyOpenTabBar) { newValue in

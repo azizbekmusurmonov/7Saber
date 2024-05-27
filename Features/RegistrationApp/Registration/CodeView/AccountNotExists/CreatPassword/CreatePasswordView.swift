@@ -56,7 +56,7 @@ struct CreatePasswordView: View {
                         buttonBacround: vm.userPassword.isEmpty || vm.userRetryPassword.isEmpty ? .constant(.gray) : .constant(.black),
                         buttonText: "ENTER",
                         action: {
-                            
+                            vm.emailRegistration()
                         }
                     )
                     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Core
 
 struct EnterPasswordView: View {
     
@@ -14,6 +15,20 @@ struct EnterPasswordView: View {
     var body: some View {
         ZStack {
             VStack {
+                
+                NavigationBar(
+                    showButton: vm.isCodeViewPresented,
+                    leftButtonAction: {
+                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                            vm.isCodeViewPresented.toggle()
+                            vm.isLoading.toggle()
+                        }
+                    },
+                    skipButtonAction: {
+                        DataStorage.storage.save(true, for: .isRegistrate)
+                    }
+                )
+                
                 WelcomeView(welcomeText: "Enter your password")
                     .padding(.top, 150)
                 
@@ -31,9 +46,15 @@ struct EnterPasswordView: View {
                         buttonBacround: vm.numberText.isEmpty ? .constant(.gray) : .constant(.black),
                         buttonText: "ENTER",
                         action: {
-                            
+                            vm.isLoading = true
+                            vm.loginForEmail()
+                            vm.isLoading = false
                         }
                     )
+                    
+                    if !vm.isLoading {
+                        iOSSpinner()
+                    }
                     
                     Spacer()
                 }

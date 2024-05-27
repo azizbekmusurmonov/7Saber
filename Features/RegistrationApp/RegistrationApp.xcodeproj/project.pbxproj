@@ -19,10 +19,13 @@
 		7B0C2A4E2BD4697F00284C1C /* CodeTextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A4D2BD4697F00284C1C /* CodeTextFieldButton.swift */; };
 		7B0C2A522BD46CE100284C1C /* ExtentionToTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A512BD46CE100284C1C /* ExtentionToTimeInterval.swift */; };
 		7B1513BD2BDD8A7E00A72A6C /* CodeViewAccountExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1513BC2BDD8A7E00A72A6C /* CodeViewAccountExists.swift */; };
+		7B361FE22C047BCD00791208 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B361FE12C047BCD00791208 /* LoginModel.swift */; };
 		7B5D0B182BD7ECE400345C11 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */; };
 		7B5D0B192BD7ECE400345C11 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B5D0B1B2BD7EE5A00345C11 /* SendCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */; };
 		7B6468D32BDD93F0008814B4 /* GetUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6468D22BDD93F0008814B4 /* GetUserModel.swift */; };
+		7B9E4D2B2C03CD6600ED37C4 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E4D2A2C03CD6600ED37C4 /* Spinner.swift */; };
+		7B9E4D2D2C03E2D400ED37C4 /* RegestrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E4D2C2C03E2D400ED37C4 /* RegestrationModel.swift */; };
 		7BF15FC52BE2888B003BBDAA /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FC42BE2888B003BBDAA /* CreatePasswordView.swift */; };
 		7BF15FC72BE28B1E003BBDAA /* PrimeryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FC62BE28B1E003BBDAA /* PrimeryTextField.swift */; };
 		7BF15FC92BE2B8E0003BBDAA /* PrimeryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FC82BE2B8E0003BBDAA /* PrimeryButton.swift */; };
@@ -98,9 +101,12 @@
 		7B0C2A4D2BD4697F00284C1C /* CodeTextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextFieldButton.swift; sourceTree = "<group>"; };
 		7B0C2A512BD46CE100284C1C /* ExtentionToTimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionToTimeInterval.swift; sourceTree = "<group>"; };
 		7B1513BC2BDD8A7E00A72A6C /* CodeViewAccountExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewAccountExists.swift; sourceTree = "<group>"; };
+		7B361FE12C047BCD00791208 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCodeModel.swift; sourceTree = "<group>"; };
 		7B6468D22BDD93F0008814B4 /* GetUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserModel.swift; sourceTree = "<group>"; };
+		7B9E4D2A2C03CD6600ED37C4 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		7B9E4D2C2C03E2D400ED37C4 /* RegestrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegestrationModel.swift; sourceTree = "<group>"; };
 		7BF15FC42BE2888B003BBDAA /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 		7BF15FC62BE28B1E003BBDAA /* PrimeryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeryTextField.swift; sourceTree = "<group>"; };
 		7BF15FC82BE2B8E0003BBDAA /* PrimeryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeryButton.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				7B0C2A3C2BD4457E00284C1C /* NavigationBar.swift */,
+				7B9E4D2A2C03CD6600ED37C4 /* Spinner.swift */,
 				7BF15FC62BE28B1E003BBDAA /* PrimeryTextField.swift */,
 				7BF15FC82BE2B8E0003BBDAA /* PrimeryButton.swift */,
 			);
@@ -224,6 +231,8 @@
 				7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */,
 				7B6468D22BDD93F0008814B4 /* GetUserModel.swift */,
 				52FAAF472BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift */,
+				7B9E4D2C2C03E2D400ED37C4 /* RegestrationModel.swift */,
+				7B361FE12C047BCD00791208 /* LoginModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -446,12 +455,14 @@
 				7B0C2A3A2BD444AB00284C1C /* RegisterMobillAppView.swift in Sources */,
 				7B0C2A522BD46CE100284C1C /* ExtentionToTimeInterval.swift in Sources */,
 				7B0C2A492BD465D300284C1C /* CodeViewAccountNotExists.swift in Sources */,
+				7B361FE22C047BCD00791208 /* LoginModel.swift in Sources */,
 				7B0C2A3D2BD4457E00284C1C /* NavigationBar.swift in Sources */,
 				7B0C2A432BD4574900284C1C /* TextFieldNextButton.swift in Sources */,
 				7BF15FC92BE2B8E0003BBDAA /* PrimeryButton.swift in Sources */,
 				7BF15FCB2BE2BDA4003BBDAA /* SendAgainButton.swift in Sources */,
 				7B0C2A402BD449DE00284C1C /* WelcomeView.swift in Sources */,
 				7BF15FC72BE28B1E003BBDAA /* PrimeryTextField.swift in Sources */,
+				7B9E4D2D2C03E2D400ED37C4 /* RegestrationModel.swift in Sources */,
 				FA77A2992BBBA9EB00843673 /* Registration.docc in Sources */,
 				7B5D0B1B2BD7EE5A00345C11 /* SendCodeModel.swift in Sources */,
 				7BF15FCF2BE2DE6C003BBDAA /* FullNameView.swift in Sources */,
@@ -462,6 +473,7 @@
 				52FAAF482BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift in Sources */,
 				7BF15FD32BE359FF003BBDAA /* EnterPasswordView.swift in Sources */,
 				7BF15FC52BE2888B003BBDAA /* CreatePasswordView.swift in Sources */,
+				7B9E4D2B2C03CD6600ED37C4 /* Spinner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
