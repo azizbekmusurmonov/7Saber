@@ -23,7 +23,7 @@ public struct DetailInfoView: View {
         HStack {
             AsyncImage(
                 url: URL(string: imageURL),
-                transaction: Transaction(animation: .default),
+                transaction: Transaction(),
                 content: { phase in
                     if let image = phase.image { image
                         .resizable()
