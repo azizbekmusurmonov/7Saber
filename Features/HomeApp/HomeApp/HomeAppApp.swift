@@ -11,12 +11,11 @@ import Home
 @main
 struct HomeAppApp: App {
     
-    @StateObject var homeVm = HomeViiewModel()
+  //  @StateObject var homeVm = HomeViiewModel()
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
-                .environmentObject(homeVm)
+            ContentView()
         }
     }
 }
