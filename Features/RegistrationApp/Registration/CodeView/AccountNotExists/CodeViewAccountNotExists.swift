@@ -41,7 +41,7 @@ struct CodeViewAccountNotExists: View {
                         .padding(.top, 150)
                     CodeTextFieldButton(enterButtonAction: {
                         if !vm.codeText.isEmpty {
-                            if (vm.numberText.contains("@gmail.com") || vm.numberText.contains("@icloud.com") || vm.numberText.contains("@qiradio.com")) {
+                            if (vm.numberText.contains("@gmail.com") || vm.numberText.contains("@icloud.com")) {
                                 
                                 vm.checkCode()        
                                 

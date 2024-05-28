@@ -4,7 +4,7 @@
 //
 //  Created by Asadbek Yoldoshev on 21/04/24.
 //
-//yoldoshev5007@icloud.com
+
 import SwiftUI
 import Combine
 import NetworkManager
@@ -26,7 +26,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
     @Published var isCodeViewPresented = false
     @Published var codeText: String = ""
     @Published var timer: Timer?
-    @Published var remainingSeconds = 120
+    @Published var remainingSeconds = 60
     @Published var userExists = false
     @Published var userPassword: String = ""
     @Published var userRetryPassword: String = ""
@@ -41,9 +41,9 @@ public class RegisterMobillAppViewModel: ObservableObject {
     public init () { }
     
     func getEmailOrNumberButtonPressed() {
-        remainingSeconds = 120
+        remainingSeconds = 60
         if !numberText.isEmpty {
-            if (numberText.contains("@gmail.com") || numberText.contains("@icloud.com") || numberText.contains("@qiradio.com")) {
+            if (numberText.contains("@gmail.com") || numberText.contains("@icloud.com")) {
                 getUser(by: .email)
                 
                 if userExists {

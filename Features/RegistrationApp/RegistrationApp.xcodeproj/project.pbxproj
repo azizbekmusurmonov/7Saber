@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52FAAF482BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAF472BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift */; };
+		7B03A65C2C052DCC0066D850 /* ExtentionToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03A65B2C052DCC0066D850 /* ExtentionToView.swift */; };
 		7B0C2A262BD414A400284C1C /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0C2A252BD414A400284C1C /* AssetKit.framework */; };
 		7B0C2A272BD414A400284C1C /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0C2A252BD414A400284C1C /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B0C2A3A2BD444AB00284C1C /* RegisterMobillAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A392BD444AB00284C1C /* RegisterMobillAppView.swift */; };
@@ -91,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		52FAAF472BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessRegistratedModel.swift; sourceTree = "<group>"; };
+		7B03A65B2C052DCC0066D850 /* ExtentionToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionToView.swift; sourceTree = "<group>"; };
 		7B0C2A252BD414A400284C1C /* AssetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AssetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0C2A392BD444AB00284C1C /* RegisterMobillAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMobillAppView.swift; sourceTree = "<group>"; };
 		7B0C2A3C2BD4457E00284C1C /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				7B0C2A512BD46CE100284C1C /* ExtentionToTimeInterval.swift */,
+				7B03A65B2C052DCC0066D850 /* ExtentionToView.swift */,
 			);
 			path = Extetions;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				7BF15FC92BE2B8E0003BBDAA /* PrimeryButton.swift in Sources */,
 				7BF15FCB2BE2BDA4003BBDAA /* SendAgainButton.swift in Sources */,
 				7B0C2A402BD449DE00284C1C /* WelcomeView.swift in Sources */,
+				7B03A65C2C052DCC0066D850 /* ExtentionToView.swift in Sources */,
 				7BF15FC72BE28B1E003BBDAA /* PrimeryTextField.swift in Sources */,
 				7B9E4D2D2C03E2D400ED37C4 /* RegestrationModel.swift in Sources */,
 				FA77A2992BBBA9EB00843673 /* Registration.docc in Sources */,

@@ -16,7 +16,7 @@ import Profile
 
 struct TabBarView: View {
     
-    @StateObject var homeVM = HomeViiewModel()
+   // @StateObject var homeVM = HomeViiewModel()
     @StateObject var wishlistVM = WishlistViewModel()
     @StateObject var catalogVM = CatalogViewModel()
     @StateObject var cartVC = CartViewModel()
@@ -28,12 +28,12 @@ struct TabBarView: View {
                 .edgesIgnoringSafeArea(.all)
             
             TabView {
-                HomeView()
+                ContentView()
                     .tabItem {
                         Image(systemName: "1.circle")
                         Text("Home")
                     }
-                    .environmentObject(homeVM)
+                   // .environmentObject(homeVM)
                 
                 CatalogView()
                     .environmentObject(catalogVM)
