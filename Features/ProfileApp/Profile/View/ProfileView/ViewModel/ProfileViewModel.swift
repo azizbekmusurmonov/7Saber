@@ -15,7 +15,7 @@ public class ProfileViewModel: ObservableObject {
     
     @Published var profileImage: ProfileBundle = ProfileBundle(
         profileImage: Asset.Image.Logo.person.image,
-        profileName: "Azizbek Musurmpnov",
-        gmailName: "azizbekmusurmonov004@gmail.com",
-        phoneNumber: "883825004")
+        profileName: "7SaberUser",
+        gmailName: "7SaberUser@gmail.com",
+        phoneNumber: "901234567")
 }
