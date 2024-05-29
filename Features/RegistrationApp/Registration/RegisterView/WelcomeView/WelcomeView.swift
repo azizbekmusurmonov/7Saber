@@ -19,7 +19,7 @@ struct WelcomeView: View {
     }
     
     var body: some View {
-        ZStack {
+        
             HStack() {
                 VStack(alignment: .leading) {
                     Image(uiImage: Asset.Image.Logo.logoBlack.image)
@@ -31,12 +31,15 @@ struct WelcomeView: View {
                         .padding(.bottom, 12)
                     Text(welcomeText)
                         .font(.system(size: 16))
+                        .lineLimit(0)
+                        .fixedSize(horizontal: false, vertical: true)
+                    
                     Spacer()
                 }
                 .padding(.leading, 40)
                 Spacer()
             }
-        }
+//            .frame(width: UIScreen.main.bounds.width, alignment: .leading)
     }
 }
 

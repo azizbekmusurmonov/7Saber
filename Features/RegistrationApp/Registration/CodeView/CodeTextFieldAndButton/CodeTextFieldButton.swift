@@ -20,7 +20,7 @@ struct CodeTextFieldButton: View {
                     
                     PrimeryTextField(
                         textFiledText: $vm.codeText,
-                        keyboardType: .constant(.emailAddress),
+                        keyboardType: .constant(.numberPad),
                         placeholderText: "Code"
                     )
                     

@@ -11,11 +11,11 @@ struct GetUserModel: Codable {
     let id: Int
     let roleId: Int
     let avatarId: Int
-    let fullName: String
-    let email: String
+    let fullName: String?
+    let email: String?
     let phone: String
-    let gender: String
-    let birthday: String
+    let gender: String?
+    let birthday: String?
     let isDeleted: Bool
     let created_at: String
     let updated_at: String
