@@ -20,7 +20,7 @@ public struct RegisterMobillAppView: View {
     }
     
     public var body: some View {
-        ZStack {
+        
             VStack {
                 if !vm.isCodeViewPresented {
                     
@@ -36,6 +36,7 @@ public struct RegisterMobillAppView: View {
                     
                     WelcomeView(welcome: "WELCOME", welcomeText: "Enter your phone number \nor email to continue")
                         .padding(.top, 150)
+                        .frame(width: UIScreen.main.bounds.width)
                     TextFieldNextButton(nextButtonPressed: {
                         if !vm.numberText.isEmpty {
                             vm.getEmailOrNumberButtonPressed()
@@ -82,7 +83,7 @@ public struct RegisterMobillAppView: View {
                 }
             }
         }
-    }
+    
 }
 
 

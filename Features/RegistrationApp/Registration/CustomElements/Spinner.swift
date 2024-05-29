@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AssetKit
 
 struct iOSSpinner: View {
     @State private var isAnimating = false
@@ -15,7 +16,7 @@ struct iOSSpinner: View {
             ZStack {
                 Circle()
                     .trim(from: 0, to: 0.8)
-                    .stroke(Color.blue, lineWidth: 5)
+                    .stroke(Asset.Color.Text.primaryCol.swiftUIColor, lineWidth: 5)
                     .rotationEffect(.degrees(isAnimating ? 360 : 0))
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
