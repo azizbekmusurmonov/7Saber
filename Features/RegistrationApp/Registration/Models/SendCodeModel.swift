@@ -8,6 +8,6 @@
 import Foundation
 
 struct SendCodeModel: Codable {
-    let user: String?
+    let user: GetUserModel?
     let message: String
 }

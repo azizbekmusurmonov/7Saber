@@ -15,11 +15,15 @@ struct SendAgainButton: View {
         Button(action: { // sendAgain Button
             print("Send Again tapped")
                 
-            vm.remainingSeconds = 120
+            vm.remainingSeconds = 60
             vm.stopTimer()
             vm.startTimer()
           
-//            vm.sendCode()
+            if (vm.numberText.contains("@gmail.com") || vm.numberText.contains("@icloud.com")) {
+                vm.sendCode(by: .email)
+            } else if vm.numberText.contains("+998") && vm.numberText.count == 13 {
+                vm.sendCode(by: .phone)
+            }
         }) {
             Image(systemName: "repeat")
                 .resizable()
@@ -37,7 +41,3 @@ struct SendAgainButton: View {
         .padding(.top, 21)
     }
 }
-
-//#Preview {
-//    SendAgainButton()
-//}

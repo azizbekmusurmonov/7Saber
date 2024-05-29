@@ -50,7 +50,6 @@ struct PrimeryTextField: View {
             
             HStack {
                 TextField("", text: $textFiledText, onEditingChanged: { editing in
-                    
                     withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                         textFieldIsEditing = editing
                     }
@@ -63,7 +62,8 @@ struct PrimeryTextField: View {
             .overlay(
                 Rectangle()
                     .frame(height: 1)
-                    .padding(.top, 8).foregroundColor(.gray),
+                    .padding(.top, 8)
+                    .foregroundColor(.gray),
                 alignment: .bottom
             )
             HStack {

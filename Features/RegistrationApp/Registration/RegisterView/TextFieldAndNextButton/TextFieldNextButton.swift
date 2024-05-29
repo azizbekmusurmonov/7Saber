@@ -32,10 +32,6 @@ struct TextFieldNextButton: View {
                             print("Button Tapped")
                             
                             nextButtonPressed()
-                            
-                            withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-                                vm.isCodeViewPresented = true
-                            }
                         }
                     )
                     .padding(.top, 20)
