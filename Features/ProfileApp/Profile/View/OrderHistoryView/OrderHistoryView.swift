@@ -12,7 +12,12 @@ import Core
 struct OrderHistoryView: View {
     
     @Environment(\.dismiss) var pop
-    @StateObject var vm = OrderHistoryViewModel()
+    
+    @EnvironmentObject var vm: OrderHistoryViewModel
+    @StateObject var data = CurrentViewModel()
+    
+    @State var isTabBottomSheet = false
+    @State var detentHeight: CGFloat = 0
     
     public init() { }
     
@@ -24,7 +29,12 @@ struct OrderHistoryView: View {
                 VStack(spacing: 0) {
                     ForEach(0..<vm.orderHistoryData.count, id: \.self) { index in
                         OrderHistorySection(item: vm.orderHistoryData[index])
-                        
+                    }
+                    .onTapGesture {
+                        isTabBottomSheet = true
+                    }
+                    .sheet(isPresented: self.$isTabBottomSheet) {
+                        OrderBottomSheetView()
                     }
                     Divider()
                 }
@@ -40,7 +50,6 @@ extension OrderHistoryView {
         VStack(spacing: .zero) {
             BaseNavigationBar(title: "ORDER HISTORY ",
                               leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed: {
-                print("leftButtonPressed")
                 self.pop()
             })
         }

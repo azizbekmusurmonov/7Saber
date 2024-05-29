@@ -20,7 +20,7 @@ struct DatePickerView: View {
             HStack(spacing: 10) {
                 VStack(alignment: .leading) {
                     Text(header)
-                        .font(.caption)
+                        .font(.system(size: 11, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     Text(dateFormatter.string(from: birthDate))
                 }
@@ -36,14 +36,17 @@ struct DatePickerView: View {
             .onTapGesture {
                 showPicker.toggle()
             }
-                if showPicker {
-                    DatePicker(selection: $birthDate, displayedComponents: .date) {
-                        Text("")
-                    }
-                    .datePickerStyle(.wheel)
-                }
+            
         }
-        .opacity(showPicker ? 1.0 : 0.0)
+        .overlay {
+            if showPicker {
+                DatePicker(selection: $birthDate, displayedComponents: .date) {
+                    Text("")
+                }
+                .datePickerStyle(.wheel)
+            }
+        }
+//        .opacity(showPicker ? 0.8 : 0.2)
         Divider()
     }
     

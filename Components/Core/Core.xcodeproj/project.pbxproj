@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		526456092BEBCACD00A59849 /* ToastView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526456082BEBCACD00A59849 /* ToastView+Extension.swift */; };
-		5272BAC02BE9294E00EDD0F5 /* DynamicBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BABF2BE9294D00EDD0F5 /* DynamicBottomSheet.swift */; };
-		5272BACD2BE92D0600EDD0F5 /* BottomSheetsNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BACC2BE92D0600EDD0F5 /* BottomSheetsNavBar.swift */; };
 		5272BACF2BE92E0700EDD0F5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BACE2BE92E0700EDD0F5 /* Font.swift */; };
-		5272BAD22BE92F0B00EDD0F5 /* BaseText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BAD12BE92F0B00EDD0F5 /* BaseText.swift */; };
 		5272BAD42BE9310700EDD0F5 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BAD32BE9310700EDD0F5 /* Size.swift */; };
 		52F0DD862BEE65FD00F9ECE6 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 52F0DD852BEE65FD00F9ECE6 /* SwiftMessages */; };
 		52FAAF462BF268D300B5B1A4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAF452BF268D300B5B1A4 /* UserModel.swift */; };
@@ -24,6 +21,9 @@
 		FA77A2452BBBA94E00843673 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = FA77A2422BBBA94E00843673 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA77A2532BBBA97500843673 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77A2522BBBA97500843673 /* Color+Extensions.swift */; };
 		FAB4226C2BC6D8C2002C7260 /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4226B2BC6D8C2002C7260 /* ProfileTab.swift */; };
+		FAD86DD02C076E9C00B45427 /* BottomSheetsNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD86DCE2C076DF900B45427 /* BottomSheetsNavBar.swift */; };
+		FAD86DD12C076ED200B45427 /* BaseText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7956E2BEAA13300467150 /* BaseText.swift */; };
+		FAF795732BEAA14100467150 /* DynamicBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF795712BEAA14100467150 /* DynamicBottomSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,10 +42,7 @@
 
 /* Begin PBXFileReference section */
 		526456082BEBCACD00A59849 /* ToastView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToastView+Extension.swift"; sourceTree = "<group>"; };
-		5272BABF2BE9294D00EDD0F5 /* DynamicBottomSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBottomSheet.swift; sourceTree = "<group>"; };
-		5272BACC2BE92D0600EDD0F5 /* BottomSheetsNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetsNavBar.swift; sourceTree = "<group>"; };
 		5272BACE2BE92E0700EDD0F5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		5272BAD12BE92F0B00EDD0F5 /* BaseText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseText.swift; sourceTree = "<group>"; };
 		5272BAD32BE9310700EDD0F5 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		529EE81D2BE2A97600BDF552 /* DynamicBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicBottomSheet.swift; sourceTree = "<group>"; };
 		52FAAF452BF268D300B5B1A4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -58,6 +55,10 @@
 		FA77A2432BBBA94E00843673 /* Core.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Core.docc; sourceTree = "<group>"; };
 		FA77A2522BBBA97500843673 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		FAB4226B2BC6D8C2002C7260 /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
+		FAD6F6932BEA62DF00A2685E /* DeviceBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBounds.swift; sourceTree = "<group>"; };
+		FAD86DCE2C076DF900B45427 /* BottomSheetsNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetsNavBar.swift; sourceTree = "<group>"; };
+		FAF7956E2BEAA13300467150 /* BaseText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseText.swift; sourceTree = "<group>"; };
+		FAF795712BEAA14100467150 /* DynamicBottomSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBottomSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,22 +80,6 @@
 				526456082BEBCACD00A59849 /* ToastView+Extension.swift */,
 			);
 			path = "Toast+Ext";
-			sourceTree = "<group>";
-		};
-		5272BABE2BE9293700EDD0F5 /* BottomSheet */ = {
-			isa = PBXGroup;
-			children = (
-				5272BABF2BE9294D00EDD0F5 /* DynamicBottomSheet.swift */,
-			);
-			path = BottomSheet;
-			sourceTree = "<group>";
-		};
-		5272BAD02BE92F0600EDD0F5 /* Text */ = {
-			isa = PBXGroup;
-			children = (
-				5272BAD12BE92F0B00EDD0F5 /* BaseText.swift */,
-			);
-			path = Text;
 			sourceTree = "<group>";
 		};
 		529EE81C2BE2A96B00BDF552 /* DynamicBottomSheet */ = {
@@ -140,8 +125,8 @@
 		FA69E8112BC170DE005113B2 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
-				5272BAD02BE92F0600EDD0F5 /* Text */,
-				5272BABE2BE9293700EDD0F5 /* BottomSheet */,
+				FAF795722BEAA14100467150 /* BottomSheet */,
+				FAF7956F2BEAA13300467150 /* Text */,
 				FA69E8122BC170EE005113B2 /* Navigationbars */,
 			);
 			path = UIElements;
@@ -150,9 +135,9 @@
 		FA69E8122BC170EE005113B2 /* Navigationbars */ = {
 			isa = PBXGroup;
 			children = (
+				FAD86DCE2C076DF900B45427 /* BottomSheetsNavBar.swift */,
 				FA69E8132BC17118005113B2 /* BaseNavigationBar.swift */,
 				FAB4226B2BC6D8C2002C7260 /* ProfileTab.swift */,
-				5272BACC2BE92D0600EDD0F5 /* BottomSheetsNavBar.swift */,
 			);
 			path = Navigationbars;
 			sourceTree = "<group>";
@@ -163,6 +148,7 @@
 				FA77A2412BBBA94E00843673 /* Core */,
 				FA77A2402BBBA94E00843673 /* Products */,
 				FA568B0C2BD7CC3D00B87B59 /* Frameworks */,
+				FAF7956D2BEAA08500467150 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,11 +180,35 @@
 			isa = PBXGroup;
 			children = (
 				FA77A2522BBBA97500843673 /* Color+Extensions.swift */,
+				FAD6F6932BEA62DF00A2685E /* DeviceBounds.swift */,
 				5272BACE2BE92E0700EDD0F5 /* Font.swift */,
 				5272BAD32BE9310700EDD0F5 /* Size.swift */,
 				7B65D9D22BF4F8680038DA06 /* String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAF7956D2BEAA08500467150 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		FAF7956F2BEAA13300467150 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				FAF7956E2BEAA13300467150 /* BaseText.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		FAF795722BEAA14100467150 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FAF795712BEAA14100467150 /* DynamicBottomSheet.swift */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,11 +298,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA77A2442BBBA94E00843673 /* Core.docc in Sources */,
-				5272BAC02BE9294E00EDD0F5 /* DynamicBottomSheet.swift in Sources */,
+				FAD86DD12C076ED200B45427 /* BaseText.swift in Sources */,
 				526456092BEBCACD00A59849 /* ToastView+Extension.swift in Sources */,
 				FA69E8142BC17118005113B2 /* BaseNavigationBar.swift in Sources */,
+				FAF795732BEAA14100467150 /* DynamicBottomSheet.swift in Sources */,
 				5272BACF2BE92E0700EDD0F5 /* Font.swift in Sources */,
 				FA77A2532BBBA97500843673 /* Color+Extensions.swift in Sources */,
+				FAD86DD02C076E9C00B45427 /* BottomSheetsNavBar.swift in Sources */,
 				52FAAF462BF268D300B5B1A4 /* UserModel.swift in Sources */,
 				7B1513B72BDCDB6D00A72A6C /* AnyDataStorage.swift in Sources */,
 				5272BAD42BE9310700EDD0F5 /* Size.swift in Sources */,

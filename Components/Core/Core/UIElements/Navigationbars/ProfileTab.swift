@@ -20,7 +20,7 @@ public struct ProfileTab: View {
        VStack(spacing: .zero) {
            HStack(spacing: .zero) {
                Text(title)
-                   .font(.title2)
+                   .font(.system(size: 16, weight: .medium))
                    .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                    .padding()
                Spacer()
@@ -48,10 +48,9 @@ public struct ProfileTabHeader: View {
     public var body: some View {
         HStack(spacing: .zero) {
             Text(title)
+                .font(.system(size: 23, weight: .bold))
                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                 .multilineTextAlignment(.leading)
-                .font(.headline)
-                .font(.system(size: 23))
                 .padding()
                 .padding(.top, 30)
             Spacer()

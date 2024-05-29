@@ -32,7 +32,7 @@ struct PaymentMethodItemView: View {
                     isExpiryDateHidden.toggle()
                 }) {
                     Text(isExpiryDateHidden ? "SHOW" : "HIDE")
-                        .font(.footnote)
+                        .font(.system(size: 13, weight: .medium))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                 }
             }

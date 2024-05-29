@@ -22,13 +22,12 @@ public struct DeleteAndLogOutButton: View {
             }) {
                 HStack(spacing: .zero) {
                     Text(title)
+                        .font(.system(size: 16, weight: .regular))
                         .padding()
-                        .font(.footnote)
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     
                     Spacer()
                     
-                    Spacer()
                     
                     Image(uiImage: icon)
                         .padding()
