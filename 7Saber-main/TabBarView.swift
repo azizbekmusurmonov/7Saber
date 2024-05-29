@@ -63,9 +63,9 @@ struct TabBarView: View {
                         Image(uiImage: Asset.Image.TabBars.profile.image)
                         Text("Profile")
                     }
-                    .onAppear {
+//                    .onAppear {
 //                        self.profileVM.count = 100
-                    }
+//                    }
             }
         }
     }

@@ -8,47 +8,137 @@
 import Foundation
 import Combine
 
+import Foundation
+
 final public class NetworkService {
+    
+    private init() { }
     
     public static let shared = NetworkService()
     
-    public func request<Model: Decodable>(
-        url urlString: String,
-        decode model: Model.Type,
-        method: HttpMethod = .get,
-        parameters: [String: Any] = [:]
-    ) async throws -> Model {
-        guard let url = URL(string: urlString) else { throw NetworkError.incorrectURL }
+    public func request<T: Decodable>(
+        url: String,
+        decode: T.Type,
+        method: HTTPMethod,
+        queryParameters: [String: String]? = nil,
+        body: [String: Any]? = nil
+    ) async throws -> T {
+        guard var components = URLComponents(string: url) else {
+            throw NetworkError.invalidURL
+        }
+        let newLine = "\n"
+        var string = "REQUEST------------------ \(url)"
         
-        var request = URLRequest(url: url)
-        request.httpMethod = method.rawValue.uppercased()
+        string += newLine
         
-        if !parameters.isEmpty, let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
-            
-            request.httpBody = httpBody
+        // Add query parameters to the URL if provided
+        if let queryParameters = queryParameters {
+            components.queryItems = queryParameters.map { URLQueryItem(name: $0.key, value: $0.value) }
+            string += "queryParameters: \(queryParameters)"
+            string += newLine
         }
         
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        guard let response = response as? HTTPURLResponse, response.statusCode >= 200, response.statusCode < 300 else {
-            
-            let statusCode = (response as? HTTPURLResponse)?.statusCode ?? .zero
-            
-            print("⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ FAIL", urlString, statusCode)
-            
-            throw NetworkError.incorrectStatusCode(statusCode)
+        guard let finalURL = components.url else {
+            throw NetworkError.invalidURL
         }
         
-        let model: Model
+        var request = URLRequest(url: finalURL)
+        request.httpMethod = method.rawValue
+    
+        
+        // Add request body if provided
+        if let body = body {
+            request.httpBody = try? JSONSerialization.data(withJSONObject: body)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            string += "body: \(body)"
+            string += newLine
+        }
         
         do {
-             model = try JSONDecoder().decode(Model.self, from: data)
+            let (data, response) = try await URLSession.shared.data(for: request)
+            guard let safeResponse = response as? HTTPURLResponse,
+                      safeResponse.statusCode >= 200,
+                      safeResponse.statusCode < 300
+            else {
+                guard let response = (response as? HTTPURLResponse) else { throw NetworkError.requestFailed }
+                
+                print(string)
+                throw NetworkError.incorrectStatusCode(response.statusCode)
+            }
+            string += "✅✅✅✅ SUCCESS"
+            string += newLine
+            
+            string += "\( try JSONSerialization.jsonObject(with: data))"
+            
+            let decoder = JSONDecoder()
+            let decodedObject = try decoder.decode(T.self, from: data)
+            print(string)
+            return decodedObject
         } catch {
-            print("⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️", "DecodeError \n", error)
-            throw NetworkError.couldnotDecodeModel(error)
+            print(string)
+            print("🛑🛑🛑🛑🛑🛑🛑 DECODE ERROR", error)
+            throw error
         }
-        
-        print("✅✅✅✅✅✅✅✅", urlString)
-        return model
     }
+    
+    public func request2<T: Decodable>(
+        url: String,
+        decode: T.Type,
+        method: HTTPMethod,
+        queryParameters: [String: String]? = nil,
+        param: [String: Any]? = nil
+    ) async throws -> T {
+        
+        let urlString = "https://lab.7saber.uz/api/auth/registration"
+        var request = URLRequest(url: URL(string: urlString)!)
+        
+        // set header
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        // set HTTP Method
+        request.httpMethod = "POST"
+        
+        // set body parameters
+        request.httpBody = param?.percentEncoded()
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+
+            
+            guard let response = response as? HTTPURLResponse, (200 ... 299) ~= response.statusCode else {
+                print("⛔️⛔️⛔️⛔️⛔️⛔️⛔️ status error", (response as? HTTPURLResponse)?.statusCode ?? .zero)
+                throw NetworkError.incorrectStatusCode((response as? HTTPURLResponse)?.statusCode ?? .zero)
+            }
+            
+            let model = try JSONDecoder().decode(T.self, from: data)
+            
+            return model
+        } catch {
+            throw error
+        }
+    }
+}
+
+
+extension Dictionary {
+    func percentEncoded() -> Data? {
+        map { key, value in
+            let escapedKey = "\(key)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
+            let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
+            return escapedKey + "=" + escapedValue
+        }
+        .joined(separator: "&")
+        .data(using: .utf8)
+    }
+}
+
+extension CharacterSet {
+    static let urlQueryValueAllowed: CharacterSet = {
+        let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
+        let subDelimitersToEncode = "!$&'()*+,;="
+        
+        var allowed: CharacterSet = .urlQueryAllowed
+        allowed.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
+        return allowed
+    }()
 }

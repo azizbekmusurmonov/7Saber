@@ -10,10 +10,12 @@ import AssetKit
 
 struct WelcomeView: View {
     
+    let welcome: String
     let welcomeText: String
     
-    init(welcomeText: String) { // Initialize the parameter
+    init(welcome: String = "WELCOME", welcomeText: String) { // Initialize the parameter
         self.welcomeText = welcomeText
+        self.welcome = welcome
     }
     
     var body: some View {
@@ -23,7 +25,7 @@ struct WelcomeView: View {
                     Image(uiImage: Asset.Image.Logo.logoBlack.image)
                         .resizable()
                         .frame(width: 36, height: 36)
-                    Text("WELCOME")
+                    Text(welcome)
                         .font(.system(size: 40))
                         .padding(.top, 20)
                         .padding(.bottom, 12)
@@ -39,5 +41,5 @@ struct WelcomeView: View {
 }
 
 #Preview {
-    WelcomeView(welcomeText: "")
+    WelcomeView(welcome: "", welcomeText: "")
 }
