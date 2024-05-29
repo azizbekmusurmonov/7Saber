@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 import AssetKit
 
-public class PaymentMethodViewModel: ObservableObject {
+public class PaymentMethodModel: ObservableObject {
     
     @Published public var cards: [Card] = []
     public init() { }
@@ -17,6 +17,7 @@ public class PaymentMethodViewModel: ObservableObject {
 }
 
 public struct Card: Hashable {
+    public var id = UUID().uuidString
     public let image: UIImage // Use Image type for image
     public let cardNumber: String
     public var expiryDate: String // Corrected typo in property name

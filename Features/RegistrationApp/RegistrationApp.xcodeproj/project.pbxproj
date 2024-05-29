@@ -308,6 +308,7 @@
 		FA77A2A32BBBAA0C00843673 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAD86DD22C076F0800B45427 /* Home.framework */,
 				7BF6FAE32BDBF2E400F4D9BA /* Home.framework */,
 				7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */,
 				7B0C2A252BD414A400284C1C /* AssetKit.framework */,

@@ -14,11 +14,10 @@ public struct ProfileView: View {
     @EnvironmentObject var vm: ProfileViewModel
     @StateObject var profileData = ProfileViewModel()
     
-    
     public init() { }
     
     public var body: some View {
-       
+        
         NavigationView {
             VStack {
                 
@@ -28,10 +27,11 @@ public struct ProfileView: View {
                     VStack(spacing: .zero) {
                         
                         ProfileImageView(bundle: $vm.profileImage)
-
+                        
                         ProfileList()
-    
-                        DeleteAndLogOutButton(title: "LOG OUT", icon: Asset.Image.Profile.logOut.image,
+                        
+                        DeleteAndLogOutButton(title: "LOG OUT", 
+                                              icon: Asset.Image.Profile.logOut.image,
                                               buttonPressed: {
                             print("log out")
                         })

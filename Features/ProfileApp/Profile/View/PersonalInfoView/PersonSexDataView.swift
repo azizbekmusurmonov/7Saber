@@ -21,7 +21,7 @@ struct PersonSexDataView: View {
             HStack(spacing: .zero) {
                 VStack(alignment: .leading) {
                     Text(header)
-                        .font(.caption)
+                        .font(.system(size: 11, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     
                     Text(data)
@@ -37,6 +37,9 @@ struct PersonSexDataView: View {
                         .frame(width: 10, height: 4.65)
                         .padding(.leading)
                 }
+            }
+            .onTapGesture {
+                showOption = true
             }
             .actionSheet(isPresented: $showOption) {
                 ActionSheet(

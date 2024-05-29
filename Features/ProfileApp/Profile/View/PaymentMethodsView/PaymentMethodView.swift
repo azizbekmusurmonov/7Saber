@@ -11,16 +11,12 @@ import Core
 
 struct PaymentMethodView: View {
     
-    @State var cards: [Card] = [
-        Card(image: Asset.Image.BankImage.agrobank.image,
-             cardNumber: "8600 23** **** **84",
-             expiryDate: "12/27"),
-        Card(image: Asset.Image.BankImage.masterCard.image,
-             cardNumber: "5623 43** **** **25",
-             expiryDate: "12/24")
-    ]
-
+    @EnvironmentObject var vm: PaymentMethodViewModel
+    @StateObject var profileData = PaymentMethodViewModel()
     
+    @State var isSheetViewActive = false
+    @State var detentHeight: CGFloat = 0
+
     @Environment(\.dismiss) var pop
     
     var body: some View {
@@ -28,13 +24,13 @@ struct PaymentMethodView: View {
            
             navBar
             Spacer()
-            if cards.isEmpty {
+            if vm.cards.isEmpty {
                 PaymentMethodViewIsEmpty()
                 Spacer()
             } else {
                 ScrollView {
                     VStack(spacing: .zero) {
-                        ForEach(cards, id: \.self) { card in
+                        ForEach(vm.cards, id: \.self) { card in
                             PaymentMethodItemView(card: card)
                                 .cornerRadius(10)
                                 .padding()
@@ -44,8 +40,23 @@ struct PaymentMethodView: View {
             }
             AddButton(title: "ADD PAYMENT METHOD",
                       buttonPressed: {
-                print("pressed")
+                self.isSheetViewActive.toggle()
+                
             })
+            .sheet(isPresented: self.$isSheetViewActive) {
+                if #available(iOS 16.0, *) {
+                    PaymentAddCardView()
+                        .readHeight()
+                        .onPreferenceChange(HeightPreferenceKey.self) { height in
+                            if let height {
+                                self.detentHeight = height
+                            }
+                        }
+                        .presentationDetents([.height(self.detentHeight)])
+                } else {
+                    PaymentAddCardView()
+                }
+            }
         }
         .navigationBarBackButtonHidden()
     }

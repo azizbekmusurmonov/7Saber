@@ -11,16 +11,10 @@ import AssetKit
 
 struct AddressView: View {
     
-    @State var items: [Item] = [
-        Item(title: "MY OFFICE",
-             location: "Mukimiy st. 59, Tashkent, Uzbekistan",
-             seeOnMap: "SEE ON MAP"
-            ),
-        Item(title: "MY OFFICE",
-             location: "Mukimiy st. 59, Tashkent, Uzbekistan",
-             seeOnMap: "SEE ON MAP"
-            )
-    ]
+    @EnvironmentObject var vm: AddressesViewModel
+    @StateObject var profileData = AddressesViewModel()
+    
+    @State var addLocationView = false
     
     @Environment(\.dismiss) var pop
     
@@ -31,15 +25,15 @@ struct AddressView: View {
             navBar
             Spacer()
             
-            if items.isEmpty {
+            if vm.items.isEmpty {
                 AddressesIsEmpty()
                 Spacer()
             } else {
                 
-            ScrollView {
-                VStack(spacing: .zero) {
-                    
-                        ForEach(items, id: \.self) { item in
+                ScrollView {
+                    VStack(spacing: .zero) {
+                        
+                        ForEach(vm.items, id: \.self) { item in
                             AddressItemView(item: item)
                             Divider()
                         }
@@ -48,8 +42,11 @@ struct AddressView: View {
                 }
             }
             AddButton(title: "ADD NEW ADDRESS", buttonPressed:{
-                print("button pressed")
+                addLocationView = true
             } )
+            .sheet(isPresented: $addLocationView) {
+                AddNewAddress()
+            }
         }
         .navigationBarBackButtonHidden()
     }

@@ -18,7 +18,7 @@ struct TextFieldView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(header)
-                .font(.caption)
+                .font(.system(size: 11, weight: .regular))
                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
             
             TextField(titleKey, text: $text)

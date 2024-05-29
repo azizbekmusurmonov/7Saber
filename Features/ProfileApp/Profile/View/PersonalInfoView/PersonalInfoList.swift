@@ -20,16 +20,16 @@ struct PersonalInfoList: View {
             TextFieldView(header: "Full name",
                           titleKey: "Enter your full name",
                           text: "")
-                
+            
             TextFieldView(header: "Phone number",
                           titleKey: "Enter your phone number",
                           text: "")
-                .keyboardType(.numberPad)
+            .keyboardType(.phonePad)
             
             TextFieldView(header: "E-mail",
                           titleKey: "Enter e-mail",
                           text: "")
-                .keyboardType(.emailAddress)
+            .keyboardType(.emailAddress)
             
             PersonSexDataView()
             

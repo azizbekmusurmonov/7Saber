@@ -22,14 +22,13 @@ public struct SaveCancelButtons: View {
                 buttonPressed()
             }) {
                 Text(title)
+                    .font(.system(size: 16, weight: .regular))
                     .padding()
                     .frame(width: 180)
-                    .font(.footnote)
                     .foregroundColor(textColor)
             }
             .background(color)
             .clipShape(.capsule)
-            .padding(.leading)
         }
     }
 }

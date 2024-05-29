@@ -13,7 +13,7 @@ public struct AddButton: View {
     
     @State var title: String
     @State var buttonPressed: (() -> ())
-        
+    
     public var body: some View {
         VStack(spacing: .zero) {
             Button(action: {
@@ -21,7 +21,7 @@ public struct AddButton: View {
             }) {
                 HStack(spacing: .zero) {
                     Text(title)
-                        .font(.footnote)
+                        .font(.system(size: 16, weight: .regular))
                         .foregroundColor(Asset.Color.Text.whiteCol.swiftUIColor)
                     Spacer()
                     Image(uiImage: Asset.Image.Icons.plusCrcleWhite.image)
@@ -37,4 +37,3 @@ public struct AddButton: View {
         .padding()
     }
 }
-
