@@ -43,6 +43,8 @@ extension UserDefaults: AnyDataStorage {
 }
 
 public enum StorageKeys: String {
+    case isShowedOnBoarding
     case isRegistrate
     case token
+    case language
 }

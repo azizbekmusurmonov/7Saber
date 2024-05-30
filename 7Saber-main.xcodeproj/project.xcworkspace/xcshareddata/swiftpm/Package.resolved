@@ -1,4 +1,5 @@
 {
+  "originHash" : "a0f8432326d9374368700bc0f3e7859a57bd998fee717b20ebac1b93420c2a5a",
   "pins" : [
     {
       "identity" : "swiftmessages",
@@ -10,5 +11,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

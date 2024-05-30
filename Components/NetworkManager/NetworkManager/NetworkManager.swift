@@ -2,13 +2,12 @@
 //  NetworkManager.swift
 //  NetworkManager
 //
-//  Created by Azizbek Musurmonov   on 02/04/24.
+//  Created by Ismatillokhon   on 02/04/24.
 //
 
 import Foundation
 import Combine
-
-import Foundation
+import Core
 
 final public class NetworkService {
     
@@ -45,11 +44,23 @@ final public class NetworkService {
         var request = URLRequest(url: finalURL)
         request.httpMethod = method.rawValue
     
+        // set header
+        print("-------------------------HEADER---------------------------------")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        print("Content-Type", "application/json","\n")
+        request.setValue("iOS", forHTTPHeaderField: "Accept-Device")
+        if let language = DataStorage.storage.get(from: .language) as? String {
+            request.setValue(language, forHTTPHeaderField: "Accept-Language")
+            print("Accept-Language", language,"\n")
+        }
+        if let token = DataStorage.storage.get(from: .token) {
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            print("Authorization", "Bearer", "TOKEN", token == nil ? "NO" : token,"\n")
+        }
         
         // Add request body if provided
         if let body = body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body)
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             
             string += "body: \(body)"
             string += newLine

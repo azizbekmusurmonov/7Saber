@@ -12,6 +12,7 @@ import Core
 public struct RegisterMobillAppView: View {
     
     @EnvironmentObject var vm: RegisterMobillAppViewModel
+    @State private var isShowRegistrView: Bool = false
     
     let skipButtonTapped: () -> ()
     
@@ -20,7 +21,12 @@ public struct RegisterMobillAppView: View {
     }
     
     public var body: some View {
-        
+        if isShowRegistrView == false || (DataStorage.storage.get(from: .isShowedOnBoarding) == nil)  {
+            OnBoardingView {
+                isShowRegistrView = true
+                DataStorage.storage.save(true, for: .isShowedOnBoarding)
+            }
+        } else {
             VStack {
                 if !vm.isCodeViewPresented {
                     
@@ -81,6 +87,7 @@ public struct RegisterMobillAppView: View {
                 if newValue  {
                     skipButtonTapped()
                 }
+            }
             }
         }
     
