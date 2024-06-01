@@ -12,16 +12,14 @@ import AssetKit
 struct OrderBottomSheetView: View {
     var body: some View {
         VStack(spacing: .zero) {
+            BottomSheetsNavBar(title: "ORDER DETAILS")
             ScrollView {
-                VStack {
-                    BottomSheetsNavBar(title: "ORDER DETAILS")
                     OrderIdView()
                     ShipToDataView()
                     PaymentItem()
                     OrderedProductsView()
-                }
-                .padding()
             }
+            .padding()
         }
     }
 }

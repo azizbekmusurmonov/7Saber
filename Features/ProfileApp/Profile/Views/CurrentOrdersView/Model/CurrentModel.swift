@@ -21,8 +21,8 @@ public struct Cell: Hashable {
 }
 
 enum CurrentOrderStatus: String {
-    case delivered = "DELIVERY"
-    case onProccess = "ONPROGREE"
+    case delivered = "DELIVERED"
+    case onProccess = "ONPROGREES"
     case canceled
     
     var color: Color {

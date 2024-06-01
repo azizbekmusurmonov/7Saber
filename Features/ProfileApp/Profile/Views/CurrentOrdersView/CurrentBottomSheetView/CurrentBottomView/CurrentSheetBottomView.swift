@@ -12,16 +12,16 @@ import Core
 struct CurrentSheetBottomView: View {
     var body: some View {
         VStack(spacing: .zero) {
+            BottomSheetsNavBar(title: "ORDER DETAILS")
             ScrollView {
-                BottomSheetsNavBar(title: "ORDER DETAILS")
                 OrderIdView()
                 ShipToDataView()
                 PaymentItem()
                 OrderStatusProgress()
                 OrderedProductsView()
             }
+            .padding(16)
         }
-//        .padding(16)
     }
 }
 

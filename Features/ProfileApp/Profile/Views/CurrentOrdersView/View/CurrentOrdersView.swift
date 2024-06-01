@@ -34,6 +34,7 @@ struct CurrentOrdersView: View {
                     }
                     .sheet(isPresented: self.$isTabSectionView) {
                         CurrentSheetBottomView()
+                            .environmentObject(CurrentBottomViewModel())
                     }
                     Divider()
                 }
