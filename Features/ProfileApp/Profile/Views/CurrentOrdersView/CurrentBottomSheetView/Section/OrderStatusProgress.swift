@@ -11,15 +11,18 @@ import AssetKit
 
 struct OrderStatusProgress: View {
     
+    @State private var progress: Double = 0.25
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("ORDER STATUS")
                 .font(.system(size: 19, weight: .semibold))
                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
             HStack(spacing: 16) {
-                ProgressView(value: 0.25, total: 1)
-                    .rotationEffect(.degrees(90))
-                    .frame(height: 400)
+                ProgressView(value: progress)
+                    .progressViewStyle(VerticalProgressViewStyle())
+                    .frame(width: 10, height: 210)
+                
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading, spacing: 4) {
                         Image(uiImage: Asset.Image.Icons.receiptCheck.image)
@@ -60,12 +63,12 @@ struct OrderStatusProgress: View {
                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     }
                 }
+                Spacer()
             }
-            .padding()
         }
         Divider()
-        .padding(16)
-
+        //        .padding(16)
+        
     }
 }
 

@@ -24,9 +24,8 @@ struct ProfileImageView: View {
                     .padding()
                 
                 Divider()
-                Spacer()
-                
                 VStack(spacing: .zero) {
+                    Spacer()
                     Text(bundle.profileName)
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
@@ -36,26 +35,28 @@ struct ProfileImageView: View {
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     
                         .padding(10)
+                    Spacer()
                     Divider()
+                    Spacer()
                     
                     Button(action: {
                         
                     }) {
                         Text("EDIT PROFILE")
                             .font(.system(size: 13, weight: .regular))
-                            .padding()
                         
                         Image(uiImage: Asset.Image.Icons.edit.image)
                         
                     }
+                    .padding()
                     .frame(height: 40)
                     .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     .background(Asset.Color.Button.grayCol.swiftUIColor)
                     .clipShape(.capsule)
-                    .padding()
+                    Spacer()
                 }
+                Spacer()
             }
-            
         }
     }
 }

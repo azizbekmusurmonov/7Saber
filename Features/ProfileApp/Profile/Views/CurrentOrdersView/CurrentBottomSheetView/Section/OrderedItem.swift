@@ -11,22 +11,17 @@ import AssetKit
 
 struct OrderedItem: View {
     
-    @State var image: UIImage
-    @State var productName: String
-    @State var size: String
-    @State var color: String
-    @State var quantity: String
-    @State var price: String
+    @State var product: Products
     @State var buttonPressed: () -> ()
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack(spacing: 10) {
-                Image(uiImage: image)
+                Image(uiImage: product.image)
                     .resizable()
                     .frame(width: 124, height: 155)
                 VStack(alignment: .leading,spacing: 10) {
-                    Text(productName)
+                    Text(product.productName)
                         .font(.sabFont(400, size: 13))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     HStack(spacing: 10) {
@@ -34,7 +29,7 @@ struct OrderedItem: View {
                             Text("Size:")
                                 .font(.sabFont(400, size: 9))
                                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
-                            Text(size)
+                            Text(product.size)
                                 .font(.sabFont(400, size: 11))
                                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         }
@@ -42,7 +37,7 @@ struct OrderedItem: View {
                             Text("Color:")
                                 .font(.sabFont(400, size: 9))
                                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
-                            Text(color)
+                            Text(product.color)
                                 .font(.sabFont(400, size: 11))
                                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         }
@@ -52,7 +47,7 @@ struct OrderedItem: View {
                             Text("Quantity:")
                                 .font(.sabFont(400, size: 9))
                                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
-                            Text(quantity)
+                            Text(product.quantity)
                                 .font(.sabFont(400, size: 11))
                                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         }
@@ -60,7 +55,7 @@ struct OrderedItem: View {
                             Text("Price")
                                 .font(.sabFont(400, size: 9))
                                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
-                            Text(price)
+                            Text(product.price)
                                 .font(.sabFont(400, size: 11))
                                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         }
@@ -76,10 +71,11 @@ struct OrderedItem: View {
                             .resizable()
                             .setSize(18)
                     }
+                    .padding()
                     .frame(height: 40)
                     .background(Asset.Color.Button.grayCol.swiftUIColor)
                     .clipShape(.capsule)
-                    .padding()
+                    
                 }.padding()
             }
         }

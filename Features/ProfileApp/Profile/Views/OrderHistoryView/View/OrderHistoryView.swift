@@ -17,7 +17,6 @@ struct OrderHistoryView: View {
     @StateObject var data = CurrentViewModel()
     
     @State var isTabBottomSheet = false
-    @State var detentHeight: CGFloat = 0
     
     public init() { }
     
@@ -35,6 +34,7 @@ struct OrderHistoryView: View {
                     }
                     .sheet(isPresented: self.$isTabBottomSheet) {
                         OrderBottomSheetView()
+                            .environmentObject(CurrentBottomViewModel())
                     }
                     Divider()
                 }
