@@ -12,7 +12,18 @@ import AssetKit
 struct PaymentCardView: View {
     
     @State var bankLogo: UIImage
+    @State var cardType: CardType = .mastercard
     
+    @Binding var cardNumber: String
+    @Binding var expirationDate: String
+    @Binding var nameCard: String
+    @Binding var cvvCard: String
+    
+    enum CardType {
+        case visa
+        case mastercard
+        case unknown
+    }
     var body: some View {
         VStack(alignment: .leading, spacing: .zero) {
             Image(uiImage: bankLogo)
@@ -20,16 +31,18 @@ struct PaymentCardView: View {
                 .frame(width: 72, height: 14)
             Spacer()
             CardNumberView()
-                .frame(height: 20)
-            NameCardView()
-                .frame(height: 20)
+            if cardType == .visa || cardType == .mastercard {
+                Spacer()
+                NameCardView()
+            }
+            
             Spacer()
             HStack(spacing: .zero) {
                 CardDateView()
-                    .frame(height: 20)
                 Spacer()
-                CardCvvView()
-                    .frame(height: 20)
+                if cardType == .visa || cardType == .mastercard {
+                    CardCvvView()
+                }
             }
         }
         .padding(16)
