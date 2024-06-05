@@ -14,6 +14,7 @@ struct NameCardView: View {
     var body: some View {
         VStack(spacing: .zero) {
             TextField("Name of the card", text: $text)
+                .textFieldStyle(PlainTextFieldStyle())
         }
         Divider()
     }

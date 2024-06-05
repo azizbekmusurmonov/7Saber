@@ -54,7 +54,6 @@ struct OrderHistorySection: View {
                 }
                 .frame(height: 74)
                 Divider()
-                    .padding()
             }
         }
         .padding(.horizontal)
