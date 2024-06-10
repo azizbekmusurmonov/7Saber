@@ -25,9 +25,9 @@ public enum AddButtonBacgrounColor {
 
 public struct AddButton: View {
     
-    @State var title: String
-    @State var buttonPressed: (() -> ())
-    @State var isDisabled: Bool = false
+    let title: String
+    let buttonPressed: (() -> ())
+    @Binding var isDisabled: Bool
     
     public var body: some View {
         VStack(spacing: .zero) {

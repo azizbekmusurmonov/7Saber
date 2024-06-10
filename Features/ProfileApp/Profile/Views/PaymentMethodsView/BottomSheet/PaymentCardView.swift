@@ -12,7 +12,7 @@ import AssetKit
 struct PaymentCardView: View {
     
     @State var bankLogo: UIImage
-    @State var cardType: CardType = .mastercard
+    @State var cardType: CardType = .unknown
     
     @Binding var cardNumber: String
     @Binding var expirationDate: String
@@ -30,18 +30,18 @@ struct PaymentCardView: View {
                 .resizable()
                 .frame(width: 72, height: 14)
             Spacer()
-            CardNumberView()
+            CardNumberView(text: $cardNumber)
             if cardType == .visa || cardType == .mastercard {
                 Spacer()
-                NameCardView()
+                NameCardView(text: $nameCard)
             }
             
             Spacer()
             HStack(spacing: .zero) {
-                CardDateView()
+                CardDateView(text: $expirationDate)
                 Spacer()
                 if cardType == .visa || cardType == .mastercard {
-                    CardCvvView()
+                    CardCvvView(textCvv: $cvvCard)
                 }
             }
         }

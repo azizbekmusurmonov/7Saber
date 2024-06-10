@@ -26,7 +26,7 @@ public struct ProfileView: View {
                 ScrollView {
                     VStack(spacing: .zero) {
                         
-                        ProfileImageView(bundle: $vm.profileImage)
+                        ProfileImageView(bundle: $vm.profileData)
                         
                         ProfileList()
                         

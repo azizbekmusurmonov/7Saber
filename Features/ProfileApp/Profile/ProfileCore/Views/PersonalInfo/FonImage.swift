@@ -35,11 +35,10 @@ struct FonImage: View {
                                 .frame(width: 32, height: 32)
                         }
                     )
-                    .padding()
                     .sheet(isPresented: $showImagePicker) {
-//                        ImagePicker(sourceType: .photoLibrary) { image in
-//                            self.personalBundle.profileImage = image
-//                        }
+                        ImagePicker(sourceType: .photoLibrary, maxFileSize: 1 * 1024 * 1024) { image in
+                            self.personalBundle.profileImage = image
+                        }
                     }
                 Spacer()
             }

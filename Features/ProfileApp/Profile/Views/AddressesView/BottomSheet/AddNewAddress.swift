@@ -12,6 +12,7 @@ import AssetKit
 struct AddNewAddress: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var viewModel: AddressFormViewModel
     
     var body: some View {
         VStack(spacing: .zero) {
@@ -21,72 +22,70 @@ struct AddNewAddress: View {
             
             BottomSheetsNavBar(title: "ADD NEW ADDRESS")
             
-            ScrollView(.vertical,showsIndicators: false) {
-                VStack (alignment:.leading,spacing: 30) {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack (alignment:.leading, spacing: 30) {
                     
-                    
-                    AddressTextfields(titleKey: "Address name")
+                    AddressTextfields(titleKey: "Address name", text: $viewModel.addressName)
+                        .textFieldStyle(PlainTextFieldStyle())
                         .padding()
-                        .frame(height: 50)
+                        .padding(.top, 20)
                     
                     SelectCountryTextfield()
+                        .textFieldStyle(PlainTextFieldStyle())
                         .padding()
-                        .frame(height: 50)
                     
-                    AddressTextfields(titleKey: "Street address")
+                    AddressTextfields(titleKey: "Street address", text: $viewModel.streetAddress)
+                        .textFieldStyle(PlainTextFieldStyle())
                         .padding()
-                        .frame(height: 50)
                     
                     HStack(spacing: .zero) {
-                        AddressTextfields(titleKey: "Building")
+                        AddressTextfields(titleKey: "Building", text: $viewModel.building)
+                            .textFieldStyle(PlainTextFieldStyle())
                             .keyboardType(.numberPad)
                             .padding()
-                            .frame(height: 50)
-                        AddressTextfields(titleKey: "Appartment")
+                        AddressTextfields(titleKey: "Appartment", text: $viewModel.apartment)
+                            .textFieldStyle(PlainTextFieldStyle())
                             .keyboardType(.numberPad)
                             .padding()
-                            .frame(height: 50)
                     }
                     
                     HStack(spacing: .zero) {
-                        AddressTextfields(titleKey: "Floor")
+                        AddressTextfields(titleKey: "Floor", text: $viewModel.floor)
+                            .textFieldStyle(PlainTextFieldStyle())
                             .keyboardType(.numberPad)
                             .padding()
-                            .frame(height: 50)
-                        AddressTextfields(titleKey: "House")
+                        AddressTextfields(titleKey: "House", text: $viewModel.house)
+                            .textFieldStyle(PlainTextFieldStyle())
                             .keyboardType(.numberPad)
                             .padding()
-                            .frame(height: 50)
                     }
                     
-                    AddressTextfields(titleKey: "City")
+                    AddressTextfields(titleKey: "City", text: $viewModel.city)
+                        .textFieldStyle(PlainTextFieldStyle())
                         .padding()
-                        .frame(height: 50)
                     
-                    AddressTextfields(titleKey: "State / Province / Region")
+                    AddressTextfields(titleKey: "State / Province / Region", text: $viewModel.stateProvinceRegion)
+                        .textFieldStyle(PlainTextFieldStyle())
                         .padding()
-                        .frame(height: 50)
                     
-                    
-                    AddressTextfields(titleKey: "Zipcode")
+                    AddressTextfields(titleKey: "Zipcode", text: $viewModel.zipcode)
+                        .textFieldStyle(PlainTextFieldStyle())
                         .padding()
-                        .frame(height: 50)
                     
-                    AddressTextfields(titleKey: "Phone number")
+                    AddressTextfields(titleKey: "Phone number", text: $viewModel.phoneNumber)
                         .keyboardType(.numberPad)
                         .padding()
-                        .frame(height: 50)
                 }
             }
             
             Divider()
-            AddButton(title: "ADD THE ADDRESS") {
-                print("add the adress")
-            }
+            AddButton(title: "ADD THE ADDRESS", buttonPressed: {
+                print("add the address")
+            }, isDisabled: .constant(!viewModel.isFormValid)) 
         }
     }
 }
 
 #Preview {
-    AddNewAddress( )
+    AddNewAddress()
 }

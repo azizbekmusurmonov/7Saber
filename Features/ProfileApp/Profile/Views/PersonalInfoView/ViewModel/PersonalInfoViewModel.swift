@@ -6,5 +6,11 @@
 //
 
 import SwiftUI
+import Combine
+
+public class PersonalInfoViewModel: ObservableObject {
+    
+    public init() { }
+}
 
 
