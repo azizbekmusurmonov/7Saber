@@ -17,26 +17,26 @@ struct PersonalInfoList: View {
     @State private var showPicker = false
     @State private var birthDate = Date()
     
-    @EnvironmentObject var vm: ProfileViewModel
+    @EnvironmentObject var vm: PersonalInfoViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
             
-            FonImage(personalBundle: $vm.profileData)
+            FonImage()
             
             TextFieldView(header: "Full name",
                           titleKey: "Enter your full name",
-                          text: "")
+                          text: $vm.fullNam)
             .padding(.top, 20)
             
             TextFieldView(header: "Phone number",
                           titleKey: "Enter your phone number",
-                          text: "")
+                          text: $vm.phoneNamber)
             .keyboardType(.phonePad)
             
             TextFieldView(header: "E-mail",
                           titleKey: "Enter e-mail",
-                          text: "")
+                          text: $vm.email)
             .keyboardType(.emailAddress)
             
             PersonSexDataView()
@@ -57,6 +57,9 @@ struct PersonalInfoList: View {
                         .frame(width: 20, height: 20)
                 }
             }
+            .onTapGesture {
+                showPicker = true
+            }
             
             Divider()
             
@@ -73,6 +76,9 @@ struct PersonalInfoList: View {
                                   color: Asset.Color.Button.blackCol.swiftUIColor, textColor: Asset.Color.Text.whiteCol.swiftUIColor,
                                   buttonPressed: {
                     print("Save profile")
+                    Task {
+                        await vm.sendPersonalInfo()
+                    }
                 })
             }
             
@@ -90,7 +96,7 @@ struct PersonalInfoList: View {
             }
         }
         .onTapGesture {
-            showPicker.toggle()
+            showPicker = false
         }
     }
     

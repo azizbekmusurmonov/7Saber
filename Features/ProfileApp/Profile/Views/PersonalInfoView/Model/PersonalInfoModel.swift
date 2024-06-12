@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-struct PersonalInfoModel: Identifiable, Hashable {
-    var id = UUID().uuidString
-    var profileImage: UIImage
+struct PersonalInfoModel: Decodable {
+//    let profileImage: UIImage
     var profileName: String
     var phoneNumber: String
     var gmailName: String

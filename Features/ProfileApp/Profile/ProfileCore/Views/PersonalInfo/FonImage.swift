@@ -11,13 +11,16 @@ import AssetKit
 
 struct FonImage: View {
     
-    @Binding var personalBundle: ProfileBundle
+    @State var image: UIImage? = nil
     @State var showImagePicker: Bool = false
+    
+    @EnvironmentObject var vm: PersonalInfoViewModel
+    @StateObject var profileData = PersonalInfoViewModel()
     
     var body: some View {
         VStack(spacing: .zero) {
             HStack(spacing: .zero) {
-                Image(uiImage: personalBundle.profileImage)
+                Image(uiImage: vm.profileImage ?? Asset.Image.Logo.person.image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 146, height: 146)
@@ -37,7 +40,7 @@ struct FonImage: View {
                     )
                     .sheet(isPresented: $showImagePicker) {
                         ImagePicker(sourceType: .photoLibrary, maxFileSize: 1 * 1024 * 1024) { image in
-                            self.personalBundle.profileImage = image
+                            self.vm.profileImage = image
                         }
                     }
                 Spacer()
