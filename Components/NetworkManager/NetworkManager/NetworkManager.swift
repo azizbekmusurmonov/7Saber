@@ -20,7 +20,8 @@ final public class NetworkService {
         decode: T.Type,
         method: HTTPMethod,
         queryParameters: [String: String]? = nil,
-        body: [String: Any]? = nil
+        body: [String: Any]? = nil,
+        header: [String: String] = [:]
     ) async throws -> T {
         guard var components = URLComponents(string: url) else {
             throw NetworkError.invalidURL
@@ -56,6 +57,11 @@ final public class NetworkService {
         if let token = DataStorage.storage.get(from: .token) {
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
             print("Authorization", "Bearer", "TOKEN", token == nil ? "NO" : token,"\n")
+        }
+        if !header.isEmpty {
+            header.forEach { (key, value) in
+            request.setValue(key, forHTTPHeaderField: value)
+            }
         }
         
         // Add request body if provided
@@ -117,7 +123,7 @@ final public class NetworkService {
 
             
             guard let response = response as? HTTPURLResponse, (200 ... 299) ~= response.statusCode else {
-                print("⛔️⛔️⛔️⛔️⛔️⛔️⛔️ status error", (response as? HTTPURLResponse)?.statusCode ?? .zero)
+                print("⛔️⛔️⛔️⛔️⛔️⛔️⛔️ status error", (response as? HTTPURLResponse)?.statusCode ?? .zero, print(response))
                 throw NetworkError.incorrectStatusCode((response as? HTTPURLResponse)?.statusCode ?? .zero)
             }
             

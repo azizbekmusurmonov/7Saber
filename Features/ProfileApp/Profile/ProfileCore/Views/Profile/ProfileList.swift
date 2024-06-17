@@ -29,7 +29,7 @@ struct ProfileList: View {
                                 Text(sections[index].cells[cellIndex].title)
                                     .font(.system(size: 16, weight: .medium))
                                     .foregroundColor(.black)
-                                
+                                                                
                                 Spacer()
                                 
                                 if sections[index].cells[cellIndex].hasRightIcon {

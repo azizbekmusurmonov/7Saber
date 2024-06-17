@@ -22,3 +22,35 @@ public class PaymentMethodViewModel: ObservableObject {
              expiryDate: "12/24")
     ]
 }
+
+public class PaymentFormViewModel: ObservableObject {
+    
+    @Published var cardNumber: String = "" {
+        didSet {
+            checkToValid()
+        }
+    }
+    @Published var expirationDate: String = "" {
+        didSet {
+            checkToValid()
+        }
+    }
+    @Published var nameCard: String = "" {
+        didSet {
+            checkToValid()
+        }
+    }
+    @Published var cvvCard: String = "" {
+        didSet {
+            checkToValid()
+        }
+    }
+    
+    @Published public var isFormValied: Bool = false
+    
+    public func checkToValid() {
+        isFormValied = !cardNumber.isEmpty && !expirationDate.isEmpty && !nameCard.isEmpty && !cvvCard.isEmpty || !cardNumber.isEmpty && !expirationDate.isEmpty
+    }
+    
+    public init() {}
+}

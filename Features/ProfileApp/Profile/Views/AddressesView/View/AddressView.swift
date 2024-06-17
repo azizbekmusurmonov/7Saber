@@ -13,6 +13,7 @@ struct AddressView: View {
     
     @EnvironmentObject var vm: AddressesViewModel
     @StateObject var profileData = AddressesViewModel()
+    @StateObject private var addressFromViewModel = AddressFormViewModel()
     
     @State var addLocationView = false
     
@@ -43,9 +44,10 @@ struct AddressView: View {
             }
             AddButton(title: "ADD NEW ADDRESS", buttonPressed:{
                 addLocationView = true
-            } )
+            }, isDisabled: $addressFromViewModel.isFormValid )
             .sheet(isPresented: $addLocationView) {
                 AddNewAddress()
+                    .environmentObject(addressFromViewModel)
             }
         }
         .navigationBarBackButtonHidden()
