@@ -11,15 +11,19 @@ import AssetKit
 
 public struct SaveCancelButtons: View {
     
-    @State var title: String
-    @State var color: Color
-    @State var textColor: Color
-    @State var buttonPressed: (() -> ())
+    var title: String
+    var color: Color
+    var textColor: Color
+    var buttonPressed: (() -> ())
+    
+    @Binding var isDisabled: Bool
     
     public var body: some View {
         VStack(spacing: .zero) {
             Button(action: {
-                buttonPressed()
+                if !isDisabled {
+                    buttonPressed()
+                }
             }) {
                 Text(title)
                     .font(.system(size: 16, weight: .regular))
@@ -27,8 +31,9 @@ public struct SaveCancelButtons: View {
                     .frame(width: 180)
                     .foregroundColor(textColor)
             }
-            .background(color)
+            .background(isDisabled ? AddButtonBacgrounColor.disable.buttonBacgroundColor : color)
             .clipShape(.capsule)
+            .disabled(isDisabled)
         }
     }
 }

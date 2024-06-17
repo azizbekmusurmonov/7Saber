@@ -72,6 +72,8 @@
 		FAD6F6882BE88D9500A2685E /* CurrentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6F6872BE88D9500A2685E /* CurrentViewModel.swift */; };
 		FAD6F68A2BE8A18C00A2685E /* CurrentSheetBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6F6892BE8A18C00A2685E /* CurrentSheetBottomView.swift */; };
 		FAD6F68C2BE8A29000A2685E /* OrderBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6F68B2BE8A29000A2685E /* OrderBottomSheetView.swift */; };
+		FAE11D422C19EEFD00207739 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE11D412C19EEFD00207739 /* UploadImage.swift */; };
+		FAE11D572C1FF48000207739 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE11D562C1FF47F00207739 /* CountryModel.swift */; };
 		FAEEE03A2C15C6B900FD39D5 /* PersonalInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEE0392C15C6B900FD39D5 /* PersonalInfoModel.swift */; };
 		FAF695932BEB1BAB00BD5CC1 /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF695922BEB1BAB00BD5CC1 /* PaymentCardView.swift */; };
 		FAF695962BEBABF700BD5CC1 /* OrderIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF695952BEBABF700BD5CC1 /* OrderIdView.swift */; };
@@ -186,6 +188,8 @@
 		FAD6F6872BE88D9500A2685E /* CurrentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewModel.swift; sourceTree = "<group>"; };
 		FAD6F6892BE8A18C00A2685E /* CurrentSheetBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSheetBottomView.swift; sourceTree = "<group>"; };
 		FAD6F68B2BE8A29000A2685E /* OrderBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBottomSheetView.swift; sourceTree = "<group>"; };
+		FAE11D412C19EEFD00207739 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
+		FAE11D562C1FF47F00207739 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		FAEEE0392C15C6B900FD39D5 /* PersonalInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoModel.swift; sourceTree = "<group>"; };
 		FAF695922BEB1BAB00BD5CC1 /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
 		FAF695952BEBABF700BD5CC1 /* OrderIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderIdView.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				FA568B132BD951C900B87B59 /* AddressesModel.swift */,
+				FAE11D562C1FF47F00207739 /* CountryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -648,6 +653,7 @@
 			isa = PBXGroup;
 			children = (
 				FA568B112BD9101A00B87B59 /* PersonalInfoViewModel.swift */,
+				FAE11D412C19EEFD00207739 /* UploadImage.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -879,6 +885,7 @@
 				FA272F092BF45D0D00952AEF /* AddressesViewModel.swift in Sources */,
 				FAB4227D2BC8B77B002C7260 /* AddressView.swift in Sources */,
 				FAF695A02BEC86B700BD5CC1 /* OrderedItem.swift in Sources */,
+				FAE11D422C19EEFD00207739 /* UploadImage.swift in Sources */,
 				FAF695A32BEE3D5200BD5CC1 /* CardNumberView.swift in Sources */,
 				FAF6959C2BEBC11E00BD5CC1 /* OrderStatusProgress.swift in Sources */,
 				FAA5CDB52C0A19A0004E6AAF /* CurrentBottomModel.swift in Sources */,
@@ -922,6 +929,7 @@
 				FAB4228B2BC8B802002C7260 /* CountryRegionView.swift in Sources */,
 				FAB4228D2BC8B80F002C7260 /* GeneralTermsView.swift in Sources */,
 				FAF695A92BEE3F6800BD5CC1 /* CardCvvView.swift in Sources */,
+				FAE11D572C1FF48000207739 /* CountryModel.swift in Sources */,
 				FABA5AD32BDBAEBA00796390 /* AddressItemView.swift in Sources */,
 				FABA5AD52BDBC0A200796390 /* PaymentMethodViewIsEmpty.swift in Sources */,
 				FAB422812BC8B79E002C7260 /* CurrentOrdersView.swift in Sources */,

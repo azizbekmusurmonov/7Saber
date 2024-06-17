@@ -44,6 +44,12 @@ public struct ProfileView: View {
                     }
                 }
             }
+            .navigationBarHidden(true)
+            .onAppear {
+                Task {
+                    await vm.fetchProfile()
+                }
+            }
         }
     }
 }
@@ -63,4 +69,5 @@ extension ProfileView {
 
 #Preview {
     ProfileView()
+        .environmentObject(ProfileViewModel())
 }

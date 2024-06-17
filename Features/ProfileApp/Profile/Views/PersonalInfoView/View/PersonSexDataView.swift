@@ -34,7 +34,7 @@ struct PersonSexDataView: View {
             HStack(spacing: .zero) {
                 VStack(alignment: .leading) {
                     
-                    TextField(SelectGender.male.rawValue, text: selectGen == nil ? .constant("") : .constant(selectGen!.rawValue))
+                    TextField("Gender", text: selectGen == nil ? .constant("") : .constant(selectGen!.rawValue))
                         .textFieldStyle(PlainTextFieldStyle())
                         .disabled(true)
                 }

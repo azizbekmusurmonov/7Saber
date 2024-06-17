@@ -70,16 +70,16 @@ struct PersonalInfoList: View {
                                   textColor: Asset.Color.Text.primaryCol.swiftUIColor,
                                   buttonPressed: {
                     pop()
-                })
+                }, isDisabled: .constant(false))
                 
                 SaveCancelButtons(title: "Save",
                                   color: Asset.Color.Button.blackCol.swiftUIColor, textColor: Asset.Color.Text.whiteCol.swiftUIColor,
                                   buttonPressed: {
-                    print("Save profile")
-                    Task {
-                        await vm.sendPersonalInfo()
-                    }
-                })
+                    
+//                    Task {
+                        vm.sendPersonalInfo()
+//                    }
+                }, isDisabled: .constant(!vm.isFormValid))
             }
             
         }

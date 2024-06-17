@@ -80,7 +80,7 @@ struct AddNewAddress: View {
             
             Divider()
             AddButton(title: "ADD THE ADDRESS", buttonPressed: {
-                print("add the address")
+                viewModel.sendAddresses()
             }, isDisabled: .constant(!viewModel.isFormValid)) 
         }
     }

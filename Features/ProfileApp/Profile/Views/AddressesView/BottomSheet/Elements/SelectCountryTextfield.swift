@@ -18,6 +18,8 @@ enum SelectCountry: String, CaseIterable, Identifiable {
 
 struct SelectCountryTextfield: View {
     
+    @EnvironmentObject var viewModel: AddressFormViewModel
+    
     @State private var selectedCountry: SelectCountry? = nil
     @State private var showCountryPicker = false
     
