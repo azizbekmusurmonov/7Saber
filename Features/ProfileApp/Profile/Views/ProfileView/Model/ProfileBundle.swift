@@ -5,12 +5,19 @@
 //  Created by Azizbek Musurmonov   on 07/04/24.
 //
 
-import SwiftUI
+import Foundation
+import UIKit
 
-struct ProfileBundle: Identifiable, Hashable {
-    var id = UUID().uuidString
-    var profileImage: UIImage
+struct ProfileBundle: Hashable, Decodable {
+    var profileImageURL: String
     var profileName: String
     var gmailName: String
     var phoneNumber: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case profileImageURL = "profileImage"
+        case profileName
+        case gmailName
+        case phoneNumber
+    }
 }

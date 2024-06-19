@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardCvvView: View {
     
-    @State var textCvv = ""
+    @Binding var textCvv: String
     
     var body: some View {
         VStack(spacing: .zero) {
