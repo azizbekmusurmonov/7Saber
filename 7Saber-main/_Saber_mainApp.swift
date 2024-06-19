@@ -23,7 +23,7 @@ struct _Saber_mainApp: App {
             } else {
                 RegisterMobillAppView(skipButtonTapped: {
                     skipButtonPressed = true
-                }, hasSkipButton: true)
+                })
                     .environmentObject(registerVM)
             }
         }
