@@ -16,7 +16,7 @@ struct ProfileConstans {
                         ProfilecellModel(title: "Personal information",
                                          hasRightIcon: true,
                                          number: "",
-                                         pushToView: AnyView(PersonalInfoView().environmentObject(ProfileViewModel()))),
+                                         pushToView: AnyView(PersonalInfoView().environmentObject(PersonalInfoViewModel()))),
                         ProfilecellModel(title: "Addresses",
                                          hasRightIcon: true,
                                          number: "",

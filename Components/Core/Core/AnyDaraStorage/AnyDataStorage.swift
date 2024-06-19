@@ -20,6 +20,8 @@ public final class DataStorage {
     
     public var token = ""
     
+    public var isRegistrated: Bool { (DataStorage.storage.get(from: .token) as? String)?.isEmpty == false }
+    
     public static let storage: AnyDataStorage = UserDefaults.standard
 }
 

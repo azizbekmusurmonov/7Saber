@@ -23,6 +23,8 @@
 		FAB4226C2BC6D8C2002C7260 /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4226B2BC6D8C2002C7260 /* ProfileTab.swift */; };
 		FAD86DD02C076E9C00B45427 /* BottomSheetsNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD86DCE2C076DF900B45427 /* BottomSheetsNavBar.swift */; };
 		FAD86DD12C076ED200B45427 /* BaseText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7956E2BEAA13300467150 /* BaseText.swift */; };
+		FAEEE03D2C15DEF200FD39D5 /* ImagecolorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEE03C2C15DEF200FD39D5 /* ImagecolorView.swift */; };
+		FAEEE03F2C15DEFF00FD39D5 /* Imagepicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEE03E2C15DEFF00FD39D5 /* Imagepicker.swift */; };
 		FAF795732BEAA14100467150 /* DynamicBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF795712BEAA14100467150 /* DynamicBottomSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		FAB4226B2BC6D8C2002C7260 /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
 		FAD6F6932BEA62DF00A2685E /* DeviceBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBounds.swift; sourceTree = "<group>"; };
 		FAD86DCE2C076DF900B45427 /* BottomSheetsNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetsNavBar.swift; sourceTree = "<group>"; };
+		FAEEE03C2C15DEF200FD39D5 /* ImagecolorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagecolorView.swift; sourceTree = "<group>"; };
+		FAEEE03E2C15DEFF00FD39D5 /* Imagepicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imagepicker.swift; sourceTree = "<group>"; };
 		FAF7956E2BEAA13300467150 /* BaseText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseText.swift; sourceTree = "<group>"; };
 		FAF795712BEAA14100467150 /* DynamicBottomSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBottomSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +112,8 @@
 		FA568B152BD9579F00B87B59 /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				FAEEE03C2C15DEF200FD39D5 /* ImagecolorView.swift */,
+				FAEEE03E2C15DEFF00FD39D5 /* Imagepicker.swift */,
 			);
 			name = ImagePicker;
 			path = ../../../Features/WishlistApp/WishlistApp/ImagePicker;
@@ -287,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEEE03F2C15DEFF00FD39D5 /* Imagepicker.swift in Sources */,
 				FA77A2442BBBA94E00843673 /* Core.docc in Sources */,
 				FAD86DD12C076ED200B45427 /* BaseText.swift in Sources */,
 				526456092BEBCACD00A59849 /* ToastView+Extension.swift in Sources */,
@@ -299,6 +306,7 @@
 				7B1513B72BDCDB6D00A72A6C /* AnyDataStorage.swift in Sources */,
 				5272BAD42BE9310700EDD0F5 /* Size.swift in Sources */,
 				7B65D9D32BF4F8680038DA06 /* String.swift in Sources */,
+				FAEEE03D2C15DEF200FD39D5 /* ImagecolorView.swift in Sources */,
 				FAB4226C2BC6D8C2002C7260 /* ProfileTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

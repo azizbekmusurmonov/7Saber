@@ -13,7 +13,7 @@ struct TextFieldView: View {
     
     @State var header: String
     @State var titleKey: String
-    @State var text: String
+    @Binding var text: String
     
     var body: some View {
         VStack(alignment: .leading) {

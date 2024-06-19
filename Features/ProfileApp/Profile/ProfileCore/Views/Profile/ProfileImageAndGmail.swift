@@ -16,7 +16,7 @@ struct ProfileImageView: View {
     var body: some View {
         VStack(spacing: .zero) {
             HStack(spacing: .zero) {
-                Image(uiImage: bundle.profileImage)
+                Image(bundle.profileImageURL)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 146, height: 146)
