@@ -7,6 +7,12 @@
 
 import Foundation
 import Combine
+import NetworkManager
+
+enum ShowMessage: Equatable {
+    case success(message: String)
+    case error(message: String)
+}
 
 public struct Product: Identifiable {
     public let id = UUID()
@@ -20,27 +26,18 @@ public struct Product: Identifiable {
 
 public final class CartViewModel: ObservableObject {
     
-    @Published var products: [Product] = [
-        Product(name: "Product 1", price: 1000000, discountedPrice: 1300000, size: "41", color: "Dark green", count: 1),
-        Product(name: "Product 2", price: 1000000, discountedPrice: 1500000, size: "42", color: "Black", count: 1),
-        Product(name: "Product 3", price: 1000000, discountedPrice: 1500000, size: "42", color: "Black", count: 1),
-        Product(name: "Product 4", price: 1000000, discountedPrice: 1500000, size: "42", color: "Black", count: 1),
-        Product(name: "Product 5", price: 1000000, discountedPrice: 1500000, size: "42", color: "Black", count: 1),
-        Product(name: "Product 6", price: 1000000, discountedPrice: 1500000, size: "42", color: "Black", count: 1),
-        Product(name: "Product 7", price: 1000000, discountedPrice: 1500000, size: "42", color: "Black", count: 1),
-        Product(name: "Product 8", price: 1000000, discountedPrice: 1500000, size: "42", color: "Black", count: 1),
-        Product(name: "Product 9", price: 1000000, discountedPrice: 1500000, size: "42", color: "Black", count: 1),
-        Product(name: "Product 10", price: 1000000, discountedPrice: 1500000, size: "42", color: "Black", count: 1)
-    ] {
+    @Published var products: [Product] = [] {
         didSet {
             recalculateTotalPrice()
         }
     }
     
     @Published var totalPrice: Int = 0
+    @Published var message: ShowMessage? = nil
     
     public init() {
         recalculateTotalPrice()
+        getCart()
     }
     
     private func recalculateTotalPrice() {
@@ -65,6 +62,58 @@ public final class CartViewModel: ObservableObject {
         if let index = products.firstIndex(where: { $0.id == product.id }), products[index].count > 0 {
             products[index].count -= 1
             recalculateTotalPrice()
+        }
+    }
+    
+    func getCart() {
+        let urlString = "https://lab.7saber.uz/api/client/cart"
+        
+        Task.detached { [weak self] in
+            
+            do {
+                let model = try await NetworkService.shared.request(
+                    url: urlString,
+                    decode: [CartModel].self,
+                    method: .get,
+                    queryParameters: ["page": 1.description, "pageSize": 15.description]
+                )
+                
+                await MainActor.run { [weak self] in
+                    self?.message = .success(message: "CART muvaffaqiyatli keldi")
+//                    self?.products = model
+                }
+            } catch {
+                await MainActor.run { [weak self] in
+                    self?.message = .success(message: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func updateCart() {
+        
+        let urlString = "https://lab.7saber.uz/api/client/cart/update"
+        
+        Task.detached { [weak self] in
+            guard self != nil else { return }
+            
+            do {
+                // Используем копию urlComponents
+                let model = try await NetworkService.shared.request(
+                    url: urlString,
+                    decode: UpdateModel.self,
+                    method: .post
+//                    body: [type.rawValue: self?.numberText ?? ""]
+                )
+                await MainActor.run { [weak self] in
+                    self?.message = .success(message: "")
+                }
+                
+            } catch {
+                await MainActor.run { [weak self] in
+                    self?.message = .success(message: error.localizedDescription)
+                }
+            }
         }
     }
 }

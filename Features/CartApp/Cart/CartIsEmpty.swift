@@ -16,7 +16,6 @@ struct CartIsEmpty: View {
                     Image(uiImage: Asset.Image.Wishlist.folder.image)
                         .resizable()
                         .frame(width: 32, height: 32)
-//                        .padding(.top, 258)
                         .padding(.leading, 16)
                     Text("YOUR CART IS EMPTY")
                         .padding(.leading, 16)
