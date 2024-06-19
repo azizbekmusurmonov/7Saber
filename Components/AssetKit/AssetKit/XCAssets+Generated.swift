@@ -34,9 +34,9 @@ public enum Asset {
     }
     public enum Chips {
       public enum Status {
-        public static let onProccess = ColorAsset(name: "OnProccess")
         public static let canceled = ColorAsset(name: "canceled")
         public static let delivired = ColorAsset(name: "delivired")
+        public static let onProccess = ColorAsset(name: "onProccess")
       }
     }
     public enum Surface {

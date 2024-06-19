@@ -9,15 +9,32 @@ import SwiftUI
 import Core
 import AssetKit
 
+public enum AddButtonBacgrounColor {
+    case black
+    case disable
+    
+    var buttonBacgroundColor: Color {
+        switch self {
+        case .black: 
+            return Asset.Color.Button.blackCol.swiftUIColor
+        case .disable: 
+            return Asset.Color.Button.Black.disable.swiftUIColor
+        }
+    }
+}
+
 public struct AddButton: View {
     
-    @State var title: String
-    @State var buttonPressed: (() -> ())
+    let title: String
+    let buttonPressed: (() -> ())
+    @Binding var isDisabled: Bool
     
     public var body: some View {
         VStack(spacing: .zero) {
             Button(action: {
-                buttonPressed()
+                if !isDisabled {
+                    buttonPressed()
+                }
             }) {
                 HStack(spacing: .zero) {
                     Text(title)
@@ -31,8 +48,9 @@ public struct AddButton: View {
             }
             .padding()
             .frame(width: 361,height: 56)
-            .background(Asset.Color.Button.blackCol.swiftUIColor)
+            .background(isDisabled ? AddButtonBacgrounColor.disable.buttonBacgroundColor : AddButtonBacgrounColor.black.buttonBacgroundColor)
             .clipShape(.capsule)
+            .disabled(isDisabled)
         }
         .padding()
     }

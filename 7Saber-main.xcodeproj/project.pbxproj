@@ -195,6 +195,7 @@
 		FA77A26A2BBBA99300843673 /* AppResources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppResources.xcodeproj; path = AppResources/AppResources.xcodeproj; sourceTree = "<group>"; };
 		FA77A28A2BBBA9CB00843673 /* RegistrationApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RegistrationApp.xcodeproj; path = RegistrationApp/RegistrationApp.xcodeproj; sourceTree = "<group>"; };
 		FAACC0C12BBE52A7003CCE22 /* AssetKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AssetKit.xcodeproj; path = AssetKit/AssetKit.xcodeproj; sourceTree = "<group>"; };
+		FAE11D552C19F1B200207739 /* -Saber-main-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "-Saber-main-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +265,7 @@
 		5281032B2BB265BC00F789A4 /* 7Saber-main */ = {
 			isa = PBXGroup;
 			children = (
+				FAE11D552C19F1B200207739 /* -Saber-main-Info.plist */,
 				5281032C2BB265BC00F789A4 /* _Saber_mainApp.swift */,
 				5281032E2BB265BC00F789A4 /* TabBarView.swift */,
 				528103B82BB2681800F789A4 /* AddCard.swift */,
@@ -792,9 +794,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"7Saber-main/Preview Content\"";
-				DEVELOPMENT_TEAM = K7U4M666S7;
+				DEVELOPMENT_TEAM = 55T4GQ9V2G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "-Saber-main-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -827,9 +830,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"7Saber-main/Preview Content\"";
-				DEVELOPMENT_TEAM = K7U4M666S7;
+				DEVELOPMENT_TEAM = 55T4GQ9V2G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "-Saber-main-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -10,7 +10,6 @@
 		526456092BEBCACD00A59849 /* ToastView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526456082BEBCACD00A59849 /* ToastView+Extension.swift */; };
 		5272BACF2BE92E0700EDD0F5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BACE2BE92E0700EDD0F5 /* Font.swift */; };
 		5272BAD42BE9310700EDD0F5 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BAD32BE9310700EDD0F5 /* Size.swift */; };
-		52F0DD862BEE65FD00F9ECE6 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 52F0DD852BEE65FD00F9ECE6 /* SwiftMessages */; };
 		52FAAF462BF268D300B5B1A4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAF452BF268D300B5B1A4 /* UserModel.swift */; };
 		7B1513B72BDCDB6D00A72A6C /* AnyDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1513B62BDCDB6D00A72A6C /* AnyDataStorage.swift */; };
 		7B65D9D32BF4F8680038DA06 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65D9D22BF4F8680038DA06 /* String.swift */; };
@@ -20,9 +19,12 @@
 		FA77A2442BBBA94E00843673 /* Core.docc in Sources */ = {isa = PBXBuildFile; fileRef = FA77A2432BBBA94E00843673 /* Core.docc */; };
 		FA77A2452BBBA94E00843673 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = FA77A2422BBBA94E00843673 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA77A2532BBBA97500843673 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77A2522BBBA97500843673 /* Color+Extensions.swift */; };
+		FAA5CDAE2C09DCFF004E6AAF /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = FAA5CDAD2C09DCFF004E6AAF /* SwiftMessages */; };
 		FAB4226C2BC6D8C2002C7260 /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4226B2BC6D8C2002C7260 /* ProfileTab.swift */; };
 		FAD86DD02C076E9C00B45427 /* BottomSheetsNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD86DCE2C076DF900B45427 /* BottomSheetsNavBar.swift */; };
 		FAD86DD12C076ED200B45427 /* BaseText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7956E2BEAA13300467150 /* BaseText.swift */; };
+		FAEEE03D2C15DEF200FD39D5 /* ImagecolorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEE03C2C15DEF200FD39D5 /* ImagecolorView.swift */; };
+		FAEEE03F2C15DEFF00FD39D5 /* Imagepicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEE03E2C15DEFF00FD39D5 /* Imagepicker.swift */; };
 		FAF795732BEAA14100467150 /* DynamicBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF795712BEAA14100467150 /* DynamicBottomSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +46,6 @@
 		526456082BEBCACD00A59849 /* ToastView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToastView+Extension.swift"; sourceTree = "<group>"; };
 		5272BACE2BE92E0700EDD0F5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5272BAD32BE9310700EDD0F5 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
-		529EE81D2BE2A97600BDF552 /* DynamicBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicBottomSheet.swift; sourceTree = "<group>"; };
 		52FAAF452BF268D300B5B1A4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		7B1513B62BDCDB6D00A72A6C /* AnyDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDataStorage.swift; sourceTree = "<group>"; };
 		7B65D9D22BF4F8680038DA06 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -57,6 +58,8 @@
 		FAB4226B2BC6D8C2002C7260 /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
 		FAD6F6932BEA62DF00A2685E /* DeviceBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceBounds.swift; sourceTree = "<group>"; };
 		FAD86DCE2C076DF900B45427 /* BottomSheetsNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetsNavBar.swift; sourceTree = "<group>"; };
+		FAEEE03C2C15DEF200FD39D5 /* ImagecolorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagecolorView.swift; sourceTree = "<group>"; };
+		FAEEE03E2C15DEFF00FD39D5 /* Imagepicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imagepicker.swift; sourceTree = "<group>"; };
 		FAF7956E2BEAA13300467150 /* BaseText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseText.swift; sourceTree = "<group>"; };
 		FAF795712BEAA14100467150 /* DynamicBottomSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBottomSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52F0DD862BEE65FD00F9ECE6 /* SwiftMessages in Frameworks */,
+				FAA5CDAE2C09DCFF004E6AAF /* SwiftMessages in Frameworks */,
 				FA568B0E2BD7CC3D00B87B59 /* AssetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,14 +83,6 @@
 				526456082BEBCACD00A59849 /* ToastView+Extension.swift */,
 			);
 			path = "Toast+Ext";
-			sourceTree = "<group>";
-		};
-		529EE81C2BE2A96B00BDF552 /* DynamicBottomSheet */ = {
-			isa = PBXGroup;
-			children = (
-				529EE81D2BE2A97600BDF552 /* DynamicBottomSheet.swift */,
-			);
-			path = DynamicBottomSheet;
 			sourceTree = "<group>";
 		};
 		52FAAF442BF268C400B5B1A4 /* Public Models */ = {
@@ -117,6 +112,8 @@
 		FA568B152BD9579F00B87B59 /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				FAEEE03C2C15DEF200FD39D5 /* ImagecolorView.swift */,
+				FAEEE03E2C15DEFF00FD39D5 /* Imagepicker.swift */,
 			);
 			name = ImagePicker;
 			path = ../../../Features/WishlistApp/WishlistApp/ImagePicker;
@@ -166,7 +163,6 @@
 				52FAAF442BF268C400B5B1A4 /* Public Models */,
 				526456072BEBCAC000A59849 /* Toast+Ext */,
 				7B1513B52BDCDB4500A72A6C /* AnyDaraStorage */,
-				529EE81C2BE2A96B00BDF552 /* DynamicBottomSheet */,
 				FA568B152BD9579F00B87B59 /* ImagePicker */,
 				FA69E8112BC170DE005113B2 /* UIElements */,
 				FA77A2512BBBA96C00843673 /* Extensions */,
@@ -241,7 +237,7 @@
 			);
 			name = Core;
 			packageProductDependencies = (
-				52F0DD852BEE65FD00F9ECE6 /* SwiftMessages */,
+				FAA5CDAD2C09DCFF004E6AAF /* SwiftMessages */,
 			);
 			productName = Core;
 			productReference = FA77A23F2BBBA94E00843673 /* Core.framework */;
@@ -271,7 +267,7 @@
 			);
 			mainGroup = FA77A2352BBBA94E00843673;
 			packageReferences = (
-				5264560A2BEBCB3200A59849 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+				FAA5CDAC2C09DCFF004E6AAF /* XCRemoteSwiftPackageReference "SwiftMessages" */,
 			);
 			productRefGroup = FA77A2402BBBA94E00843673 /* Products */;
 			projectDirPath = "";
@@ -297,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEEE03F2C15DEFF00FD39D5 /* Imagepicker.swift in Sources */,
 				FA77A2442BBBA94E00843673 /* Core.docc in Sources */,
 				FAD86DD12C076ED200B45427 /* BaseText.swift in Sources */,
 				526456092BEBCACD00A59849 /* ToastView+Extension.swift in Sources */,
@@ -308,9 +305,8 @@
 				52FAAF462BF268D300B5B1A4 /* UserModel.swift in Sources */,
 				7B1513B72BDCDB6D00A72A6C /* AnyDataStorage.swift in Sources */,
 				5272BAD42BE9310700EDD0F5 /* Size.swift in Sources */,
-				5272BACD2BE92D0600EDD0F5 /* BottomSheetsNavBar.swift in Sources */,
 				7B65D9D32BF4F8680038DA06 /* String.swift in Sources */,
-				5272BAD22BE92F0B00EDD0F5 /* BaseText.swift in Sources */,
+				FAEEE03D2C15DEF200FD39D5 /* ImagecolorView.swift in Sources */,
 				FAB4226C2BC6D8C2002C7260 /* ProfileTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,7 +446,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K7U4M666S7;
+				DEVELOPMENT_TEAM = 55T4GQ9V2G;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -488,7 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K7U4M666S7;
+				DEVELOPMENT_TEAM = 55T4GQ9V2G;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -543,7 +539,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5264560A2BEBCB3200A59849 /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+		FAA5CDAC2C09DCFF004E6AAF /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages";
 			requirement = {
@@ -554,9 +550,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		52F0DD852BEE65FD00F9ECE6 /* SwiftMessages */ = {
+		FAA5CDAD2C09DCFF004E6AAF /* SwiftMessages */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5264560A2BEBCB3200A59849 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			package = FAA5CDAC2C09DCFF004E6AAF /* XCRemoteSwiftPackageReference "SwiftMessages" */;
 			productName = SwiftMessages;
 		};
 /* End XCSwiftPackageProductDependency section */
