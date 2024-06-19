@@ -58,6 +58,7 @@ struct PrimeryTextField: View {
                 .padding()
                 .frame(width: UIScreen.main.bounds.width - 80, height: 48)
                 .keyboardType(keyboardType.getKeyboardType)
+                .hideKeyboardOnTap()
             }
             .overlay(
                 Rectangle()
