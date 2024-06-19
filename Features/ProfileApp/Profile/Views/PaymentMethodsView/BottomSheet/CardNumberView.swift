@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardNumberView: View {
     
-    @State private var text = ""
+    @Binding var text: String
     
     var body: some View {
         VStack(spacing: .zero) {
@@ -34,11 +34,5 @@ struct CardNumberView: View {
         
         // Group digits into sets of 4
         number = limitedDigits.chunked(into: 4).joined(separator: " ")
-    }
-}
-
-struct CardNumberView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardNumberView()
     }
 }
