@@ -14,14 +14,19 @@ import Cart
 import Catalog
 import Profile
 import AssetKit
+import Registration
+import Core
 
 struct TabBarView: View {
     
-   // @StateObject var homeVM = HomeViiewModel()
+    // @StateObject var homeVM = HomeViiewModel()
     @StateObject var wishlistVM = WishlistViewModel()
     @StateObject var catalogVM = CatalogViewModel()
     @StateObject var cartVC = CartViewModel()
     @StateObject var profileVM = ProfileViewModel()
+    @EnvironmentObject var registerVM: RegisterMobillAppViewModel
+    
+    @State var isRegistrated = DataStorage.shared.isRegistrated
     
     var body: some View {
         ZStack {
@@ -34,7 +39,7 @@ struct TabBarView: View {
                         Image(uiImage: Asset.Image.TabBars.home.image)
                         Text("Home")
                     }
-                   // .environmentObject(homeVM)
+                // .environmentObject(homeVM)
                 
                 CatalogView()
                     .environmentObject(catalogVM)
@@ -51,21 +56,38 @@ struct TabBarView: View {
                         Text("Cart")
                     }
                 
-                WishlistView()
-                    .environmentObject(wishlistVM)
-                    .tabItem {
-                        Image(uiImage: Asset.Image.TabBars.wishlist.image)
-                        Text("Wishlist")
+                ZStack {
+                    if !isRegistrated {
+                        RegisterMobillAppView(skipButtonTapped: {
+                            isRegistrated = true
+                        }, hasSkipButton: false)
+                    } else {
+                        WishlistView()
+                            .environmentObject(wishlistVM)
                     }
-                ProfileView()
-                    .environmentObject(profileVM)
-                    .tabItem {
-                        Image(uiImage: Asset.Image.TabBars.profile.image)
-                        Text("Profile")
+                }
+                .tabItem {
+                    Image(uiImage: Asset.Image.TabBars.wishlist.image)
+                    Text("Wishlist")
+                }
+                
+                ZStack {
+                    if !isRegistrated {
+                        RegisterMobillAppView(skipButtonTapped: {
+                            isRegistrated = true
+                        }, hasSkipButton: false)
+                    } else {
+                        ProfileView()
+                            .environmentObject(profileVM)
                     }
-//                    .onAppear {
-//                        self.profileVM.count = 100
-//                    }
+                }
+                .tabItem {
+                    Image(uiImage: Asset.Image.TabBars.profile.image)
+                    Text("Profile")
+                }
+                //                    .onAppear {
+                //                        self.profileVM.count = 100
+                //                    }
             }
         }
     }

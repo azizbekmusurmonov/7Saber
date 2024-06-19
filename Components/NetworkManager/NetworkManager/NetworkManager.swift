@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import Core
+import UIKit
 
 final public class NetworkService {
     
@@ -62,6 +63,11 @@ final public class NetworkService {
             header.forEach { (key, value) in
             request.setValue(key, forHTTPHeaderField: value)
             }
+        }
+        
+        if let deviceId = await UIDevice.current.identifierForVendor?.uuidString {
+            request.setValue(deviceId, forHTTPHeaderField: "Accept-DeviceId")
+            print("DeviceId", deviceId)
         }
         
         // Add request body if provided

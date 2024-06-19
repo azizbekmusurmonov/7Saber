@@ -394,6 +394,7 @@
 				528103262BB265BC00F789A4 /* Frameworks */,
 				528103272BB265BC00F789A4 /* Resources */,
 				528103B72BB2676B00F789A4 /* Embed Frameworks */,
+				521FF62E2C229B03000208DA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -423,11 +424,13 @@
 			};
 			buildConfigurationList = 528103242BB265BC00F789A4 /* Build configuration list for PBXProject "7Saber-main" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = uz;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				uz,
 			);
 			mainGroup = 528103202BB265BC00F789A4;
 			packageReferences = (
@@ -627,6 +630,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		521FF62E2C229B03000208DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		528103252BB265BC00F789A4 /* Sources */ = {
