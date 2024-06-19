@@ -24,6 +24,16 @@ struct PersonalInfoView: View {
             ScrollView {
                 VStack(spacing: .zero) {
                     PersonalInfoList()
+                        .environmentObject(vm)
+                }
+                .onChange(of: vm.messageShow) { newValue in
+                    guard let newValue else { return }
+                    switch newValue {
+                    case .succes(message: let message):
+                        Snackbar.show(message: message, theme: .success)
+                    case .error(message: let message):
+                        Snackbar.show(message: message, theme: .error)
+                    }
                 }
             }
             .padding()

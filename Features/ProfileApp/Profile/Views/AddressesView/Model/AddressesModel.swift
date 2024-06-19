@@ -8,13 +8,6 @@
 import Foundation
 import Combine
 
-public class AddressesModel: ObservableObject {
-    
-    @Published public var items: [Item] = []
-    public init() { }
-   
-}
-
 public struct Item: Hashable {
     public var id = UUID().uuidString
     public let title: String
