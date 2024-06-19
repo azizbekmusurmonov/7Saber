@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import NetworkManager
+import Core
 
 enum MessageShow: Equatable {
     case succes(message: String)
@@ -53,11 +54,14 @@ public class PersonalInfoViewModel: ObservableObject {
             do {
                 try await UploadImage.uploadImage(image: profileImage!, fullName: fullNam, gender: gender, birthDate: .init(), email: email, toURL: url)
                 
-                await MainActor.run {
-                    print("shu yerda success korsatasiz")
+                await MainActor.run { [weak self] in
+                    self?.messageShow = .succes(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli yuborildi")
                 }
             } catch {
                 print("uplaod error ", error.localizedDescription)
+                await MainActor.run { [weak self] in
+                    self?.messageShow = .error(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli yuborilmadi")
+                }
             }
         }
     }
