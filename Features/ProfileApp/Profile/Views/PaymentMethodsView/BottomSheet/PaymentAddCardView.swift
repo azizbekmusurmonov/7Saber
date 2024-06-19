@@ -11,28 +11,21 @@ import AssetKit
 
 struct PaymentAddCardView: View {
     
-    @State private var cardNumber: String = ""
-    @State private var expirationDate: String = ""
-    @State private var nameCard: String = ""
-    @State private var cvvCard: String = ""
-    
-    var isAddButtonEnabled: Bool {
-        return !cardNumber.isEmpty && !expirationDate.isEmpty && !nameCard.isEmpty && !cvvCard.isEmpty
-    }
+    @EnvironmentObject private var vm: PaymentFormViewModel
     
     var body: some View {
         VStack(spacing: .zero) {
             BottomSheetsNavBar(title: "ADDED CREDIT CARD")
             PaymentCardView(bankLogo: Asset.Image.BankImage.agrobank.image,
-                            cardNumber: $cardNumber,
-                            expirationDate: $expirationDate,
-                            nameCard: $nameCard,
-                            cvvCard: $cvvCard)
+                            cardNumber: $vm.cardNumber,
+                            expirationDate: $vm.expirationDate,
+                            nameCard: $vm.nameCard,
+                            cvvCard: $vm.cvvCard)
             .cornerRadius(10)
             .padding()
-            AddButton(title: "ADD CARD", buttonPressed: {
+            AddButton(title: "ADD CARD",  buttonPressed: {
                 print("add card")
-            }, isDisabled: !isAddButtonEnabled)
+            }, isDisabled: .constant(!vm.isFormValied))
         }
         .padding()
     }

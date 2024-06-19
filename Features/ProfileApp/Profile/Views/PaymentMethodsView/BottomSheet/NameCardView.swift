@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NameCardView: View {
     
-    @State var text = ""
+    @Binding var text: String
     
     var body: some View {
         VStack(spacing: .zero) {

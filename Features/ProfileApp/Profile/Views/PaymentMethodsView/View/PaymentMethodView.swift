@@ -13,6 +13,7 @@ struct PaymentMethodView: View {
     
     @EnvironmentObject var vm: PaymentMethodViewModel
     @StateObject var profileData = PaymentMethodViewModel()
+    @StateObject private var paymentFromViewModel = PaymentFormViewModel()
     
     @State var isSheetViewActive = false
     @State var detentHeight: CGFloat = 0
@@ -42,10 +43,11 @@ struct PaymentMethodView: View {
                       buttonPressed: {
                 self.isSheetViewActive.toggle()
                 
-            })
+            }, isDisabled: $paymentFromViewModel.isFormValied)
             .sheet(isPresented: self.$isSheetViewActive) {
                 if #available(iOS 16.0, *) {
                     PaymentAddCardView()
+                        .environmentObject(paymentFromViewModel)
                         .readHeight()
                         .onPreferenceChange(HeightPreferenceKey.self) { height in
                             if let height {
@@ -55,6 +57,7 @@ struct PaymentMethodView: View {
                         .presentationDetents([.height(self.detentHeight)])
                 } else {
                     PaymentAddCardView()
+                        .environmentObject(paymentFromViewModel)
                 }
             }
         }

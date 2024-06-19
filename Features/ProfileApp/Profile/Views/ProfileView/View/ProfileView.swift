@@ -26,7 +26,7 @@ public struct ProfileView: View {
                 ScrollView {
                     VStack(spacing: .zero) {
                         
-                        ProfileImageView(bundle: $vm.profileImage)
+                        ProfileImageView(bundle: $vm.profileData)
                         
                         ProfileList()
                         
@@ -42,6 +42,12 @@ public struct ProfileView: View {
                             print("delete acc")
                         })
                     }
+                }
+            }
+            .navigationBarHidden(true)
+            .onAppear {
+                Task {
+                    await vm.fetchProfile()
                 }
             }
         }
@@ -63,4 +69,5 @@ extension ProfileView {
 
 #Preview {
     ProfileView()
+        .environmentObject(ProfileViewModel())
 }
