@@ -25,15 +25,10 @@ public struct CartView: View {
                 ScrollView {
                     CartListView()
                 }
-    //            .padding(.top, 16)
                 
                 CheckOutView(action: {})
             }
             
         }
     }
-}
-
-#Preview {
-    CartView()
 }

@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import Core
+import UIKit
 
 final public class NetworkService {
     
@@ -56,6 +57,11 @@ final public class NetworkService {
         if let token = DataStorage.storage.get(from: .token) {
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
             print("Authorization", "Bearer", "TOKEN", token == nil ? "NO" : token,"\n")
+        }
+        
+        if let deviceId = await UIDevice.current.identifierForVendor?.uuidString {
+            request.setValue(deviceId, forHTTPHeaderField: "Accept-DeviceId")
+            print("DeviceId", deviceId)
         }
         
         // Add request body if provided
