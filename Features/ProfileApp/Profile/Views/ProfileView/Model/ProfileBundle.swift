@@ -14,10 +14,10 @@ struct ProfileBundle: Hashable, Decodable {
     var gmailName: String
     var phoneNumber: String?
     
-    enum CodingKeys: String, CodingKey {
-        case profileImageURL = "profileImage"
-        case profileName
-        case gmailName
-        case phoneNumber
-    }
+//    enum CodingKeys: String, CodingKey {
+//        case profileImageURL = "profileImage"
+//        case profileName
+//        case gmailName
+//        case phoneNumber
+//    }
 }

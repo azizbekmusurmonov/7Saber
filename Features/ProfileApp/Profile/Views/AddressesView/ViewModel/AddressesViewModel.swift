@@ -72,6 +72,8 @@ public class AddressFormViewModel: ObservableObject {
     
     @Published public var isFormValid: Bool = false
     
+    @Published var message: MessageShow? = nil
+    
     public func checkToValied() {
         isFormValid = !addressName.isEmpty && !streetAddress.isEmpty && !city.isEmpty && !stateProvinceRegion.isEmpty
     }
@@ -106,8 +108,14 @@ public class AddressFormViewModel: ObservableObject {
                 )
                 
                 print("Address sent successfully: \(responce)")
+                await MainActor.run { [weak self] in
+                    self?.message = .succes(message: "Sizning manzilingiz muvaffaqqiyatli yuborildi")
+                }
             } catch {
                 print("uplaod error ", error.localizedDescription)
+                await MainActor.run { [weak self] in
+                    self?.message = .error(message: "Sizning manzilingiz muvaffaqqiyatli yuborilmadi")
+                }
             }
         }
     }
