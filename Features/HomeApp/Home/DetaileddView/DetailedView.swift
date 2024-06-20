@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailedView: View {
     
-    @StateObject var categoryController = CategoryController()
+  //  @StateObject var categoryController = CategoryController()
     @StateObject var viewModel = NewCollectionViewModel()
     @StateObject var viewModel22 = NewCollectionViewModel22()
     @State private var selectedColor: Color?
