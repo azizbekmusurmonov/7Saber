@@ -19,7 +19,6 @@ struct _Saber_mainApp: App {
         WindowGroup {
             if (DataStorage.storage.get(from: .isRegistrate) as? Bool) == true || skipButtonPressed  {
                 TabBarView()
-                    .environmentObject(registerVM)
             } else {
                 RegisterMobillAppView(skipButtonTapped: {
                     skipButtonPressed = true

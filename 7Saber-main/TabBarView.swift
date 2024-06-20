@@ -13,20 +13,14 @@ import CategoryTarget
 import Cart
 import Catalog
 import Profile
-import AssetKit
-import Registration
-import Core
 
 struct TabBarView: View {
     
-    // @StateObject var homeVM = HomeViiewModel()
+   // @StateObject var homeVM = HomeViiewModel()
     @StateObject var wishlistVM = WishlistViewModel()
     @StateObject var catalogVM = CatalogViewModel()
     @StateObject var cartVC = CartViewModel()
     @StateObject var profileVM = ProfileViewModel()
-    @EnvironmentObject var registerVM: RegisterMobillAppViewModel
-    
-    @State var isRegistrated = DataStorage.shared.isRegistrated
     
     var body: some View {
         ZStack {
@@ -36,23 +30,22 @@ struct TabBarView: View {
             TabView {
                 ContentView()
                     .tabItem {
-                        Image(uiImage: Asset.Image.TabBars.home.image)
+                        Image(systemName: "1.circle")
                         Text("Home")
                     }
-                // .environmentObject(homeVM)
+                  //  .environmentObject(homeVM)
                 
                 CatalogView()
                     .environmentObject(catalogVM)
                     .tabItem {
-                        Image(uiImage: Asset.Image.TabBars.catalog.image)
+                        Image(systemName: "2.circle")
                         Text("Catalog")
-                        
                     }
                 
                 CartView()
                     .environmentObject(cartVC)
                     .tabItem {
-                        Image(uiImage: Asset.Image.TabBars.cart.image)
+                        Image(systemName: "3.circle")
                         Text("Cart")
                     }
                 
@@ -80,14 +73,9 @@ struct TabBarView: View {
                         ProfileView()
                             .environmentObject(profileVM)
                     }
-                }
-                .tabItem {
-                    Image(uiImage: Asset.Image.TabBars.profile.image)
-                    Text("Profile")
-                }
-                //                    .onAppear {
-                //                        self.profileVM.count = 100
-                //                    }
+//                    .onAppear {
+//                        self.profileVM.count = 100
+//                    }
             }
         }
     }
@@ -102,3 +90,4 @@ struct Blur: UIViewRepresentable {
     
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {}
 }
+
