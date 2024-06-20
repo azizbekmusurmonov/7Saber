@@ -2,13 +2,13 @@
 //  NetworkManager.swift
 //  NetworkManager
 //
-//  Created by Azizbek Musurmonov   on 02/04/24.
+//  Created by Ismatillokhon   on 02/04/24.
 //
 
 import Foundation
 import Combine
-
-import Foundation
+import Core
+import UIKit
 
 final public class NetworkService {
     
@@ -21,7 +21,8 @@ final public class NetworkService {
         decode: T.Type,
         method: HTTPMethod,
         queryParameters: [String: String]? = nil,
-        body: [String: Any]? = nil
+        body: [String: Any]? = nil,
+        header: [String: String] = [:]
     ) async throws -> T {
         guard var components = URLComponents(string: url) else {
             throw NetworkError.invalidURL
@@ -45,11 +46,33 @@ final public class NetworkService {
         var request = URLRequest(url: finalURL)
         request.httpMethod = method.rawValue
     
+        // set header
+        print("-------------------------HEADER---------------------------------")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        print("Content-Type", "application/json","\n")
+        request.setValue("iOS", forHTTPHeaderField: "Accept-Device")
+        if let language = DataStorage.storage.get(from: .language) as? String {
+            request.setValue(language, forHTTPHeaderField: "Accept-Language")
+            print("Accept-Language", language,"\n")
+        }
+        if let token = DataStorage.storage.get(from: .token) {
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            print("Authorization", "Bearer", "TOKEN", token == nil ? "NO" : token,"\n")
+        }
+        if !header.isEmpty {
+            header.forEach { (key, value) in
+            request.setValue(key, forHTTPHeaderField: value)
+            }
+        }
+        
+        if let deviceId = await UIDevice.current.identifierForVendor?.uuidString {
+            request.setValue(deviceId, forHTTPHeaderField: "Accept-DeviceId")
+            print("DeviceId", deviceId)
+        }
         
         // Add request body if provided
         if let body = body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body)
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             
             string += "body: \(body)"
             string += newLine
@@ -106,7 +129,7 @@ final public class NetworkService {
 
             
             guard let response = response as? HTTPURLResponse, (200 ... 299) ~= response.statusCode else {
-                print("⛔️⛔️⛔️⛔️⛔️⛔️⛔️ status error", (response as? HTTPURLResponse)?.statusCode ?? .zero)
+                print("⛔️⛔️⛔️⛔️⛔️⛔️⛔️ status error", (response as? HTTPURLResponse)?.statusCode ?? .zero, print(response))
                 throw NetworkError.incorrectStatusCode((response as? HTTPURLResponse)?.statusCode ?? .zero)
             }
             
@@ -121,7 +144,7 @@ final public class NetworkService {
 
 
 extension Dictionary {
-    func percentEncoded() -> Data? {
+    public func percentEncoded() -> Data? {
         map { key, value in
             let escapedKey = "\(key)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
             let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""

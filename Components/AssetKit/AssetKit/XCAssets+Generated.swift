@@ -26,10 +26,10 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 public enum Asset {
   public enum Color {
     public enum Button {
-      public static let blackCol = ColorAsset(name: "BlackCol")
       public enum Black {
         public static let disable = ColorAsset(name: "disable")
       }
+      public static let blackCol = ColorAsset(name: "BlackCol")
       public static let grayCol = ColorAsset(name: "GrayCol")
     }
     public enum Chips {
@@ -144,6 +144,12 @@ public enum Asset {
       public static let logoWhiteNav = ImageAsset(name: "logoWhiteNav")
       public static let searchNav = ImageAsset(name: "searchNav")
       public static let userProfileNav = ImageAsset(name: "userProfileNav")
+    }
+    public enum OnBoarding {
+      public static let image1 = ImageAsset(name: "Image1")
+      public static let image2 = ImageAsset(name: "Image2")
+      public static let image3 = ImageAsset(name: "Image3")
+      public static let image4 = ImageAsset(name: "Image4")
     }
     public enum Profile {
       public static let logOut = ImageAsset(name: "logOut")

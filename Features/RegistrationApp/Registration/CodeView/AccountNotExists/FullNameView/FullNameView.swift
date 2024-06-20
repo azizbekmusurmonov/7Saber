@@ -6,15 +6,32 @@
 //
 
 import SwiftUI
+import Core
 
 struct FullNameView: View {
     
     @EnvironmentObject var vm: RegisterMobillAppViewModel
     
+    let skipButtonTapped: () -> ()
+    
     var body: some View {
         ZStack {
             if !vm.isPasswordViewPresent {
                 VStack {
+                    
+                    NavigationBar(
+                        showButton: vm.isCodeViewPresented,
+                        leftButtonAction: {
+                            withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                                vm.isFullNameViewPresent.toggle()
+                            }
+                        },
+                        skipButtonAction: {
+                            skipButtonTapped()
+                            DataStorage.storage.save(true, for: .isRegistrate)
+                        }
+                    )
+                    
                     WelcomeView(welcomeText: "It looks like we don’t have your account. \nPlease fill up the following fields \nto continue")
                         .padding(.top, 150)
                     
@@ -39,16 +56,20 @@ struct FullNameView: View {
                             buttonText: "ENTER",
                             action: {
                                 withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-//                                    vm.isPasswordViewPresent.toggle()
-                                    vm.registr()
+                                    vm.isPasswordViewPresent.toggle()
                                 }
                             }
                         )
                         Spacer()
                     }
                 }
+                .onChange(of: vm.forcelyOpenTabBar) { newValue in
+                    if newValue  {
+                        skipButtonTapped()
+                    }
+                }
             } else {
-                CreatePasswordView()
+                CreatePasswordView(skipButtonTapped: {})
                     .environmentObject(vm)
             }
         }
@@ -56,5 +77,5 @@ struct FullNameView: View {
 }
 
 #Preview {
-    FullNameView()
+    FullNameView(skipButtonTapped: {})
 }

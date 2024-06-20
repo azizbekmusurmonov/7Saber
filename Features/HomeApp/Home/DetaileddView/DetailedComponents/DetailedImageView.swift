@@ -32,7 +32,7 @@ class ImageLoader: ObservableObject {
 
 struct ImageSlide: View {
     @State private var currentIndex: Int = 0
-    @State private var isFullScreen = false
+    @State private var isFullScreen = false // Added state for full-screen mode
     @State private var isTransitioning = false
     
     private let clothingImageURLs = [
@@ -67,15 +67,19 @@ struct ImageSlide: View {
             ImageSlide2()
         })
     }
-
+    
+    // Toggle full-screen mode
     private func toggleFullScreen() {
         self.isTransitioning = true
         self.isFullScreen = true
     }
 }
 
-
-
+struct ImageSlide_Previews: PreviewProvider {
+    static var previews: some View {
+        ImageSlide()
+    }
+}
 
 struct RemoteImage: View {
     @ObservedObject var imageLoader: ImageLoader

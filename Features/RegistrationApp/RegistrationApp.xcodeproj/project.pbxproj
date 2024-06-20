@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52412E6C2C084ABD0052F87E /* WalkScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E662C084ABD0052F87E /* WalkScreen2.swift */; };
+		52412E6D2C084ABD0052F87E /* WalkScreen3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E672C084ABD0052F87E /* WalkScreen3.swift */; };
+		52412E6E2C084ABD0052F87E /* WalkScreen4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E682C084ABD0052F87E /* WalkScreen4.swift */; };
+		52412E6F2C084ABD0052F87E /* WalkScreen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E692C084ABD0052F87E /* WalkScreen1.swift */; };
+		52412E702C084ABD0052F87E /* SelectCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E6A2C084ABD0052F87E /* SelectCountryView.swift */; };
+		52412E712C084ABD0052F87E /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E6B2C084ABD0052F87E /* OnBoardingView.swift */; };
 		52FAAF482BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAF472BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift */; };
+		7B03A65C2C052DCC0066D850 /* ExtentionToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03A65B2C052DCC0066D850 /* ExtentionToView.swift */; };
 		7B0C2A262BD414A400284C1C /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0C2A252BD414A400284C1C /* AssetKit.framework */; };
 		7B0C2A272BD414A400284C1C /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0C2A252BD414A400284C1C /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B0C2A3A2BD444AB00284C1C /* RegisterMobillAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A392BD444AB00284C1C /* RegisterMobillAppView.swift */; };
@@ -19,10 +26,13 @@
 		7B0C2A4E2BD4697F00284C1C /* CodeTextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A4D2BD4697F00284C1C /* CodeTextFieldButton.swift */; };
 		7B0C2A522BD46CE100284C1C /* ExtentionToTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C2A512BD46CE100284C1C /* ExtentionToTimeInterval.swift */; };
 		7B1513BD2BDD8A7E00A72A6C /* CodeViewAccountExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1513BC2BDD8A7E00A72A6C /* CodeViewAccountExists.swift */; };
+		7B361FE22C047BCD00791208 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B361FE12C047BCD00791208 /* LoginModel.swift */; };
 		7B5D0B182BD7ECE400345C11 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */; };
 		7B5D0B192BD7ECE400345C11 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B5D0B1B2BD7EE5A00345C11 /* SendCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */; };
 		7B6468D32BDD93F0008814B4 /* GetUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6468D22BDD93F0008814B4 /* GetUserModel.swift */; };
+		7B9E4D2B2C03CD6600ED37C4 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E4D2A2C03CD6600ED37C4 /* Spinner.swift */; };
+		7B9E4D2D2C03E2D400ED37C4 /* RegestrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E4D2C2C03E2D400ED37C4 /* RegestrationModel.swift */; };
 		7BF15FC52BE2888B003BBDAA /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FC42BE2888B003BBDAA /* CreatePasswordView.swift */; };
 		7BF15FC72BE28B1E003BBDAA /* PrimeryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FC62BE28B1E003BBDAA /* PrimeryTextField.swift */; };
 		7BF15FC92BE2B8E0003BBDAA /* PrimeryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF15FC82BE2B8E0003BBDAA /* PrimeryButton.swift */; };
@@ -87,7 +97,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		52412E662C084ABD0052F87E /* WalkScreen2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkScreen2.swift; sourceTree = "<group>"; };
+		52412E672C084ABD0052F87E /* WalkScreen3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkScreen3.swift; sourceTree = "<group>"; };
+		52412E682C084ABD0052F87E /* WalkScreen4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkScreen4.swift; sourceTree = "<group>"; };
+		52412E692C084ABD0052F87E /* WalkScreen1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkScreen1.swift; sourceTree = "<group>"; };
+		52412E6A2C084ABD0052F87E /* SelectCountryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCountryView.swift; sourceTree = "<group>"; };
+		52412E6B2C084ABD0052F87E /* OnBoardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		52FAAF472BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessRegistratedModel.swift; sourceTree = "<group>"; };
+		7B03A65B2C052DCC0066D850 /* ExtentionToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionToView.swift; sourceTree = "<group>"; };
 		7B0C2A252BD414A400284C1C /* AssetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AssetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0C2A392BD444AB00284C1C /* RegisterMobillAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMobillAppView.swift; sourceTree = "<group>"; };
 		7B0C2A3C2BD4457E00284C1C /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
@@ -98,9 +115,12 @@
 		7B0C2A4D2BD4697F00284C1C /* CodeTextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextFieldButton.swift; sourceTree = "<group>"; };
 		7B0C2A512BD46CE100284C1C /* ExtentionToTimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionToTimeInterval.swift; sourceTree = "<group>"; };
 		7B1513BC2BDD8A7E00A72A6C /* CodeViewAccountExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewAccountExists.swift; sourceTree = "<group>"; };
+		7B361FE12C047BCD00791208 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		7B5D0B172BD7ECE400345C11 /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCodeModel.swift; sourceTree = "<group>"; };
 		7B6468D22BDD93F0008814B4 /* GetUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserModel.swift; sourceTree = "<group>"; };
+		7B9E4D2A2C03CD6600ED37C4 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		7B9E4D2C2C03E2D400ED37C4 /* RegestrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegestrationModel.swift; sourceTree = "<group>"; };
 		7BF15FC42BE2888B003BBDAA /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 		7BF15FC62BE28B1E003BBDAA /* PrimeryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeryTextField.swift; sourceTree = "<group>"; };
 		7BF15FC82BE2B8E0003BBDAA /* PrimeryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeryButton.swift; sourceTree = "<group>"; };
@@ -145,10 +165,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52412E652C084AA40052F87E /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				52412E6B2C084ABD0052F87E /* OnBoardingView.swift */,
+				52412E6A2C084ABD0052F87E /* SelectCountryView.swift */,
+				52412E692C084ABD0052F87E /* WalkScreen1.swift */,
+				52412E662C084ABD0052F87E /* WalkScreen2.swift */,
+				52412E672C084ABD0052F87E /* WalkScreen3.swift */,
+				52412E682C084ABD0052F87E /* WalkScreen4.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 		7B0C2A3B2BD4456A00284C1C /* CustomElements */ = {
 			isa = PBXGroup;
 			children = (
 				7B0C2A3C2BD4457E00284C1C /* NavigationBar.swift */,
+				7B9E4D2A2C03CD6600ED37C4 /* Spinner.swift */,
 				7BF15FC62BE28B1E003BBDAA /* PrimeryTextField.swift */,
 				7BF15FC82BE2B8E0003BBDAA /* PrimeryButton.swift */,
 			);
@@ -195,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				7B0C2A512BD46CE100284C1C /* ExtentionToTimeInterval.swift */,
+				7B03A65B2C052DCC0066D850 /* ExtentionToView.swift */,
 			);
 			path = Extetions;
 			sourceTree = "<group>";
@@ -224,6 +259,8 @@
 				7B5D0B1A2BD7EE5A00345C11 /* SendCodeModel.swift */,
 				7B6468D22BDD93F0008814B4 /* GetUserModel.swift */,
 				52FAAF472BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift */,
+				7B9E4D2C2C03E2D400ED37C4 /* RegestrationModel.swift */,
+				7B361FE12C047BCD00791208 /* LoginModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,6 +331,7 @@
 		FA77A2962BBBA9EB00843673 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				52412E652C084AA40052F87E /* OnBoarding */,
 				FA77A2972BBBA9EB00843673 /* Registration.h */,
 				FA77A2982BBBA9EB00843673 /* Registration.docc */,
 				7B0C2A462BD4650500284C1C /* RegisterView */,
@@ -446,22 +484,32 @@
 				7B0C2A3A2BD444AB00284C1C /* RegisterMobillAppView.swift in Sources */,
 				7B0C2A522BD46CE100284C1C /* ExtentionToTimeInterval.swift in Sources */,
 				7B0C2A492BD465D300284C1C /* CodeViewAccountNotExists.swift in Sources */,
+				7B361FE22C047BCD00791208 /* LoginModel.swift in Sources */,
 				7B0C2A3D2BD4457E00284C1C /* NavigationBar.swift in Sources */,
 				7B0C2A432BD4574900284C1C /* TextFieldNextButton.swift in Sources */,
 				7BF15FC92BE2B8E0003BBDAA /* PrimeryButton.swift in Sources */,
+				52412E6D2C084ABD0052F87E /* WalkScreen3.swift in Sources */,
 				7BF15FCB2BE2BDA4003BBDAA /* SendAgainButton.swift in Sources */,
 				7B0C2A402BD449DE00284C1C /* WelcomeView.swift in Sources */,
+				7B03A65C2C052DCC0066D850 /* ExtentionToView.swift in Sources */,
 				7BF15FC72BE28B1E003BBDAA /* PrimeryTextField.swift in Sources */,
+				7B9E4D2D2C03E2D400ED37C4 /* RegestrationModel.swift in Sources */,
 				FA77A2992BBBA9EB00843673 /* Registration.docc in Sources */,
+				52412E712C084ABD0052F87E /* OnBoardingView.swift in Sources */,
 				7B5D0B1B2BD7EE5A00345C11 /* SendCodeModel.swift in Sources */,
+				52412E6E2C084ABD0052F87E /* WalkScreen4.swift in Sources */,
 				7BF15FCF2BE2DE6C003BBDAA /* FullNameView.swift in Sources */,
+				52412E702C084ABD0052F87E /* SelectCountryView.swift in Sources */,
 				7B1513BD2BDD8A7E00A72A6C /* CodeViewAccountExists.swift in Sources */,
+				52412E6F2C084ABD0052F87E /* WalkScreen1.swift in Sources */,
 				7B6468D32BDD93F0008814B4 /* GetUserModel.swift in Sources */,
 				7B0C2A4E2BD4697F00284C1C /* CodeTextFieldButton.swift in Sources */,
 				7B0C2A452BD458B100284C1C /* RegisterMobillAppViewModel.swift in Sources */,
 				52FAAF482BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift in Sources */,
 				7BF15FD32BE359FF003BBDAA /* EnterPasswordView.swift in Sources */,
+				52412E6C2C084ABD0052F87E /* WalkScreen2.swift in Sources */,
 				7BF15FC52BE2888B003BBDAA /* CreatePasswordView.swift in Sources */,
+				7B9E4D2B2C03CD6600ED37C4 /* Spinner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,7 +720,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K7U4M666S7;
+				DEVELOPMENT_TEAM = 55T4GQ9V2G;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -712,7 +760,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K7U4M666S7;
+				DEVELOPMENT_TEAM = 55T4GQ9V2G;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

@@ -1,0 +1,10 @@
+/* 
+  Localizable_en.strings
+  AssetKit
+
+  Created by Ismatillokhon on 19/06/24.
+  
+*/
+"where_are_you_in" = "ГДЕ ТЫ НАХОДИШЬСЯ?";
+"welcome" = "ДОБРО ПОЖАЛОВАТЬ";
+"enter_your_phone_or_email" = "Введите свой номер телефона или адрес электронной почты для продолжения";    

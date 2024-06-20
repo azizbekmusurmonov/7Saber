@@ -20,6 +20,8 @@ public final class DataStorage {
     
     public var token = ""
     
+    public var isRegistrated: Bool { (DataStorage.storage.get(from: .token) as? String)?.isEmpty == false }
+    
     public static let storage: AnyDataStorage = UserDefaults.standard
 }
 
@@ -43,6 +45,8 @@ extension UserDefaults: AnyDataStorage {
 }
 
 public enum StorageKeys: String {
+    case isShowedOnBoarding
     case isRegistrate
     case token
+    case language
 }

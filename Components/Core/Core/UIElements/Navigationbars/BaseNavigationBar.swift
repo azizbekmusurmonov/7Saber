@@ -40,7 +40,7 @@ public struct BaseNavigationBar: View {
                     Spacer()
                     
                     Text(title)
-                        .font(.title2)
+                        .font(.system(size: 19, weight: .medium))
                     Spacer()
                 }
                 

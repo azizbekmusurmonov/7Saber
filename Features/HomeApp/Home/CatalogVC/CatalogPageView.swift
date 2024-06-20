@@ -44,7 +44,10 @@ struct CatalogPage: View {
                     
             }.padding(.top, 50)
             
-
+            SHoes()
+                .padding(.leading, 10)
+                .padding(.top, 50)
+             
         }
        
         

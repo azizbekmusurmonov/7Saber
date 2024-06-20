@@ -68,3 +68,13 @@
         forceProvidesNamespaces: true
         enumName: Asset
        output: XCAssets+Generated.swift
+
+ strings:
+   inputs:
+     - en.lproj
+   outputs:
+     - templateName: structured-swift5
+       output: Localizations+Generated.swift
+       params:
+          publicAccess: true
+          enumName: Localizations

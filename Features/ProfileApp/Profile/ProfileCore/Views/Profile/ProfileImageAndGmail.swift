@@ -16,7 +16,7 @@ struct ProfileImageView: View {
     var body: some View {
         VStack(spacing: .zero) {
             HStack(spacing: .zero) {
-                Image(uiImage: bundle.profileImage)
+                Image(bundle.profileImageURL)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 146, height: 146)
@@ -24,39 +24,39 @@ struct ProfileImageView: View {
                     .padding()
                 
                 Divider()
-                Spacer()
-                
                 VStack(spacing: .zero) {
+                    Spacer()
                     Text(bundle.profileName)
-                        .font(.headline)
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         .padding(2)
                     Text(bundle.gmailName)
-                        .font(.caption2)
+                        .font(.system(size: 13, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     
                         .padding(10)
+                    Spacer()
                     Divider()
+                    Spacer()
                     
                     Button(action: {
                         
                     }) {
                         Text("EDIT PROFILE")
-                            .padding()
-                            .font(.footnote)
+                            .font(.system(size: 13, weight: .regular))
                         
                         Image(uiImage: Asset.Image.Icons.edit.image)
                         
                     }
+                    .padding()
                     .frame(height: 40)
                     .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     .background(Asset.Color.Button.grayCol.swiftUIColor)
                     .clipShape(.capsule)
-                    .padding()
-                    .padding(.leading, 12)
+                    Spacer()
                 }
+                Spacer()
             }
-            
         }
     }
 }

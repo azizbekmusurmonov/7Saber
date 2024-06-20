@@ -59,6 +59,9 @@ struct AutumnImageView2: View {
                         .foregroundColor(.white)
                         .padding(8)
                         .lineLimit(4)
+                        .padding(.trailing, 1)
+                        .padding(.leading, 60)
+                        .padding(.bottom, 600)
                         .opacity(viewModel.showContent ? 1 : 0)
                      
                     
