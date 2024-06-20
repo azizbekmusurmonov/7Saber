@@ -10,13 +10,29 @@ import Core
 import AssetKit
 
 struct OrderStatusView: View {
+    var status: Progresses
+    
+    private var progressValue: Double {
+        switch status {
+            
+        case .orderedPaid:
+            return 0.25
+        case .accepted:
+            return 0.5
+        case .shipped:
+            return 0.75
+        case .delivired:
+            return 1.0
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("ORDER STATUS")
                 .font(.system(size: 13, weight: .bold))
                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
            
-            ProgressView(value: 0.25, total: 1) {  }
+            ProgressView(value: progressValue, total: 1)
             
             HStack(spacing: 10) {
                 Image(uiImage: Asset.Image.Icons.receiptCheck.image)
@@ -32,9 +48,11 @@ struct OrderStatusView: View {
                 }
             }
         }
-        .padding()
+        .padding(.horizontal)
         .frame(height: 115)
+        .background(Asset.Color.Surface.Card.color.swiftUIColor)
         .cornerRadius(10)
+        .shadow(radius: 5)
     }
 }
 
@@ -46,9 +64,3 @@ struct PinkBorderedProgressViewStyle: ProgressViewStyle {
             .cornerRadius(4)
     }
 }
-
-
-#Preview {
-    OrderStatusView()
-}
-

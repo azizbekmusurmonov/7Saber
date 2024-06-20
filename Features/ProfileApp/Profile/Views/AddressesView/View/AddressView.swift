@@ -12,7 +12,6 @@ import AssetKit
 struct AddressView: View {
     
     @EnvironmentObject var vm: AddressesViewModel
-    @StateObject var profileData = AddressesViewModel()
     @StateObject private var addressFromViewModel = AddressFormViewModel()
     
     @State var addLocationView = false
@@ -21,36 +20,49 @@ struct AddressView: View {
     
     var body: some View {
         
-        VStack(spacing: .zero) {
-            
-            navBar
-            Spacer()
-            
-            if vm.items.isEmpty {
-                AddressesIsEmpty()
-                Spacer()
-            } else {
+        switch vm.viewState {
+        case .show:
+            VStack(spacing: .zero) {
                 
-                ScrollView {
-                    VStack(spacing: .zero) {
-                        
-                        ForEach(vm.items, id: \.self) { item in
-                            AddressItemView(item: item)
-                            Divider()
+                navBar
+                Spacer()
+           
+                    ScrollView {
+                        VStack(spacing: .zero) {
+                            
+                            ForEach(vm.items ?? [], id: \.self) { item in
+                                AddressItemView(item: item)
+                                Divider()
+                            }
+                            .padding()
                         }
-                        .padding()
+                        .onChange(of: vm.message) { newValue in
+                            guard let newValue else { return }
+                            switch newValue {
+                            case .succes(message: let message):
+                                Snackbar.show(message: message, theme: .success)
+                            case .error(message: let message):
+                                Snackbar.show(message: message, theme: .error)
+                            }
+                        }
                     }
                 }
+                AddButton(title: "ADD NEW ADDRESS", buttonPressed:{
+                    addLocationView = true
+                }, isDisabled: $addressFromViewModel.isFormValid )
+                .sheet(isPresented: $addLocationView) {
+                    AddNewAddress()
+                        .environmentObject(addressFromViewModel)
+                
             }
-            AddButton(title: "ADD NEW ADDRESS", buttonPressed:{
-                addLocationView = true
-            }, isDisabled: $addressFromViewModel.isFormValid )
-            .sheet(isPresented: $addLocationView) {
-                AddNewAddress()
-                    .environmentObject(addressFromViewModel)
-            }
+            .navigationBarBackButtonHidden()
+        case .loading:
+            LoaderView()
+        case .empty:
+            navBar
+            Spacer()
+            AddressesIsEmpty()
         }
-        .navigationBarBackButtonHidden()
     }
 }
 
