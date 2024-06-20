@@ -13,6 +13,7 @@ struct AddNewAddress: View {
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: AddressFormViewModel
+    @Environment(\.dismiss) var pop
     
     var body: some View {
         VStack(spacing: .zero) {
@@ -81,6 +82,7 @@ struct AddNewAddress: View {
                     switch newValue {
                     case .succes(message: let message):
                         Snackbar.show(message: message, theme: .success)
+                        pop()
                     case .error(message: let message):
                         Snackbar.show(message: message, theme: .error)
                     }

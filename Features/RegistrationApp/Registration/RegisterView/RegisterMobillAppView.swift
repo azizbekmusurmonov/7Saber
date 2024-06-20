@@ -15,9 +15,11 @@ public struct RegisterMobillAppView: View {
     @State private var isShowRegistrView: Bool = false
     
     let skipButtonTapped: () -> ()
+    let hasSkipButton: Bool
     
-    public init(skipButtonTapped: @escaping () -> ()) {
+    public init(skipButtonTapped: @escaping () -> (), hasSkipButton: Bool) {
         self.skipButtonTapped = skipButtonTapped
+        self.hasSkipButton = hasSkipButton
     }
     
     public var body: some View {
@@ -95,6 +97,6 @@ public struct RegisterMobillAppView: View {
 
 
 #Preview {
-    RegisterMobillAppView(skipButtonTapped: { })
+    RegisterMobillAppView(skipButtonTapped: { }, hasSkipButton: false)
 }
 

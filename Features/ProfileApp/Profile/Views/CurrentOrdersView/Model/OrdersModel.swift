@@ -1,20 +1,20 @@
 //
-//  OrderHistoryViewModel.swift
+//  OrdersModel.swift
 //  Profile
 //
-//  Created by Azizbek Musurmonov   on 27/04/24.
+//  Created by Azizbek Musurmonov   on 20/06/24.
 //
 
 import SwiftUI
 import Combine
 import AssetKit
 
-public struct OrderHistoryModel: Hashable {
+public struct OrdersModel: Hashable {
     let headertitle: String
-    let cells: [Cells]
+    let cells: [Cell]
 }
 
-public struct Cells: Hashable {
+public struct Cell: Hashable {
     let orderId: String
     let total: String
     let status: OrderStatus
@@ -22,8 +22,8 @@ public struct Cells: Hashable {
 
 enum OrderStatus: String {
     case delivered = "DELIVERED"
-    case onProccess = "ON PROGREES"
-    case canceled
+    case onProccess = "ONP ROCESS"
+    case canceled = "CANCELED"
     
     var color: Color {
         switch self {
