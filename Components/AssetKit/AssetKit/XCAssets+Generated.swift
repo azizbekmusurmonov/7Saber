@@ -34,9 +34,9 @@ public enum Asset {
     }
     public enum Chips {
       public enum Status {
+        public static let onProccess = ColorAsset(name: "OnProccess")
         public static let canceled = ColorAsset(name: "canceled")
         public static let delivired = ColorAsset(name: "delivired")
-        public static let onProccess = ColorAsset(name: "onProccess")
       }
     }
     public enum Surface {
@@ -98,6 +98,7 @@ public enum Asset {
       public static let closeX = ImageAsset(name: "closeX")
       public static let closeXCircle = ImageAsset(name: "closeXCircle")
       public static let creditCard = ImageAsset(name: "creditCard")
+      public static let doneFilled = ImageAsset(name: "done-filled")
       public static let done = ImageAsset(name: "done")
       public static let doneFilled = ImageAsset(name: "doneFilled")
       public static let doneGreen = ImageAsset(name: "doneGreen")
@@ -129,6 +130,7 @@ public enum Asset {
       public static let shoppingBag = ImageAsset(name: "shoppingBag")
       public static let trash = ImageAsset(name: "trash")
       public static let trash2 = ImageAsset(name: "trash2")
+      public static let whiteCheck = ImageAsset(name: "whiteCheck")
     }
     public enum Logo {
       public static let logoBlack = ImageAsset(name: "logoBlack")

@@ -16,12 +16,46 @@ struct ProfileImageView: View {
     var body: some View {
         VStack(spacing: .zero) {
             HStack(spacing: .zero) {
-                Image(bundle.profileImageURL)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 146, height: 146)
-                    .clipShape(Circle())
-                    .padding()
+                if let url = URL(string: bundle.profileImageURL) {
+                    AsyncImage(url: url) { phase in
+                        switch phase {
+                        case .empty:
+                            ProgressView()
+                                .frame(width: 146, height: 146)
+                                .background(Color.gray)
+                                .clipShape(Circle())
+                                .padding()
+                        case .success(let image):
+                            image.resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 146, height: 146)
+                                .clipShape(Circle())
+                                .padding()
+                        case .failure:
+                            Image(systemName: "person.circle.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 146, height: 146)
+                                .clipShape(Circle())
+                                .padding()
+                        @unknown default:
+                            EmptyView()
+                        }
+                    }
+                } else {
+                    Image(systemName: "person.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 146, height: 146)
+                        .clipShape(Circle())
+                        .padding()
+                }
+                //                Image(bundle.profileImageURL)
+                //                    .resizable()
+                //                    .aspectRatio(contentMode: .fill)
+                //                    .frame(width: 146, height: 146)
+                //                    .clipShape(Circle())
+                //                    .padding()
                 
                 Divider()
                 VStack(spacing: .zero) {

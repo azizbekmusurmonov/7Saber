@@ -49,17 +49,29 @@ struct TabBarView: View {
                         Text("Cart")
                     }
                 
-                WishlistView()
-                    .environmentObject(wishlistVM)
-                    .tabItem {
-                        Image(systemName: "4.circle")
-                        Text("Wishlist")
+                ZStack {
+                    if !isRegistrated {
+                        RegisterMobillAppView(skipButtonTapped: {
+                            isRegistrated = true
+                        })
+                    } else {
+                        WishlistView()
+                            .environmentObject(wishlistVM)
                     }
-                ProfileView()
-                    .environmentObject(profileVM)
-                    .tabItem {
-                        Image(systemName: "5.circle")
-                        Text("Profile")
+                }
+                .tabItem {
+                    Image(uiImage: Asset.Image.TabBars.wishlist.image)
+                    Text("Wishlist")
+                }
+                
+                ZStack {
+                    if !isRegistrated {
+                        RegisterMobillAppView(skipButtonTapped: {
+                            isRegistrated = true
+                        })
+                    } else {
+                        ProfileView()
+                            .environmentObject(profileVM)
                     }
 //                    .onAppear {
 //                        self.profileVM.count = 100

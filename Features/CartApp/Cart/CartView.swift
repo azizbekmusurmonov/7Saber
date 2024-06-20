@@ -16,21 +16,19 @@ public struct CartView: View {
     
     public var body: some View {
         VStack {
-            ScrollView {
-                VStack {
-                    Image("")
-                        .resizable()
-                        
-                        .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
-                    
-                    Text("d.smclkdsdsc")
-                        .foregroundColor(.red)
+            NavigationBar()
+            Spacer()
+            if vm.products.isEmpty {
+                CartIsEmpty()
+                Spacer()
+            } else {
+                ScrollView {
+                    CartListView()
                 }
+                
+                CheckOutView(action: {})
             }
+            
         }
     }
-}
-
-#Preview {
-    CartView()
 }

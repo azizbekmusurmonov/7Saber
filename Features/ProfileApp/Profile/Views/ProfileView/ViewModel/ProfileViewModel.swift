@@ -14,9 +14,9 @@ public class ProfileViewModel: ObservableObject {
     
     @Published var profileData: ProfileBundle = ProfileBundle(
         profileImageURL: "",
-        profileName: "7SaberUser",
-        gmailName: "7SaberUser@gmail.com",
-        phoneNumber: "+998901234567")
+        profileName: "",
+        gmailName: "",
+        phoneNumber: "")
     
     public init() { }
     

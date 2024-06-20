@@ -76,6 +76,15 @@ struct AddNewAddress: View {
                         .keyboardType(.numberPad)
                         .padding()
                 }
+                .onChange(of: viewModel.message) { newValue in
+                    guard let newValue else { return }
+                    switch newValue {
+                    case .succes(message: let message):
+                        Snackbar.show(message: message, theme: .success)
+                    case .error(message: let message):
+                        Snackbar.show(message: message, theme: .error)
+                    }
+                }
             }
             
             Divider()
