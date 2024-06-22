@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import Core
+import AssetKit
+import Profile
 
 
 
@@ -17,15 +20,14 @@ struct ShareViewController: UIViewControllerRepresentable {
         return controller
     }
 
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
-        // No update needed
-    }
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) { }
 }
 
 struct Detailednavigation: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var isShareSheetPresented = false
     @State private var isSersaTapped = false
+    @Environment(\.dismiss) var pop
 
     var body: some View {
         VStack {
@@ -35,7 +37,7 @@ struct Detailednavigation: View {
             HStack {
                 Button(action: {
                     print("Back button tapped")
-                    presentationMode.wrappedValue.dismiss()
+                    pop()
                 }) {
                     Image(systemName: "xmark")
                         .resizable()

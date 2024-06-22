@@ -50,7 +50,7 @@ struct AutumnImageView2: View {
             .scaledToFill()
             .frame(width: geometry.size.width, height: geometry.size.height)
             .clipped()
-            .overlay(
+            .overlay(alignment: .topLeading) {
                 VStack {
                     Spacer()
                     Text(viewModel.model.collectionDescription)
@@ -63,7 +63,7 @@ struct AutumnImageView2: View {
                         .padding(.leading, 60)
                         .padding(.bottom, 600)
                         .opacity(viewModel.showContent ? 1 : 0)
-                        .animation(.easeInOut(duration: 1.5))
+                     
                     
                     Button(action: {
                         
@@ -83,15 +83,15 @@ struct AutumnImageView2: View {
                             .padding(.horizontal, 40)
                             .padding(.bottom, 40)
                             .opacity(viewModel.showContent ? 1 : 0)
-                            .animation(.easeInOut(duration: 1.5))
+                          
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.top, -100)
                 .opacity(viewModel.showContent ? 1 : 0)
-                .animation(.easeInOut(duration: 1.5)),
-                alignment: .bottom
-            )
+               
+            }
+
             .onAppear {
                 viewModel.triggerAnimation()
             }

@@ -12,34 +12,45 @@ import Core
 struct CurrentOrdersView: View {
     
     @Environment(\.dismiss) var pop
-    
-    @EnvironmentObject var vm: CurrentViewModel
-    @StateObject var data = CurrentViewModel()
-    
-    @State var isTabSectionView = false
+    @EnvironmentObject var vm: OrdersViewModel
     
     public init() { }
     
     var body: some View {
-        VStack(spacing: 0) {
-            navBar
-            Spacer()
-            ScrollView {
-                VStack(spacing: 0) {
-                    ForEach(0..<vm.currentData.count, id: \.self) { index in
-                        CurrentSection(currentItem: vm.currentData[index])
+        
+        switch vm.viewState {
+        case .show:
+            VStack(spacing: 0) {
+                navBar
+                Spacer()
+                ScrollView {
+                    VStack(spacing: 0) {
+                        ForEach(0..<(vm.ordersData?.count ?? 0), id: \.self) { index in
+                            if let orderData = vm.ordersData?[index] {
+                                CurrentSection(currentItem: orderData)
+                            }
+                        }
+                        Divider()
                     }
-                    .onTapGesture {
-                        isTabSectionView = true
+                    .onChange(of: vm.message) { newValue in
+                        guard let newValue else { return }
+                        switch newValue {
+                        case .succes(message: let message):
+                            Snackbar.show(message: message, theme: .success)
+                        case .error(message: let message):
+                            Snackbar.show(message: message, theme: .error)
+                        }
                     }
-                    .sheet(isPresented: self.$isTabSectionView) {
-                        CurrentSheetBottomView()
-                            .environmentObject(CurrentBottomViewModel())
-                    }
-                    Divider()
                 }
             }
+        case .loading:
+            LoaderView()
+        case .empty:
+            navBar
+            Spacer()
+            CurrentIsEmpty()
         }
+        
     }
 }
 

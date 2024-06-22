@@ -20,7 +20,7 @@ public struct ProductItemView22: View {
                     .padding(.horizontal, 2)
                     .padding(.top, 10)
             } placeholder: {
-                ProgressView()
+                AnimatedCircleProgressView()
             }
             .frame(width: 301, height: 400)
             

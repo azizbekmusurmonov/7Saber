@@ -17,9 +17,9 @@ struct ShowAll: View {
     var body: some View {
         NavigationView {
             VStack {
-                CustomNavigation()
-                    .frame(height: 45)
-                    .padding(.top, 15)
+//                CustomNavigation()
+//                    .frame(height: 45)
+//                    .padding(.top, 15)
                 
                 ScrollView {
                     Divider()
@@ -46,7 +46,7 @@ struct ShowAll: View {
                     }
                 }
              
-            }
+            }.customNavigation()
         }
     }
 }

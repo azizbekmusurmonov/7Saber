@@ -9,25 +9,17 @@ import SwiftUI
 import Core
 import AssetKit
 
-enum SelectCountry: String, CaseIterable, Identifiable {
-    case uzbekistan = "Uzbekistan"
-    case russia = "Russia"
-    case other = "Other"
-    var id: Self { self }
-}
-
 struct SelectCountryTextfield: View {
     
     @EnvironmentObject var viewModel: AddressFormViewModel
     
-    @State private var selectedCountry: SelectCountry? = nil
     @State private var showCountryPicker = false
     
     var body: some View {
         VStack(spacing: .zero) {
             HStack(spacing: 10) {
                 VStack(alignment: .leading) {
-                    TextField("Select the country", text: selectedCountry == nil ? .constant("") : .constant(selectedCountry!.rawValue))
+                    TextField("Select the country", text: viewModel.selectedCountry == nil ? .constant("") : .constant(viewModel.selectedCountry?.name ?? ""))
                         .textFieldStyle(PlainTextFieldStyle())
                         .disabled(true)
                 }
@@ -44,29 +36,23 @@ struct SelectCountryTextfield: View {
         .onTapGesture {
             showCountryPicker = true
         }
-        .overlay(
+        .sheet(isPresented: $showCountryPicker, content: {
             VStack(spacing: .zero) {
-                if showCountryPicker {
-                    
-                    VStack {
-                        ForEach(SelectCountry.allCases, id: \.self) { country in
-                            Button(action: {
-                                selectedCountry = country
-                                showCountryPicker.toggle() // Close the picker after selection
-                            }) {
-                                Text(country.rawValue)
-                                    .foregroundColor(Color.black)
-                            }
-                            Divider()
+                ScrollView {
+                    ForEach(0..<viewModel.countries.count, id: \.self) { index in
+                        Button(action: {
+                            viewModel.selectedCountry = viewModel.countries[index]
+                            showCountryPicker.toggle() // Close the picker after selection
+                        }) {
+                            Text(viewModel.countries[index].name)
+                                .foregroundColor(Color.black)
                         }
+                        Divider()
                     }
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 10)
                 }
+                .background(Color.white)
             }
-        )
+        })
     }
 }
 

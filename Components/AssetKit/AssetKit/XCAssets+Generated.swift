@@ -100,6 +100,7 @@ public enum Asset {
       public static let creditCard = ImageAsset(name: "creditCard")
       public static let done = ImageAsset(name: "done")
       public static let doneFilled = ImageAsset(name: "doneFilled")
+      public static let doneFilledWhite = ImageAsset(name: "doneFilledWhite")
       public static let doneGreen = ImageAsset(name: "doneGreen")
       public static let edit = ImageAsset(name: "edit")
       public static let eye = ImageAsset(name: "eye")

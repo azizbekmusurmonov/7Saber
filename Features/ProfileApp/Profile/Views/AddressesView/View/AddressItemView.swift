@@ -17,7 +17,7 @@ struct AddressItemView: View {
     var body: some View {
         VStack(spacing: .zero) {
             HStack(spacing: .zero) {
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 4) {
                     Text(item.title)
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
