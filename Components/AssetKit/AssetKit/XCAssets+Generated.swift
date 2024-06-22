@@ -98,7 +98,6 @@ public enum Asset {
       public static let closeX = ImageAsset(name: "closeX")
       public static let closeXCircle = ImageAsset(name: "closeXCircle")
       public static let creditCard = ImageAsset(name: "creditCard")
-      public static let doneFilled = ImageAsset(name: "done-filled")
       public static let done = ImageAsset(name: "done")
       public static let doneFilled = ImageAsset(name: "doneFilled")
       public static let doneGreen = ImageAsset(name: "doneGreen")
