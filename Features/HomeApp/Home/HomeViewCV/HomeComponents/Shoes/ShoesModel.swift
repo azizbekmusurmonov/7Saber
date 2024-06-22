@@ -1,22 +1,21 @@
 //
-//  ProductModel.swift
+//  MODELLL.swift
 //  Home
 //
-//  Created by islombek on 22/05/24.
+//  Created by islombek on 24/05/24.
 //
 
 import Foundation
 
-// MARK: - NewCollection
-struct NewCollection: Codable {
+// MARK: - Trending
+struct Shoes: Codable {
     let currentPage: Int
-    let data: [Datum]
+    let data: [ShoesDatum]
     let firstPageURL: String
     let from, lastPage: Int
     let lastPageURL: String
     let links: [Link]
-    let nextPageURL: String?
-    let path: String
+    let nextPageURL, path: String
     let perPage: Int
     let prevPageURL: String?
     let to, total: Int
@@ -38,7 +37,7 @@ struct NewCollection: Codable {
 }
 
 // MARK: - Datum
-struct Datum: Codable, Identifiable {
+struct ShoesDatum: Codable, Identifiable {
     let id: Int
     let catalogID: Int?
     let categoryID: Int
@@ -48,19 +47,20 @@ struct Datum: Codable, Identifiable {
     let descRu: String?
     let descEn, specUz, specRu, specEn: String?
     let sku: String
-    let discount: [String?]
+    let discount: [String]
     let price: [String: Int?]
     let gender: String
     let mainImgID: Int
     let mediaID: String?
-    let clientMedias: [String?]
-    let weight, type: Int
+    let clientMedias: [String]
+    let weight: Int
+    let type: Int?
     let isActive: Bool
-    let additions: [String?]
+    let additions: [String]
     let createdAt, updatedAt, name: String
     let desc: String?
     let attributes: [Attribute]
-    let mainImg: MainImg
+    let mainImg: ShoesMainImg
     let media: String?
 
     enum CodingKeys: String, CodingKey {
@@ -81,46 +81,51 @@ struct Datum: Codable, Identifiable {
 }
 
 // MARK: - Attribute
-struct Attribute: Codable {
+struct ShoesAttribute: Codable {
     let productID: Int
     let billzID: String
     let barcode: Int
-    let colorVariants: [ProductColor]
+    let color: [ShoesColor]
     let size: String
-    let photos: [Photo]
+    let photos: [ShoesPhoto]
     let qty: Int
     let createdAt, updatedAt: String
 
     enum CodingKeys: String, CodingKey {
         case productID = "productId"
         case billzID = "billzId"
-        case barcode, colorVariants = "color", size, photos, qty
+        case barcode, color, size, photos, qty
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }
 }
 
-// MARK: - ProductColor
-struct ProductColor: Codable {
+// MARK: - Color
+struct ShoesColor: Codable {
     let name: String
     let hex: String?
 }
 
 // MARK: - Photo
-struct Photo: Codable {
+struct ShoesPhoto: Codable {
     let baseName: String
     let src: String
 }
 
 // MARK: - MainImg
-struct MainImg: Codable {
+struct ShoesMainImg: Codable {
     let id: Int
     let src: String
-    let type: String
+    let type: ShoesTypeEnum
+}
+
+enum ShoesTypeEnum: String, Codable {
+    case jpg = "jpg"
+    case typeDefault = "default"
 }
 
 // MARK: - Link
-struct Link: Codable {
+struct ShoesLink: Codable {
     let url: String?
     let label: String
     let active: Bool

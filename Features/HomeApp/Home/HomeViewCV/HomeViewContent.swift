@@ -11,9 +11,10 @@ import AssetKit
 
 public struct ContentView: View {
     
-    @StateObject var categoryController = CategoryController()
-    @StateObject var viewModel = NewCollectionViewModel()
-    @StateObject var viewModel22 = NewCollectionViewModel22()
+    //@StateObject var categoryController = CategoryController()
+    @StateObject private var newCollectionViewModel = NewCollectionViewModel()
+    @StateObject var trendingViewModel = TrendingViewModel()
+    @StateObject var shoesViewModel = ShoesViewModel()
     
     @State private var isShowingCatalogPage = false
     @State private var isShowingDetailedView = false
@@ -37,29 +38,29 @@ public struct ContentView: View {
                         .padding(.top, -75)
                     
                     NavigationLink(destination: CatalogPage()) {
-                        CategoryView(categories: categoryController.categories)
-                            .onAppear {
-                                categoryController.fetchCategories()
-                            }
+                        CategoryView(viewModel: CategoryViewModel())
                     }
                     
-                    NewCollectionView(viewModel: viewModel)
-                        .padding(.leading, 10)
+                    NewCollectionView(viewModel: newCollectionViewModel)
+                    
                         .padding(.top, 30)
                         .onTapGesture {
                             isShowingDetailedView = true // Present DetailedView when tapped
                         }
                     
-                    NewCollectionView22(viewModel22: viewModel22)
-                        .padding(.leading, 10)
-                        .padding(.top, 60)
+                    TrendingView(viewModel: trendingViewModel)
+                       
+                        .padding(.top, 30)
                         .onTapGesture {
                             isShowingDetailedView = true // Present DetailedView when tapped
                         }
                     
-                    SHoes()
-                        .padding(.leading, 10)
-                        .padding(.top, 50)
+                    ShoesView(viewModel: shoesViewModel)
+                       
+                        .padding(.top, 30)
+                        .onTapGesture {
+                            isShowingDetailedView = true // Present DetailedView when tapped
+                        }
                     
                     BigText()
                         .padding(.top, 150)
