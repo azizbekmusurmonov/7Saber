@@ -22,7 +22,7 @@ public struct Cell: Hashable {
 
 enum OrderStatus: String {
     case delivered = "DELIVERED"
-    case onProccess = "ONP ROCESS"
+    case onProccess = "ON PROCCESS"
     case canceled = "CANCELED"
     
     var color: Color {

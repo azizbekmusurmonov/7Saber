@@ -10,13 +10,12 @@ import Foundation
 // MARK: - NewCollection
 struct NewCollection: Codable {
     let currentPage: Int
-    let data: [Datum]
+    let data: [NewCollectionDatum]
     let firstPageURL: String
     let from, lastPage: Int
     let lastPageURL: String
-    let links: [Link]
-    let nextPageURL: String?
-    let path: String
+    let links: [NewCollectionLink]
+    let nextPageURL, path: String
     let perPage: Int
     let prevPageURL: String?
     let to, total: Int
@@ -38,29 +37,28 @@ struct NewCollection: Codable {
 }
 
 // MARK: - Datum
-struct Datum: Codable, Identifiable {
+struct NewCollectionDatum: Codable, Identifiable {
     let id: Int
     let catalogID: Int?
     let categoryID: Int
     let sportTypeID: String?
     let nameUz, nameRu, nameEn: String
-    let descUz: String?
-    let descRu: String?
-    let descEn, specUz, specRu, specEn: String?
+    let descUz, descRu, descEn, specUz: String?
+    let specRu, specEn: String?
     let sku: String
-    let discount: [String?]
+    let discount: [String]
     let price: [String: Int?]
     let gender: String
     let mainImgID: Int
     let mediaID: String?
-    let clientMedias: [String?]
+    let clientMediaIDS: NewCollectionClientMediaIDS
     let weight, type: Int
     let isActive: Bool
-    let additions: [String?]
+    let additions: [String]
     let createdAt, updatedAt, name: String
     let desc: String?
-    let attributes: [Attribute]
-    let mainImg: MainImg
+    let attributes: [NewCollectionAttribute]
+    let mainImg: NewCollectionMainImg
     let media: String?
 
     enum CodingKeys: String, CodingKey {
@@ -71,7 +69,8 @@ struct Datum: Codable, Identifiable {
         case nameUz, nameRu, nameEn, descUz, descRu, descEn, specUz, specRu, specEn, sku, discount, price, gender
         case mainImgID = "mainImgId"
         case mediaID = "mediaId"
-        case clientMedias, weight, type, isActive, additions
+        case clientMediaIDS = "clientMediaIds"
+        case weight, type, isActive, additions
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case name, desc, attributes
@@ -81,46 +80,68 @@ struct Datum: Codable, Identifiable {
 }
 
 // MARK: - Attribute
-struct Attribute: Codable {
+struct NewCollectionAttribute: Codable {
     let productID: Int
     let billzID: String
-    let barcode: Int
-    let colorVariants: [ProductColor]
+    let barcode, colorID: Int
     let size: String
-    let photos: [Photo]
+    let photos: [NewCollectionPhoto]
     let qty: Int
     let createdAt, updatedAt: String
+    let color: NewCollectionColor
 
     enum CodingKeys: String, CodingKey {
         case productID = "productId"
         case billzID = "billzId"
-        case barcode, colorVariants = "color", size, photos, qty
+        case barcode
+        case colorID = "colorId"
+        case size, photos, qty
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case color
     }
 }
 
-// MARK: - ProductColor
-struct ProductColor: Codable {
-    let name: String
+// MARK: - Color
+struct NewCollectionColor: Codable {
+    let id: Int
+    let billzID, nameUz, nameRu, nameEn: String
     let hex: String?
+    let createdAt, updatedAt, name: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case billzID = "billzId"
+        case nameUz, nameRu, nameEn, hex
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case name
+    }
 }
 
 // MARK: - Photo
-struct Photo: Codable {
+struct NewCollectionPhoto: Codable {
     let baseName: String
     let src: String
 }
 
+enum NewCollectionClientMediaIDS: String, Codable {
+    case empty = "[]"
+}
+
 // MARK: - MainImg
-struct MainImg: Codable {
+struct NewCollectionMainImg: Codable {
     let id: Int
     let src: String
-    let type: String
+    let type: NewCollectionTypeEnum
+}
+
+enum NewCollectionTypeEnum: String, Codable {
+    case typeDefault = "default"
 }
 
 // MARK: - Link
-struct Link: Codable {
+struct NewCollectionLink: Codable {
     let url: String?
     let label: String
     let active: Bool
