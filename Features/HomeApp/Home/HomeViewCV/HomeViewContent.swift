@@ -34,8 +34,8 @@ public struct ContentView: View {
                 
                 ScrollView {
                     
-                    VideoPlayerView(videoName: "backVideo")
-                        .padding(.top, -75)
+                    AVPContentView()
+                        .padding(.top)
                     
                     NavigationLink(destination: CatalogPage()) {
                         CategoryView(viewModel: CategoryViewModel())

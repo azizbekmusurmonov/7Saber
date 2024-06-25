@@ -5,42 +5,38 @@
 //  Created by islombek on 22/05/24.
 //
 
-import SwiftUI
-import AVKit
+import Foundation
 
+// MARK: - AVPplayer
+struct AVPplayer: Codable, Identifiable {
+    let id: Int
+    let link, titleUz, titleRu, titleEn: String
+    let descUz, descRu, descEn, details: String?
+    let webMediaID, appMediaID: Int
+    let catalogID: String?
+    let type, queue: Int
+    let isActive: Bool
+    let createdAt, updatedAt, title: String
+    let desc: String?
+    let webMedia, appMedia: Media
 
-class VideoPlayerModel {
-     var player: AVQueuePlayer?
-
-    init(videoName: String) {
-        self.player = AVQueuePlayer()
-
-        if let url = Bundle.main.url(forResource: videoName, withExtension: "mp4") {
-            let asset = AVAsset(url: url)
-            let playerItem = AVPlayerItem(asset: asset)
-            self.player?.replaceCurrentItem(with: playerItem)
-            self.player?.play()
-            
-            NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying(_:)), name: .AVPlayerItemDidPlayToEndTime, object: playerItem)
-        } else {
-           // fatalError("Video file not found")
-            return 
-        }
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
-    @objc  func playerDidFinishPlaying(_ notification: Notification) {
-        if let playerItem = notification.object as? AVPlayerItem {
-            playerItem.seek(to: .zero, completionHandler: nil)
-            player?.play()
-        }
-    }
-
-    func getPlayer() -> AVQueuePlayer {
-        return player ?? AVQueuePlayer()
+    enum CodingKeys: String, CodingKey {
+        case id, link, titleUz, titleRu, titleEn, descUz, descRu, descEn, details
+        case webMediaID = "webMediaId"
+        case appMediaID = "appMediaId"
+        case catalogID = "catalogId"
+        case type, queue, isActive
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case title, desc
+        case webMedia = "web_media"
+        case appMedia = "app_media"
     }
 }
 
+// MARK: - Media
+struct Media: Codable {
+    let id: Int?
+    let src: String?
+    let type: String?
+}
