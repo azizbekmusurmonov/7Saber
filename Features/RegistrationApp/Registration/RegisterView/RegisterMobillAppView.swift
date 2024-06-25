@@ -28,6 +28,10 @@ public struct RegisterMobillAppView: View {
             OnBoardingView {
                 isShowRegistrView = true
                 DataStorage.storage.save(true, for: .isShowedOnBoarding)
+            }.onAppear {
+                if let _ = DataStorage.storage.get(from: .isShowedOnBoarding) {
+                    isShowRegistrView = true
+                }
             }
         } else {
             VStack {
@@ -40,7 +44,7 @@ public struct RegisterMobillAppView: View {
                         skipButtonAction: {
                             skipButtonTapped()
                             DataStorage.storage.save(true, for: .isRegistrate)
-                        }
+                        }, hasSkipButton: hasSkipButton
                     )
                     
                     WelcomeView(welcome: Localizations.welcome, welcomeText: Localizations.enterYourPhoneNumberOrEmailToContinue)
