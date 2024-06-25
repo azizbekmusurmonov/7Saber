@@ -45,6 +45,8 @@ public struct RegisterMobillAppView: View {
                     
                     WelcomeView(welcome: Localizations.welcome, welcomeText: Localizations.enterYourPhoneOrEmail)
                         .padding(.top, 150)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
                         .frame(width: UIScreen.main.bounds.width)
                     TextFieldNextButton(nextButtonPressed: {
                         if !vm.numberText.isEmpty {
@@ -63,11 +65,15 @@ public struct RegisterMobillAppView: View {
                                     .environmentObject(vm)
                                     .opacity(vm.userExists ? 1 : 0)
                             } else if vm.numberText.contains("+998") && vm.numberText.count == 13 {
-                                CodeViewAccountExists(skipButtonTapped: {})
+                                CodeViewAccountExists(skipButtonTapped: {
+                                    
+                                })
                                     .environmentObject(vm)
                                     .opacity(vm.userExists ? 1 : 0)
                             }
-                            CodeViewAccountNotExists(skipButtonTapped: {})
+                            CodeViewAccountNotExists(skipButtonTapped: {
+                                
+                            })
                                 .environmentObject(vm)
                                 .opacity(vm.userExists ? 0 : 1)
                         } else {
