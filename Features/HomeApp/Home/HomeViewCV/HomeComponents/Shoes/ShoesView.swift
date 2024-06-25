@@ -17,9 +17,6 @@ public struct ShoesView: View {
             contentView
                 .padding(.top, -10)
         }
-        .onAppear {
-            viewModel.fetchCategories()
-        }
         .padding()
     }
     
@@ -35,7 +32,7 @@ public struct ShoesView: View {
             Spacer()
             
             Button(action: {
-                viewModel.fetchCategories()
+                viewModel.startFetchingData()
             }) {
                 if viewModel.isLoading {
                     ProgressView()
@@ -50,19 +47,20 @@ public struct ShoesView: View {
     
     private var contentView: some View {
         Group {
-            if let error = viewModel.error {
-                errorView(error)
-            } else if let categories = viewModel.categories {
+//            if let error = viewModel.error {
+//                errorView(error)
+//            } else 
+            if let categories = viewModel.categories {
                 categoriesView(categories)
             }
         }
     }
     
-    private func errorView(_ error: ShoesNetworkError) -> some View {
-        Text("Error: \(error.localizedDescription)")
-            .foregroundColor(.red)
-            .padding()
-    }
+//    private func errorView(_ error: ShoesNetworkError) -> some View {
+//        Text("Error: \(error.localizedDescription)")
+//            .foregroundColor(.red)
+//            .padding()
+//    }
     
     private func categoriesView(_ categories: Shoes) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
