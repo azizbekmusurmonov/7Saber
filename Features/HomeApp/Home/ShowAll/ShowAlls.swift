@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShowAll: View {
     
-    @StateObject var categoryController = CategoryController()
+    //@StateObject var categoryController = CategoryController()
     @StateObject var viewModel = NewCollectionViewModel()
     @StateObject var viewModel22 = NewCollectionViewModel22()
     @State private var isShowingCatalogPage = false
@@ -39,11 +39,11 @@ struct ShowAll: View {
                             .padding(.top, 60)
                     }
                     
-                    NavigationLink(destination: DetailedView()) {
-                        SHoes()
-                            .padding(.leading, 10)
-                            .padding(.top, 50)
-                    }
+//                    NavigationLink(destination: DetailedView()) {
+//                        SHoes()
+//                            .padding(.leading, 10)
+//                            .padding(.top, 50)
+//                    }
                 }
              
             }.customNavigation()
