@@ -5,6 +5,266 @@
   Created by Ismatillokhon on 19/06/24.
   
 */
-"where_are_you_in" = "WHERE ARE YOU IN?";
-"welcome" = "WELCOME";
-"enter_your_phone_or_email" = "Enter your phone number or email to continue";
+// MARK: - Intro
+
+"feel" = "Feel";
+"the_comfort" = "The comfort";
+"on" = "On";
+"every" = "Every";
+"step" = "Step";
+
+"tough_times" = "Tough times";
+"dont_last" = "Don't last";
+"but" = "But";
+"tough_people" = "Tough people";
+"do" = "Do";
+
+"dont" = "Don't";
+"count_the_days" = "Count the days";
+"the_days" = "The days";
+"count" = "Count";
+
+"never" = "Never";
+"put_an" = "Put an";
+"age_limit" = "Age limit";
+"on_your" = "On your";
+"dreams" = "Dreams";
+
+"select_the_country" = "Select the country";
+"uzbekistan" = "Uzbekistan";
+"russia" = "Russia";
+"other_country" = "Other country";
+"continue" = "Continue";
+
+
+//MARK: - Registration
+
+"welcome" = "Welcome";
+"enter_your_phone_number_or_email_to_continue" = "Enter your phone number or email to continue";
+"phone_number_or_email" = "Phone number or Email";
+"next" = "Next";
+"skip" = "Skip";
+"enter_confirmation_code_to_continue_the_process" = "Enter confirmation code to continue the process";
+"code" = "Code";
+"enter" = "Enter";
+"we_have_sent_to_your_phone_number" = "We have sent to your phone number %@ a 5-digit number, please enter that code to confirm";
+"send_again" = "Send again";
+
+"it_looks_like_we_dont_have_your_account" = "It looks like we don't have your account.";
+"please_fill_up_the_following_fields_to_continue" = "Please fill up the following fields to continue";
+"fullname" = "Fullname";
+"create_a_password" = "Create a password";
+"password" = "Password";
+"re_type_password" = "Re-type password";
+
+"privacy_policy" = "Privacy policy";
+"terms_and_conditions" = "Terms & Conditions";
+
+// MARK: - Main
+
+// Tab bar
+"home" = "Home";
+"catalog" = "Catalog";
+"cart" = "Cart";
+"wishlist" = "Wishlist";
+"profile" = "Profile";
+
+// Main page - Categories
+
+"time_to_win" = "Time to win";
+
+"categories" = "Categories";
+"men" = "Men";
+"women" = "Women";
+"kids" = "Kids";
+"all" = "All";
+
+"new_collection" = "New collection";
+"see_all" = "See all";
+
+"trending_now" = "Trending now";
+
+"shoes" = "Shoes";
+"there_are_three_types_of_people" = "There are three types of people in sports and business.Those who make it possible, those who watch it happen, and those who wonder what happened.";
+
+"by_sports" = "By sports";
+"running" = "Running";
+"triathlon" = "Triathlon";
+"swimming" = "Swimming";
+"boxing" = "Boxing";
+"judo" = "Judo";
+"others" = "Others";
+
+"7saber_for_your_family" = "7Saber for your family";
+"for_daddy" = "For daddy";
+"for_mommy" = "For mommy";
+"for_child" = "For child";
+
+"autumn_sales" = "Autumn sales";
+"our_autumn_collection_is_now_in_stock" = "Our autumn collection is now in stock";
+
+// MARK: - Catalog
+
+"accessories" = "Accessories";
+"best_sellers" = "Best sellers";
+"tressers_and_pants" = "Tressers and pants";
+"clothes" = "Clothes";
+"t_shirts" = "T-shirts";
+"windbreakers_and_sweatshirts" = "Windbreakers and sweatshirts";
+"hoodies_and_sweatshirts" = "Hoodies and sweatshirts";
+"sweaters" = "Sweaters";
+"jackets_and_vests" = "Jackets and vests";
+"ski_and_snowboard_clothing" = "Ski and snowboard clothing";
+"suits" = "Suits";
+"featured" = "Featured";
+"new_arrivals" = "New arrivals";
+"seasonal_sales_up_to" = "%@ sales up to %@%";
+"filter" = "Filter";
+"clear_all" = "Clear all";
+"sort_by" = "Sort by";
+"newest_first" = "Newest first";
+"price_low_to_high" = "Price: low-high";
+"price_high_to_low" = "Price: high-low";
+"size" = "Size";
+"color" = "Color";
+"sale" = "Sale";
+"percent_off_and_up" = "%@ Off and Up";
+"view_results" = "View %@ Results";
+"newest" = "Newest";
+"brand" = "Brand";
+"nike" = "Nike";
+"adidas" = "Adidas";
+"puma" = "Puma";
+"under_armour" = "Under Armour";
+
+//MARK: - Filter page:
+
+"turquoise" = "Turquoise";
+"white" = "White";
+"black" = "Black";
+"grey" = "Grey";
+"light_pink" = "Light pink";
+"blue" = "Blue";
+"dark_grey" = "Dark grey";
+"orange" = "Orange";
+"free_standar_shipping_for_7SaberClub_members" = "Free standard shipping for 7SaberClub members";
+"x_day_free_returns_and_exchange" = "%@ -day Free returns and exchanges";
+"express_shipping_service_is_available" = "Express Shipping service is available";
+"description" = "Description";
+"product_details" = "Product details";
+"shipping_and_returns" = "Shipping & returns";
+"sustainability" = "Sustainability";
+"care_instructions" = "Care instructions";
+"how_others_wearing_7saber" = "How others wearing 7Saber";
+"upload_yout_photo_or_mention" = "Upload your photo or mention @7Saber on Instagram for a chance to be introduced";
+"add_your_photo" = "Add your photo, be one of us";
+"you_may_also_like" = "You may also like";
+"complete_the_look" = "Complete the look";
+"7line_leggings" = "7Line Leggings";
+"added_to_bag" = "Added to bag";
+"view_bag" = "View bag";
+
+
+// MARK: - Profile
+
+"profile" = "Profile";
+"account" = "Account";
+"personal_information" = "Personal information";
+"addresses" = "Addresses";
+"payment_methods" = "Payment methods";
+"orders" = "Orders";
+"current_orders" = "Current orders";
+"order_history" = "Order history";
+"settings" = "Settings";
+"push_notifications" = "Push notifications";
+"privacy" = "Privacy";
+"language" = "Language";
+"country_region" = "Country / Region";
+"legal" = "Legal";
+"general_terms_conditions" = "General Terms & Conditions";
+"terms_of_use" = "Terms of Use";
+"log_out" = "Log out";
+"delete_account" = "Delete account";
+"edit_profile" = "Edit profile";
+"upload_img" = "Upload img";
+"full_name" = "Full name";
+"phone" = "Phone";
+"email" = "Email";
+"gender" = "Gender";
+"male" = "Male";
+"female" = "Female";
+"birthday" = "Birthday";
+"save" = "Save";
+"cancel" = "Cancel";
+"address_name" = "Address name";
+"select_the_country" = "Select the country";
+"street_address" = "Street address";
+"building" = "Building";
+"apartment" = "Apartment";
+"floor" = "Floor";
+"house" = "House";
+"city" = "City";
+"state_province_region" = "State / Province / Region";
+"zipcode" = "Zipcode";
+"phone_number" = "Phone number";
+"add_new_address" = "Add new address";
+"you_dont_have_address" = "You don't have address";
+"seems_you_have_not_added_your_address_yet" = "Seems you have not added your address yet";
+"add_payment_method" = "Add payment method";
+"there_is_no_credit_card" = "There is no credit card";
+"seems_credit_card_has_not_been_added_yet" = "Seems credit card has not been added yet";
+"added_credit_card" = "Added credit card";
+"add_card" = "Add card";
+"order_details" = "Order details";
+"order_id" = "Order ID";
+"total" = "Total";
+"on_process" = "On process";
+"order_status" = "Order status";
+"ordered_paid" = "Ordered & Paid";
+"accepted" = "Accepted";
+"shipped" = "Shipped";
+"delivered" = "Delivered";
+"ordered_products" = "Ordered products";
+"buy_it_again" = "Buy it again";
+"show" = "Show";
+"ship_to" = "Ship to";
+
+//MARK: - Wishlist
+
+"your_wishlist_is_empty" = "Your wishlist is empty";
+"seems_you_have_not_added_any_product_here" = "Seems you have not added any product here.";
+"product" = "product";
+"remove" = "Remove";
+"check_out" = "Check out";
+"select_size" = "Select size";
+"add_to_card" = "Add to card";
+
+//MARK: - Check out
+
+"my_cart" = "My cart";
+"checkout" = "Checkout";
+"in_your_bag" = "In your bag";
+"personal_info" = "Personal info";
+"shipping_address" = "Shipping address";
+"add_shipping_address" = "Add shipping address to continue the checkout";
+"promocode" = "Promocode";
+"subtotal" = "Subtotal";
+"promocode_discount" = "Promocode discount";
+"loyalty_discount" = "Loyalty discount";
+"estimated_tax" = "Estimated tax";
+"continue_to_payment" = "Continue to payment";
+"pay_by_card" = "Pay by card";
+"pay_by_cash" = "Pay by cash";
+"other_method" = "Other method";
+"pay_order" = "Pay & order";
+"shipping" = "Shipping";
+"pick_up" = "Pick up";
+"our_stores" = "Our stores";
+"unfortunately" = "Unfortunately";
+"seems_there_is_no_our_store_in_china" = "Seems, there is no our store in China but we can ship your order to your home";
+"add_pick_up_address" = "Add pick-up address";
+"promocode_applied" = "Promocode applied";
+"apply_promocode" = "Apply promocode";
+"go_to_check_out" = "Go to check out";
+"add_card" = "Add card";
+ 

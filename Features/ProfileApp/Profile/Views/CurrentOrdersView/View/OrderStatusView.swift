@@ -10,6 +10,8 @@ import Core
 import AssetKit
 
 struct OrderStatusView: View {
+    
+    @EnvironmentObject var vm: OrdersViewModel
     var status: Progresses
     
     private var progressValue: Double {

@@ -23,6 +23,8 @@ public final class DataStorage {
     public var isRegistrated: Bool { (DataStorage.storage.get(from: .token) as? String)?.isEmpty == false }
     
     public static let storage: AnyDataStorage = UserDefaults.standard
+    
+    public let language: AppLanguage = AppLanguage(rawValue: DataStorage.storage.get(from: .language) as? String ?? "uz") ?? .uz
 }
 
 extension UserDefaults: AnyDataStorage {
@@ -49,4 +51,10 @@ public enum StorageKeys: String {
     case isRegistrate
     case token
     case language
+}
+
+public enum AppLanguage: String, CaseIterable {
+    case uz
+    case ru
+    case en
 }
