@@ -11,7 +11,7 @@ import AssetKit
 
 public struct ContentView: View {
     
-    //@StateObject var categoryController = CategoryController()
+
     @StateObject private var newCollectionViewModel = NewCollectionViewModel()
     @StateObject var trendingViewModel = TrendingViewModel()
     @StateObject var shoesViewModel = ShoesViewModel()
@@ -28,7 +28,7 @@ public struct ContentView: View {
             VStack {
                 
                 BaseNavigationBar(title: "", leftImage: Asset.Image.Logo.logoBlack.image, rightImage: Asset.Image.Home.searchHome.image)
-                    .frame(height: 60)
+//                    .frame(height: 60)
                     .padding(.top, 54)
                     .background(Blur(style: .light).opacity(0.5))
                 
@@ -55,7 +55,7 @@ public struct ContentView: View {
                             isShowingDetailedView = true // Present DetailedView when tapped
                         }
                     
-                    ShoesView(viewModel: shoesViewModel)
+                    ShoesView()
                        
                         .padding(.top, 30)
                         .onTapGesture {
@@ -68,14 +68,15 @@ public struct ContentView: View {
                     ButtonSort()
                         .padding(.top, 100)
                     
-                    Family()
+                 
                     
                     VStack {
                         AutumnSalesView()
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                             .clipped()
                         
-                    }.padding(.top, -10)
+                    }
+                        .padding(.bottom, 80)
                     
                 }
             }

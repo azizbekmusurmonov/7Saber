@@ -13,7 +13,7 @@ public struct ShoesItemView: View {
     let shoesProductimage: ShoesMainImg
     
     public var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack {
             productImageView
             productInfoView
             Spacer()

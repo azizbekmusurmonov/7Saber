@@ -9,8 +9,8 @@ import SwiftUI
 import AssetKit
 
 public struct ProductItemView: View {
-    let product: Datum
-    let productimage: MainImg
+    let product: NewCollectionDatum
+    let productimage: NewCollectionMainImg
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -29,7 +29,7 @@ public struct ProductItemView: View {
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 300, height: 376)
+                    .frame(width: 301, height: 376)
                     .clipped()
             } placeholder: {
                 ProgressView()
@@ -78,19 +78,4 @@ public struct ProductItemView: View {
         .padding([.leading, .top], 0)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
