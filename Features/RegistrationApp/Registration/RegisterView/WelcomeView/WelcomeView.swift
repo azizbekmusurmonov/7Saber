@@ -31,7 +31,7 @@ struct WelcomeView: View {
                         .padding(.bottom, 12)
                     Text(welcomeText)
                         .font(.system(size: 16))
-                        .lineLimit(0)
+                        .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: true)
                     
                     Spacer()

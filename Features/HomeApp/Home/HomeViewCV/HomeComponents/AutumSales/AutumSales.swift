@@ -73,11 +73,11 @@ struct AutumnImageView: View {
                 .frame(maxWidth: 200, alignment: .leading)
                 .padding(.bottom, 16)
                 .padding(.top, 16)
-                .opacity(viewModel.showContent ? 1 : 0)
-                .animation(.easeInOut(duration: 1.0)),
+                .opacity(viewModel.showContent ? 1 : 0),
+               
                 alignment: .topLeading
             )
-            .overlay(
+            .overlay(alignment: .topLeading) {
                 VStack(alignment: .trailing) {
                     Text(viewModel.model.collectionDescription)
                         .font(.system(size: 25))
@@ -88,10 +88,10 @@ struct AutumnImageView: View {
                         .padding(.trailing, 1)
                         .padding(.top, 640)
                         .opacity(viewModel.showContent ? 1 : 0)
-                        .animation(.easeInOut(duration: 1.5))
+                      
                     Spacer()
                     Button(action: {
-                        // Button action here
+                        
                     }) {
                         Text(viewModel.model.buttonTitle)
                             .font(.title3)
@@ -108,16 +108,16 @@ struct AutumnImageView: View {
                             .padding(.horizontal, 40)
                             .padding(.bottom, 40)
                             .opacity(viewModel.showContent ? 1 : 0)
-                            .animation(.easeInOut(duration: 1.5))
+                           
                     }
                 }
                 .frame(maxWidth: 220, alignment: .trailing)
                 .padding(.bottom, 1)
                 .padding(.top, 16)
                 .opacity(viewModel.showContent ? 1 : 0)
-                .animation(.easeInOut(duration: 1.5)),
-                alignment: .bottomTrailing
-            )
+            }
+                
+            
             .onAppear {
                 viewModel.triggerAnimation()
             }

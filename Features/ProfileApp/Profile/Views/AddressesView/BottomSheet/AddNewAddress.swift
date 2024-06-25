@@ -13,6 +13,7 @@ struct AddNewAddress: View {
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: AddressFormViewModel
+    @Environment(\.dismiss) var pop
     
     var body: some View {
         VStack(spacing: .zero) {
@@ -75,6 +76,16 @@ struct AddNewAddress: View {
                     AddressTextfields(titleKey: "Phone number", text: $viewModel.phoneNumber)
                         .keyboardType(.numberPad)
                         .padding()
+                }
+                .onChange(of: viewModel.message) { newValue in
+                    guard let newValue else { return }
+                    switch newValue {
+                    case .succes(message: let message):
+                        Snackbar.show(message: message, theme: .success)
+                        pop()
+                    case .error(message: let message):
+                        Snackbar.show(message: message, theme: .error)
+                    }
                 }
             }
             

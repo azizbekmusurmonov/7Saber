@@ -13,11 +13,12 @@
 		5240926C2BB7BEC100A75FC0 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5240926B2BB7BEC100A75FC0 /* Profile.framework */; };
 		5281032D2BB265BC00F789A4 /* _Saber_mainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281032C2BB265BC00F789A4 /* _Saber_mainApp.swift */; };
 		5281032F2BB265BC00F789A4 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281032E2BB265BC00F789A4 /* TabBarView.swift */; };
-		528103312BB265BD00F789A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528103302BB265BD00F789A4 /* Assets.xcassets */; };
-		528103342BB265BD00F789A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528103332BB265BD00F789A4 /* Preview Assets.xcassets */; };
 		528103B92BB2681800F789A4 /* AddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528103B82BB2681800F789A4 /* AddCard.swift */; };
 		529DA8F12BB7B30000629C86 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA8EA2BB7B2A300629C86 /* Home.framework */; };
 		529DA9432BB7B3A400629C86 /* Wishlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9422BB7B3A400629C86 /* Wishlist.framework */; };
+		529DA9442BB7B3A400629C86 /* Wishlist.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9422BB7B3A400629C86 /* Wishlist.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B569D3952C23D6B3005A1624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B569D3942C23D6B3005A1624 /* Assets.xcassets */; };
+		B569D3982C23D6BE005A1624 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B569D3962C23D6BE005A1624 /* Preview Assets.xcassets */; };
 		FA77A2AE2BBBAA6100843673 /* Registration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2AD2BBBAA6100843673 /* Registration.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,12 +158,12 @@
 		528103292BB265BC00F789A4 /* 7Saber-main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "7Saber-main.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5281032C2BB265BC00F789A4 /* _Saber_mainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _Saber_mainApp.swift; sourceTree = "<group>"; };
 		5281032E2BB265BC00F789A4 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
-		528103302BB265BD00F789A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		528103332BB265BD00F789A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		528103B82BB2681800F789A4 /* AddCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCard.swift; sourceTree = "<group>"; };
 		529DA8B82BB7B23000629C86 /* HomeApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HomeApp.xcodeproj; path = HomeApp/HomeApp.xcodeproj; sourceTree = "<group>"; };
 		529DA9272BB7B36D00629C86 /* WishlistApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WishlistApp.xcodeproj; path = WishlistApp/WishlistApp.xcodeproj; sourceTree = "<group>"; };
 		529DA9C22BB7B89A00629C86 /* CategoryApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CategoryApp.xcodeproj; path = CategoryApp/CategoryApp.xcodeproj; sourceTree = "<group>"; };
+		B569D3942C23D6B3005A1624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B569D3962C23D6BE005A1624 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA77A22D2BBBA91600843673 /* NetworkManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkManager.xcodeproj; path = NetworkManager/NetworkManager.xcodeproj; sourceTree = "<group>"; };
 		FA77A24B2BBBA94E00843673 /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = Core/Core.xcodeproj; sourceTree = "<group>"; };
 		FA77A26A2BBBA99300843673 /* AppResources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppResources.xcodeproj; path = AppResources/AppResources.xcodeproj; sourceTree = "<group>"; };
@@ -242,18 +243,10 @@
 				5281032C2BB265BC00F789A4 /* _Saber_mainApp.swift */,
 				5281032E2BB265BC00F789A4 /* TabBarView.swift */,
 				528103B82BB2681800F789A4 /* AddCard.swift */,
-				528103302BB265BD00F789A4 /* Assets.xcassets */,
-				528103322BB265BD00F789A4 /* Preview Content */,
+				B569D3972C23D6BE005A1624 /* Preview Content */,
+				B569D3942C23D6B3005A1624 /* Assets.xcassets */,
 			);
 			path = "7Saber-main";
-			sourceTree = "<group>";
-		};
-		528103322BB265BD00F789A4 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				528103332BB265BD00F789A4 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		5281035A2BB2661A00F789A4 /* Features */ = {
@@ -302,6 +295,14 @@
 				529DA9F32BB7B9AF00629C86 /* CategoryTarget.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B569D3972C23D6BE005A1624 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B569D3962C23D6BE005A1624 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		FA4F206F2BB7E88F00457A3E /* Components */ = {
@@ -596,8 +597,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528103342BB265BD00F789A4 /* Preview Assets.xcassets in Resources */,
-				528103312BB265BD00F789A4 /* Assets.xcassets in Resources */,
+				B569D3982C23D6BE005A1624 /* Preview Assets.xcassets in Resources */,
+				B569D3952C23D6B3005A1624 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

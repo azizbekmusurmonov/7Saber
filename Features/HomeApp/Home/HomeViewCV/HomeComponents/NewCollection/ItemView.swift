@@ -6,57 +6,53 @@
 //
 
 import SwiftUI
+import AssetKit
 
 public struct ProductItemView: View {
     let product: ProductModel
     
     public var body: some View {
-        VStack(alignment: .leading) {
-            AsyncImage(url: URL(string: product.bg.src)) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .padding(.horizontal, 0)
-                    .padding(.top, 0)
-                    .onAppear {
-                        print("product.bg.src", product.bg.src)
-                    }
-            } placeholder: {
-                ProgressView()
-            }.onAppear {
-                print("product.bg.src", product.bg.src)
+        VStack(alignment: .leading, spacing: 0) {
+            ZStack(alignment: .bottomLeading) {
+                AsyncImage(url: URL(string: product.bg.src)) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 301, height: 376)
+                        .clipped()
+                } placeholder: {
+                    ProgressView()
+                }
+                
+                Button(action: {
+                    // Button action
+                }) {
+                    Image(uiImage: Asset.Image.Icons.plusCircle.image)
+                        .resizable()
+                        .frame(width: 48, height: 48)
+                }
+                .padding(10)
             }
-          .frame(width: 301, height: 400)
-            
             
             Text(product.nameRu)
-                .font(.system(size: 13))
-                .fontWeight(.medium)
+                .font(.system(size: 13, weight: .medium))
                 .foregroundColor(.black)
-                .padding(.leading, 0)
-                .padding(.top, 0)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 8)
+                .padding(.leading, 10)
                 .lineLimit(2)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text(product.bg.id.description)
-                .font(.system(size: 16))
-                .fontWeight(.semibold)
+            Text(product.bg.type.description)
+                .font(.system(size: 16, weight: .semibold))
                 .foregroundColor(.black)
-                .padding(.leading, 0)
                 .padding(.top, 2)
+                .padding(.leading, 10)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .lineLimit(1)
             
-            Button(action: {
-        
-            }) {
-                Image("plusonImage")
-                    .frame(width: 48, height: 48)
-                    .padding(.top, -120)
-                    .padding(.leading, 0)
-                    .padding(0)
-            }
-            .padding(.leading, 10)
+            Spacer()
         }
+        //.frame(width: 301, height: 376)
     }
 }
+

@@ -11,26 +11,54 @@ import Core
 
 struct ProfileImageView: View {
     
-    @Binding var bundle: ProfileBundle
+    @EnvironmentObject var vm: ProfileViewModel
     
     var body: some View {
         VStack(spacing: .zero) {
             HStack(spacing: .zero) {
-                Image(bundle.profileImageURL)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 146, height: 146)
-                    .clipShape(Circle())
-                    .padding()
+                if let url = URL(string: vm.profileData?.avatar.src ?? "") {
+                    AsyncImage(url: url) { phase in
+                        switch phase {
+                        case .empty:
+                            ProgressView()
+                                .frame(width: 146, height: 146)
+                                .background(Color.gray)
+                                .clipShape(Circle())
+                                .padding()
+                        case .success(let image):
+                            image.resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 146, height: 146)
+                                .clipShape(Circle())
+                                .padding()
+                        case .failure:
+                            Image(systemName: "person.circle.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 146, height: 146)
+                                .clipShape(Circle())
+                                .padding()
+                        @unknown default:
+                            EmptyView()
+                        }
+                    }
+                } else {
+                    Image(systemName: "person.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 146, height: 146)
+                        .clipShape(Circle())
+                        .padding()
+                }
                 
                 Divider()
                 VStack(spacing: .zero) {
                     Spacer()
-                    Text(bundle.profileName)
+                    Text(vm.profileData?.fullName ?? "")
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         .padding(2)
-                    Text(bundle.gmailName)
+                    Text(vm.profileData?.email ?? "")
                         .font(.system(size: 13, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     

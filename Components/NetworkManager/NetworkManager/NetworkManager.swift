@@ -93,7 +93,7 @@ final public class NetworkService {
             string += newLine
             
             string += "\( try JSONSerialization.jsonObject(with: data))"
-            
+            print(try JSONSerialization.jsonObject(with: data))
             let decoder = JSONDecoder()
             let decodedObject = try decoder.decode(T.self, from: data)
             print(string)

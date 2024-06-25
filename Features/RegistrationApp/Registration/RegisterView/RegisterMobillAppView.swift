@@ -8,6 +8,7 @@
 import SwiftUI
 //import Home
 import Core
+import AssetKit
 
 public struct RegisterMobillAppView: View {
     
@@ -42,7 +43,7 @@ public struct RegisterMobillAppView: View {
                         }
                     )
                     
-                    WelcomeView(welcomeText: "Enter your phone number \nor email to continue")
+                    WelcomeView(welcome: Localizations.welcome, welcomeText: Localizations.enterYourPhoneOrEmail)
                         .padding(.top, 150)
                         .frame(width: UIScreen.main.bounds.width)
                     TextFieldNextButton(nextButtonPressed: {
