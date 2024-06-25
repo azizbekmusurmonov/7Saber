@@ -10,6 +10,9 @@ import Core
 import AssetKit
 
 struct PaymentItem: View {
+    
+    @EnvironmentObject var vm: OrdersViewModel
+    
     var body: some View {
         VStack(spacing: .zero) {
             HStack(spacing: .zero) {

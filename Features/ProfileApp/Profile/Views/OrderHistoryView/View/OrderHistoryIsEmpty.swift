@@ -10,6 +10,9 @@ import AssetKit
 import Core
 
 struct OrderHistoryIsEmpty: View {
+    
+    @EnvironmentObject var vm: OrdersViewModel
+    
     var body: some View {
         
         VStack(spacing: .zero) {
