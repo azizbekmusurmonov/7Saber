@@ -42,7 +42,7 @@ public struct RegisterMobillAppView: View {
                         }
                     )
                     
-                    WelcomeView(welcomeText: )
+                    WelcomeView(welcomeText: "Enter your phone number \nor email to continue")
                         .padding(.top, 150)
                         .frame(width: UIScreen.main.bounds.width)
                     TextFieldNextButton(nextButtonPressed: {
