@@ -7,14 +7,14 @@
 
 import Foundation
 
-// MARK: - Trending
+// MARK: - Shoes
 struct Shoes: Codable {
     let currentPage: Int
     let data: [ShoesDatum]
     let firstPageURL: String
     let from, lastPage: Int
     let lastPageURL: String
-    let links: [Link]
+    let links: [ShoesLink]
     let nextPageURL, path: String
     let perPage: Int
     let prevPageURL: String?
@@ -43,23 +43,21 @@ struct ShoesDatum: Codable, Identifiable {
     let categoryID: Int
     let sportTypeID: String?
     let nameUz, nameRu, nameEn: String
-    let descUz: String?
-    let descRu: String?
-    let descEn, specUz, specRu, specEn: String?
+    let descUz, descRu, descEn, specUz: String?
+    let specRu, specEn: String?
     let sku: String
     let discount: [String]
     let price: [String: Int?]
     let gender: String
     let mainImgID: Int
     let mediaID: String?
-    let clientMedias: [String]
-    let weight: Int
-    let type: Int?
+    let clientMediaIDS: ShoesClientMediaIDS
+    let weight, type: Int
     let isActive: Bool
     let additions: [String]
     let createdAt, updatedAt, name: String
     let desc: String?
-    let attributes: [Attribute]
+    let attributes: [ShoesAttribute]
     let mainImg: ShoesMainImg
     let media: String?
 
@@ -71,7 +69,8 @@ struct ShoesDatum: Codable, Identifiable {
         case nameUz, nameRu, nameEn, descUz, descRu, descEn, specUz, specRu, specEn, sku, discount, price, gender
         case mainImgID = "mainImgId"
         case mediaID = "mediaId"
-        case clientMedias, weight, type, isActive, additions
+        case clientMediaIDS = "clientMediaIds"
+        case weight, type, isActive, additions
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case name, desc, attributes
@@ -84,32 +83,44 @@ struct ShoesDatum: Codable, Identifiable {
 struct ShoesAttribute: Codable {
     let productID: Int
     let billzID: String
-    let barcode: Int
-    let color: [ShoesColor]
+    let barcode, colorID: Int
     let size: String
-    let photos: [ShoesPhoto]
+    let photos: [String]
     let qty: Int
     let createdAt, updatedAt: String
+    let color: ShoesColor
 
     enum CodingKeys: String, CodingKey {
         case productID = "productId"
         case billzID = "billzId"
-        case barcode, color, size, photos, qty
+        case barcode
+        case colorID = "colorId"
+        case size, photos, qty
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case color
     }
 }
 
 // MARK: - Color
 struct ShoesColor: Codable {
-    let name: String
+    let id: Int
+    let billzID, nameUz, nameRu, nameEn: String
     let hex: String?
+    let createdAt, updatedAt, name: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case billzID = "billzId"
+        case nameUz, nameRu, nameEn, hex
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case name
+    }
 }
 
-// MARK: - Photo
-struct ShoesPhoto: Codable {
-    let baseName: String
-    let src: String
+enum ShoesClientMediaIDS: String, Codable {
+    case empty = "[]"
 }
 
 // MARK: - MainImg
@@ -120,7 +131,6 @@ struct ShoesMainImg: Codable {
 }
 
 enum ShoesTypeEnum: String, Codable {
-    case jpg = "jpg"
     case typeDefault = "default"
 }
 

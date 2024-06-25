@@ -8,24 +8,26 @@
 import SwiftUI
 
 struct BigText: View {
-    @State private var animated = false // State variable to control animations
+    @State private var animated = false
     
     var body: some View {
         Text("THERE ARE THREE TYPES OF PEOPLE IN SPORTS AND BUSINESS. THOSE WHO MAKE IT POSSIBLE, THOSE WHO WATCH IT HAPPEN, AND THOSE WHO WONDER WHAT HAPPENED.")
-            .font(.system(size: 40))
-            .fontWeight(.bold)
-            .multilineTextAlignment(.center)
-            .padding()
-            .scaleEffect(animated ? 1 : 1) // Scale effect for animation
-            .rotationEffect(Angle(degrees: animated ? 0 : 0)) // Rotation effect for animation
-            .opacity(animated ? 1 : 1) // Opacity effect for animation
-            .offset(x: animated ? 0 : 0, y: animated ? 0 : 0) // Offset for movement effect
-            .foregroundColor(animated ? .white : .black) // Color change effect
-            .onAppear {
-                withAnimation(Animation.easeInOut(duration: 1).repeatForever()) {
-                    self.animated.toggle() // Toggle animation state on view appear
-                }
-            }
+                  .font(.system(size: 40))
+                  .fontWeight(.bold)
+                  .multilineTextAlignment(.center)
+                  .padding()
+                  .scaleEffect(animated ? 0.9 : 1)
+        .opacity(animated ? 1 : 0.8)
+        .foregroundColor(animated ? .white : .black)
+        .animation(
+            Animation.easeInOut(duration: 5)
+                .repeatForever(autoreverses: true),
+            value: animated
+        )
+        .onAppear {
+            self.animated.toggle()
+        }
     }
 }
+
 

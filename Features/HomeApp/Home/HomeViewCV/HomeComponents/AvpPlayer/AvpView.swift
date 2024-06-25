@@ -5,35 +5,42 @@
 //  Created by islombek on 22/05/24.
 //
 
-
 import SwiftUI
 import AVKit
-
+import Core
 
 struct VideoPlayerView: View {
-    let videoPlayerModel: VideoPlayerModel
-
-    init(videoName: String) {
-        self.videoPlayerModel = VideoPlayerModel(videoName: videoName)
-    }
+    @ObservedObject var videoPlayerModel: VideoPlayerModel
+    @EnvironmentObject var apiManager: APIManager
+    @State private var selectedPlayer: AVPplayer?
 
     var body: some View {
-        VideoPlayer(player: videoPlayerModel.getPlayer()) {
-            VStack(alignment: .leading, spacing: 0) {
-                Text("TIME TO WIN")
-                    .font(.system(size: 93))
-                    .fontWeight(.thin)
-                    .foregroundColor(.white)
-                    .frame(width: 195, height: 354)
+        VStack {
+            if let player = videoPlayerModel.player {
+                VideoPlayer(player: player) {
+                    Text(title)
+                        .font(.system(size: 80))
+                        .fontWeight(.thin)
+                        .foregroundColor(.white)
+                        .frame(width: 200, height: 500)
+                }
+                .onDisappear {
+                    player.pause()
+                }
+                .frame(maxHeight: .infinity)
+                .ignoresSafeArea()
+            } else {
+                ProgressView("Loading...")
+                    .progressViewStyle(.circular)
             }
-            .padding(.top, 370)
-            .padding(.leading, -170)
         }
-        .frame(height: 901)
-        .frame(maxHeight: .infinity)
-        .ignoresSafeArea()
+    }
+    
+    var title: String {
+        switch DataStorage.shared.language {
+        case .uz: return apiManager.playerData?.titleUz ?? ""
+        case .ru: return apiManager.playerData?.titleRu ?? ""
+        case .en: return apiManager.playerData?.titleEn ?? ""
+        }
     }
 }
-
-
-

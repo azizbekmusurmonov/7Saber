@@ -13,12 +13,11 @@ public struct NewCollectionView: View {
     public var body: some View {
         VStack(alignment: .leading) {
             headerView
-            
             contentView
-                .padding(.top, -10)
+                
         }
         .onAppear {
-            viewModel.fetchCategories()
+            viewModel.startFetchingData()
         }
         .padding()
     }
@@ -30,12 +29,10 @@ public struct NewCollectionView: View {
             Text("NEW COLLECTION")
                 .font(.system(size: 19, weight: .bold))
                 .foregroundColor(.black)
-              
             
             Spacer()
             
             Button(action: {
-                viewModel.fetchCategories()
             }) {
                 if viewModel.isLoading {
                     ProgressView()
@@ -50,29 +47,38 @@ public struct NewCollectionView: View {
     
     private var contentView: some View {
         Group {
-            if let error = viewModel.error {
-                errorView(error)
-            } else if let categories = viewModel.categories {
-                categoriesView(categories)
+            switch viewModel.newCollection {
+            case .some(let collection):
+                collectionView(collection)
+            case .none:
+                noDataView
             }
         }
     }
-    
-    private func errorView(_ error: NetworkError) -> some View {
-        Text("Error: \(error.localizedDescription)")
-            .foregroundColor(.red)
+
+    private var noDataView: some View {
+        Text("No data available.")
+            .foregroundColor(.gray)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .padding()
     }
     
-    private func categoriesView(_ categories: NewCollection) -> some View {
+
+    private func collectionView(_ collection: NewCollection) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                ForEach(categories.data) { product in
+                ForEach(collection.data) { product in
                     ProductItemView(product: product, productimage: product.mainImg)
+                        .frame(width: 301, height: 376)
+                        .foregroundColor(.red)
+                      //  .padding(.vertical, 10)
                 }
             }
-            .padding(.horizontal, 10)
+            
         }
     }
 }
 
+#Preview {
+    NewCollectionView()
+}

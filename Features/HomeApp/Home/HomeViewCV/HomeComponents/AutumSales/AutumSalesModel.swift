@@ -1,24 +1,24 @@
 //
-//  AvpModel.swift
+//  AutumSalesModel.swift
 //  Home
 //
-//  Created by islombek on 22/05/24.
+//  Created by islombek on 21/06/24.
 //
 
 import Foundation
 
-// MARK: - AVPplayer
-struct AVPplayer: Codable, Identifiable {
+// MARK: - AutumSales
+struct AutumSales: Codable {
     let id: Int
     let link, titleUz, titleRu, titleEn: String
-    let descUz, descRu, descEn, details: String?
+    let descUz, descRu, descEn: String
+    let details: AutumSalesDetails
     let webMediaID, appMediaID: Int
     let catalogID: String?
     let type, queue: Int
     let isActive: Bool
-    let createdAt, updatedAt, title: String
-    let desc: String?
-    let webMedia, appMedia: Media
+    let createdAt, updatedAt, title, desc: String
+    let webMedia, appMedia: AutumSalesMedia
 
     enum CodingKeys: String, CodingKey {
         case id, link, titleUz, titleRu, titleEn, descUz, descRu, descEn, details
@@ -35,8 +35,14 @@ struct AVPplayer: Codable, Identifiable {
 }
 
 // MARK: - Media
-struct Media: Codable {
-    let id: Int?
-    let src: String?
-    let type: String?
+struct AutumSalesMedia: Codable {
+    let id: Int
+    let src: String
+    let type: String
 }
+
+// MARK: - Details
+struct AutumSalesDetails: Codable {
+    let percent: Int
+}
+
