@@ -44,7 +44,7 @@ struct CodeTextFieldButton: View {
                         }
                     )
                     .padding(.top, (vm.remainingSeconds != 0) ? -62 : 21)
-                    .animation(.easeInOut(duration: .animationDuration.normal))
+                    .animation(.easeInOut(duration: .animationDuration.normal), value: ValueTransformer())
                     Spacer()
                 }
                 .padding(.leading, 40)

@@ -20,7 +20,7 @@ struct SnackBarView: View {
                 .foregroundColor(Color.white)
                 .cornerRadius(8)
                 .frame(width: UIScreen.main.bounds.width)
-                .animation(.easeInOut(duration: 0.5))
+                .animation(.easeInOut(duration: 0.5), value: ValueTransformer())
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         withAnimation {
@@ -31,7 +31,7 @@ struct SnackBarView: View {
                 .padding()
             Spacer()
         } .frame(width: UIScreen.main.bounds.width)
-        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+            .safeAreaInsetPadding()
         .edgesIgnoringSafeArea(.top)
     }
 }

@@ -43,7 +43,7 @@ public struct RegisterMobillAppView: View {
                         }
                     )
                     
-                    WelcomeView(welcome: Localizations.welcome, welcomeText: Localizations.enterYourPhoneOrEmail)
+                    WelcomeView(welcome: Localizations.welcome.uppercased(), welcomeText: Localizations.enterYourPhoneNumberOrEmailToContinue)
                         .padding(.top, 150)
                         .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: true)

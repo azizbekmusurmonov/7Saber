@@ -62,6 +62,8 @@ struct AddressView: View {
             navBar
             Spacer()
             AddressesIsEmpty()
+        @unknown default:
+            fatalError()
         }
     }
 }

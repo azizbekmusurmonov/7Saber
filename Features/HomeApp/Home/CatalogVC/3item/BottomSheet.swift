@@ -11,6 +11,8 @@ public struct BottomSheetView: View {
     @Binding var isPresented: Bool
     let title: String
     
+    
+    
     public var body: some View {
         NavigationView {
             ScrollView {
@@ -38,9 +40,9 @@ public struct BottomSheetView: View {
                     .background(Color.white)
                     .cornerRadius(10)
                     .padding(.horizontal)
-                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom)
+                    .safeAreaInsetPadding()
                     .offset(y: isPresented ? 0 : UIScreen.main.bounds.height)
-                    .animation(.spring())
+                    .animation(.spring(), value: ValueTransformer())
                     .edgesIgnoringSafeArea(.all)
                 }
             }
@@ -96,3 +98,18 @@ struct SectionView: View {
     }
 }
 
+extension View {
+    func safeAreaInsetPadding() -> some View {
+        self.modifier(SafeAreaInsetPadding())
+    }
+}
+
+struct SafeAreaInsetPadding: ViewModifier {
+    func body(content: Content) -> some View {
+        GeometryReader { geometry in
+            content
+                .padding(.bottom, geometry.safeAreaInsets.bottom)
+                .edgesIgnoringSafeArea(.bottom)
+        }
+    }
+}

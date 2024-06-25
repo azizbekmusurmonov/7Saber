@@ -50,6 +50,8 @@ struct OrderHistoryView: View {
             navBar
             Spacer()
             OrderHistoryIsEmpty()
+        @unknown default:
+            fatalError()
         }
         
     }

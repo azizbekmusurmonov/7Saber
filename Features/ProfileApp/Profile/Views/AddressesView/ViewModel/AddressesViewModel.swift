@@ -124,7 +124,7 @@ public class AddressFormViewModel: ObservableObject {
         let urlString = "https://lab.7saber.uz/api/client/address/store"
         
         Task.detached { [weak self] in
-            guard let self, let url = URL(string: urlString) else { return }
+            guard let self, let _ = URL(string: urlString) else { return }
             let adressesData: [String : String] = [
                 "name" : addressName,
                 "countryId" : selectedCountry?.id.description ?? "1",

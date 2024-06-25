@@ -5,6 +5,266 @@
   Created by Ismatillokhon on 19/06/24.
   
 */
-"where_are_you_in" = "ГДЕ ТЫ НАХОДИШЬСЯ?";
-"welcome" = "ДОБРО ПОЖАЛОВАТЬ";
-"enter_your_phone_or_email" = "Введите свой номер телефона или адрес электронной почты для продолжения";    
+// MARK: - Intro
+
+"feel" = "Чувствуй";
+"the_comfort" = "Комфорт";
+"on" = "На";
+"every" = "Каждом";
+"step" = "Шагу";
+
+"tough_times" = "Трудные времена";
+"dont_last" = "Не длятся";
+"but" = "Но";
+"tough_people" = "Сильные люди";
+"do" = "Выдерживают";
+
+"dont" = "Не";
+"count_the_days" = "Считай дни";
+"the_days" = "Дни";
+"count" = "Считаютя";
+
+"never" = "Никогда";
+"put_an" = "Устанавливай";
+"age_limit" = "Возрастное ограничение";
+"on_your" = "На свои";
+"dreams" = "Мечты";
+
+"select_the_country" = "Выберите страну";
+"uzbekistan" = "Узбекистан";
+"russia" = "Россия";
+"other_country" = "Другая страна";
+"continue" = "Продолжить";
+
+
+//MARK: - Registration
+
+"welcome" = "Добро пожаловать";
+"enter_your_phone_number_or_email_to_continue" = "Введите свой номер телефона или электронную почту, чтобы продолжить";
+"phone_number_or_email" = "Номер телефона или Электронная почта";
+"next" = "Далее";
+"skip" = "Пропустить";
+"enter_confirmation_code_to_continue_the_process" = "Введите код подтверждения, чтобы продолжить процесс";
+"code" = "Код";
+"enter" = "Ввести";
+"we_have_sent_to_your_phone_number" = "Мы отправили на ваш номер телефона %@ 5-значный код, пожалуйста, введите его для подтверждения";
+"send_again" = "Отправить снова";
+
+"it_looks_like_we_dont_have_your_account" = "Похоже, у нас нет вашей учетной записи.";
+"please_fill_up_the_following_fields_to_continue" = "Пожалуйста, заполните следующие поля, чтобы продолжить";
+"fullname" = "Полное имя";
+"create_a_password" = "Создайте пароль";
+"password" = "Пароль";
+"re_type_password" = "Повторите пароль";
+
+"privacy_policy" = "Политика конфиденциальности";
+"terms_and_conditions" = "Условия и положения";
+
+// MARK: - Main
+
+// Tab bar
+"home" = "Главная";
+"catalog" = "Каталог";
+"cart" = "Корзина";
+"wishlist" = "Список желаемого";
+"profile" = "Профиль";
+
+// Main page - Categories
+
+"time_to_win" = "Время побеждать";
+
+"categories" = "Категории";
+"men" = "Мужчины";
+"women" = "Женщины";
+"kids" = "Дети";
+"all" = "Все";
+
+"new_collection" = "Новая коллекция";
+"see_all" = "Смотреть все";
+
+"trending_now" = "Сейчас в тренде";
+
+"shoes" = "Обуви";
+"there_are_three_types_of_people" = "В спорте и бизнесе есть три типа людей: те, кто делает это возможным, те, кто наблюдает за этим, и те, кто задается вопросом, что произошло.";
+
+"by_sports" = "По видам спорта";
+"running" = "Бег";
+"triathlon" = "Триатлон";
+"swimming" = "Плавание";
+"boxing" = "Бокс";
+"judo" = "Дзюдо";
+"others" = "Другие";
+
+"7saber_for_your_family" = "7Saber для вашей семьи";
+"for_daddy" = "Для папы";
+"for_mommy" = "Для мамы";
+"for_child" = "Для ребенка";
+
+"seasonal_sales" = "%@ распродажи";
+"our_seasonal_collection_is_now_in_stock" = "Наша %@ коллекция уже в наличии";
+
+// MARK: - Catalog
+
+"accessories" = "Аксессуары";
+"best_sellers" = "Бестселлеры";
+"tressers_and_pants" = "Штаны и брюки";
+"clothes" = "Одежда";
+"t_shirts" = "Футболки";
+"windbreakers_and_bombers" = "Ветровки и бомберы";
+"hoodies_and_sweatshirts" = "Худи и толстовки";
+"sweaters" = "Свитера";
+"jackets_and_vests" = "Куртки и жилеты";
+"ski_and_snowboard_clothing" = "Одежда для лыж и сноуборда";
+"suits" = "Костюмы";
+"featured" = "Избранное";
+"new_arrivals" = "Новинки";
+"seasonal_sales_up_to" = "Сезонные распродажи до %@%";
+"filter" = "Фильтр";
+"clear_all" = "Очистить все";
+"sort_by" = "Сортировать по";
+"newest_first" = "Сначала новые";
+"price_low_to_high" = "Цена: от низкой к высокой";
+"price_high_to_low" = "Цена: от высокой к низкой";
+"size" = "Размер";
+"color" = "Цвет";
+"sale" = "Распродажа";
+"percent_off_and_up" = "Скидка %@ и выше";
+"view_results" = "Посмотреть %@ результатов";
+"newest" = "Новинки";
+"brand" = "Бренд";
+"nike" = "Nike";
+"adidas" = "Adidas";
+"puma" = "Puma";
+"under_armour" = "Under Armour";
+
+//MARK: - Filter page:
+
+"turquoise" = "Бирюзовый";
+"white" = "Белый";
+"black" = "Черный";
+"grey" = "Серый";
+"light_pink" = "Светло-розовый";
+"blue" = "Синий";
+"dark_grey" = "Темно-серый";
+"orange" = "Оранжевый";
+"free_standar_shipping_for_7SaberClub_members" = "Бесплатная стандартная доставка для участников 7SaberClub";
+"x_day_free_returns_and_exchange" = "Бесплатный возврат и обмен в течение %@ дней";
+"express_shipping_service_is_available" = "Доступна экспресс-доставка";
+"description" = "Описание";
+"product_details" = "Детали продукта";
+"shipping_and_returns" = "Доставка и возврат";
+"sustainability" = "Устойчивость";
+"care_instructions" = "Инструкции по уходу";
+"how_others_wearing_7saber" = "Как другие носят 7Saber";
+"upload_yout_photo_or_mention" = "Загрузите свое фото или упомяните @7Saber в Instagram, чтобы получить шанс быть представленным";
+"add_your_photo" = "Добавьте свое фото, станьте одним из нас";
+"you_may_also_like" = "Вам также может понравиться";
+"complete_the_look" = "Завершите образ";
+"7line_leggings" = "Леггинсы 7Line";
+"added_to_bag" = "Добавлено в корзину";
+"view_bag" = "Просмотр корзины";
+
+
+// MARK: - Profile
+
+"profile" = "Профиль";
+"account" = "Учетная запись";
+"personal_information" = "Личная информация";
+"addresses" = "Адреса";
+"payment_methods" = "Способы оплаты";
+"orders" = "Заказы";
+"current_orders" = "Текущие заказы";
+"order_history" = "История заказов";
+"settings" = "Настройки";
+"push_notifications" = "Уведомления";
+"privacy" = "Конфиденциальность";
+"language" = "Язык";
+"country_region" = "Страна / Регион";
+"legal" = "Правовая информация";
+"general_terms_conditions" = "Общие условия";
+"terms_of_use" = "Условия использования";
+"log_out" = "Выйти";
+"delete_account" = "Удалить аккаунт";
+"edit_profile" = "Редактировать профиль";
+"upload_img" = "Загрузить изображение";
+"full_name" = "Полное имя";
+"phone" = "Телефон";
+"email" = "Электронная почта";
+"gender" = "Пол";
+"male" = "Мужской";
+"female" = "Женский";
+"birthday" = "День рождения";
+"save" = "Сохранить";
+"cancel" = "Отменить";
+"address_name" = "Название адреса";
+"select_the_country" = "Выберите страну";
+"street_address" = "Улица";
+"building" = "Здание";
+"apartment" = "Квартира";
+"floor" = "Этаж";
+"house" = "Дом";
+"city" = "Город";
+"state_province_region" = "Штат / Провинция / Регион";
+"zipcode" = "Почтовый индекс";
+"phone_number" = "Номер телефона";
+"add_new_address" = "Добавить новый адрес";
+"you_dont_have_address" = "У вас нет адреса";
+"seems_you_have_not_added_your_address_yet" = "Похоже, вы еще не добавили свой адрес";
+"add_payment_method" = "Добавить способ оплаты";
+"there_is_no_credit_card" = "Нет кредитной карты";
+"seems_credit_card_has_not_been_added_yet" = "Похоже, кредитная карта еще не добавлена";
+"added_credit_card" = "Добавлена кредитная карта";
+"add_card" = "Добавить карту";
+"order_details" = "Детали заказа";
+"order_id" = "ID заказа";
+"total" = "Итого";
+"on_process" = "В процессе";
+"order_status" = "Статус заказа";
+"ordered_paid" = "Заказано и оплачено";
+"accepted" = "Принято";
+"shipped" = "Отправлено";
+"delivered" = "Доставлено";
+"ordered_products" = "Заказанные продукты";
+"buy_it_again" = "Купить снова";
+"show" = "Показать";
+"ship_to" = "Отправить на";
+
+//MARK: - Wishlist
+
+"your_wishlist_is_empty" = "Ваш список желаемого пуст";
+"seems_you_have_not_added_any_product_here" = "Похоже, вы еще не добавили сюда ни одного продукта.";
+"product" = "продукт";
+"remove" = "Удалить";
+"check_out" = "Оформить заказ";
+"select_size" = "Выберите размер";
+"add_to_card" = "Добавить в корзину";
+
+//MARK: - Check out
+
+"my_cart" = "Моя корзина";
+"checkout" = "Оформить заказ";
+"in_your_bag" = "В вашей корзине";
+"personal_info" = "Личная информация";
+"shipping_address" = "Адрес доставки";
+"add_shipping_address" = "Добавить адрес доставки для продолжения оформления заказа";
+"promocode" = "Промокод";
+"subtotal" = "Подытог";
+"promocode_discount" = "Скидка по промокоду";
+"loyalty_discount" = "Скидка за лояльность";
+"estimated_tax" = "Оценочный налог";
+"continue_to_payment" = "Продолжить к оплате";
+"pay_by_card" = "Оплатить картой";
+"pay_by_cash" = "Оплатить наличными";
+"other_method" = "Другой способ";
+"pay_order" = "Оплатить и заказать";
+"shipping" = "Доставка";
+"pick_up" = "Самовывоз";
+"our_stores" = "Наши магазины";
+"unfortunately" = "К сожалению";
+"seems_there_is_no_our_store_in_china" = "Похоже, у нас нет магазина в Китае, но мы можем доставить ваш заказ к вам домой";
+"add_pick_up_address" = "Добавить адрес самовывоза";
+"promocode_applied" = "Промокод применен";
+"apply_promocode" = "Применить промокод";
+"go_to_check_out" = "Перейти к оформлению заказа";
+"add_card" = "Добавить карту";
+

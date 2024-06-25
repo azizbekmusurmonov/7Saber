@@ -25,7 +25,7 @@ public extension NetworkService {
         request.setValue("image/png", forHTTPHeaderField: "Content-Type")
 
         // 4. Create a task with URLSession
-        let (data, response) = try await URLSession.shared.upload(for: request, from: imageData)
+        let (_, response) = try await URLSession.shared.upload(for: request, from: imageData)
 
         // 5. Handle the response
         guard let httpResponse = response as? HTTPURLResponse else {

@@ -103,7 +103,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
         Task.detached { [weak self] in
             guard let self else { return }
             do {
-                let model = try await NetworkService.shared.request(
+                _ = try await NetworkService.shared.request(
                     url: url,
                     decode: UserModel.self,
                     method: .post,

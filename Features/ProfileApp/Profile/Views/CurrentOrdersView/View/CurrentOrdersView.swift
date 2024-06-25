@@ -49,6 +49,8 @@ struct CurrentOrdersView: View {
             navBar
             Spacer()
             CurrentIsEmpty()
+        @unknown default:
+            fatalError()
         }
         
     }

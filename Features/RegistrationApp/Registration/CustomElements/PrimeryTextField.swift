@@ -77,7 +77,7 @@ struct PrimeryTextField: View {
                         .onTapGesture {
                             eyeSeeOrNotSee.toggle()
                         }
-                        .animation(.easeOut(duration: .animationDuration.short))
+                        .animation(.easeOut(duration: .animationDuration.short), value: ValueTransformer())
                 }
             }
             .padding(.trailing, 40)
