@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524940B92C2A6C4B00642473 /* CategoryTarget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9DF2BB7B8DC00629C86 /* CategoryTarget.framework */; };
+		524940BA2C2A6C4B00642473 /* CategoryTarget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9DF2BB7B8DC00629C86 /* CategoryTarget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		529DA9B52BB7B89900629C86 /* CategoryAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DA9B42BB7B89900629C86 /* CategoryAppApp.swift */; };
 		529DA9B92BB7B89A00629C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529DA9B82BB7B89A00629C86 /* Assets.xcassets */; };
 		529DA9BC2BB7B89A00629C86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529DA9BB2BB7B89A00629C86 /* Preview Assets.xcassets */; };
 		529DA9E32BB7B8DC00629C86 /* CategoryTarget.docc in Sources */ = {isa = PBXBuildFile; fileRef = 529DA9E22BB7B8DC00629C86 /* CategoryTarget.docc */; };
 		529DA9E42BB7B8DC00629C86 /* CategoryTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DA9E12BB7B8DC00629C86 /* CategoryTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		529DA9E72BB7B8DC00629C86 /* CategoryTarget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9DF2BB7B8DC00629C86 /* CategoryTarget.framework */; };
 		529DA9EE2BB7B8FC00629C86 /* CategoryTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DA9ED2BB7B8FC00629C86 /* CategoryTargetView.swift */; };
 		529DA9F02BB7B95F00629C86 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DA9EF2BB7B95F00629C86 /* CategoryViewModel.swift */; };
 		FA4F20A92BB7E97900457A3E /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20A82BB7E97900457A3E /* NetworkManager.framework */; };
@@ -29,6 +30,20 @@
 			remoteInfo = CategoryTarget;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		524940BB2C2A6C4B00642473 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				524940BA2C2A6C4B00642473 /* CategoryTarget.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		529DA9B12BB7B89900629C86 /* CategoryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CategoryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				529DA9E72BB7B8DC00629C86 /* CategoryTarget.framework in Frameworks */,
+				524940B92C2A6C4B00642473 /* CategoryTarget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +161,7 @@
 				529DA9AD2BB7B89900629C86 /* Sources */,
 				529DA9AE2BB7B89900629C86 /* Frameworks */,
 				529DA9AF2BB7B89900629C86 /* Resources */,
+				524940BB2C2A6C4B00642473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

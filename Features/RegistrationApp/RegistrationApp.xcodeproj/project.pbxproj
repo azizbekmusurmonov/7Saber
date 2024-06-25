@@ -13,6 +13,12 @@
 		52412E6F2C084ABD0052F87E /* WalkScreen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E692C084ABD0052F87E /* WalkScreen1.swift */; };
 		52412E702C084ABD0052F87E /* SelectCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E6A2C084ABD0052F87E /* SelectCountryView.swift */; };
 		52412E712C084ABD0052F87E /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E6B2C084ABD0052F87E /* OnBoardingView.swift */; };
+		5249409D2C2A6C2E00642473 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A38B2BBD9AB500843673 /* AssetKit.framework */; };
+		5249409E2C2A6C2E00642473 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A38B2BBD9AB500843673 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		524940A02C2A6C2F00642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A42BBBAA0D00843673 /* Core.framework */; };
+		524940A12C2A6C2F00642473 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A42BBBAA0D00843673 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		524940A22C2A6C3100642473 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A82BBBAA1200843673 /* NetworkManager.framework */; };
+		524940A32C2A6C3100642473 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A82BBBAA1200843673 /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52FAAF482BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAF472BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift */; };
 		7B03A65C2C052DCC0066D850 /* ExtentionToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03A65B2C052DCC0066D850 /* ExtentionToView.swift */; };
 		7B0C2A262BD414A400284C1C /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0C2A252BD414A400284C1C /* AssetKit.framework */; };
@@ -44,9 +50,6 @@
 		FA77A2992BBBA9EB00843673 /* Registration.docc in Sources */ = {isa = PBXBuildFile; fileRef = FA77A2982BBBA9EB00843673 /* Registration.docc */; };
 		FA77A29A2BBBA9EB00843673 /* Registration.h in Headers */ = {isa = PBXBuildFile; fileRef = FA77A2972BBBA9EB00843673 /* Registration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA77A29D2BBBA9EB00843673 /* Registration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2952BBBA9EB00843673 /* Registration.framework */; };
-		FA77A2A52BBBAA0D00843673 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A42BBBAA0D00843673 /* Core.framework */; };
-		FA77A2A92BBBAA1200843673 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A82BBBAA1200843673 /* NetworkManager.framework */; };
-		FA77A38C2BBD9AB500843673 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A38B2BBD9AB500843673 /* AssetKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,22 @@
 			remoteInfo = Registration;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5249409F2C2A6C2E00642473 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				524940A32C2A6C3100642473 /* NetworkManager.framework in Embed Frameworks */,
+				5249409E2C2A6C2E00642473 /* AssetKit.framework in Embed Frameworks */,
+				524940A12C2A6C2F00642473 /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		52412E662C084ABD0052F87E /* WalkScreen2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkScreen2.swift; sourceTree = "<group>"; };
@@ -119,9 +138,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA77A2A52BBBAA0D00843673 /* Core.framework in Frameworks */,
-				FA77A38C2BBD9AB500843673 /* AssetKit.framework in Frameworks */,
-				FA77A2A92BBBAA1200843673 /* NetworkManager.framework in Frameworks */,
+				524940A22C2A6C3100642473 /* NetworkManager.framework in Frameworks */,
+				5249409D2C2A6C2E00642473 /* AssetKit.framework in Frameworks */,
+				524940A02C2A6C2F00642473 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +378,7 @@
 				FA77A2912BBBA9EB00843673 /* Sources */,
 				FA77A2922BBBA9EB00843673 /* Frameworks */,
 				FA77A2932BBBA9EB00843673 /* Resources */,
+				5249409F2C2A6C2E00642473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -15,14 +15,17 @@
 		5240925F2BB7BDF600A75FC0 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524092572BB7BDF600A75FC0 /* Profile.framework */; };
 		524092662BB7BE0300A75FC0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524092652BB7BE0300A75FC0 /* ProfileViewModel.swift */; };
 		524092682BB7BE5100A75FC0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524092672BB7BE5100A75FC0 /* ProfileView.swift */; };
+		524940A42C2A6C3500642473 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3A42BBDA10600843673 /* AssetKit.framework */; };
+		524940A52C2A6C3500642473 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3A42BBDA10600843673 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		524940A72C2A6C3600642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20D82BB7EB7D00457A3E /* Core.framework */; };
+		524940A82C2A6C3600642473 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20D82BB7EB7D00457A3E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		524940A92C2A6C3800642473 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F209E2BB7E96000457A3E /* NetworkManager.framework */; };
+		524940AA2C2A6C3800642473 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F209E2BB7E96000457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA272EEB2BF21BD600952AEF /* AddNewAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA272EEA2BF21BD600952AEF /* AddNewAddress.swift */; };
 		FA272EED2BF2225B00952AEF /* AddressTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA272EEC2BF2225B00952AEF /* AddressTextfields.swift */; };
 		FA272EEF2BF236FA00952AEF /* SelectCountryTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA272EEE2BF236FA00952AEF /* SelectCountryTextfield.swift */; };
 		FA272F092BF45D0D00952AEF /* AddressesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA272F082BF45D0D00952AEF /* AddressesViewModel.swift */; };
 		FA272F0D2BF45EEB00952AEF /* PaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA272F0C2BF45EEB00952AEF /* PaymentMethodViewModel.swift */; };
-		FA4F209F2BB7E96000457A3E /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F209E2BB7E96000457A3E /* NetworkManager.framework */; };
-		FA4F20D92BB7EB7D00457A3E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20D82BB7EB7D00457A3E /* Core.framework */; };
-		FA4F20DA2BB7EB7D00457A3E /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20D82BB7EB7D00457A3E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA53395C2C2342DC0077974E /* AdressShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA53395B2C2342DC0077974E /* AdressShowModel.swift */; };
 		FA5339612C2414B30077974E /* OrderTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5339602C2414B30077974E /* OrderTypeModel.swift */; };
 		FA5339632C2427A30077974E /* OrderHistoryIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5339622C2427A30077974E /* OrderHistoryIsEmpty.swift */; };
@@ -32,7 +35,6 @@
 		FA568B0B2BCC08F200B87B59 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA568B0A2BCC08F200B87B59 /* SectionModel.swift */; };
 		FA568B122BD9101A00B87B59 /* PersonalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA568B112BD9101A00B87B59 /* PersonalInfoViewModel.swift */; };
 		FA568B142BD951C900B87B59 /* AddressesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA568B132BD951C900B87B59 /* AddressesModel.swift */; };
-		FA77A3A52BBDA10600843673 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3A42BBDA10600843673 /* AssetKit.framework */; };
 		FA817FFF2BE1DEB5002ABBFD /* OrderStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA817FFE2BE1DEB5002ABBFD /* OrderStatusView.swift */; };
 		FA8180022BE2737C002ABBFD /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8180012BE2737C002ABBFD /* AddButton.swift */; };
 		FA9F5D462C10803700E81C9C /* StringToExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F5D452C10803700E81C9C /* StringToExtension.swift */; };
@@ -95,6 +97,22 @@
 			remoteInfo = Profile;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		524940A62C2A6C3500642473 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				524940AA2C2A6C3800642473 /* NetworkManager.framework in Embed Frameworks */,
+				524940A52C2A6C3500642473 /* AssetKit.framework in Embed Frameworks */,
+				524940A82C2A6C3600642473 /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5240923B2BB7BDD200A75FC0 /* ProfileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,9 +207,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4F209F2BB7E96000457A3E /* NetworkManager.framework in Frameworks */,
-				FA77A3A52BBDA10600843673 /* AssetKit.framework in Frameworks */,
-				FA4F20D92BB7EB7D00457A3E /* Core.framework in Frameworks */,
+				524940A92C2A6C3800642473 /* NetworkManager.framework in Frameworks */,
+				524940A72C2A6C3600642473 /* Core.framework in Frameworks */,
+				524940A42C2A6C3500642473 /* AssetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,6 +747,7 @@
 				524092532BB7BDF600A75FC0 /* Sources */,
 				524092542BB7BDF600A75FC0 /* Frameworks */,
 				524092552BB7BDF600A75FC0 /* Resources */,
+				524940A62C2A6C3500642473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52412E742C084B310052F87E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52412E732C084B310052F87E /* Core.framework */; };
+		524940962C2A6BA000642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52412E732C084B310052F87E /* Core.framework */; };
+		524940972C2A6BA000642473 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52412E732C084B310052F87E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B5D0B142BD7DCA900345C11 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D0B132BD7DCA900345C11 /* HttpMethod.swift */; };
 		7B5D0B162BD7DF3C00345C11 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D0B152BD7DF3C00345C11 /* NetworkError.swift */; };
 		FA77A2262BBBA91600843673 /* NetworkManager.docc in Sources */ = {isa = PBXBuildFile; fileRef = FA77A2252BBBA91600843673 /* NetworkManager.docc */; };
@@ -15,6 +16,20 @@
 		FA77A2342BBBA93100843673 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77A2332BBBA93100843673 /* NetworkManager.swift */; };
 		FAE11D402C19E8C400207739 /* UploadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE11D3F2C19E8C400207739 /* UploadData.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		524940982C2A6BA000642473 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				524940972C2A6BA000642473 /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		52412E732C084B310052F87E /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52412E742C084B310052F87E /* Core.framework in Frameworks */,
+				524940962C2A6BA000642473 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +114,7 @@
 				FA77A21D2BBBA91600843673 /* Sources */,
 				FA77A21E2BBBA91600843673 /* Frameworks */,
 				FA77A21F2BBBA91600843673 /* Resources */,
+				524940982C2A6BA000642473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
