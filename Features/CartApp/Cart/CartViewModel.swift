@@ -14,19 +14,10 @@ enum ShowMessage: Equatable {
     case error(message: String)
 }
 
-public struct Product: Identifiable {
-    public let id = UUID()
-    public let name: String
-    public let price: Int
-    public let discountedPrice: Int
-    public let size: String
-    public let color: String
-    public var count: Int
-}
 
 public final class CartViewModel: ObservableObject {
     
-    @Published var products: [Product] = [] {
+    @Published var products: [Cart] = [] {
         didSet {
             recalculateTotalPrice()
         }
@@ -41,7 +32,7 @@ public final class CartViewModel: ObservableObject {
     }
     
     private func recalculateTotalPrice() {
-        totalPrice = products.reduce(0) { $0 + ($1.price * $1.count) }
+//        totalPrice = products.reduce(0) { $0 + ($1.price * $1.count) }
     }
     
     func formattedTotalPrice(_ price: Int) -> String {
@@ -51,18 +42,18 @@ public final class CartViewModel: ObservableObject {
         return formatter.string(from: NSNumber(value: price)) ?? "\(price)"
     }
     
-    func increaseCount(for product: Product) {
-        if let index = products.firstIndex(where: { $0.id == product.id }) {
-            products[index].count += 1
-            recalculateTotalPrice()
-        }
+    func increaseCount(for product: Cart) {
+//        if let index = products.firstIndex(where: { $0.id == product.id }) {
+//            products[index].count += 1
+//            recalculateTotalPrice()
+////        }
     }
        
-    func decreaseCount(for product: Product) {
-        if let index = products.firstIndex(where: { $0.id == product.id }), products[index].count > 0 {
-            products[index].count -= 1
-            recalculateTotalPrice()
-        }
+    func decreaseCount(for product: CartModel) {
+//        if let index = products.firstIndex(where: { $0.id == product.id }), products[index].count > 0 {
+//            products[index].count -= 1
+//            recalculateTotalPrice()
+//        }
     }
     
     func getCart() {
@@ -73,14 +64,14 @@ public final class CartViewModel: ObservableObject {
             do {
                 let model = try await NetworkService.shared.request(
                     url: urlString,
-                    decode: [CartModel].self,
+                    decode: CartModel.self,
                     method: .get,
                     queryParameters: ["page": 1.description, "pageSize": 15.description]
                 )
                 
                 await MainActor.run { [weak self] in
                     self?.message = .success(message: "CART muvaffaqiyatli keldi")
-//                    self?.products = model
+                    self?.products = model.data
                 }
             } catch {
                 await MainActor.run { [weak self] in
