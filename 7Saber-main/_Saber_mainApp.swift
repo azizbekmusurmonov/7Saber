@@ -19,12 +19,14 @@ struct _Saber_mainApp: App {
         WindowGroup {
             if (DataStorage.storage.get(from: .isRegistrate) as? Bool) == true || skipButtonPressed  {
                 TabBarView()
+                    .preferredColorScheme(.light)
             } else {
                 RegisterMobillAppView(skipButtonTapped: {
                     skipButtonPressed = true
                     print("tapped")
                 }, hasSkipButton: true)
                     .environmentObject(registerVM)
+                    .preferredColorScheme(.light)
             }
         }
     }
