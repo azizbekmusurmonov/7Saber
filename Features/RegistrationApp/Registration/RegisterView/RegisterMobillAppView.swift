@@ -8,6 +8,7 @@
 import SwiftUI
 //import Home
 import Core
+import AssetKit
 
 public struct RegisterMobillAppView: View {
     
@@ -15,9 +16,11 @@ public struct RegisterMobillAppView: View {
     @State private var isShowRegistrView: Bool = false
     
     let skipButtonTapped: () -> ()
+    let hasSkipButton: Bool
     
-    public init(skipButtonTapped: @escaping () -> ()) {
+    public init(skipButtonTapped: @escaping () -> (), hasSkipButton: Bool) {
         self.skipButtonTapped = skipButtonTapped
+        self.hasSkipButton = hasSkipButton
     }
     
     public var body: some View {
@@ -40,7 +43,7 @@ public struct RegisterMobillAppView: View {
                         }
                     )
                     
-                    WelcomeView(welcome: "WELCOME", welcomeText: "Enter your phone number \nor email to continue")
+                    WelcomeView(welcome: Localizations.welcome, welcomeText: Localizations.enterYourPhoneOrEmail)
                         .padding(.top, 150)
                         .frame(width: UIScreen.main.bounds.width)
                     TextFieldNextButton(nextButtonPressed: {
@@ -95,6 +98,6 @@ public struct RegisterMobillAppView: View {
 
 
 #Preview {
-    RegisterMobillAppView(skipButtonTapped: { })
+    RegisterMobillAppView(skipButtonTapped: { }, hasSkipButton: false)
 }
 

@@ -8,8 +8,9 @@
 import SwiftUI
 import Combine
 import NetworkManager
+import Core
 
-enum MessageShow: Equatable {
+public enum MessageShow: Equatable {
     case succes(message: String)
     case error(message: String)
 }
@@ -30,9 +31,17 @@ public class PersonalInfoViewModel: ObservableObject {
             checkToValid()
         }
     }
-    @Published var gender: String = ""
+    @Published var gender: String = "" {
+        didSet {
+            checkToValid()
+        }
+    }
     @Published var birthDate: String = "" 
-    @Published var profileImage: UIImage? = nil
+    @Published var profileImage: UIImage? = nil {
+        didSet {
+            checkToValid()
+        }
+    }
     
     @Published public var isFormValid: Bool = false
     
@@ -53,11 +62,14 @@ public class PersonalInfoViewModel: ObservableObject {
             do {
                 try await UploadImage.uploadImage(image: profileImage!, fullName: fullNam, gender: gender, birthDate: .init(), email: email, toURL: url)
                 
-                await MainActor.run {
-                    print("shu yerda success korsatasiz")
+                await MainActor.run { [weak self] in
+                    self?.messageShow = .succes(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli yuborildi")
                 }
             } catch {
                 print("uplaod error ", error.localizedDescription)
+                await MainActor.run { [weak self] in
+                    self?.messageShow = .error(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli yuborilmadi")
+                }
             }
         }
     }

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Core
+import AssetKit
 
 public struct ContentView: View {
     
@@ -14,7 +16,7 @@ public struct ContentView: View {
     @StateObject var viewModel22 = NewCollectionViewModel22()
     
     @State private var isShowingCatalogPage = false
-    @State private var isShowingDetailedView = false 
+    @State private var isShowingDetailedView = false
     
     public init() {}
     
@@ -23,9 +25,11 @@ public struct ContentView: View {
         NavigationView {
             
             VStack {
-                CustomNavigation()
-                    .frame(height: 45)
-                    .padding(.top, 15)
+                
+                BaseNavigationBar(title: "", leftImage: Asset.Image.Logo.logoBlack.image, rightImage: Asset.Image.Home.searchHome.image)
+                    .frame(height: 60)
+                    .padding(.top, 54)
+                    .background(Blur(style: .light).opacity(0.5))
                 
                 ScrollView {
                     
@@ -33,11 +37,11 @@ public struct ContentView: View {
                         .padding(.top, -75)
                     
                     NavigationLink(destination: CatalogPage()) {
-                                CategoryView(categories: categoryController.categories)
-                                    .onAppear {
-                                    categoryController.fetchCategories()
-                                }
-                        }
+                        CategoryView(categories: categoryController.categories)
+                            .onAppear {
+                                categoryController.fetchCategories()
+                            }
+                    }
                     
                     NewCollectionView(viewModel: viewModel)
                         .padding(.leading, 10)
@@ -73,8 +77,10 @@ public struct ContentView: View {
                     }.padding(.top, -10)
                     
                 }
-               
             }
+           // .customNavigation()
+            .background(Color.white)
+            .ignoresSafeArea(edges: .all)
         }
         .fullScreenCover(isPresented: $isShowingDetailedView) {
             DetailedView()

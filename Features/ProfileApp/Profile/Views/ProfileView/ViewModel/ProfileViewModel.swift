@@ -12,25 +12,36 @@ import NetworkManager
 
 public class ProfileViewModel: ObservableObject {
     
-    @Published var profileData: ProfileBundle = ProfileBundle(
-        profileImageURL: "",
-        profileName: "7SaberUser",
-        gmailName: "7SaberUser@gmail.com",
-        phoneNumber: "+998901234567")
+    @Published var profileData: ProfileBundle? = nil
+    @Published var isLoading: Bool = false
     
-    public init() { }
+    @Published var message: MessageShow? = nil
+        
+    public init() { 
+        fetchProfile()
+    }
     
-    public func fetchProfile() async {
-        do {
-            let profile: ProfileBundle = try await NetworkService.shared.request(
-                url: "https://lab.7saber.uz/api/client/user/show/1",
-                decode: ProfileBundle.self,
-                method: .get)
-            
-            profileData = profile // Update entire profileData with fetched profile
-        } catch {
-            print("Failed to fetch profile:", error)
-            // Handle error appropriately, maybe show an alert to the user
+    public func fetchProfile() {
+        isLoading = true
+        Task.detached {
+            do {
+                let profile = try await NetworkService.shared.request(
+                    url: "https://lab.7saber.uz/api/client/user/show/1",
+                    decode: ProfileBundle.self,
+                    method: .get
+                )
+                await MainActor.run { [weak self] in
+                    self?.profileData = profile
+                    self?.isLoading = false
+                    self?.message = .succes(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli keldi!")
+                }
+                
+            } catch {
+                print("Failed to fetch profile:", error)
+                await MainActor.run { [weak self] in
+                    self?.message = .error(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli kelmadi!")
+                }
+            }
         }
     }
 }
