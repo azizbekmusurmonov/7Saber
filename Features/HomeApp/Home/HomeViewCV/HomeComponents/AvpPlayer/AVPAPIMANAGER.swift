@@ -7,9 +7,10 @@
 
 import Foundation
 import Combine
+import NetworkManager
 
 class APIManager: ObservableObject {
-    @Published var players: [AVPplayer] = []
+    @Published var playerData: AVPplayer? = nil
     @Published var isLoading: Bool = false
     @Published var error: Error?
 
@@ -22,33 +23,21 @@ class APIManager: ObservableObject {
     func fetchData() {
         isLoading = true
         let urlString = "https://lab.7saber.uz/api/client/banner/hero-slider"
-        guard let url = URL(string: urlString) else {
-            error = URLError(.badURL)
-            isLoading = false
-            return
-        }
-
-        URLSession.shared.dataTaskPublisher(for: url)
-            .tryMap { data, response in
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    throw URLError(.badServerResponse)
+    
+        Task.detached { [weak self] in
+            guard let self else { return }
+            
+            do {
+                let model = try await NetworkService.shared.request(url: urlString, decode: AVPplayer.self, method: .get)
+                
+                await MainActor.run {
+                    self.isLoading = false
+                    self.playerData = model
                 }
-                return data
+            } catch {
+                self.error = error
             }
-            .decode(type: [AVPplayer].self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { [weak self] completion in
-                switch completion {
-                case .finished:
-                    self?.isLoading = false
-                case .failure(let error):
-                    self?.error = error
-                    self?.isLoading = false
-                }
-            }, receiveValue: { [weak self] players in
-                self?.players = players
-            })
-            .store(in: &cancellables)
+        }
     }
 }
 

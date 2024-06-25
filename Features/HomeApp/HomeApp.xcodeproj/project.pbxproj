@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524940D92C2A756000642473 /* AVPContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524940D82C2A756000642473 /* AVPContentView.swift */; };
 		529DA8AB2BB7B23000629C86 /* HomeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DA8AA2BB7B23000629C86 /* HomeAppApp.swift */; };
 		529DA8AF2BB7B23000629C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529DA8AE2BB7B23000629C86 /* Assets.xcassets */; };
 		529DA8B22BB7B23000629C86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529DA8B12BB7B23000629C86 /* Preview Assets.xcassets */; };
@@ -108,6 +109,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		524940D82C2A756000642473 /* AVPContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPContentView.swift; sourceTree = "<group>"; };
 		529DA8A72BB7B23000629C86 /* HomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		529DA8AA2BB7B23000629C86 /* HomeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAppApp.swift; sourceTree = "<group>"; };
 		529DA8AE2BB7B23000629C86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				B57A085E2BFE3ECC00D3BA72 /* AvpView.swift */,
+				524940D82C2A756000642473 /* AVPContentView.swift */,
 				B593DB612C2A72E700D0314A /* AvpViewModel.swift */,
 				B593DB632C2A731700D0314A /* AVPAPIMANAGER.swift */,
 				B57A08602BFE3ED400D3BA72 /* AvpModel.swift */,
@@ -609,6 +612,7 @@
 				B57A083C2BFE3D0B00D3BA72 /* ProgressAnimate.swift in Sources */,
 				B57A08562BFE3E2D00D3BA72 /* View.swift in Sources */,
 				B57A08402BFE3D3100D3BA72 /* DetailedNavigate.swift in Sources */,
+				524940D92C2A756000642473 /* AVPContentView.swift in Sources */,
 				B57A085F2BFE3ECC00D3BA72 /* AvpView.swift in Sources */,
 				B57A087B2BFE40AB00D3BA72 /* AutumSaless.swift in Sources */,
 				B57A08792BFE406000D3BA72 /* BottomSheet.swift in Sources */,

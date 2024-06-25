@@ -11,13 +11,14 @@ import AVKit
 class VideoPlayerModel: ObservableObject {
     @Published var player: AVPlayer?
 
-    init(videoURL: URL) {
+    init(videoURL: URL?) {
+        guard let videoURL  else { return }
         let asset = AVAsset(url: videoURL)
         let playerItem = AVPlayerItem(asset: asset)
         self.player = AVPlayer(playerItem: playerItem)
         
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying(_:)), name: .AVPlayerItemDidPlayToEndTime, object: playerItem)
-        
+        self.player?.pause()
         self.player?.play()
     }
     
