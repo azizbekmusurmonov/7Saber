@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524940472C2A675400642473 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524940462C2A675400642473 /* Profile.framework */; };
 		529DA8AB2BB7B23000629C86 /* HomeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DA8AA2BB7B23000629C86 /* HomeAppApp.swift */; };
 		529DA8AF2BB7B23000629C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529DA8AE2BB7B23000629C86 /* Assets.xcassets */; };
 		529DA8B22BB7B23000629C86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529DA8B12BB7B23000629C86 /* Preview Assets.xcassets */; };
 		529DA8D92BB7B27400629C86 /* Home.docc in Sources */ = {isa = PBXBuildFile; fileRef = 529DA8D82BB7B27400629C86 /* Home.docc */; };
 		529DA8DA2BB7B27400629C86 /* Home.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DA8D72BB7B27400629C86 /* Home.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		529DA8DD2BB7B27400629C86 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA8D52BB7B27400629C86 /* Home.framework */; };
-		529DA8DE2BB7B27400629C86 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA8D52BB7B27400629C86 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B502D7C92C00681100DD2642 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502D7C82C00681100DD2642 /* ColorPicker.swift */; };
 		B502D7CD2C007B5D00DD2642 /* ProductShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502D7CC2C007B5D00DD2642 /* ProductShow.swift */; };
 		B502D7CF2C007BCC00DD2642 /* ShoesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502D7CE2C007BCC00DD2642 /* ShoesViewModel.swift */; };
@@ -73,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		524940462C2A675400642473 /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		529DA8A72BB7B23000629C86 /* HomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		529DA8AA2BB7B23000629C86 /* HomeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAppApp.swift; sourceTree = "<group>"; };
 		529DA8AE2BB7B23000629C86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 			files = (
 				FA4F20B22BB7E98900457A3E /* NetworkManager.framework in Frameworks */,
 				FA77A3A22BBDA0F600843673 /* AssetKit.framework in Frameworks */,
+				524940472C2A675400642473 /* Profile.framework in Frameworks */,
 				FA4F20E82BB7EBB900457A3E /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +206,7 @@
 		529DA8E32BB7B29600629C86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				524940462C2A675400642473 /* Profile.framework */,
 				FA77A3A12BBDA0F600843673 /* AssetKit.framework */,
 				FA4F20E72BB7EBB900457A3E /* Core.framework */,
 				FA4F20B12BB7E98900457A3E /* NetworkManager.framework */,
