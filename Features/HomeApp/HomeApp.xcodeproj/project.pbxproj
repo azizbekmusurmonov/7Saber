@@ -14,7 +14,6 @@
 		529DA8D92BB7B27400629C86 /* Home.docc in Sources */ = {isa = PBXBuildFile; fileRef = 529DA8D82BB7B27400629C86 /* Home.docc */; };
 		529DA8DA2BB7B27400629C86 /* Home.h in Headers */ = {isa = PBXBuildFile; fileRef = 529DA8D72BB7B27400629C86 /* Home.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		529DA8DD2BB7B27400629C86 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA8D52BB7B27400629C86 /* Home.framework */; };
-		529DA8DE2BB7B27400629C86 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA8D52BB7B27400629C86 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B502D7C92C00681100DD2642 /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502D7C82C00681100DD2642 /* ColorPicker.swift */; };
 		B502D7CD2C007B5D00DD2642 /* ShoesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502D7CC2C007B5D00DD2642 /* ShoesViewModel.swift */; };
 		B502D7CF2C007BCC00DD2642 /* ShoesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B502D7CE2C007BCC00DD2642 /* ShoesItem.swift */; };
@@ -64,11 +63,8 @@
 		B593DB622C2A72E700D0314A /* AvpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B593DB612C2A72E700D0314A /* AvpViewModel.swift */; };
 		B593DB642C2A731700D0314A /* AVPAPIMANAGER.swift in Sources */ = {isa = PBXBuildFile; fileRef = B593DB632C2A731700D0314A /* AVPAPIMANAGER.swift */; };
 		FA4F20B22BB7E98900457A3E /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20B12BB7E98900457A3E /* NetworkManager.framework */; };
-		FA4F20B32BB7E98900457A3E /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20B12BB7E98900457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA4F20E82BB7EBB900457A3E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20E72BB7EBB900457A3E /* Core.framework */; };
-		FA4F20E92BB7EBB900457A3E /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20E72BB7EBB900457A3E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA77A3A22BBDA0F600843673 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3A12BBDA0F600843673 /* AssetKit.framework */; };
-		FA77A3A32BBDA0F600843673 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3A12BBDA0F600843673 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,33 +76,6 @@
 			remoteInfo = Home;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		529DA8E22BB7B27400629C86 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				529DA8DE2BB7B27400629C86 /* Home.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA4F20B42BB7E98900457A3E /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				FA4F20B32BB7E98900457A3E /* NetworkManager.framework in Embed Frameworks */,
-				FA77A3A32BBDA0F600843673 /* AssetKit.framework in Embed Frameworks */,
-				FA4F20E92BB7EBB900457A3E /* Core.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		524940D82C2A756000642473 /* AVPContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPContentView.swift; sourceTree = "<group>"; };
@@ -186,6 +155,7 @@
 			files = (
 				FA4F20B22BB7E98900457A3E /* NetworkManager.framework in Frameworks */,
 				FA77A3A22BBDA0F600843673 /* AssetKit.framework in Frameworks */,
+				524940472C2A675400642473 /* Profile.framework in Frameworks */,
 				FA4F20E82BB7EBB900457A3E /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +216,7 @@
 		529DA8E32BB7B29600629C86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				524940462C2A675400642473 /* Profile.framework */,
 				FA77A3A12BBDA0F600843673 /* AssetKit.framework */,
 				FA4F20E72BB7EBB900457A3E /* Core.framework */,
 				FA4F20B12BB7E98900457A3E /* NetworkManager.framework */,
@@ -496,7 +467,6 @@
 				529DA8A32BB7B23000629C86 /* Sources */,
 				529DA8A42BB7B23000629C86 /* Frameworks */,
 				529DA8A52BB7B23000629C86 /* Resources */,
-				529DA8E22BB7B27400629C86 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -516,7 +486,6 @@
 				529DA8D12BB7B27400629C86 /* Sources */,
 				529DA8D22BB7B27400629C86 /* Frameworks */,
 				529DA8D32BB7B27400629C86 /* Resources */,
-				FA4F20B42BB7E98900457A3E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -782,7 +751,6 @@
 		529DA8B62BB7B23000629C86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -801,8 +769,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Ismatillokhon.HomeApp;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.7saber.shop.HomeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -817,7 +785,6 @@
 		529DA8B72BB7B23000629C86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -836,8 +803,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Ismatillokhon.HomeApp;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.7saber.shop.HomeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -873,7 +840,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = Ismatillokhon.HomeApp.Home;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.7saber.shop.Home;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -913,7 +880,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = Ismatillokhon.HomeApp.Home;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.7saber.shop.Home;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

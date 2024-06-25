@@ -91,10 +91,14 @@ class UploadImage {
         guard let httpResponse = response as? HTTPURLResponse else {
             throw UploadError.invalidResponse
         }
+        
+        let model = try JSONDecoder().decode(ProfileModel.self, from: data)
+        
+        DataStorage.storage.update(model.token, for: .token)
 
         // Check for successful upload
         if (200..<300).contains(httpResponse.statusCode) {
-            print("Image and data uploaded successfully!")
+            print(try JSONSerialization.jsonObject(with: data))
         } else {
             throw UploadError.uploadFailed(statusCode: httpResponse.statusCode)
         }

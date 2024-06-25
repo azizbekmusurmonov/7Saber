@@ -11,12 +11,12 @@ import Core
 
 struct ProfileImageView: View {
     
-    @Binding var bundle: ProfileBundle
+    @EnvironmentObject var vm: ProfileViewModel
     
     var body: some View {
         VStack(spacing: .zero) {
             HStack(spacing: .zero) {
-                if let url = URL(string: bundle.profileImageURL) {
+                if let url = URL(string: vm.profileData?.avatar.src ?? "") {
                     AsyncImage(url: url) { phase in
                         switch phase {
                         case .empty:
@@ -50,21 +50,15 @@ struct ProfileImageView: View {
                         .clipShape(Circle())
                         .padding()
                 }
-                //                Image(bundle.profileImageURL)
-                //                    .resizable()
-                //                    .aspectRatio(contentMode: .fill)
-                //                    .frame(width: 146, height: 146)
-                //                    .clipShape(Circle())
-                //                    .padding()
                 
                 Divider()
                 VStack(spacing: .zero) {
                     Spacer()
-                    Text(bundle.profileName)
+                    Text(vm.profileData?.fullName ?? "")
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         .padding(2)
-                    Text(bundle.gmailName)
+                    Text(vm.profileData?.email ?? "")
                         .font(.system(size: 13, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     

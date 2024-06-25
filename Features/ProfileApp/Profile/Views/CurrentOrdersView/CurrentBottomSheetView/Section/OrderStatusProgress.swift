@@ -11,6 +11,8 @@ import AssetKit
 
 struct OrderStatusProgress: View {
     
+    @EnvironmentObject var vm: OrdersViewModel
+    
     @State private var progress: Double = 0.25
     
     var body: some View {
@@ -31,9 +33,11 @@ struct OrderStatusProgress: View {
                         Text("Ordered & Paid")
                             .font(.sabFont(500, size: 13))
                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
-                        Text("08/02/2024 | 12:56")
-                            .font(.sabFont(400, size: 11))
-                            .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                        if progress == 0.25 {
+                            Text("08/02/2024 | 12:56")
+                                .font(.sabFont(400, size: 11))
+                                .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                        }
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {
@@ -43,6 +47,11 @@ struct OrderStatusProgress: View {
                         Text("Accepted")
                             .font(.sabFont(500, size: 13))
                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                        if progress == 0.5 {
+                            Text("08/02/2024 | 12:56")
+                                .font(.sabFont(400, size: 11))
+                                .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                        }
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {
@@ -52,6 +61,11 @@ struct OrderStatusProgress: View {
                         Text("Shipped")
                             .font(.sabFont(500, size: 13))
                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                        if progress == 0.75 {
+                            Text("08/02/2024 | 12:56")
+                                .font(.sabFont(400, size: 11))
+                                .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                        }
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {
@@ -61,6 +75,11 @@ struct OrderStatusProgress: View {
                         Text("Delivered")
                             .font(.sabFont(500, size: 13))
                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                        if progress == 1.0 {
+                            Text("08/02/2024 | 12:56")
+                                .font(.sabFont(400, size: 11))
+                                .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                        }
                     }
                 }
                 Spacer()

@@ -14,7 +14,6 @@ struct PersonalInfoView: View {
     @Environment(\.dismiss) var pop
     
     @EnvironmentObject var vm: PersonalInfoViewModel
-    @StateObject var profileData = PersonalInfoViewModel()
     
     public init() { }
     
@@ -31,6 +30,7 @@ struct PersonalInfoView: View {
                     switch newValue {
                     case .succes(message: let message):
                         Snackbar.show(message: message, theme: .success)
+                        pop()
                     case .error(message: let message):
                         Snackbar.show(message: message, theme: .error)
                     }

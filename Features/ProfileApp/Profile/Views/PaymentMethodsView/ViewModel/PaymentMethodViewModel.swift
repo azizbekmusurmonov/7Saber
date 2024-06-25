@@ -51,6 +51,11 @@ public class PaymentFormViewModel: ObservableObject {
     public func checkToValid() {
         isFormValied = !cardNumber.isEmpty && !expirationDate.isEmpty && !nameCard.isEmpty && !cvvCard.isEmpty || !cardNumber.isEmpty && !expirationDate.isEmpty
     }
+    @Published var messageShow: MessageShow? = nil
     
     public init() {}
+    
+    public func sendCart() {
+        let urlString = "https://api.7saber.uz/client/card/store"
+    }
 }

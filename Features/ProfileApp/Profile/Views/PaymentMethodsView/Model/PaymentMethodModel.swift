@@ -6,15 +6,6 @@
 //
 
 import SwiftUI
-import Combine
-import AssetKit
-
-public class PaymentMethodModel: ObservableObject {
-    
-    @Published public var cards: [Card] = []
-    public init() { }
-   
-}
 
 public struct Card: Hashable {
     public var id = UUID().uuidString

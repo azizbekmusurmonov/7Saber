@@ -31,11 +31,11 @@ struct ProfileConstans {
                         ProfilecellModel(title: "Current orders",
                                          hasRightIcon: true,
                                          number: "3",
-                                         pushToView: AnyView(CurrentOrdersView().environmentObject(CurrentViewModel()))),
+                                         pushToView: AnyView(CurrentOrdersView().environmentObject(OrdersViewModel()))),
                         ProfilecellModel(title: "Order history",
                                          hasRightIcon: true,
                                          number: "",
-                                         pushToView: AnyView(OrderHistoryView().environmentObject(OrderHistoryViewModel()))),
+                                         pushToView: AnyView(OrderHistoryView().environmentObject(OrdersViewModel()))),
                         
                      ]),
         SectionModel(headertitle: "SETTINGS",
