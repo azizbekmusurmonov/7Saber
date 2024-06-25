@@ -11,8 +11,7 @@ import AssetKit
 
 struct OrderedProductsView: View {
     
-    @EnvironmentObject var vm: CurrentBottomViewModel
-    @StateObject var data = CurrentBottomViewModel()
+    @EnvironmentObject var vm: OrdersViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: .zero) {
@@ -20,19 +19,21 @@ struct OrderedProductsView: View {
                 Text("ORDERED PRODUCTS ")
                     .font(.sabFont(600, size: 19))
                     .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
-                Text("(\(vm.products.count) items)")
+                Text("(\(vm.products?.count ?? 0) items)")
                     .font(.sabFont(600, size: 19))
                     .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
             }
            
-            ForEach(vm.products, id: \.self) { product in
-                OrderedItem(product: product,
-                            buttonPressed: {
-                    print("Button pressed for \(product.productName)")
-                })
-                Divider()
-            }
-            .padding()
+            if let products = vm.products {
+                ForEach(products, id: \.self) { product in
+                    OrderedItem(product: product,
+                                buttonPressed: {
+                        print("Button pressed for \(product.productName)")
+                    })
+                    Divider()
+                }
+                .padding()
+            } 
         }
     }
 }

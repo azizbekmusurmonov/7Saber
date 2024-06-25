@@ -63,7 +63,7 @@ struct OrderHistorySection: View {
                 }
                 .sheet(item: self.$isTabBottomSheet) { identifiableInt in
                     OrderBottomSheetView()
-                        .environmentObject(CurrentBottomViewModel())
+                        .environmentObject(OrdersViewModel())
                 }
                 if index < item.cells.count - 1 {
                     Divider()

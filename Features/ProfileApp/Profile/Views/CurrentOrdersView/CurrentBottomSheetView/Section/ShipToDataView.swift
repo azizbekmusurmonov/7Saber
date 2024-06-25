@@ -10,6 +10,9 @@ import Core
 import AssetKit
 
 struct ShipToDataView: View {
+    
+    @EnvironmentObject var vm: OrdersViewModel
+    
     var body: some View {
         
         HStack(spacing: .zero) {
