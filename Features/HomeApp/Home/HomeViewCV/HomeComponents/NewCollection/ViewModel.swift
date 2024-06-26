@@ -5,54 +5,75 @@
 //  Created by islombek on 22/05/24.
 //
 
+
 import Foundation
-import Combine
 
+public enum NetworkError: LocalizedError {
+    case invalidURL
+    case requestFailed(description: String)
+    case invalidResponse
+    case decodingError(description: String)
 
-public class NewCollectionViewModel: ObservableObject {
-    
-    @Published var newCollectionProducts: [ProductModel] = []
-    @Published var isLoading: Bool = false
-    @Published var error: Error?
-
-    private var cancellables = Set<AnyCancellable>()
-
-    func fetchProducts() {
-        isLoading = true
-        let urlString = "https://lab.7saber.uz/api/client/category"
-        guard let url = URL(string: urlString) else {
-            error = URLError(.badURL)
-            isLoading = false
-            return
+    public var errorDescription: String? {
+        switch self {
+        case .invalidURL:
+            return "The URL is invalid."
+        case .requestFailed(let description):
+            return "Network request failed: \(description)"
+        case .invalidResponse:
+            return "The server response was invalid."
+        case .decodingError(let description):
+            return "Failed to decode data: \(description)"
         }
-
-        URLSession.shared.dataTaskPublisher(for: url)
-            .tryMap { (data, response) in
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                    throw URLError(.badServerResponse)
-                }
-                return data
-            }
-            .receive(on: RunLoop.main)
-            .decode(type: [ProductModel].self, decoder: JSONDecoder())
-            
-            .sink(receiveCompletion: { [weak self] completion in
-                switch completion {
-                case .finished:
-                    self?.isLoading = false
-                    print("Data successfully completed ✳️")
-                case .failure(let error):
-                    self?.error = error
-                    self?.isLoading = false
-                    print("Data completed with failure 🆘: \(error.localizedDescription)")
-                }
-            }, receiveValue: { [weak self] products in
-                DispatchQueue.main.async {
-                    self?.newCollectionProducts = products
-                }
-                
-            })
-            .store(in: &cancellables)
     }
 }
 
+
+
+import SwiftUI
+import Combine
+import Core
+import NetworkManager
+
+public class NewCollectionViewModel: ObservableObject {
+    
+    private var fetchTask: Task<Void, Never>?
+    
+    @Published var newCollection: NewCollection?
+    @Published var isLoading = false
+    
+    public init() {
+        startFetchingData()
+    }
+    
+    public func startFetchingData() {
+        isLoading = true
+        fetchTask = Task {
+            defer {
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
+            }
+            do {
+                let urlString = "https://lab.7saber.uz/api/client/product?pageSize=15&page=1&type=1"
+                let newCollection = try await NetworkService.shared.request(
+                    url: urlString,
+                    decode: NewCollection.self,
+                    method: .get
+                )
+                DispatchQueue.main.async {
+                    self.newCollection = newCollection
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
+                print("Error fetching new collection: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    deinit {
+        fetchTask?.cancel()
+    }
+}

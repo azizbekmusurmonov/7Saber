@@ -60,7 +60,8 @@ struct TabBarView: View {
                     if !isRegistrated {
                         RegisterMobillAppView(skipButtonTapped: {
                             isRegistrated = true
-                        })
+                        }, hasSkipButton: false)
+                        .environmentObject(registerVM)
                     } else {
                         WishlistView()
                             .environmentObject(wishlistVM)
@@ -75,7 +76,8 @@ struct TabBarView: View {
                     if !isRegistrated {
                         RegisterMobillAppView(skipButtonTapped: {
                             isRegistrated = true
-                        })
+                        }, hasSkipButton: false)
+                        .environmentObject(registerVM)
                     } else {
                         ProfileView()
                             .environmentObject(profileVM)
@@ -85,9 +87,6 @@ struct TabBarView: View {
                     Image(uiImage: Asset.Image.TabBars.profile.image)
                     Text("Profile")
                 }
-                //                    .onAppear {
-                //                        self.profileVM.count = 100
-                //                    }
             }
         }
     }

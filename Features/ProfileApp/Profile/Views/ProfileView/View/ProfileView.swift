@@ -12,43 +12,50 @@ import AssetKit
 public struct ProfileView: View {
     
     @EnvironmentObject var vm: ProfileViewModel
-    @StateObject var profileData = ProfileViewModel()
     
     public init() { }
     
     public var body: some View {
         
-        NavigationView {
-            VStack {
-                
-                navigationBar
-                
-                ScrollView {
-                    VStack(spacing: .zero) {
-                        
-                        ProfileImageView(bundle: $vm.profileData)
-                        
-                        ProfileList()
-                        
-                        DeleteAndLogOutButton(title: "LOG OUT", 
-                                              icon: Asset.Image.Profile.logOut.image,
-                                              buttonPressed: {
-                            print("log out")
-                        })
-                        
-                        DeleteAndLogOutButton(title: "DELETE ACOUNT",
-                                              icon: Asset.Image.Icons.trash2.image,
-                                              buttonPressed: {
-                            print("delete acc")
-                        })
+        if vm.isLoading {
+            LoaderView()
+        } else {
+            NavigationView {
+                VStack {
+                    
+                    navigationBar
+                    
+                    ScrollView {
+                        VStack(spacing: .zero) {
+                            
+                            ProfileImageView()
+                                .environmentObject(vm)
+                            
+                            ProfileList()
+                            DeleteAndLogOutButton(title: "LOG OUT",
+                                                  icon: Asset.Image.Profile.logOut.image,
+                                                  buttonPressed: {
+                                print("log out")
+                            })
+                            
+                            DeleteAndLogOutButton(title: "DELETE ACOUNT",
+                                                  icon: Asset.Image.Icons.trash2.image,
+                                                  buttonPressed: {
+                                print("delete acc")
+                            })
+                        }
+                        .onChange(of: vm.message) { newValue in
+                            guard let newValue else { return }
+                            switch newValue {
+                            case .succes(message: let message):
+                                Snackbar.show(message: message, theme: .success)
+                            case .error(message: let message):
+                                Snackbar.show(message: message, theme: .error)
+                            }
+                        }
                     }
                 }
-            }
-            .navigationBarHidden(true)
-            .onAppear {
-                Task {
-                    await vm.fetchProfile()
-                }
+                .navigationBarHidden(true)
             }
         }
     }

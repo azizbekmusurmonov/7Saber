@@ -13,21 +13,20 @@
 		524091D12BB7BA9100A75FC0 /* Cart.docc in Sources */ = {isa = PBXBuildFile; fileRef = 524091D02BB7BA9100A75FC0 /* Cart.docc */; };
 		524091D22BB7BA9100A75FC0 /* Cart.h in Headers */ = {isa = PBXBuildFile; fileRef = 524091CF2BB7BA9100A75FC0 /* Cart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		524091D52BB7BA9100A75FC0 /* Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524091CD2BB7BA9100A75FC0 /* Cart.framework */; };
-		524091D62BB7BA9100A75FC0 /* Cart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 524091CD2BB7BA9100A75FC0 /* Cart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		524091DC2BB7BAB300A75FC0 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524091DB2BB7BAB300A75FC0 /* CartView.swift */; };
 		524091DE2BB7BACF00A75FC0 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524091DD2BB7BACF00A75FC0 /* CartViewModel.swift */; };
+		524940B22C2A6C4300642473 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3952BBDA0C200843673 /* AssetKit.framework */; };
+		524940B32C2A6C4300642473 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3952BBDA0C200843673 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		524940B52C2A6C4400642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20DE2BB7EB9500457A3E /* Core.framework */; };
+		524940B62C2A6C4400642473 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20DE2BB7EB9500457A3E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		524940B72C2A6C4600642473 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20A32BB7E97200457A3E /* NetworkManager.framework */; };
+		524940B82C2A6C4600642473 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20A32BB7E97200457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7B49D85B2C15B5B400F9036F /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49D8592C15B56300F9036F /* NavigationBar.swift */; };
 		7B49D85D2C15B91500F9036F /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49D85C2C15B91500F9036F /* CheckOutView.swift */; };
 		7B7319912C1841EC0057EAA0 /* UpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7319902C1841EC0057EAA0 /* UpdateModel.swift */; };
 		7B7319932C1848670057EAA0 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7319922C1848670057EAA0 /* CartModel.swift */; };
 		7BC755A82C16DF3B00F24B31 /* CartIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC755A72C16DF3B00F24B31 /* CartIsEmpty.swift */; };
 		7BEE35F42C1637630042A13A /* CartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEE35F32C1637630042A13A /* CartListView.swift */; };
-		FA4F20A42BB7E97200457A3E /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20A32BB7E97200457A3E /* NetworkManager.framework */; };
-		FA4F20A52BB7E97200457A3E /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20A32BB7E97200457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA4F20DF2BB7EB9500457A3E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20DE2BB7EB9500457A3E /* Core.framework */; };
-		FA4F20E02BB7EB9500457A3E /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20DE2BB7EB9500457A3E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA77A3962BBDA0C200843673 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3952BBDA0C200843673 /* AssetKit.framework */; };
-		FA77A3972BBDA0C200843673 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3952BBDA0C200843673 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,26 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		524091DA2BB7BA9100A75FC0 /* Embed Frameworks */ = {
+		524940B42C2A6C4300642473 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				524091D62BB7BA9100A75FC0 /* Cart.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA4F20A62BB7E97200457A3E /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				FA4F20A52BB7E97200457A3E /* NetworkManager.framework in Embed Frameworks */,
-				FA77A3972BBDA0C200843673 /* AssetKit.framework in Embed Frameworks */,
-				FA4F20E02BB7EB9500457A3E /* Core.framework in Embed Frameworks */,
+				524940B82C2A6C4600642473 /* NetworkManager.framework in Embed Frameworks */,
+				524940B32C2A6C4300642473 /* AssetKit.framework in Embed Frameworks */,
+				524940B62C2A6C4400642473 /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,9 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4F20A42BB7E97200457A3E /* NetworkManager.framework in Frameworks */,
-				FA77A3962BBDA0C200843673 /* AssetKit.framework in Frameworks */,
-				FA4F20DF2BB7EB9500457A3E /* Core.framework in Frameworks */,
+				524940B72C2A6C4600642473 /* NetworkManager.framework in Frameworks */,
+				524940B52C2A6C4400642473 /* Core.framework in Frameworks */,
+				524940B22C2A6C4300642473 /* AssetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +199,6 @@
 				524091AD2BB7BA4800A75FC0 /* Sources */,
 				524091AE2BB7BA4800A75FC0 /* Frameworks */,
 				524091AF2BB7BA4800A75FC0 /* Resources */,
-				524091DA2BB7BA9100A75FC0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,7 +218,7 @@
 				524091C92BB7BA9100A75FC0 /* Sources */,
 				524091CA2BB7BA9100A75FC0 /* Frameworks */,
 				524091CB2BB7BA9100A75FC0 /* Resources */,
-				FA4F20A62BB7E97200457A3E /* Embed Frameworks */,
+				524940B42C2A6C4300642473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -456,7 +443,6 @@
 		524091C02BB7BA4900A75FC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -475,8 +461,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Ismatillokhon.CartApp;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.7saber.shop.CartApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -487,7 +473,6 @@
 		524091C12BB7BA4900A75FC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -506,8 +491,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Ismatillokhon.CartApp;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.7saber.shop.CartApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -522,7 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 55T4GQ9V2G;
+				DEVELOPMENT_TEAM = K7U4M666S7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -539,7 +524,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = Ismatillokhon.Cart;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.7saber.shop.Cart;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -562,7 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 55T4GQ9V2G;
+				DEVELOPMENT_TEAM = K7U4M666S7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -579,7 +564,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = Ismatillokhon.Cart;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.7saber.shop.Cart;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

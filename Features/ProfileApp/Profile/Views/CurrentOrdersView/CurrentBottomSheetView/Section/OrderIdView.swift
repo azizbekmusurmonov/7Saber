@@ -10,6 +10,10 @@ import Core
 import AssetKit
 
 struct OrderIdView: View {
+    
+    @EnvironmentObject var vm: OrdersViewModel
+    var data: OrdersModel
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("ORDER ID")
@@ -17,29 +21,30 @@ struct OrderIdView: View {
                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
             HStack(spacing: .zero) {
                 VStack(spacing: .zero) {
-                   
-                    Text("73489F274")
-                        .font(.system(size: 13, weight: .medium))
-                        .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
-                        
+                    ForEach(data.cells, id: \.self) { cell in
+                        Text(cell.orderId)
+                            .font(.system(size: 13, weight: .medium))
+                            .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
+                    }
                 }
                 Spacer()
                 HStack(spacing: .zero) {
                     Image(uiImage: Asset.Image.Icons.clock.image)
                         .resizable()
                         .setSize(16)
-                    Text("March 20, 2024")
+                    Text(data.headertitle)
                         .font(.system(size: 13, weight: .medium))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                 }
                 Spacer()
                 
                 HStack {
-                    Text("ON PROCCESS")
-                        .font(.system(size: 11, weight: .regular))
-                        .foregroundColor(Asset.Color.Text.Status.proccessCol.swiftUIColor)
-                        .padding(5)
-                    
+                    ForEach(data.cells, id: \.self) { cell in
+                        Text(cell.status.rawValue.uppercased())
+                            .font(.system(size: 11, weight: .regular))
+                            .foregroundColor(Asset.Color.Text.Status.proccessCol.swiftUIColor)
+                            .padding(5)
+                    }
                     Image(uiImage: Asset.Image.Icons.proccess.image)
                         .resizable()
                         .frame(width: 14, height: 14)
@@ -50,8 +55,4 @@ struct OrderIdView: View {
             Divider()
         }.padding(.vertical, 16)
     }
-}
-
-#Preview {
-    OrderIdView()
 }

@@ -11,14 +11,16 @@ import Core
 
 struct OrderHistorySection: View {
     
-    var item: OrderHistoryModel
+    var item: OrdersModel
+    @EnvironmentObject var vm: OrdersViewModel
+    @State private var isTabBottomSheet: IdentifiableInt? = nil
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 16) {
             Text(item.headertitle)
                 .font(.system(size: 16, weight: .medium))
                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
-            ForEach(item.cells, id: \.self) { cell in
+            ForEach(Array(item.cells.enumerated()), id: \.offset) { index, cell in
                 HStack(spacing: 10) {
                     VStack(alignment: .leading) {
                         Text("ORDER ID")
@@ -49,13 +51,29 @@ struct OrderHistorySection: View {
                             .frame(width: 14, height: 14)
                     }
                     .background(cell.status.color)
-                    .clipShape(.capsule)
-                    
+                    .clipShape(Capsule())
                 }
                 .frame(height: 74)
-                Divider()
+                .onTapGesture {
+                    if isTabBottomSheet?.id == index {
+                        isTabBottomSheet = nil
+                    } else {
+                        isTabBottomSheet = IdentifiableInt(id: index)
+                    }
+                }
+                .sheet(item: self.$isTabBottomSheet) { identifiableInt in
+                    OrderBottomSheetView()
+                        .environmentObject(OrdersViewModel())
+                }
+                if index < item.cells.count - 1 {
+                    Divider()
+                }
             }
         }
         .padding(.horizontal)
     }
+}
+
+struct IdentifiableInt: Identifiable {
+    var id: Int
 }

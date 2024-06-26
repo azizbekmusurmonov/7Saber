@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
+import Core
+import AssetKit
 
 public struct ContentView: View {
     
-    @StateObject var categoryController = CategoryController()
-    @StateObject var viewModel = NewCollectionViewModel()
-    @StateObject var viewModel22 = NewCollectionViewModel22()
+
+    @StateObject private var newCollectionViewModel = NewCollectionViewModel()
+    @StateObject var trendingViewModel = TrendingViewModel()
+    @StateObject var shoesViewModel = ShoesViewModel()
     
     @State private var isShowingCatalogPage = false
-    @State private var isShowingDetailedView = false 
+    @State private var isShowingDetailedView = false
     
     public init() {}
     
@@ -23,39 +26,41 @@ public struct ContentView: View {
         NavigationView {
             
             VStack {
-                CustomNavigation()
-                    .frame(height: 45)
-                    .padding(.top, 15)
+                
+                BaseNavigationBar(title: "", leftImage: Asset.Image.Logo.logoBlack.image, rightImage: Asset.Image.Home.searchHome.image)
+//                    .frame(height: 60)
+                    .padding(.top, 54)
+                    .background(Blur(style: .light).opacity(0.5))
                 
                 ScrollView {
                     
-                    VideoPlayerView(videoName: "backVideo")
-                        .padding(.top, -75)
+                    AVPContentView()
+                        .padding(.top)
                     
                     NavigationLink(destination: CatalogPage()) {
-                                CategoryView(categories: categoryController.categories)
-                                    .onAppear {
-                                    categoryController.fetchCategories()
-                                }
-                        }
+                        CategoryView(viewModel: CategoryViewModel())
+                    }
                     
-                    NewCollectionView(viewModel: viewModel)
-                        .padding(.leading, 10)
+                    NewCollectionView(viewModel: newCollectionViewModel)
+                    
                         .padding(.top, 30)
                         .onTapGesture {
                             isShowingDetailedView = true // Present DetailedView when tapped
                         }
                     
-                    NewCollectionView22(viewModel22: viewModel22)
-                        .padding(.leading, 10)
-                        .padding(.top, 60)
+                    TrendingView(viewModel: trendingViewModel)
+                       
+                        .padding(.top, 30)
                         .onTapGesture {
                             isShowingDetailedView = true // Present DetailedView when tapped
                         }
                     
-                    SHoes()
-                        .padding(.leading, 10)
-                        .padding(.top, 50)
+                    ShoesView()
+                       
+                        .padding(.top, 30)
+                        .onTapGesture {
+                            isShowingDetailedView = true // Present DetailedView when tapped
+                        }
                     
                     BigText()
                         .padding(.top, 150)
@@ -63,18 +68,21 @@ public struct ContentView: View {
                     ButtonSort()
                         .padding(.top, 100)
                     
-                    Family()
+                 
                     
                     VStack {
                         AutumnSalesView()
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                             .clipped()
                         
-                    }.padding(.top, -10)
+                    }
+                        .padding(.bottom, 80)
                     
                 }
-               
             }
+           // .customNavigation()
+            .background(Color.white)
+            .ignoresSafeArea(edges: .all)
         }
         .fullScreenCover(isPresented: $isShowingDetailedView) {
             DetailedView()

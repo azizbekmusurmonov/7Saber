@@ -8,30 +8,33 @@
 
 import SwiftUI
 
-struct AutumnSalesModel {
-    let imageName: String = "AUTUM_SALES"
-    let salePercentage: String = "30%"
-    let saleTitle: String = "AUTUMN SALES"
-    let collectionDescription: String = "OUR AUTUMN COLLECTION IS NOW IN STOCK"
-    let buttonTitle: String = "SEE ALL"
-}
-
-
-
-import SwiftUI
-
 struct AutumnSalesView: View {
     @StateObject var viewModel = AutumnSalesViewModel()
     
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
-                if let image = UIImage(named: viewModel.model.imageName) {
-                    AutumnImageView(image: image, geometry: geometry)
-                        .environmentObject(viewModel)
-                    
+                if viewModel.isLoading {
+                    ProgressView("Loading...")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else if let model = viewModel.model, let imageUrl = URL(string: model.webMedia.src) {
+                    AsyncImage(url: imageUrl) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .clipped()
+                            .overlay(
+                                AutumnImageView(image: image, geometry: geometry)
+                                    .environmentObject(viewModel)
+                            )
+                    } placeholder: {
+                        ProgressView()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                    }
                 } else {
-                    Text("Image not found")
+                    Text("Failed to load data")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
         }
@@ -39,21 +42,30 @@ struct AutumnSalesView: View {
     }
 }
 
+
+
+
+
+
+
+
+import SwiftUI
+
 struct AutumnImageView: View {
-    var image: UIImage
+    var image: Image
     var geometry: GeometryProxy
     
     @EnvironmentObject var viewModel: AutumnSalesViewModel
     
     var body: some View {
-        Image(uiImage: image)
+        image
             .resizable()
             .scaledToFill()
             .frame(width: geometry.size.width, height: geometry.size.height)
             .clipped()
             .overlay(
                 VStack(alignment: .leading) {
-                    Text(viewModel.model.salePercentage)
+                    Text(viewModel.salePercentage)
                         .font(.system(size: 70))
                         .fontWeight(.bold)
                         .foregroundColor(.white)
@@ -61,39 +73,37 @@ struct AutumnImageView: View {
                         .cornerRadius(5)
                         .padding(.top, 16)
                         .padding(.leading, 16)
-                    Text(viewModel.model.saleTitle)
+                    Text(viewModel.saleTitle)
                         .font(.title)
                         .foregroundColor(.white)
                         .padding(8)
                         .cornerRadius(5)
                         .padding(.top, -20)
-                        .padding(.leading, 16)
-                        .padding(.trailing, 16)
+                        .padding(.leading, 40)
+                        .padding(.trailing)
                 }
                 .frame(maxWidth: 200, alignment: .leading)
                 .padding(.bottom, 16)
-                .padding(.top, 16)
-                .opacity(viewModel.showContent ? 1 : 0)
-                .animation(.easeInOut(duration: 1.0)),
+                .padding(.top, 16),
                 alignment: .topLeading
             )
             .overlay(
                 VStack(alignment: .trailing) {
-                    Text(viewModel.model.collectionDescription)
+                    Text(viewModel.collectionDescription)
                         .font(.system(size: 25))
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                         .padding(8)
+                        .cornerRadius(5)
                         .lineLimit(4)
                         .padding(.trailing, 1)
-                        .padding(.top, 640)
-                        .opacity(viewModel.showContent ? 1 : 0)
-                        .animation(.easeInOut(duration: 1.5))
+                        .padding(.top, geometry.size.height * 0.5)
+                      
                     Spacer()
                     Button(action: {
-                        // Button action here
+                     
                     }) {
-                        Text(viewModel.model.buttonTitle)
+                        Text(viewModel.buttonTitle)
                             .font(.title3)
                             .foregroundColor(.black)
                             .padding(8)
@@ -107,34 +117,12 @@ struct AutumnImageView: View {
                             .cornerRadius(20)
                             .padding(.horizontal, 40)
                             .padding(.bottom, 40)
-                            .opacity(viewModel.showContent ? 1 : 0)
-                            .animation(.easeInOut(duration: 1.5))
                     }
                 }
                 .frame(maxWidth: 220, alignment: .trailing)
                 .padding(.bottom, 1)
-                .padding(.top, 16)
-                .opacity(viewModel.showContent ? 1 : 0)
-                .animation(.easeInOut(duration: 1.5)),
-                alignment: .bottomTrailing
+                .padding(.top, 16),
+                alignment: .bottom
             )
-            .onAppear {
-                viewModel.triggerAnimation()
-            }
-    }
-}
-
-
-
-import SwiftUI
-
-class AutumnSalesViewModel: ObservableObject {
-    @Published var showContent = false
-    var model = AutumnSalesModel()
-    
-    func triggerAnimation() {
-        withAnimation {
-            self.showContent = true
-        }
     }
 }

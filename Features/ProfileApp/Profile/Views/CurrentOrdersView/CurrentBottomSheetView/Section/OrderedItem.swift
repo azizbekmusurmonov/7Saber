@@ -11,6 +11,8 @@ import AssetKit
 
 struct OrderedItem: View {
     
+    @EnvironmentObject var vm: OrdersViewModel
+    
     @State var product: Products
     @State var buttonPressed: () -> ()
     

@@ -60,7 +60,6 @@ struct EnterPasswordView: View {
                 }
             }
         }
-        .hideKeyboardOnTap()
     }
 }
 

@@ -7,45 +7,142 @@
 
 import Foundation
 
-// MARK: - ProductElement
-struct ProductModel: Codable, Identifiable {
+// MARK: - NewCollection
+struct NewCollection: Codable {
+    let currentPage: Int
+    let data: [NewCollectionDatum]
+    let firstPageURL: String
+    let from, lastPage: Int
+    let lastPageURL: String
+    let links: [NewCollectionLink]
+    let nextPageURL, path: String
+    let perPage: Int
+    let prevPageURL: String?
+    let to, total: Int
+
+    enum CodingKeys: String, CodingKey {
+        case currentPage = "current_page"
+        case data
+        case firstPageURL = "first_page_url"
+        case from
+        case lastPage = "last_page"
+        case lastPageURL = "last_page_url"
+        case links
+        case nextPageURL = "next_page_url"
+        case path
+        case perPage = "per_page"
+        case prevPageURL = "prev_page_url"
+        case to, total
+    }
+}
+
+// MARK: - Datum
+struct NewCollectionDatum: Codable, Identifiable {
     let id: Int
+    let catalogID: Int?
+    let categoryID: Int
+    let sportTypeID: String?
+    let nameUz, nameRu, nameEn: String
+    let descUz, descRu, descEn, specUz: String?
+    let specRu, specEn: String?
+    let sku: String
+    let discount: [String]
+    let price: [String: Int?]
+    let gender: String
+    let mainImgID: Int
+    let mediaID: String?
+    let clientMediaIDS: NewCollectionClientMediaIDS
+    let weight, type: Int
+    let isActive: Bool
+    let additions: [String]
+    let createdAt, updatedAt, name: String
+    let desc: String?
+    let attributes: [NewCollectionAttribute]
+    let mainImg: NewCollectionMainImg
+    let media: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case catalogID = "catalogId"
+        case categoryID = "categoryId"
+        case sportTypeID = "sportTypeId"
+        case nameUz, nameRu, nameEn, descUz, descRu, descEn, specUz, specRu, specEn, sku, discount, price, gender
+        case mainImgID = "mainImgId"
+        case mediaID = "mediaId"
+        case clientMediaIDS = "clientMediaIds"
+        case weight, type, isActive, additions
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case name, desc, attributes
+        case mainImg = "main_img"
+        case media
+    }
+}
+
+// MARK: - Attribute
+struct NewCollectionAttribute: Codable {
+    let productID: Int
     let billzID: String
-    let parentID, nameUz: String??
-    let nameRu: String
-    let nameEn: String??
-    let bgID: Int
-    let queue: String??
-    let isActive, isBillz, isDeleted: Bool
+    let barcode, colorID: Int
+    let size: String
+    let photos: [NewCollectionPhoto]
+    let qty: Int
     let createdAt, updatedAt: String
-    let name: String??
-    let bg: Background
+    let color: NewCollectionColor
+
+    enum CodingKeys: String, CodingKey {
+        case productID = "productId"
+        case billzID = "billzId"
+        case barcode
+        case colorID = "colorId"
+        case size, photos, qty
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case color
+    }
+}
+
+// MARK: - Color
+struct NewCollectionColor: Codable {
+    let id: Int
+    let billzID, nameUz, nameRu, nameEn: String
+    let hex: String?
+    let createdAt, updatedAt, name: String
 
     enum CodingKeys: String, CodingKey {
         case id
         case billzID = "billzId"
-        case parentID = "parentId"
-        case nameUz, nameRu, nameEn
-        case bgID = "bgId"
-        case queue, isActive, isBillz, isDeleted
+        case nameUz, nameRu, nameEn, hex
         case createdAt = "created_at"
         case updatedAt = "updated_at"
-        case name, bg
+        case name
     }
 }
 
-// MARK: - Bg
-struct Background: Codable {
-    let id: Int
-    let baseName, originName: String??
+// MARK: - Photo
+struct NewCollectionPhoto: Codable {
+    let baseName: String
     let src: String
-    let size: String??
-    let type: String
-    let createdAt, updatedAt: String?
+}
 
-    enum CodingKeys: String, CodingKey {
-        case id, baseName, originName, src, size, type
-        case createdAt = "created_at"
-        case updatedAt = "updated_at"
-    }
+enum NewCollectionClientMediaIDS: String, Codable {
+    case empty = "[]"
+}
+
+// MARK: - MainImg
+struct NewCollectionMainImg: Codable {
+    let id: Int
+    let src: String
+    let type: NewCollectionTypeEnum
+}
+
+enum NewCollectionTypeEnum: String, Codable {
+    case typeDefault = "default"
+}
+
+// MARK: - Link
+struct NewCollectionLink: Codable {
+    let url: String?
+    let label: String
+    let active: Bool
 }
