@@ -11,6 +11,7 @@ import Core
 
 struct CurrentSection: View {
     
+    @EnvironmentObject var vm: OrdersViewModel
     var currentItem: OrdersModel
     
     @State private var pressedIndex: Int? = nil
@@ -73,7 +74,7 @@ struct CurrentSection: View {
                     }
                     .sheet(isPresented: self.$isTabSectionView) {
                         CurrentSheetBottomView()
-                            .environmentObject(CurrentBottomViewModel())
+                            .environmentObject(OrdersViewModel())
                     }
                     if pressedIndex == index {
                         OrderStatusView(status: .orderedPaid)

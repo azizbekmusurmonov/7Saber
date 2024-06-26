@@ -14,7 +14,7 @@ struct Trending: Codable {
     let firstPageURL: String
     let from, lastPage: Int
     let lastPageURL: String
-    let links: [Link]
+    let links: [TrendingLink]
     let nextPageURL, path: String
     let perPage: Int
     let prevPageURL: String?
@@ -58,7 +58,7 @@ struct TrendingDatum: Codable, Identifiable {
     let additions: [String]
     let createdAt, updatedAt, name: String
     let desc: String?
-    let attributes: [Attribute]
+    let attributes: [TrendingAttribute]
     let mainImg: TrendingMainImg
     let media: String?
 

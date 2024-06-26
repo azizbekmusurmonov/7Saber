@@ -48,8 +48,8 @@ public class AddressesViewModel: ObservableObject {
     private func mapAddressToItem(address: AdressShowModel) -> Item {
         return Item(
             title: address.name,
-            location: "\(address.street), \(address.building), \(address.city), \(address.country.name)",
-            seeOnMap: "See on map URL or data here"
+            location: "\(address.street) st. \(address.building), \(address.city), \(address.country.name)",
+            seeOnMap: "SEE ON MAP"
         )
     }
 }

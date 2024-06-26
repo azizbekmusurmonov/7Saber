@@ -34,13 +34,7 @@ struct CatalogPage: View {
                 .padding(.top, 30)
                 .padding(.leading, 10)
             
-               
-            VStack {
-                AutumnSalesView2()
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                    .clipped()
-                    
-            }.padding(.top, 50)
+         
             
            
              

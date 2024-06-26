@@ -10,6 +10,7 @@
 			<integer>2</integer>
 		</dict>
 	</dict>
+<<<<<<< HEAD
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>528103282BB265BC00F789A4</key>
@@ -18,5 +19,7 @@
 			<true/>
 		</dict>
 	</dict>
+=======
+>>>>>>> Localization
 </dict>
 </plist>

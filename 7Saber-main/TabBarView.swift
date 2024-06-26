@@ -75,7 +75,8 @@ struct TabBarView: View {
                     if !isRegistrated {
                         RegisterMobillAppView(skipButtonTapped: {
                             isRegistrated = true
-                        }, hasSkipButton: true)
+                        }, hasSkipButton: false)
+                        .environmentObject(registerVM)
                     } else {
                         ProfileView()
                             .environmentObject(profileVM)
