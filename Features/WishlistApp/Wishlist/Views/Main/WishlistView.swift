@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Core
+import AssetKit
 
 public struct WishlistView: View {
     
@@ -28,6 +29,12 @@ public struct WishlistView: View {
             } else {
                 ScrollView {
                     VStack(spacing: 20) {
+                        HStack {
+                            Text("6 product")
+                                .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                            Spacer()
+                        }
+                        Divider()
                         ForEach(vm.items) { item in
                             HStack(spacing: .zero) {
                                 ItemRow(item: item, selectSizeTapHandler: {
