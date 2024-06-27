@@ -10,7 +10,6 @@ import Core
 import AssetKit
 
 public struct ContentView: View {
-    
 
     @StateObject private var newCollectionViewModel = NewCollectionViewModel()
     @StateObject var trendingViewModel = TrendingViewModel()
@@ -28,7 +27,7 @@ public struct ContentView: View {
             VStack {
                 
                 BaseNavigationBar(title: "", leftImage: Asset.Image.Logo.logoBlack.image, rightImage: Asset.Image.Home.searchHome.image)
-//                    .frame(height: 60)
+                    .frame(height: 60)
                     .padding(.top, 54)
                     .background(Blur(style: .light).opacity(0.5))
                 

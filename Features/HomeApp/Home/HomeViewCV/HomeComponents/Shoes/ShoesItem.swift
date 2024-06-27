@@ -15,6 +15,7 @@ public struct ShoesItemView: View {
     public var body: some View {
         VStack {
             productImageView
+                .padding(.leading, -70)
             productInfoView
             Spacer()
         }

@@ -13,31 +13,42 @@ public struct ProductItemView: View {
     let productimage: NewCollectionMainImg
     
     public var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            productImageView
-            productInfoView
-            Spacer()
-        }
-        .frame(width: 393, height: 478)
-    }
-    
-    // MARK: - Subviews
-    
-    private var productImageView: some View {
-        ZStack(alignment: .bottomLeading) {
-            AsyncImage(url: URL(string: productimage.src)) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 301, height: 376)
-                    .clipped()
-            } placeholder: {
-                ProgressView()
+        VStack(alignment: .leading) {
+            ZStack(alignment: .bottomLeading) {
+                AsyncImage(url: URL(string: productimage.src)) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 301, height: 376)
+                        .clipped()
+                } placeholder: {
+                    ProgressView()
+                }
+                
+                addToCartButton
+                    .padding(10)
             }
+            .frame(width: 301, height: 376, alignment: .leading)
             
-            addToCartButton
-                .padding(10)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(product.nameEn)
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundColor(.black)
+                    .lineLimit(2)
+                    .frame(width: 301, alignment: .leading)
+                    .padding(.top, 8)
+                
+                if let price = product.price["uzs"] ?? product.price.values.compactMap({ $0 }).first {
+                    Text("\(price) so'm")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.black)
+                        .frame(width: 301, alignment: .leading)
+                }
+            }
+            .frame(width: 301, height: 46, alignment: .leading)
+            .padding(.horizontal, 0) // No extra padding to ensure leading alignment
         }
+        .frame(width: 393, height: 478, alignment: .leading)
     }
     
     private var addToCartButton: some View {
@@ -57,25 +68,4 @@ public struct ProductItemView: View {
                 )
         }
     }
-
-    
-    private var productInfoView: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(product.nameEn)
-                .font(.system(size: 13, weight: .medium))
-                .foregroundColor(.black)
-                .lineLimit(2)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 8)
-            
-            if let price = product.price["uzs"] ?? product.price.values.compactMap({ $0 }).first {
-                Text("\(price) so'm")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(.black)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
-        }
-        .padding([.leading, .top], 0)
-    }
 }
-

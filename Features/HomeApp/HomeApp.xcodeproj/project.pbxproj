@@ -332,9 +332,9 @@
 		B57A08322BFE3C8900D3BA72 /* NewCollection */ = {
 			isa = PBXGroup;
 			children = (
+				B57A08552BFE3E2D00D3BA72 /* View.swift */,
 				B57A08512BFE3E1600D3BA72 /* ItemView.swift */,
 				B57A08532BFE3E2500D3BA72 /* ProductModel.swift */,
-				B57A08552BFE3E2D00D3BA72 /* View.swift */,
 				B57A08582BFE3E3E00D3BA72 /* ViewModel.swift */,
 			);
 			path = NewCollection;

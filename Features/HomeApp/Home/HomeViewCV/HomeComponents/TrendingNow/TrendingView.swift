@@ -11,14 +11,13 @@ public struct TrendingView: View {
     @ObservedObject var viewModel = TrendingViewModel()
     
     public var body: some View {
-        VStack(alignment: .leading) {
+        VStack{
             headerView
-            
             contentView
-                .padding(.top, -10)
+                
         }
         .onAppear {
-            viewModel.fetchCategories()
+            viewModel.startFetchingData()
         }
         .padding()
     }
@@ -30,12 +29,10 @@ public struct TrendingView: View {
             Text("TRENDING NOW")
                 .font(.system(size: 19, weight: .bold))
                 .foregroundColor(.black)
-                
             
             Spacer()
             
             Button(action: {
-                viewModel.fetchCategories()
             }) {
                 if viewModel.isLoading {
                     ProgressView()
@@ -50,28 +47,36 @@ public struct TrendingView: View {
     
     private var contentView: some View {
         Group {
-            if let error = viewModel.error {
-                errorView(error)
-            } else if let categories = viewModel.categories {
-                categoriesView(categories)
+            switch viewModel.newCollection {
+            case .some(let collection):
+                collectionView(collection)
+            case .none:
+                noDataView
             }
         }
     }
-    
-    private func errorView(_ error: TrendingNetworkError) -> some View {
-        Text("Error: \(error.localizedDescription)")
-            .foregroundColor(.red)
+
+    private var noDataView: some View {
+        Text("No data available.")
+            .foregroundColor(.gray)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .padding()
     }
     
-    private func categoriesView(_ categories: Trending) -> some View {
+
+    private func collectionView(_ collection: Trending) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                ForEach(categories.data) { product in
-                    TrendingItemView(trendingProduct: product, trendingProductimage: product.mainImg)
+                ForEach(collection.data) { product in
+                    TrendingItemView(product: product, productimage: product.mainImg)
+//                        .frame(width: 301, height: 376)
+                       
+                      //  .padding(.vertical, 10)
                 }
             }
-            .padding(.horizontal, 10)
+            
         }
     }
 }
+
+

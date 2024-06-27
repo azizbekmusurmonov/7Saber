@@ -4,14 +4,13 @@
 //
 //  Created by islombek on 22/05/24.
 //
-
 import SwiftUI
 
 public struct NewCollectionView: View {
     @ObservedObject var viewModel = NewCollectionViewModel()
     
     public var body: some View {
-        VStack(alignment: .leading) {
+        VStack {
             headerView
             contentView
                 
@@ -42,40 +41,34 @@ public struct NewCollectionView: View {
                         .foregroundColor(.gray)
                 }
             }
-        }
+        }.background(Color.red)
+            .padding(.trailing, 0)
     }
     
     private var contentView: some View {
-        Group {
-            switch viewModel.newCollection {
-            case .some(let collection):
-                collectionView(collection)
-            case .none:
-                noDataView
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: -90) {  // Set spacing to 2 pixels
+                switch viewModel.newCollection {
+                case .some(let collection):
+                    ForEach(collection.data) { product in
+                        ProductItemView(product: product, productimage: product.mainImg)
+                            .frame(width: 393, height: 478)
+                    }
+                case .none:
+                    noDataView
+                        .frame(width: 393, height: 478)
+                }
             }
-        }
+            .frame(alignment: .leading)
+            
+        }.background(Color.blue)
     }
-
+    
     private var noDataView: some View {
-        Text("No data available.")
+        Text("Kutilmoqda...")
             .foregroundColor(.gray)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .padding()
-    }
-    
-
-    private func collectionView(_ collection: NewCollection) -> some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
-                ForEach(collection.data) { product in
-                    ProductItemView(product: product, productimage: product.mainImg)
-                        .frame(width: 301, height: 376)
-                        .foregroundColor(.red)
-                      //  .padding(.vertical, 10)
-                }
-            }
-            
-        }
     }
 }
 

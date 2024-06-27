@@ -9,16 +9,19 @@ import SwiftUI
 
 struct DetailedView: View {
     
-  //  @StateObject var categoryController = CategoryController()
+
     @StateObject var viewModel = NewCollectionViewModel()
     @StateObject var viewModel22 = NewCollectionViewModel22()
     @State private var selectedColor: Color?
 
-   // @StateObject var viewModel = TrendingViewModel()
+
     
     @State private var isShowingCatalogPage = false
+   
     
     var body: some View {
+        
+        
         
         NavigationView {
             
@@ -155,9 +158,9 @@ struct DetailedView: View {
     }
 }
 
-#Preview {
-    DetailedView()
-}
+//#Preview {
+//    DetailedView()
+//}
 
 
 

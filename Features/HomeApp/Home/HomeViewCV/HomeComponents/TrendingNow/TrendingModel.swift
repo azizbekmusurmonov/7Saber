@@ -52,7 +52,7 @@ struct TrendingDatum: Codable, Identifiable {
     let gender: String
     let mainImgID: Int
     let mediaID: String?
-    let clientMedias: [String]
+    let clientMediaIDS: TrendingClientMediaIDS
     let weight, type: Int
     let isActive: Bool
     let additions: [String]
@@ -70,7 +70,8 @@ struct TrendingDatum: Codable, Identifiable {
         case nameUz, nameRu, nameEn, descUz, descRu, descEn, specUz, specRu, specEn, sku, discount, price, gender
         case mainImgID = "mainImgId"
         case mediaID = "mediaId"
-        case clientMedias, weight, type, isActive, additions
+        case clientMediaIDS = "clientMediaIds"
+        case weight, type, isActive, additions
         case createdAt = "created_at"
         case updatedAt = "updated_at"
         case name, desc, attributes
@@ -83,32 +84,50 @@ struct TrendingDatum: Codable, Identifiable {
 struct TrendingAttribute: Codable {
     let productID: Int
     let billzID: String
-    let barcode: Int
-    let color: [TrendingColor]
+    let barcode, colorID: Int
     let size: String
     let photos: [TrendingPhoto]
     let qty: Int
     let createdAt, updatedAt: String
+    let color: TrendingColor
 
     enum CodingKeys: String, CodingKey {
         case productID = "productId"
         case billzID = "billzId"
-        case barcode, color, size, photos, qty
+        case barcode
+        case colorID = "colorId"
+        case size, photos, qty
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case color
     }
 }
 
 // MARK: - Color
 struct TrendingColor: Codable {
-    let name: String
+    let id: Int
+    let billzID, nameUz, nameRu, nameEn: String
     let hex: String?
+    let createdAt, updatedAt, name: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case billzID = "billzId"
+        case nameUz, nameRu, nameEn, hex
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case name
+    }
 }
 
 // MARK: - Photo
 struct TrendingPhoto: Codable {
     let baseName: String
     let src: String
+}
+
+enum TrendingClientMediaIDS: String, Codable {
+    case empty = "[]"
 }
 
 // MARK: - MainImg
@@ -119,6 +138,7 @@ struct TrendingMainImg: Codable {
 }
 
 enum TrendingTypeEnum: String, Codable {
+    case jpg = "jpg"
     case typeDefault = "default"
 }
 
