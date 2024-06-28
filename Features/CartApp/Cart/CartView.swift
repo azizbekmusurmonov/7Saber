@@ -22,9 +22,7 @@ public struct CartView: View {
                 CartIsEmpty()
                 Spacer()
             } else {
-                ScrollView {
                     CartListView()
-                }
                 
                 CheckOutView(action: {})
             }

@@ -13,7 +13,15 @@ struct NavigationBar: View {
     var showButton: Bool
     var leftButtonAction: () -> Void
     var skipButtonAction: () -> Void
+    let hasSkipButton: Bool
     @EnvironmentObject var vm: RegisterMobillAppViewModel
+    
+    init(showButton: Bool, leftButtonAction: @escaping () -> Void, skipButtonAction: @escaping () -> Void, hasSkipButton: Bool = true) {
+        self.showButton = showButton
+        self.leftButtonAction = leftButtonAction
+        self.skipButtonAction = skipButtonAction
+        self.hasSkipButton = hasSkipButton
+    }
     
     var body: some View {
         ZStack {
@@ -30,14 +38,16 @@ struct NavigationBar: View {
                     .frame(width: 40, height: 40)
                 }
                 Spacer()
-                Button(action: {
-                    
-                    skipButtonAction()
-                }, label: {
-                    Text("SKIP")
-                        .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
-                })
-                .frame(height: 40)
+                if hasSkipButton {
+                    Button(action: {
+                        
+                        skipButtonAction()
+                    }, label: {
+                        Text("SKIP")
+                            .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
+                    })
+                    .frame(height: 40)
+                }
             }
             .padding(.leading, 36)
             .padding(.trailing, 36)

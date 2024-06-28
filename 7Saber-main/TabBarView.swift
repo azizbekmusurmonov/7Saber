@@ -61,6 +61,7 @@ struct TabBarView: View {
                         RegisterMobillAppView(skipButtonTapped: {
                             isRegistrated = true
                         }, hasSkipButton: false)
+                        .environmentObject(registerVM)
                     } else {
                         WishlistView()
                             .environmentObject(wishlistVM)
@@ -76,6 +77,7 @@ struct TabBarView: View {
                         RegisterMobillAppView(skipButtonTapped: {
                             isRegistrated = true
                         }, hasSkipButton: false)
+                        .environmentObject(registerVM)
                     } else {
                         ProfileView()
                             .environmentObject(profileVM)

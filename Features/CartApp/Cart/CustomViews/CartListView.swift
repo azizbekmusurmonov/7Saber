@@ -68,11 +68,13 @@ struct CartListView: View {
                                     Text(vm.products[index].product.price["uzs"]??.description ?? "")
                                         .font(.system(size: 14))
                                     
-                                    Text("1000000 UZS")
-                                        .strikethrough(true, color: Asset.Color.Text.secondaryCol.swiftUIColor)
-                                        .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
-                                        .font(.system(size: 11))
-                                        .padding(.leading, 10)
+                                    if !vm.products[index].product.discount.isEmpty {
+                                        Text("1000000 UZS")
+                                            .strikethrough(true, color: Asset.Color.Text.secondaryCol.swiftUIColor)
+                                            .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                                            .font(.system(size: 11))
+                                            .padding(.leading, 10)
+                                    }
                                     Spacer()
                                 }
                                 .padding(.top, 4)
@@ -93,7 +95,7 @@ struct CartListView: View {
                                             .font(.system(size: 11))
                                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                                         
-                                        Text(vm.products[index].details.colorID.description)
+                                        Text("\(vm.products[index].product.attributes[index].color.nameUz)")
                                             .font(.system(size: 11))
                                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                                     }
@@ -103,7 +105,7 @@ struct CartListView: View {
                                 
                                 HStack(spacing: 0) {
                                     Button(action: {
-//                                        vm.decreaseCount(for: product)
+                                        vm.updateCart(discount: .minus)
                                     }) {
                                         Image(systemName: "minus")
                                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
@@ -118,7 +120,7 @@ struct CartListView: View {
                                         .padding(.horizontal, 8)
                                     
                                     Button(action: {
-                                        //vm.increaseCount(for: product)
+                                        vm.updateCart(discount: .plus)
                                     }) {
                                         Image(systemName: "plus")
                                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
