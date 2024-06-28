@@ -40,7 +40,8 @@ struct CartModel: Codable {
 
 // MARK: - Datum
 struct Cart: Codable {
-    let id, userID, productID, qty: Int
+    let id, userID, productID: Int
+    var qty: Int
     let details: CartDetails
     let type: Int
     let createdAt, updatedAt: String
@@ -87,7 +88,7 @@ struct ProductModel: Codable {
     let additions: [String?]
     let createdAt, updatedAt, name: String
     let desc: String?
-    let attributes: [Attribute]
+    let attributes: [CartAttribute]
     let mainImg: MainImgModel
     let media: String?
 
@@ -110,7 +111,7 @@ struct ProductModel: Codable {
 }
 
 // MARK: - Attribute
-struct Attribute: Codable {
+struct CartAttribute: Codable {
     let productID: Int
     let billzID: String
     let barcode, colorID: Int
@@ -118,7 +119,7 @@ struct Attribute: Codable {
     let photos: [String?]
     let qty: Int
     let createdAt, updatedAt: String
-    let color: Color
+    let color: CartColor
 
     enum CodingKeys: String, CodingKey {
         case productID = "productId"
@@ -133,7 +134,7 @@ struct Attribute: Codable {
 }
 
 // MARK: - Color
-struct Color: Codable {
+struct CartColor: Codable {
     let id: Int
     let billzID, nameUz, nameRu, nameEn: String
     let hex: String?

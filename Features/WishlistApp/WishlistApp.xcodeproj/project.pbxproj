@@ -196,6 +196,7 @@
 		529DA9332BB7B38300629C86 /* Wishlist */ = {
 			isa = PBXGroup;
 			children = (
+				8441CB212C22E454007C5D3A /* Model */,
 				5272BAD52BE932FB00EDD0F5 /* AdditionalViews */,
 				5272BAC62BE92BFD00EDD0F5 /* Extensions */,
 				5272BAC42BE92BE000EDD0F5 /* Views */,
@@ -203,6 +204,13 @@
 				529DA9352BB7B38300629C86 /* Wishlist.docc */,
 			);
 			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		8441CB212C22E454007C5D3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		845CD3EE2BD7FF660059BD4F /* CustomNavigation */ = {

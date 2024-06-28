@@ -7,15 +7,26 @@
 
 import Foundation
 
+struct CheckSuccessModel: Codable {
+    let message: String?
+}
+
 struct UpdateModel: Codable {
-    let id: Int
-    let productId: Int
-    let qty: Int
+    let id: Int?
+    let productId: Int?
+    let qty: Int?
     let details: Details?
+    
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decodeIfPresent(Int.self, forKey: .id)
+        self.productId = try container.decodeIfPresent(Int.self, forKey: .productId)
+        self.qty = try container.decodeIfPresent(Int.self, forKey: .qty)
+        self.details = try container.decodeIfPresent(Details.self, forKey: .details)
+    }
 }
 
 struct Details: Codable {
-    let hex: String?
+    let colorId: Int
     let size: String
-    let gender: String
 }
