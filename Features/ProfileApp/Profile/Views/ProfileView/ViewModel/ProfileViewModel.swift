@@ -40,6 +40,7 @@ public class ProfileViewModel: ObservableObject {
                 print("Failed to fetch profile:", error)
                 await MainActor.run { [weak self] in
                     self?.message = .error(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli kelmadi!")
+                    self?.isLoading = false
                 }
             }
         }

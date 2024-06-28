@@ -16,11 +16,8 @@
 		5240922A2BB7BC2100A75FC0 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524092292BB7BC2100A75FC0 /* CatalogView.swift */; };
 		5240922C2BB7BC8000A75FC0 /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5240922B2BB7BC8000A75FC0 /* CatalogViewModel.swift */; };
 		524940AB2C2A6C3B00642473 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3982BBDA0D500843673 /* AssetKit.framework */; };
-		524940AC2C2A6C3B00642473 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3982BBDA0D500843673 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		524940AE2C2A6C3C00642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20DB2BB7EB8C00457A3E /* Core.framework */; };
-		524940AF2C2A6C3C00642473 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20DB2BB7EB8C00457A3E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		524940B02C2A6C3E00642473 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20992BB7E95800457A3E /* NetworkManager.framework */; };
-		524940B12C2A6C3E00642473 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20992BB7E95800457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5272BADF2BE93A3100EDD0F5 /* CheckOutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BADE2BE93A3100EDD0F5 /* CheckOutDetailView.swift */; };
 		5272BAE12BE93A7A00EDD0F5 /* CheckOutDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BAE02BE93A7A00EDD0F5 /* CheckOutDetailVM.swift */; };
 /* End PBXBuildFile section */
@@ -34,22 +31,6 @@
 			remoteInfo = Catalog;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		524940AD2C2A6C3B00642473 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				524940B12C2A6C3E00642473 /* NetworkManager.framework in Embed Frameworks */,
-				524940AC2C2A6C3B00642473 /* AssetKit.framework in Embed Frameworks */,
-				524940AF2C2A6C3C00642473 /* Core.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		524091ED2BB7BBE700A75FC0 /* CatalogApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalogApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,7 +195,6 @@
 				524092182BB7BC1300A75FC0 /* Sources */,
 				524092192BB7BC1300A75FC0 /* Frameworks */,
 				5240921A2BB7BC1300A75FC0 /* Resources */,
-				524940AD2C2A6C3B00642473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

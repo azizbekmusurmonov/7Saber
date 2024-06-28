@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		524940932C2A6B9D00642473 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA568B0D2BD7CC3D00B87B59 /* AssetKit.framework */; };
-		524940942C2A6B9D00642473 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA568B0D2BD7CC3D00B87B59 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		526456092BEBCACD00A59849 /* ToastView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526456082BEBCACD00A59849 /* ToastView+Extension.swift */; };
 		5272BACF2BE92E0700EDD0F5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BACE2BE92E0700EDD0F5 /* Font.swift */; };
 		5272BAD42BE9310700EDD0F5 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BAD32BE9310700EDD0F5 /* Size.swift */; };
+		529F0B752C2C47900049819D /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F0B742C2C47900049819D /* CountryModel.swift */; };
 		52FAAF462BF268D300B5B1A4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAF452BF268D300B5B1A4 /* UserModel.swift */; };
 		7B1513B72BDCDB6D00A72A6C /* AnyDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1513B62BDCDB6D00A72A6C /* AnyDataStorage.swift */; };
 		7B65D9D32BF4F8680038DA06 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65D9D22BF4F8680038DA06 /* String.swift */; };
@@ -30,24 +30,11 @@
 		FAF795732BEAA14100467150 /* DynamicBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF795712BEAA14100467150 /* DynamicBottomSheet.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		524940952C2A6B9D00642473 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				524940942C2A6B9D00642473 /* AssetKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		526456082BEBCACD00A59849 /* ToastView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToastView+Extension.swift"; sourceTree = "<group>"; };
 		5272BACE2BE92E0700EDD0F5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5272BAD32BE9310700EDD0F5 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		529F0B742C2C47900049819D /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		52FAAF452BF268D300B5B1A4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		7B1513B62BDCDB6D00A72A6C /* AnyDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDataStorage.swift; sourceTree = "<group>"; };
 		7B65D9D22BF4F8680038DA06 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -87,6 +74,14 @@
 				526456082BEBCACD00A59849 /* ToastView+Extension.swift */,
 			);
 			path = "Toast+Ext";
+			sourceTree = "<group>";
+		};
+		529F0B732C2C47760049819D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				529F0B742C2C47900049819D /* CountryModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		52FAAF442BF268C400B5B1A4 /* Public Models */ = {
@@ -156,6 +151,7 @@
 		FA77A2352BBBA94E00843673 = {
 			isa = PBXGroup;
 			children = (
+				529F0B732C2C47760049819D /* Models */,
 				FA77A2412BBBA94E00843673 /* Core */,
 				FA77A2402BBBA94E00843673 /* Products */,
 				FA568B0C2BD7CC3D00B87B59 /* Frameworks */,
@@ -243,7 +239,6 @@
 				FA77A23B2BBBA94E00843673 /* Sources */,
 				FA77A23C2BBBA94E00843673 /* Frameworks */,
 				FA77A23D2BBBA94E00843673 /* Resources */,
-				524940952C2A6B9D00642473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +304,7 @@
 			files = (
 				FAEEE03F2C15DEFF00FD39D5 /* Imagepicker.swift in Sources */,
 				FA77A2442BBBA94E00843673 /* Core.docc in Sources */,
+				529F0B752C2C47900049819D /* CountryModel.swift in Sources */,
 				FAD86DD12C076ED200B45427 /* BaseText.swift in Sources */,
 				526456092BEBCACD00A59849 /* ToastView+Extension.swift in Sources */,
 				FA69E8142BC17118005113B2 /* BaseNavigationBar.swift in Sources */,

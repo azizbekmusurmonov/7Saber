@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		524940BC2C2A6C4D00642473 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A39E2BBDA0EC00843673 /* AssetKit.framework */; };
-		524940BD2C2A6C4D00642473 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A39E2BBDA0EC00843673 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		524940BF2C2A6C4F00642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20E42BB7EBAD00457A3E /* Core.framework */; };
-		524940C02C2A6C4F00642473 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20E42BB7EBAD00457A3E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		524940C12C2A6C5000642473 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20AD2BB7E97E00457A3E /* NetworkManager.framework */; };
-		524940C22C2A6C5000642473 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20AD2BB7E97E00457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5272BAC92BE92C2400EDD0F5 /* WishlistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BAC82BE92C2400EDD0F5 /* WishlistDetailView.swift */; };
 		5272BACB2BE92C7800EDD0F5 /* WishlistDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BACA2BE92C7800EDD0F5 /* WishlistDetailVM.swift */; };
 		5272BAD72BE9330E00EDD0F5 /* DetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BAD62BE9330E00EDD0F5 /* DetailInfoView.swift */; };
@@ -42,22 +39,6 @@
 			remoteInfo = Wishlist;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		524940BE2C2A6C4D00642473 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				524940C22C2A6C5000642473 /* NetworkManager.framework in Embed Frameworks */,
-				524940BD2C2A6C4D00642473 /* AssetKit.framework in Embed Frameworks */,
-				524940C02C2A6C4F00642473 /* Core.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5272BAC12BE929D200EDD0F5 /* Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,7 +254,6 @@
 				529DA92E2BB7B38300629C86 /* Sources */,
 				529DA92F2BB7B38300629C86 /* Frameworks */,
 				529DA9302BB7B38300629C86 /* Resources */,
-				524940BE2C2A6C4D00642473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
