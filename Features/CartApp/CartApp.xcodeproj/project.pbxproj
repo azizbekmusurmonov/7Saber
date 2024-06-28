@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521E788F2C2E7D2A00481766 /* CartMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E788E2C2E7D2A00481766 /* CartMockData.swift */; };
 		524091B52BB7BA4800A75FC0 /* CartAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524091B42BB7BA4800A75FC0 /* CartAppApp.swift */; };
 		524091B92BB7BA4900A75FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524091B82BB7BA4900A75FC0 /* Assets.xcassets */; };
 		524091BC2BB7BA4900A75FC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524091BB2BB7BA4900A75FC0 /* Preview Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		521E788E2C2E7D2A00481766 /* CartMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartMockData.swift; sourceTree = "<group>"; };
 		524091B12BB7BA4800A75FC0 /* CartApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524091B42BB7BA4800A75FC0 /* CartAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAppApp.swift; sourceTree = "<group>"; };
 		524091B82BB7BA4900A75FC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		521E788D2C2E7D1A00481766 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				521E788E2C2E7D2A00481766 /* CartMockData.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
 		524091A82BB7BA4800A75FC0 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		524091CE2BB7BA9100A75FC0 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				521E788D2C2E7D1A00481766 /* MockData */,
 				524091CF2BB7BA9100A75FC0 /* Cart.h */,
 				524091D02BB7BA9100A75FC0 /* Cart.docc */,
 				524091DB2BB7BAB300A75FC0 /* CartView.swift */,
@@ -285,6 +296,7 @@
 				7BEE35F42C1637630042A13A /* CartListView.swift in Sources */,
 				524091DC2BB7BAB300A75FC0 /* CartView.swift in Sources */,
 				524091D12BB7BA9100A75FC0 /* Cart.docc in Sources */,
+				521E788F2C2E7D2A00481766 /* CartMockData.swift in Sources */,
 				7B49D85B2C15B5B400F9036F /* NavigationBar.swift in Sources */,
 				7BC755A82C16DF3B00F24B31 /* CartIsEmpty.swift in Sources */,
 			);
