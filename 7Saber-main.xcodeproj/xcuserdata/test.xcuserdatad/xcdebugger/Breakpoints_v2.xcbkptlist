@@ -7,17 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "360666E7-7D60-4AF9-8BA7-36703EA9B0F8"
+            uuid = "247617C9-E080-4D3A-A58B-14BF792BE94D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Features/ProfileApp/Profile/Views/PersonalInfoView/ViewModel/UploadImage.swift"
+            filePath = "Features/RegistrationApp/Registration/RegisterView/RegisterMobillAppViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "uploadImage(image:fullName:gender:birthDate:email:toURL:)"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "getUser(by:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3E30FB4-6B76-4F57-9FF2-76AF7369FC8A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "7Saber-main/TabBarView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
