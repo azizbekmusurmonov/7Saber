@@ -26,7 +26,11 @@ public final class CartViewModel: ObservableObject {
     @Published var qty: Int = 0
     @Published var overallSum: String = ""
     @Published var totalPrice: Int = 0
+    @Published var searchText: String = ""
     @Published var message: ShowMessage? = nil
+    @Published var showSearchBar = false
+    
+    @Published var isCartEmpty: Bool = false
     
     public init() {
         getCart()
@@ -49,6 +53,7 @@ public final class CartViewModel: ObservableObject {
                     self?.message = .success(message: "CART muvaffaqiyatli keldi")
                     self?.products = model.data
                     self?.totalSum()
+                    self?.checkIfCartIsEmpty()
                 }
             } catch {
                 await MainActor.run { [weak self] in
@@ -58,13 +63,12 @@ public final class CartViewModel: ObservableObject {
         }
     }
     
-    func updateCart(discount: CardDiscount) {
-        
+    func updateCart(discount: CardDiscount, index: Int) {
         switch discount {
         case .minus:
-            minusQty()
+            minusQty(index: index)
         case .plus:
-            plusQty()
+            plusQty(index: index)
         }
         
         let urlString = "https://lab.7saber.uz/api/client/cart/update"
@@ -72,47 +76,46 @@ public final class CartViewModel: ObservableObject {
         Task.detached { [weak self] in
             guard let self = self else { return }
             
-            for product in self.products {
-                do {
-                    let requestBody: [String: Any] = [
-                        "id": product.id,
-                        "productId": product.productID,
-                        "qty": product.qty,
-                        "details": [
-                            "colorId": product.details.colorID,
-                            "size": product.details.size
-                        ]
+            do {
+                let product = self.products[index]
+                let requestBody: [String: Any] = [
+                    "id": product.id,
+                    "productId": product.productID,
+                    "qty": product.qty,
+                    "details": [
+                        "colorId": product.details.colorID,
+                        "size": product.details.size
                     ]
-                    
-                    let model = try await NetworkService.shared.request(
-                        url: urlString,
-                        decode: CheckSuccessModel.self,
-                        method: .post,
-                        body: requestBody
-                    )
-                    
-                    await MainActor.run { [weak self] in
-                        self?.message = .success(message: "Update successful")
-                        self?.totalSum()
-                    }
-                    
-                } catch {
-                    await MainActor.run { [weak self] in
-                        self?.message = .error(message: error.localizedDescription)
-                        switch discount {
-                        case .minus:
-                            self?.plusQty()
-                        case .plus:
-                            self?.minusQty()
-                        }
+                ]
+                
+                let model = try await NetworkService.shared.request(
+                    url: urlString,
+                    decode: CheckSuccessModel.self,
+                    method: .post,
+                    body: requestBody
+                )
+                
+                await MainActor.run { [weak self] in
+                    self?.message = .success(message: "Update successful")
+                    self?.totalSum()
+                }
+                
+            } catch {
+                await MainActor.run { [weak self] in
+                    self?.message = .error(message: error.localizedDescription)
+                    switch discount {
+                    case .minus:
+                        self?.plusQty(index: index)
+                    case .plus:
+                        self?.minusQty(index: index)
                     }
                 }
             }
         }
     }
     
-    func deleteCart() {
-        let urlString = "https://lab.7saber.uz/api/client/cart/destroy/1"
+    func deleteCart(productId: Int) {
+        let urlString = "https://lab.7saber.uz/api/client/cart/destroy/\(productId)"
         
         Task.detached { [weak self] in
             
@@ -126,6 +129,7 @@ public final class CartViewModel: ObservableObject {
                 await MainActor.run { [weak self] in
                     self?.message = .success(message: "CART muvaffaqiyatli ochirildi")
                     self?.getCart()
+                    self?.checkIfCartIsEmpty()
                 }
             } catch {
                 await MainActor.run { [weak self] in
@@ -135,27 +139,18 @@ public final class CartViewModel: ObservableObject {
         }
     }
 
-    func plusQty() {
-        
-        for index in 0..<products.count {
-            products[index].qty += 1
-            self.qty = products[index].qty
-        }
-        
+    func plusQty(index: Int) {
+        products[index].qty += 1
         totalSum()
     }
     
-    func minusQty() {
-        
-        for index in 0..<products.count {
-            if products[index].qty == 0 {
-                deleteCart()
-            } else {
-                products[index].qty -= 1
-                self.qty = products[index].qty
-            }
+    func minusQty(index: Int) {
+        if products[index].qty > 0 {
+            products[index].qty -= 1
         }
-        
+        if products[index].qty == 0 {
+            deleteCart(productId: products[index].id)
+        }
         totalSum()
     }
     
@@ -169,5 +164,9 @@ public final class CartViewModel: ObservableObject {
         }
 
         overallSum = "\(sum)"
+    }
+    
+    func checkIfCartIsEmpty() {
+        isCartEmpty = products.isEmpty
     }
 }

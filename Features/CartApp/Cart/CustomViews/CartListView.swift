@@ -57,7 +57,7 @@ struct CartListView: View {
                                         .font(.system(size: 13))
                                     Spacer()
                                     Button(action: {
-                                        // Remove product action
+                                        vm.deleteCart(productId: vm.products[index].id)
                                     }) {
                                         Text("REMOVE")
                                             .font(.system(size: 13))
@@ -105,7 +105,7 @@ struct CartListView: View {
                                 
                                 HStack(spacing: 0) {
                                     Button(action: {
-                                        vm.updateCart(discount: .minus)
+                                        vm.updateCart(discount: .minus, index: index)
                                     }) {
                                         Image(systemName: "minus")
                                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
@@ -120,7 +120,7 @@ struct CartListView: View {
                                         .padding(.horizontal, 8)
                                     
                                     Button(action: {
-                                        vm.updateCart(discount: .plus)
+                                        vm.updateCart(discount: .plus, index: index)
                                     }) {
                                         Image(systemName: "plus")
                                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)

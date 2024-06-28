@@ -7,20 +7,20 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - CartModel
 struct CartModel: Codable {
     let id = UUID().uuidString
-    let currentPage: Int
+    let currentPage: Int?
     let data: [Cart]
-    let firstPageURL: String
-    let from, lastPage: Int
-    let lastPageURL: String
-    let links: [CartLinkModel]
+    let firstPageURL: String?
+    let from, lastPage: Int?
+    let lastPageURL: String?
+    let links: [CartLinkModel]?
     let nextPageURL: String?
-    let path: String
-    let perPage: Int
+    let path: String?
+    let perPage: Int?
     let prevPageURL: String?
-    let to, total: Int
+    let to, total: Int?
 
     enum CodingKeys: String, CodingKey {
         case currentPage = "current_page"
@@ -38,7 +38,7 @@ struct CartModel: Codable {
     }
 }
 
-// MARK: - Datum
+// MARK: - Cart
 struct Cart: Codable {
     let id, userID, productID: Int
     var qty: Int
@@ -58,7 +58,7 @@ struct Cart: Codable {
     }
 }
 
-// MARK: - Details
+// MARK: - CartDetails
 struct CartDetails: Codable {
     let colorID: Int
     let size: String
@@ -69,7 +69,7 @@ struct CartDetails: Codable {
     }
 }
 
-// MARK: - Product
+// MARK: - ProductModel
 struct ProductModel: Codable {
     let id, catalogID, categoryID: Int
     let sportTypeID: Int?
@@ -110,7 +110,7 @@ struct ProductModel: Codable {
     }
 }
 
-// MARK: - Attribute
+// MARK: - CartAttribute
 struct CartAttribute: Codable {
     let productID: Int
     let billzID: String
@@ -133,7 +133,7 @@ struct CartAttribute: Codable {
     }
 }
 
-// MARK: - Color
+// MARK: - CartColor
 struct CartColor: Codable {
     let id: Int
     let billzID, nameUz, nameRu, nameEn: String
@@ -150,17 +150,16 @@ struct CartColor: Codable {
     }
 }
 
-// MARK: - MainImg
+// MARK: - MainImgModel
 struct MainImgModel: Codable {
     let id: Int
     let src: String
     let type: String
 }
 
-// MARK: - Link
+// MARK: - CartLinkModel
 struct CartLinkModel: Codable {
     let url: String?
     let label: String
     let active: Bool
 }
-
