@@ -21,7 +21,7 @@ enum CardDiscount {
 
 public final class CartViewModel: ObservableObject {
     
-    @Published var products: [Cart] = []
+    @Published var products: [Cart] = CartMockData.data
     
     @Published var qty: Int = 0
     @Published var overallSum: String = ""
@@ -33,7 +33,7 @@ public final class CartViewModel: ObservableObject {
     @Published var isCartEmpty: Bool = false
     
     public init() {
-        getCart()
+//        getCart()
     }
     
     func getCart() {

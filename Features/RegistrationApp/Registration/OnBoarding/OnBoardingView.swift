@@ -65,7 +65,6 @@ struct OnBoardingView: View {
             .fullScreenCover(isPresented: $showSecondView, content: {
                 SelectCountryView(didChoosedLanguage: { locale in
                     isShowRegistrView()
-                    DataStorage.storage.save(locale, for: .language)
                 })
             })
             .padding(.bottom)

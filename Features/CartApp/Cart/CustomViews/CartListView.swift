@@ -95,7 +95,7 @@ struct CartListView: View {
                                             .font(.system(size: 11))
                                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                                         
-                                        Text("\(vm.products[index].product.attributes[index].color.nameUz)")
+                                        Text("\(vm.products[index].product.name)")
                                             .font(.system(size: 11))
                                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                                     }
