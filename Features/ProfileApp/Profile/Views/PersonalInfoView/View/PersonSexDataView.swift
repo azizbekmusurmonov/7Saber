@@ -32,8 +32,6 @@ struct PersonSexDataView: View {
             HStack(spacing: .zero) {
                 VStack(alignment: .leading) {
                     TextField("Gender", text: .constant(vm.selectGender?.rawValue ?? ""))
-                    
-                    TextField("Gender", text: selectGen == nil ? .constant("") : .constant(selectGen?.rawValue ?? ""))
                         .textFieldStyle(PlainTextFieldStyle())
                         .disabled(true)
                 }
@@ -60,7 +58,6 @@ struct PersonSexDataView: View {
                             Button(action: {
                                 vm.selectGender = gender
                                 showOption.toggle() // Close the picker after selection
-                                vm.gender = country.rawValue
                             }) {
                                 Text(gender.rawValue)
                                     .foregroundColor(Color.black)
