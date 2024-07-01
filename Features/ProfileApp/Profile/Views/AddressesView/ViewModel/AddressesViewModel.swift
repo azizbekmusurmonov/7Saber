@@ -13,30 +13,31 @@ import Core
 public class AddressesViewModel: ObservableObject {
     
     public init() {
-        fetchAdresses()
+        fetchAddresses()
     }
     
     @Published var items: [Item]? = nil
     @Published var viewState: ViewState = .loading
     @Published var message: MessageShow? = nil
     
-    public func fetchAdresses() {
+    public func fetchAddresses() {
         viewState = .loading
-        Task.detached {
+        Task {
             do {
-                let adresses = try await NetworkService.shared.request(
-                    url: "https://lab.7saber.uz/api/client/address/show/1",
+                let addresses = try await NetworkService.shared.request(
+                    url: "https://lab.7saber.uz/api/client/address",
                     decode: AdressShowModel.self,
                     method: .get
                 )
-                let item = self.mapAddressToItem(address: adresses)
+                
+                let items = addresses.data.map { self.mapAddressToItem(address: $0) }
                 await MainActor.run { [weak self] in
-                    self?.items = [item]
-                    self?.viewState = self?.items?.isEmpty == true ? .empty : .show
+                    self?.items = items
+                    self?.viewState = items.isEmpty ? .empty : .show
                     self?.message = .succes(message: "Sizning manzilingiz muvaffaqqiyatli!")
                 }
             } catch {
-                print("Failed to fetch profile:", error)
+                print("Failed to fetch addresses:", error)
                 await MainActor.run { [weak self] in
                     self?.viewState = .show
                     self?.message = .error(message: "Sizning manzilingiz muvaffaqqiyatsiz")
@@ -45,7 +46,7 @@ public class AddressesViewModel: ObservableObject {
         }
     }
     
-    private func mapAddressToItem(address: AdressShowModel) -> Item {
+    private func mapAddressToItem(address: Datum) -> Item {
         return Item(
             title: address.name,
             location: "\(address.street) st. \(address.building), \(address.city), \(address.country.name)",
@@ -53,6 +54,7 @@ public class AddressesViewModel: ObservableObject {
         )
     }
 }
+
 
 public class AddressFormViewModel: ObservableObject {
     
@@ -105,7 +107,11 @@ public class AddressFormViewModel: ObservableObject {
             checkToValied()
         }
     }
-    @Published var zipcode: String = ""
+    @Published var zipcode: String = "" {
+        didSet {
+                checkToValied()
+        }
+    }
     @Published var phoneNumber: String = ""
     @Published var selectedCountry: CountryModel? = nil
     @Published public var isFormValid: Bool = false

@@ -19,8 +19,6 @@ struct PersonSexDataView: View {
     
     @State var header = "Sex"
     @State var showOption = false
-    @State private var selectGen: SelectGender? = nil
-    @State var selectedOption: String?
     
     @EnvironmentObject var vm: PersonalInfoViewModel
     
@@ -33,8 +31,7 @@ struct PersonSexDataView: View {
             
             HStack(spacing: .zero) {
                 VStack(alignment: .leading) {
-                    
-                    TextField("Gender", text: selectGen == nil ? .constant("") : .constant(selectGen!.rawValue))
+                    TextField("Gender", text: .constant(vm.selectGender?.rawValue ?? ""))
                         .textFieldStyle(PlainTextFieldStyle())
                         .disabled(true)
                 }
@@ -45,25 +42,24 @@ struct PersonSexDataView: View {
                     Image(uiImage: Asset.Image.Icons.chevronDown.image)
                         .resizable()
                         .frame(width: 10, height: 4.65)
-                        .padding(.leading)
                 }
+                .padding(.trailing, 10)
             }
             Divider()
         }
         .onTapGesture {
-            showOption.toggle()
+            showOption = true
         }
         .overlay(
             VStack(spacing: .zero) {
                 if showOption {
-                    
                     VStack {
-                        ForEach(SelectGender.allCases, id: \.self) { country in
+                        ForEach(SelectGender.allCases) { gender in
                             Button(action: {
-                                selectGen = country
+                                vm.selectGender = gender
                                 showOption.toggle() // Close the picker after selection
                             }) {
-                                Text(country.rawValue)
+                                Text(gender.rawValue)
                                     .foregroundColor(Color.black)
                             }
                             Divider()
@@ -75,7 +71,7 @@ struct PersonSexDataView: View {
                     .shadow(radius: 10)
                 }
             }
-                .frame(width: 100)
+            .frame(width: 100)
         )
     }
 }
