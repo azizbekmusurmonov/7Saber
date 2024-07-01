@@ -50,6 +50,7 @@ public class PersonalInfoViewModel: ObservableObject {
     }
     
     @Published var messageShow: MessageShow? = nil
+    @Published var selectGender: SelectGender? = nil
     
     public init() { }
     
