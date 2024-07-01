@@ -59,7 +59,6 @@ struct CodeViewAccountExists: View {
                 }
             }
         }
-        .hideKeyboardOnTap()
     }
 }
 

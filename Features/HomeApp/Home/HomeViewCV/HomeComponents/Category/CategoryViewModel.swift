@@ -6,33 +6,71 @@
 //
 
 
-import SwiftUI
+import Foundation
+
+// MARK: - CategoryElement
+struct CategoryElement: Codable, Identifiable {
+    let id: Int
+    let nameUz, nameRu, nameEn: String
+    let bg: Bg
+
+    enum CodingKeys: String, CodingKey {
+        case id, nameUz, nameRu, nameEn, bg
+    }
+}
+
+// MARK: - Bg
+struct Bg: Codable {
+    let src: String
+}
+
+typealias Categoryy = [CategoryElement]
 
 
-class CategoryController: ObservableObject {
-    @Published var categories: [Category] = []
-    
+
+import Foundation
+import Combine
+
+class CategoryViewModel: ObservableObject {
+    @Published var categories: [CategoryElement] = []
+    @Published var isLoading: Bool = false
+    @Published var error: Error?
+
+    private var cancellables = Set<AnyCancellable>()
+
+    init() {
+        fetchCategories()
+    }
+
     func fetchCategories() {
-    
-        let imageURLs = [
-            "https://images.uzum.uz/coaemo283ve66on3qop0/original.jpg",
-            "https://images.uzum.uz/cequsbgv1htd23akac7g/original.jpg",
-            "https://images.uzum.uz/ci6mfet40v9pplt421ng/original.jpg",
-            "https://images.uzum.uz/cj1p2kv5d7kom1tkqt80/original.jpg"
-        ]
-        
-        let productInfo = [
-            ("MAN", ""),
-            ("WOMAN", ""),
-            ("KIDS", ""),
-            ("ACCESSORIES", ""),
-        ]
-        
-        for index in 0..<imageURLs.count {
-            let category = Category(name: productInfo[index].0,
-                                    imageURL: URL(string: imageURLs[index])!,
-                                    price: productInfo[index].1)
-            categories.append(category)
+        isLoading = true
+        let urlString = "https://lab.7saber.uz/api/client/catalog?type=1"
+        guard let url = URL(string: urlString) else {
+            error = URLError(.badURL)
+            isLoading = false
+            return
         }
+
+        URLSession.shared.dataTaskPublisher(for: url)
+            .tryMap { data, response in
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    throw URLError(.badServerResponse)
+                }
+                return data
+            }
+            .decode(type: [CategoryElement].self, decoder: JSONDecoder())
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .finished:
+                    self?.isLoading = false
+                case .failure(let error):
+                    self?.error = error
+                    self?.isLoading = false
+                }
+            }, receiveValue: { [weak self] categories in
+                self?.categories = categories
+            })
+            .store(in: &cancellables)
     }
 }

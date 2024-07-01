@@ -8,6 +8,7 @@
 import SwiftUI
 //import Home
 import Core
+import AssetKit
 
 public struct RegisterMobillAppView: View {
     
@@ -27,6 +28,10 @@ public struct RegisterMobillAppView: View {
             OnBoardingView {
                 isShowRegistrView = true
                 DataStorage.storage.save(true, for: .isShowedOnBoarding)
+            }.onAppear {
+                if let _ = DataStorage.storage.get(from: .isShowedOnBoarding) {
+                    isShowRegistrView = true
+                }
             }
         } else {
             VStack {
@@ -39,11 +44,13 @@ public struct RegisterMobillAppView: View {
                         skipButtonAction: {
                             skipButtonTapped()
                             DataStorage.storage.save(true, for: .isRegistrate)
-                        }
+                        }, hasSkipButton: hasSkipButton
                     )
                     
-                    WelcomeView(welcome: "WELCOME", welcomeText: "Enter your phone number \nor email to continue")
+                    WelcomeView(welcome: Localizations.welcome, welcomeText: Localizations.enterYourPhoneNumberOrEmailToContinue)
                         .padding(.top, 150)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
                         .frame(width: UIScreen.main.bounds.width)
                     TextFieldNextButton(nextButtonPressed: {
                         if !vm.numberText.isEmpty {
@@ -62,11 +69,15 @@ public struct RegisterMobillAppView: View {
                                     .environmentObject(vm)
                                     .opacity(vm.userExists ? 1 : 0)
                             } else if vm.numberText.contains("+998") && vm.numberText.count == 13 {
-                                CodeViewAccountExists(skipButtonTapped: {})
+                                CodeViewAccountExists(skipButtonTapped: {
+                                    
+                                })
                                     .environmentObject(vm)
                                     .opacity(vm.userExists ? 1 : 0)
                             }
-                            CodeViewAccountNotExists(skipButtonTapped: {})
+                            CodeViewAccountNotExists(skipButtonTapped: {
+                                
+                            })
                                 .environmentObject(vm)
                                 .opacity(vm.userExists ? 0 : 1)
                         } else {

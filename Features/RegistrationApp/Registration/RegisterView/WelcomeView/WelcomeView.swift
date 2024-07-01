@@ -13,7 +13,7 @@ struct WelcomeView: View {
     let welcome: String
     let welcomeText: String
     
-    init(welcome: String = "WELCOME", welcomeText: String) { // Initialize the parameter
+    init(welcome: String = Localizations.welcome, welcomeText: String) { // Initialize the parameter
         self.welcomeText = welcomeText
         self.welcome = welcome
     }
@@ -31,7 +31,7 @@ struct WelcomeView: View {
                         .padding(.bottom, 12)
                     Text(welcomeText)
                         .font(.system(size: 16))
-                        .lineLimit(0)
+                        .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: true)
                     
                     Spacer()

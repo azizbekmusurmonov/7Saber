@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct CategoryView: View {
-    let categories: [Category]
-    
+    @ObservedObject var viewModel: CategoryViewModel
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("CATEGORIES")
@@ -19,18 +21,30 @@ struct CategoryView: View {
                 .padding(.top, 10)
                 .padding(.horizontal)
             
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 2) {
-                    ForEach(categories, id: \.name) { category in
-                        CategoryItemView(category: category)
+            if viewModel.isLoading {
+                ProgressView("Loading...")
+                    .padding(.top, 10)
+            } else if let error = viewModel.error {
+                Text("Error: \(error.localizedDescription)")
+                    .padding(.top, 10)
+            } else {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 2) {
+                        ForEach(viewModel.categories) { category in
+                            CategoryItemView(category: category)
+                        }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
             }
         }
         .padding(.vertical, 10)
+        .onAppear {
+            viewModel.fetchCategories()
+        }
     }
 }
+
 
 
 
@@ -62,13 +76,14 @@ struct Category: Equatable {
 
 
 
+import SwiftUI
 
 struct CategoryItemView: View {
-    let category: Category
+    let category: CategoryElement
     
     var body: some View {
         VStack(alignment: .leading) {
-            AsyncImage(url: category.imageURL) { image in
+            AsyncImage(url: URL(string: category.bg.src)) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -81,18 +96,12 @@ struct CategoryItemView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text(category.name)
+            Text(category.nameEn)
                 .font(.system(size: 25))
                 .fontWeight(.light)
                 .lineLimit(1)
                 .foregroundColor(.black)
                 .padding(.top, -30)
-            
-            Text(category.price)
-                .font(.system(size: 16))
-                .foregroundColor(.gray)
-                .padding(.top, -10)
         }
     }
 }
-

@@ -15,7 +15,7 @@ struct RegistrationAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RegisterMobillAppView(skipButtonTapped: { })
+            RegisterMobillAppView(skipButtonTapped: { }, hasSkipButton: true)
                 .environmentObject(vm)
         }
     }

@@ -18,7 +18,8 @@ public struct ProfileView: View {
     public var body: some View {
         
         if vm.isLoading {
-            LoaderView()
+            VStack{}
+//            LoaderView()
         } else {
             NavigationView {
                 VStack {
