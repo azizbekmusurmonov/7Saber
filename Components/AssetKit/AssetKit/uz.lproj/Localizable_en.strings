@@ -12,6 +12,9 @@
 "on" = "Qadamda";
 "every" = "His";
 "step" = "Eting";
+"quantity" = "Soni:";
+"personal_info" = "Shaxsiy ma'lumotlar:";
+"title_add_shipping" = "Yetqazib berish manzilini kiriting";
 
 "tough_times" = "Qiyin vaqtlar";
 "dont_last" = "Uzoqga bormaydi";

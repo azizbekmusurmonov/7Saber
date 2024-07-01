@@ -58,7 +58,6 @@
 		FABA5AD92BDBC38F00796390 /* PaymentMethodItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5AD82BDBC38F00796390 /* PaymentMethodItemView.swift */; };
 		FABA5ADB2BDBED2C00796390 /* ProfileConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5ADA2BDBED2C00796390 /* ProfileConstans.swift */; };
 		FABA5ADF2BDD82BA00796390 /* OrderHistorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA5ADE2BDD82BA00796390 /* OrderHistorySection.swift */; };
-		FABEE4442BC2A9E000E48054 /* ProfileBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEE4432BC2A9DF00E48054 /* ProfileBundle.swift */; };
 		FAC5D4602BE3ABDF003B61E5 /* DeleteAndLogOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5D45F2BE3ABDF003B61E5 /* DeleteAndLogOutButton.swift */; };
 		FAC5D4632BE3B158003B61E5 /* ProfileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5D4622BE3B158003B61E5 /* ProfileList.swift */; };
 		FAC5D4652BE3B205003B61E5 /* ProfileImageAndGmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC5D4642BE3B205003B61E5 /* ProfileImageAndGmail.swift */; };
@@ -164,7 +163,6 @@
 		FABA5AD82BDBC38F00796390 /* PaymentMethodItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodItemView.swift; sourceTree = "<group>"; };
 		FABA5ADA2BDBED2C00796390 /* ProfileConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConstans.swift; sourceTree = "<group>"; };
 		FABA5ADE2BDD82BA00796390 /* OrderHistorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistorySection.swift; sourceTree = "<group>"; };
-		FABEE4432BC2A9DF00E48054 /* ProfileBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBundle.swift; sourceTree = "<group>"; };
 		FAC5D45F2BE3ABDF003B61E5 /* DeleteAndLogOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAndLogOutButton.swift; sourceTree = "<group>"; };
 		FAC5D4622BE3B158003B61E5 /* ProfileList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileList.swift; sourceTree = "<group>"; };
 		FAC5D4642BE3B205003B61E5 /* ProfileImageAndGmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageAndGmail.swift; sourceTree = "<group>"; };
@@ -366,7 +364,6 @@
 		FAB4226D2BC8B29D002C7260 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
-				FABEE4412BC2A96E00E48054 /* Model */,
 				FABEE4422BC2A97F00E48054 /* ViewModel */,
 				FAD6A3712C0BD86B0026E317 /* View */,
 			);
@@ -499,14 +496,6 @@
 				FAB422792BC8B417002C7260 /* PrivacyPolicyView */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		FABEE4412BC2A96E00E48054 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FABEE4432BC2A9DF00E48054 /* ProfileBundle.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		FABEE4422BC2A97F00E48054 /* ViewModel */ = {
@@ -869,7 +858,6 @@
 				FAB422872BC8B7E5002C7260 /* PrivacyView.swift in Sources */,
 				FAD6F68C2BE8A29000A2685E /* OrderBottomSheetView.swift in Sources */,
 				FAEEE03A2C15C6B900FD39D5 /* PersonalInfoModel.swift in Sources */,
-				FABEE4442BC2A9E000E48054 /* ProfileBundle.swift in Sources */,
 				FAC5D4712BE4F5D7003B61E5 /* TextFieldView.swift in Sources */,
 				FABA5AD72BDBC1D500796390 /* PaymentMethodModel.swift in Sources */,
 				FAB4227F2BC8B78C002C7260 /* PaymentMethodView.swift in Sources */,

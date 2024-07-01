@@ -78,7 +78,8 @@
 "women" = "Women";
 "kids" = "Kids";
 "all" = "All";
-
+"quantity" = "Quantity:";
+"personal_info" = "Personal info:";
 "new_collection" = "New collection";
 "see_all" = "See all";
 
@@ -246,6 +247,7 @@
 "in_your_bag" = "In your bag";
 "personal_info" = "Personal info";
 "shipping_address" = "Shipping address";
+"title_add_shipping" = "Add shipping address";
 "add_shipping_address" = "Add shipping address to continue the checkout";
 "promocode" = "Promocode";
 "subtotal" = "Subtotal";

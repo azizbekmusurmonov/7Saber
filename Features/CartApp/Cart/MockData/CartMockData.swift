@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Core
 
 final class CartMockData {
     static let product = ProductModel(
@@ -38,4 +39,7 @@ final class CartMockData {
              qty: 0, details: .init(colorID: UUID().hashValue, size: "M"), type: 0,
              createdAt: "", updatedAt: "", product: CartMockData.product),
     ]
+    
+    static let productViewMock: Product = .init(imageURL: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRLFpHvcnLF_bSXXkh-qkvAZzQEKnDBaJv0LS1iYhWYupg3XNRtgV7MrxOlNfAphM1ikNVM0Bc4LPnmRKWBpfsc7zS-7-7S1TBifg_3VpA_&usqp=CAc", title: "T-shirt Basic", priceWithCurrency: "375 000 UZS", size: "L", color: "Blue", quantity: 4)
 }
+

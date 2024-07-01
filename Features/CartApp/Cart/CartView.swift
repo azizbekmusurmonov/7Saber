@@ -7,10 +7,15 @@
 
 import SwiftUI
 import AssetKit
+import Core
 
 public struct CartView: View {
     
+    @StateObject var checkoutViewModel = CheckoutMainViewModel()
     @EnvironmentObject var vm: CartViewModel
+    
+    @State private var showCheckout: Bool = false
+    @State private var showFullSheet: Bool = true
     
     public init() { }
     
@@ -22,11 +27,26 @@ public struct CartView: View {
                 CartIsEmpty()
                 Spacer()
             } else {
-                    CartListView()
+                CartListView()
                 
-                CheckOutView(action: {})
+                CheckOutView(action: {
+                    withAnimation(.spring(duration: 0.3, bounce: 0.3)) {
+                        showCheckout.toggle()
+                    }
+                })
             }
-            
+        }
+        .sheet(isPresented: $showCheckout) {
+            if #available(iOS 16.0, *) {
+                CheckoutMainView().environmentObject(checkoutViewModel)
+                    .presentationDetents([.height(600.dpHeight()), .large])
+            } else {
+                CheckoutMainView().environmentObject(checkoutViewModel)
+            }
         }
     }
+}
+
+#Preview {
+    CartView().environmentObject(CartViewModel())
 }

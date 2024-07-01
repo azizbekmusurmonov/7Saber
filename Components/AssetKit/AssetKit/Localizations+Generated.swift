@@ -313,6 +313,8 @@ public enum Localizations {
   public static let pushNotifications = Localizations.tr("Localizable_en", "push_notifications", fallback: "Push notifications")
   /// Put an
   public static let putAn = Localizations.tr("Localizable_en", "put_an", fallback: "Put an")
+  /// Quantity:
+  public static let quantity = Localizations.tr("Localizable_en", "quantity", fallback: "Quantity:")
   /// Re-type password
   public static let reTypePassword = Localizations.tr("Localizable_en", "re_type_password", fallback: "Re-type password")
   /// Remove
@@ -401,6 +403,8 @@ public enum Localizations {
   public static let thereIsNoCreditCard = Localizations.tr("Localizable_en", "there_is_no_credit_card", fallback: "There is no credit card")
   /// Time to win
   public static let timeToWin = Localizations.tr("Localizable_en", "time_to_win", fallback: "Time to win")
+  /// Add shipping address
+  public static let titleAddShipping = Localizations.tr("Localizable_en", "title_add_shipping", fallback: "Add shipping address")
   /// Total
   public static let total = Localizations.tr("Localizable_en", "total", fallback: "Total")
   /// Tough people

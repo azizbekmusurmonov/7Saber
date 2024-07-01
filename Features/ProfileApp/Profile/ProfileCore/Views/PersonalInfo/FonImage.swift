@@ -15,7 +15,6 @@ struct FonImage: View {
     @State var showImagePicker: Bool = false
     
     @EnvironmentObject var vm: PersonalInfoViewModel
-    @StateObject var profileData = PersonalInfoViewModel()
     
     var body: some View {
         VStack(spacing: .zero) {
