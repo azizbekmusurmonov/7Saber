@@ -63,11 +63,13 @@ public struct AddressData: Codable {
 }
 
 // MARK: - Country
-public struct CountryModel: Codable {
+public struct CountryModel: Codable, Identifiable {
     public let id: Int
+    public let parentID: Int?
     public let nameUz, nameRu, nameEn, code: String
+    public let queue: String?
+    public let createdAt, updatedAt: String?
     public let name: String
-//    public let children: [JSONAny]
 }
 
 // MARK: - Link

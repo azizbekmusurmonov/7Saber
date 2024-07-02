@@ -470,7 +470,11 @@ public enum Localizations {
 extension Localizations {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg..., fallback value: String) -> String {
     let format = BundleToken.bundle.localizedString(forKey: key, value: value, table: table)
-    return String(format: format, locale: Locale.current, arguments: args)
+      let code = UserDefaults.standard.string(forKey: "language") ?? "uz"
+      let bundle = Bundle.init(
+        path: BundleToken.bundle.path(forResource: code, ofType: "lproj") ?? ""
+      ) ?? BundleToken.bundle
+      return NSLocalizedString(key, tableName: table, bundle: bundle, value: value, comment: "")
   }
 }
 

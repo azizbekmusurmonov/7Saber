@@ -1,19 +1,19 @@
 //
 //  CountryModel.swift
-//  Profile
+//  Core
 //
-//  Created by Azizbek Musurmonov   on 17/06/24.
+//  Created by Ismatillokhon on 26/06/24.
 //
 
 import Foundation
 
-struct CountryModel: Codable {
-    let id: Int
-    let parentID: Int?
-    let nameUz, nameRu, nameEn, code: String
-    let queue: String?
-    let createdAt, updatedAt: String?
-    let name: String
+public struct CountryModel: Codable, Identifiable {
+    public let id: Int
+    public let parentID: Int?
+    public let nameUz, nameRu, nameEn, code: String
+    public let queue: String?
+    public let createdAt, updatedAt: String?
+    public let name: String
 //    let children: [String]
 
     enum CodingKeys: String, CodingKey {

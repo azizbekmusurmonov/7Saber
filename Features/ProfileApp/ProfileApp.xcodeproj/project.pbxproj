@@ -16,11 +16,8 @@
 		524092662BB7BE0300A75FC0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524092652BB7BE0300A75FC0 /* ProfileViewModel.swift */; };
 		524092682BB7BE5100A75FC0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524092672BB7BE5100A75FC0 /* ProfileView.swift */; };
 		524940A42C2A6C3500642473 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3A42BBDA10600843673 /* AssetKit.framework */; };
-		524940A52C2A6C3500642473 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3A42BBDA10600843673 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		524940A72C2A6C3600642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20D82BB7EB7D00457A3E /* Core.framework */; };
-		524940A82C2A6C3600642473 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20D82BB7EB7D00457A3E /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		524940A92C2A6C3800642473 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F209E2BB7E96000457A3E /* NetworkManager.framework */; };
-		524940AA2C2A6C3800642473 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F209E2BB7E96000457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA272EEB2BF21BD600952AEF /* AddNewAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA272EEA2BF21BD600952AEF /* AddNewAddress.swift */; };
 		FA272EED2BF2225B00952AEF /* AddressTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA272EEC2BF2225B00952AEF /* AddressTextfields.swift */; };
 		FA272EEF2BF236FA00952AEF /* SelectCountryTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA272EEE2BF236FA00952AEF /* SelectCountryTextfield.swift */; };
@@ -72,7 +69,6 @@
 		FAD6F68A2BE8A18C00A2685E /* CurrentSheetBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6F6892BE8A18C00A2685E /* CurrentSheetBottomView.swift */; };
 		FAD6F68C2BE8A29000A2685E /* OrderBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6F68B2BE8A29000A2685E /* OrderBottomSheetView.swift */; };
 		FAE11D422C19EEFD00207739 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE11D412C19EEFD00207739 /* UploadImage.swift */; };
-		FAE11D572C1FF48000207739 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE11D562C1FF47F00207739 /* CountryModel.swift */; };
 		FAEEE03A2C15C6B900FD39D5 /* PersonalInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEE0392C15C6B900FD39D5 /* PersonalInfoModel.swift */; };
 		FAF695932BEB1BAB00BD5CC1 /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF695922BEB1BAB00BD5CC1 /* PaymentCardView.swift */; };
 		FAF695962BEBABF700BD5CC1 /* OrderIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF695952BEBABF700BD5CC1 /* OrderIdView.swift */; };
@@ -96,22 +92,6 @@
 			remoteInfo = Profile;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		524940A62C2A6C3500642473 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				524940AA2C2A6C3800642473 /* NetworkManager.framework in Embed Frameworks */,
-				524940A52C2A6C3500642473 /* AssetKit.framework in Embed Frameworks */,
-				524940A82C2A6C3600642473 /* Core.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5240923B2BB7BDD200A75FC0 /* ProfileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,7 +157,6 @@
 		FAD6F6892BE8A18C00A2685E /* CurrentSheetBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSheetBottomView.swift; sourceTree = "<group>"; };
 		FAD6F68B2BE8A29000A2685E /* OrderBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBottomSheetView.swift; sourceTree = "<group>"; };
 		FAE11D412C19EEFD00207739 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
-		FAE11D562C1FF47F00207739 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		FAEEE0392C15C6B900FD39D5 /* PersonalInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoModel.swift; sourceTree = "<group>"; };
 		FAF695922BEB1BAB00BD5CC1 /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
 		FAF695952BEBABF700BD5CC1 /* OrderIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderIdView.swift; sourceTree = "<group>"; };
@@ -285,7 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				FA568B132BD951C900B87B59 /* AddressesModel.swift */,
-				FAE11D562C1FF47F00207739 /* CountryModel.swift */,
 				FA53395B2C2342DC0077974E /* AdressShowModel.swift */,
 			);
 			path = Model;
@@ -736,7 +714,6 @@
 				524092532BB7BDF600A75FC0 /* Sources */,
 				524092542BB7BDF600A75FC0 /* Frameworks */,
 				524092552BB7BDF600A75FC0 /* Resources */,
-				524940A62C2A6C3500642473 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -876,7 +853,6 @@
 				FAB4228B2BC8B802002C7260 /* CountryRegionView.swift in Sources */,
 				FAB4228D2BC8B80F002C7260 /* GeneralTermsView.swift in Sources */,
 				FAF695A92BEE3F6800BD5CC1 /* CardCvvView.swift in Sources */,
-				FAE11D572C1FF48000207739 /* CountryModel.swift in Sources */,
 				FABA5AD32BDBAEBA00796390 /* AddressItemView.swift in Sources */,
 				FABA5AD52BDBC0A200796390 /* PaymentMethodViewIsEmpty.swift in Sources */,
 				FAB422812BC8B79E002C7260 /* CurrentOrdersView.swift in Sources */,

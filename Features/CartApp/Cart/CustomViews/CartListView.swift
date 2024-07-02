@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AssetKit
+import Core
 
 struct CartListView: View {
     @EnvironmentObject var vm: CartViewModel
@@ -19,27 +20,14 @@ struct CartListView: View {
                         
                         HStack(alignment: .top, spacing: 0) {
                             ZStack(alignment: .topLeading) {
-                                AsyncImage(url: .init(string: vm.products[index].product.mainImg.src)) { phase in
-                                    switch phase {
-                                    case .empty:
-                                        ProgressView()
-                                            .frame(width: 124, height: 155)
-                                            .clipShape(Circle())
-                                            .padding()
-                                    case .success(let image):
-                                        image.resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .frame(width: 124, height: 155)
-                                            .padding()
-                                    case .failure:
-                                        Image(systemName: "person.circle.fill")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .frame(width: 124, height: 155)
-                                            .padding()
-                                    @unknown default:
-                                        EmptyView()
-                                    }
+                                
+                                AsyncImage(url: .init(string: vm.products[index].product.mainImg.src)) { image in
+                                    image
+                                        .resizable()
+                                        .frame(width: 124.dpWidth(), height: 155.dpHeight())
+                                } placeholder: {
+                                    ProgressView()
+                                        .frame(width: 124.dpWidth(), height: 155.dpHeight())
                                 }
                                 
                                 Text("\(vm.products[index].qty)")
