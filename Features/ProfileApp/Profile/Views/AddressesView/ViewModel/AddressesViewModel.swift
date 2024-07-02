@@ -26,12 +26,12 @@ public class AddressesViewModel: ObservableObject {
             do {
                 let adresses = try await NetworkService.shared.request(
                     url: "https://lab.7saber.uz/api/client/address/show/1",
-                    decode: AdressShowModel.self,
+                    decode: AddressModel.self,
                     method: .get
                 )
-                let item = self.mapAddressToItem(address: adresses)
+               // let item = self.mapAddressToItem(address: adresses)
                 await MainActor.run { [weak self] in
-                    self?.items = [item]
+                    self?.items = []
                     self?.viewState = self?.items?.isEmpty == true ? .empty : .show
                     self?.message = .succes(message: "Sizning manzilingiz muvaffaqqiyatli!")
                 }
@@ -48,7 +48,7 @@ public class AddressesViewModel: ObservableObject {
     private func mapAddressToItem(address: AdressShowModel) -> Item {
         return Item(
             title: address.name,
-            location: "\(address.street) st. \(address.building), \(address.city), \(address.country.name)",
+            location: "", // "\(address.) st. \(address.building), \(address.city), \(address.country.name)",
             seeOnMap: "SEE ON MAP"
         )
     }

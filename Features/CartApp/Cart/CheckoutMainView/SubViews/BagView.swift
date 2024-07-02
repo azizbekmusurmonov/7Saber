@@ -16,9 +16,13 @@ struct BagView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("In your bag (6 products)")
+                let text = Localizations.inYourBag + " " + "(\(vm.carts.count) \(Localizations.product))"
+                Text(text)
                     .font(.sabFont(500, size: 16))
                     .padding(16.dpHeight())
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
+                   
                 Spacer()
                 
                 Button(action: {
@@ -50,14 +54,9 @@ struct BagView: View {
     
     var productsView: some View {
         VStack{
-            
-            ForEach(0..<5) { _ in
-                VStack {
-                    ProductView(product: CartMockData.productViewMock)
-                        .measureContentSize()
-                }
+            ForEach(vm.carts) { product in
+                ProductView(product: product)
             }
-            
         }
     }
 }

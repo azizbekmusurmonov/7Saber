@@ -31,10 +31,11 @@
 		5281F6622C332D470011EA48 /* CheckoutPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F6612C332D470011EA48 /* CheckoutPriceView.swift */; };
 		5281F6642C332E270011EA48 /* CheckoutPromocodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F6632C332E270011EA48 /* CheckoutPromocodeView.swift */; };
 		5281F6662C3336E00011EA48 /* CheckoutConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F6652C3336E00011EA48 /* CheckoutConfirmButton.swift */; };
+		52AE89782C343A7900B46A88 /* CheckoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89772C343A7900B46A88 /* CheckoutRequest.swift */; };
+		52AE897C2C34540900B46A88 /* CheckotBalanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE897B2C34540900B46A88 /* CheckotBalanceModel.swift */; };
 		7B49D85B2C15B5B400F9036F /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49D8592C15B56300F9036F /* NavigationBar.swift */; };
 		7B49D85D2C15B91500F9036F /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49D85C2C15B91500F9036F /* CheckOutView.swift */; };
 		7B7319912C1841EC0057EAA0 /* UpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7319902C1841EC0057EAA0 /* UpdateModel.swift */; };
-		7B7319932C1848670057EAA0 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7319922C1848670057EAA0 /* CartModel.swift */; };
 		7BC755A82C16DF3B00F24B31 /* CartIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC755A72C16DF3B00F24B31 /* CartIsEmpty.swift */; };
 		7BEE35F42C1637630042A13A /* CartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEE35F32C1637630042A13A /* CartListView.swift */; };
 /* End PBXBuildFile section */
@@ -85,10 +86,11 @@
 		5281F6612C332D470011EA48 /* CheckoutPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPriceView.swift; sourceTree = "<group>"; };
 		5281F6632C332E270011EA48 /* CheckoutPromocodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPromocodeView.swift; sourceTree = "<group>"; };
 		5281F6652C3336E00011EA48 /* CheckoutConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutConfirmButton.swift; sourceTree = "<group>"; };
+		52AE89772C343A7900B46A88 /* CheckoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutRequest.swift; sourceTree = "<group>"; };
+		52AE897B2C34540900B46A88 /* CheckotBalanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckotBalanceModel.swift; sourceTree = "<group>"; };
 		7B49D8592C15B56300F9036F /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		7B49D85C2C15B91500F9036F /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
 		7B7319902C1841EC0057EAA0 /* UpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateModel.swift; sourceTree = "<group>"; };
-		7B7319922C1848670057EAA0 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		7BC755A72C16DF3B00F24B31 /* CartIsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartIsEmpty.swift; sourceTree = "<group>"; };
 		7BEE35F32C1637630042A13A /* CartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListView.swift; sourceTree = "<group>"; };
 		FA4F20A32BB7E97200457A3E /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,9 +131,11 @@
 		521E78912C2E813800481766 /* CheckoutMainView */ = {
 			isa = PBXGroup;
 			children = (
+				52AE89762C343A6700B46A88 /* Request */,
 				521E789D2C2ECB8400481766 /* SubViews */,
 				521E78942C2E815500481766 /* CheckoutMainView.swift */,
 				521E78962C2E815B00481766 /* CheckoutMainViewModel.swift */,
+				52AE897B2C34540900B46A88 /* CheckotBalanceModel.swift */,
 			);
 			path = CheckoutMainView;
 			sourceTree = "<group>";
@@ -203,6 +207,14 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
+		52AE89762C343A6700B46A88 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				52AE89772C343A7900B46A88 /* CheckoutRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		7B49D8582C15B55100F9036F /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				7B7319902C1841EC0057EAA0 /* UpdateModel.swift */,
-				7B7319922C1848670057EAA0 /* CartModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,7 +363,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B7319932C1848670057EAA0 /* CartModel.swift in Sources */,
 				5281F6642C332E270011EA48 /* CheckoutPromocodeView.swift in Sources */,
 				521E78A12C2F0F6800481766 /* BagView.swift in Sources */,
 				5281F6662C3336E00011EA48 /* CheckoutConfirmButton.swift in Sources */,
@@ -361,6 +371,7 @@
 				7B7319912C1841EC0057EAA0 /* UpdateModel.swift in Sources */,
 				524091DE2BB7BACF00A75FC0 /* CartViewModel.swift in Sources */,
 				7B49D85D2C15B91500F9036F /* CheckOutView.swift in Sources */,
+				52AE897C2C34540900B46A88 /* CheckotBalanceModel.swift in Sources */,
 				5281F6602C3326BF0011EA48 /* ShippingAddressView.swift in Sources */,
 				7BEE35F42C1637630042A13A /* CartListView.swift in Sources */,
 				524091DC2BB7BAB300A75FC0 /* CartView.swift in Sources */,
@@ -371,6 +382,7 @@
 				7B49D85B2C15B5B400F9036F /* NavigationBar.swift in Sources */,
 				7BC755A82C16DF3B00F24B31 /* CartIsEmpty.swift in Sources */,
 				5281F6622C332D470011EA48 /* CheckoutPriceView.swift in Sources */,
+				52AE89782C343A7900B46A88 /* CheckoutRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

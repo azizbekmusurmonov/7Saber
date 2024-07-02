@@ -55,9 +55,9 @@ final public class NetworkService {
             request.setValue(language, forHTTPHeaderField: "Accept-Language")
             print("Accept-Language", language,"\n")
         }
-        if let token = DataStorage.storage.get(from: .token) {
+        if let token = DataStorage.storage.get(from: .token) as? String {
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            print("Authorization", "Bearer", "TOKEN", token == nil ? "NO" : token,"\n")
+            print("Authorization", "Bearer", "TOKEN", token,"\n")
         }
         if !header.isEmpty {
             header.forEach { (key, value) in

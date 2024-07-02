@@ -18,6 +18,17 @@
 		5281F63B2C32E9850011EA48 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F63A2C32E9850011EA48 /* Int.swift */; };
 		5281F63D2C32E9D70011EA48 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F63C2C32E9D70011EA48 /* UIApplication.swift */; };
 		5281F65E2C3317790011EA48 /* ProfileBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F65D2C3317790011EA48 /* ProfileBundle.swift */; };
+		52AE897A2C343C9200B46A88 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89792C343C9200B46A88 /* CartModel.swift */; };
+		52AE897E2C34571C00B46A88 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE897D2C34571C00B46A88 /* AddressModel.swift */; };
+		52AE89812C34775200B46A88 /* MoneyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89802C34775200B46A88 /* MoneyFormatter.swift */; };
+		52AE89832C3478A900B46A88 /* SumFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89822C3478A900B46A88 /* SumFormatter.swift */; };
+		52AE898C2C3478D000B46A88 /* CaretPositioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89842C3478D000B46A88 /* CaretPositioner.swift */; };
+		52AE898E2C3478D000B46A88 /* TextFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89862C3478D000B46A88 /* TextFormatter.swift */; };
+		52AE898F2C3478D000B46A88 /* TextInputFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89872C3478D000B46A88 /* TextInputFormatter.swift */; };
+		52AE89902C3478D000B46A88 /* TextNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89882C3478D000B46A88 /* TextNumberFormatter.swift */; };
+		52AE89912C3478D000B46A88 /* TextNumberUnformatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89892C3478D000B46A88 /* TextNumberUnformatter.swift */; };
+		52AE89922C3478D000B46A88 /* TextUnformatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE898A2C3478D000B46A88 /* TextUnformatter.swift */; };
+		52AE89942C34794300B46A88 /* FormattedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89932C34794300B46A88 /* FormattedValue.swift */; };
 		52FAAF462BF268D300B5B1A4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAF452BF268D300B5B1A4 /* UserModel.swift */; };
 		7B1513B72BDCDB6D00A72A6C /* AnyDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1513B62BDCDB6D00A72A6C /* AnyDataStorage.swift */; };
 		7B65D9D32BF4F8680038DA06 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65D9D22BF4F8680038DA06 /* String.swift */; };
@@ -60,6 +71,17 @@
 		5281F63A2C32E9850011EA48 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		5281F63C2C32E9D70011EA48 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		5281F65D2C3317790011EA48 /* ProfileBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBundle.swift; sourceTree = "<group>"; };
+		52AE89792C343C9200B46A88 /* CartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		52AE897D2C34571C00B46A88 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		52AE89802C34775200B46A88 /* MoneyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyFormatter.swift; sourceTree = "<group>"; };
+		52AE89822C3478A900B46A88 /* SumFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumFormatter.swift; sourceTree = "<group>"; };
+		52AE89842C3478D000B46A88 /* CaretPositioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaretPositioner.swift; sourceTree = "<group>"; };
+		52AE89862C3478D000B46A88 /* TextFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFormatter.swift; sourceTree = "<group>"; };
+		52AE89872C3478D000B46A88 /* TextInputFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputFormatter.swift; sourceTree = "<group>"; };
+		52AE89882C3478D000B46A88 /* TextNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextNumberFormatter.swift; sourceTree = "<group>"; };
+		52AE89892C3478D000B46A88 /* TextNumberUnformatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextNumberUnformatter.swift; sourceTree = "<group>"; };
+		52AE898A2C3478D000B46A88 /* TextUnformatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextUnformatter.swift; sourceTree = "<group>"; };
+		52AE89932C34794300B46A88 /* FormattedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedValue.swift; sourceTree = "<group>"; };
 		52FAAF452BF268D300B5B1A4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		7B1513B62BDCDB6D00A72A6C /* AnyDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDataStorage.swift; sourceTree = "<group>"; };
 		7B65D9D22BF4F8680038DA06 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -117,12 +139,38 @@
 			path = ProductView;
 			sourceTree = "<group>";
 		};
+		52AE897F2C34774A00B46A88 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				52AE898B2C3478D000B46A88 /* TextFormatter */,
+				52AE89802C34775200B46A88 /* MoneyFormatter.swift */,
+				52AE89822C3478A900B46A88 /* SumFormatter.swift */,
+			);
+			path = Formatter;
+			sourceTree = "<group>";
+		};
+		52AE898B2C3478D000B46A88 /* TextFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				52AE89842C3478D000B46A88 /* CaretPositioner.swift */,
+				52AE89862C3478D000B46A88 /* TextFormatter.swift */,
+				52AE89872C3478D000B46A88 /* TextInputFormatter.swift */,
+				52AE89882C3478D000B46A88 /* TextNumberFormatter.swift */,
+				52AE89892C3478D000B46A88 /* TextNumberUnformatter.swift */,
+				52AE898A2C3478D000B46A88 /* TextUnformatter.swift */,
+				52AE89932C34794300B46A88 /* FormattedValue.swift */,
+			);
+			path = TextFormatter;
+			sourceTree = "<group>";
+		};
 		52FAAF442BF268C400B5B1A4 /* Public Models */ = {
 			isa = PBXGroup;
 			children = (
 				52FAAF452BF268D300B5B1A4 /* UserModel.swift */,
 				FA53395E2C2355C30077974E /* ViewState.swift */,
+				52AE89792C343C9200B46A88 /* CartModel.swift */,
 				5281F65D2C3317790011EA48 /* ProfileBundle.swift */,
+				52AE897D2C34571C00B46A88 /* AddressModel.swift */,
 			);
 			path = "Public Models";
 			sourceTree = "<group>";
@@ -204,6 +252,7 @@
 		FA77A2412BBBA94E00843673 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				52AE897F2C34774A00B46A88 /* Formatter */,
 				521E78982C2E853A00481766 /* Navigate */,
 				52FAAF442BF268C400B5B1A4 /* Public Models */,
 				526456072BEBCAC000A59849 /* Toast+Ext */,
@@ -345,7 +394,9 @@
 				FAEEE03F2C15DEFF00FD39D5 /* Imagepicker.swift in Sources */,
 				FA77A2442BBBA94E00843673 /* Core.docc in Sources */,
 				5281F63B2C32E9850011EA48 /* Int.swift in Sources */,
+				52AE897E2C34571C00B46A88 /* AddressModel.swift in Sources */,
 				FAD86DD12C076ED200B45427 /* BaseText.swift in Sources */,
+				52AE89832C3478A900B46A88 /* SumFormatter.swift in Sources */,
 				526456092BEBCACD00A59849 /* ToastView+Extension.swift in Sources */,
 				FA69E8142BC17118005113B2 /* BaseNavigationBar.swift in Sources */,
 				FAF795732BEAA14100467150 /* DynamicBottomSheet.swift in Sources */,
@@ -353,17 +404,26 @@
 				521E789A2C2E854800481766 /* Navigation+Extension.swift in Sources */,
 				FA77A2532BBBA97500843673 /* Color+Extensions.swift in Sources */,
 				FAD86DD02C076E9C00B45427 /* BottomSheetsNavBar.swift in Sources */,
+				52AE898E2C3478D000B46A88 /* TextFormatter.swift in Sources */,
 				52FAAF462BF268D300B5B1A4 /* UserModel.swift in Sources */,
 				5281F65E2C3317790011EA48 /* ProfileBundle.swift in Sources */,
 				7B1513B72BDCDB6D00A72A6C /* AnyDataStorage.swift in Sources */,
 				5281F63D2C32E9D70011EA48 /* UIApplication.swift in Sources */,
 				5272BAD42BE9310700EDD0F5 /* Size.swift in Sources */,
 				521E789C2C2EC76B00481766 /* BottomSheet.swift in Sources */,
+				52AE89912C3478D000B46A88 /* TextNumberUnformatter.swift in Sources */,
+				52AE89902C3478D000B46A88 /* TextNumberFormatter.swift in Sources */,
+				52AE89922C3478D000B46A88 /* TextUnformatter.swift in Sources */,
+				52AE898F2C3478D000B46A88 /* TextInputFormatter.swift in Sources */,
 				7B65D9D32BF4F8680038DA06 /* String.swift in Sources */,
 				FA53395A2C232B850077974E /* LoaderView.swift in Sources */,
 				FAEEE03D2C15DEF200FD39D5 /* ImagecolorView.swift in Sources */,
+				52AE897A2C343C9200B46A88 /* CartModel.swift in Sources */,
+				52AE89812C34775200B46A88 /* MoneyFormatter.swift in Sources */,
+				52AE89942C34794300B46A88 /* FormattedValue.swift in Sources */,
 				FA53395F2C2355C30077974E /* ViewState.swift in Sources */,
 				FAB4226C2BC6D8C2002C7260 /* ProfileTab.swift in Sources */,
+				52AE898C2C3478D000B46A88 /* CaretPositioner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,21 +8,25 @@
 import SwiftUI
 import AssetKit
 
-public struct Product: Codable {
+public struct Product: Identifiable {
+    public var id: Int
     public let imageURL: String
     public let title: String
     public let priceWithCurrency: String
     public let size: String
     public let color: String
     public let quantity: Int
+    public let discountDisplay: String?
     
-    public init(imageURL: String, title: String, priceWithCurrency: String, size: String, color: String, quantity: Int) {
+    public init(id: Int, imageURL: String, title: String, priceWithCurrency: String, size: String, color: String, quantity: Int, discountDisplay: String? = nil) {
+        self.id = id
         self.imageURL = imageURL
         self.title = title
         self.priceWithCurrency = priceWithCurrency
         self.size = size
         self.color = color
         self.quantity = quantity
+        self.discountDisplay = discountDisplay
     }
 }
 

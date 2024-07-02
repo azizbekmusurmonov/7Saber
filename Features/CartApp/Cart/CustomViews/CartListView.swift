@@ -65,16 +65,14 @@ struct CartListView: View {
                                     }
                                 }
                                 HStack(spacing: 0) {
-                                    Text(vm.products[index].product.price["uzs"]??.description ?? "")
+                                    Text(vm.products[index].product.price.display)
                                         .font(.system(size: 14))
                                     
-                                    if !vm.products[index].product.discount.isEmpty {
-                                        Text("1000000 UZS")
-                                            .strikethrough(true, color: Asset.Color.Text.secondaryCol.swiftUIColor)
-                                            .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
-                                            .font(.system(size: 11))
-                                            .padding(.leading, 10)
-                                    }
+                                    Text(vm.products[index].product.discount.display)
+                                        .strikethrough(true, color: Asset.Color.Text.secondaryCol.swiftUIColor)
+                                        .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                                        .font(.system(size: 11))
+                                        .padding(.leading, 10)
                                     Spacer()
                                 }
                                 .padding(.top, 4)
@@ -85,7 +83,7 @@ struct CartListView: View {
                                             .font(.system(size: 11))
                                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                                         
-                                        Text(vm.products[index].details.size)
+                                        Text(vm.products[index].product.attribute.size)
                                             .font(.system(size: 11))
                                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                                     }

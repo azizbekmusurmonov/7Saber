@@ -12,33 +12,43 @@ import Core
 
 final class CheckoutMainViewModel: ObservableObject {
     
+    @Published var isLoading: Bool = true
     @Published var showBagView: Bool = false
     @Published var userName: String = ""
     @Published var message: ShowMessage? = nil
     @Published var promocode: String = "74FE79G45"
     @Published var paymentButtonIsEnable: Bool = false
     
+    @Published var carts: [Product] = []
+    @Published var addressess: [AddressData] = []
+    @Published var totalBalance: TotalBalanceModel? = nil
+    
     init() {
-        fetchProfile()
+        fetchAllData()
     }
     
-    
-    public func fetchProfile() {
+    public func fetchAllData() {
+        
         Task.detached {
             do {
-                let profile = try await NetworkService.shared.request(
-                    url: "https://lab.7saber.uz/api/client/user/show/1",
-                    decode: ProfileBundle.self,
-                    method: .get
-                )
+                async let userData = CheckoutRequest.getUser()
+                async let cartData = CheckoutRequest.getCart()
+                async let address = CheckoutRequest.getAddress()
+                async let totalBalances = CheckoutRequest.getTotalBalance(addressId: nil, promocodeId: nil)
+                
+                let (user, carts, addresses, totalBalance) = try await (userData, cartData, address, totalBalances)
                 await MainActor.run { [weak self] in
-                    self?.userName = profile.role.name
+                    self?.userName = user.role.name
+                    self?.carts = carts.map { $0.getProduct }
+                    self?.addressess = addresses.data
+                    self?.totalBalance = totalBalance
+                    self?.isLoading = false
                 }
                 
             } catch {
                 self.message = .error(message: error.localizedDescription)
+                self.isLoading = false
             }
         }
     }
-    
 }

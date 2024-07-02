@@ -18,46 +18,50 @@ public struct CheckoutMainView: View {
     public init() { }
     
     public var body: some View {
-        VStack(spacing: .zero) {
+        if vm.isLoading {
+            ProgressView()
+        } else {
             VStack(spacing: .zero) {
-                CheckoutNavBar {
-                    dismiss()
-                }
-                
-                ScrollView {
-                    VStack(spacing: 2) {
-                        BagView()
-                            .environmentObject(vm)
-                        
-                        CheckoutPersonalInfoView()
-                            .environmentObject(vm)
-                        
-                        ShippingAddressView()
-                            .environmentObject(vm)
-                        
-                        CheckoutPromocodeView()
-                            .environmentObject(vm)
-                        
-                       
-                    }.padding(.horizontal, 20.dpWidth())
+                VStack(spacing: .zero) {
+                    CheckoutNavBar {
+                        dismiss()
+                    }
+                    
+                    ScrollView {
+                        VStack(spacing: 2) {
+                            BagView()
+                                .environmentObject(vm)
+                            
+                            CheckoutPersonalInfoView()
+                                .environmentObject(vm)
+                            
+                            ShippingAddressView()
+                                .environmentObject(vm)
+                            
+                            CheckoutPromocodeView()
+                                .environmentObject(vm)
+                            
+                        }
+                        .padding(.horizontal, 20.dpWidth())
                         .padding(.vertical, 10.dpHeight())
                         .background(Asset.Color.Button.grayCol.swiftUIColor)
-                    VStack(spacing: 0) {
-                        CheckoutPriceView()
-                            .environmentObject(vm)
                         
-                        CheckoutConfirmButton()
-                            .environmentObject(vm)
-                        Spacer()
-                    }.background(Color.white)
+                        VStack(spacing: 0) {
+                            CheckoutPriceView()
+                                .environmentObject(vm)
+                            
+                            CheckoutConfirmButton()
+                                .environmentObject(vm)
+                            Spacer()
+                            
+                        }.background(Color.white)
+                    }
                 }
             }
-        }
-        
-        
-        .onDisappear {
-            withAnimation(.spring(duration: 0.3, bounce: 0.3)) {
-                vm.showBagView = false
+            .onDisappear {
+                withAnimation(.spring(duration: 0.3, bounce: 0.3)) {
+                    vm.showBagView = false
+                }
             }
         }
     }
