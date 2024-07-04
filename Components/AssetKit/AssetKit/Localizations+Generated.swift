@@ -28,6 +28,8 @@ public enum Localizations {
   public static let addPaymentMethod = Localizations.tr("Localizable_en", "add_payment_method", fallback: "Add payment method")
   /// Add pick-up address
   public static let addPickUpAddress = Localizations.tr("Localizable_en", "add_pick_up_address", fallback: "Add pick-up address")
+  /// Add promocode here
+  public static let addPromocodeHere = Localizations.tr("Localizable_en", "add_promocode_here", fallback: "Add promocode here")
   /// Add shipping address to continue the checkout
   public static let addShippingAddress = Localizations.tr("Localizable_en", "add_shipping_address", fallback: "Add shipping address to continue the checkout")
   /// Add to card
@@ -313,6 +315,8 @@ public enum Localizations {
   public static let pushNotifications = Localizations.tr("Localizable_en", "push_notifications", fallback: "Push notifications")
   /// Put an
   public static let putAn = Localizations.tr("Localizable_en", "put_an", fallback: "Put an")
+  /// Quantity:
+  public static let quantity = Localizations.tr("Localizable_en", "quantity", fallback: "Quantity:")
   /// Re-type password
   public static let reTypePassword = Localizations.tr("Localizable_en", "re_type_password", fallback: "Re-type password")
   /// Remove
@@ -401,6 +405,8 @@ public enum Localizations {
   public static let thereIsNoCreditCard = Localizations.tr("Localizable_en", "there_is_no_credit_card", fallback: "There is no credit card")
   /// Time to win
   public static let timeToWin = Localizations.tr("Localizable_en", "time_to_win", fallback: "Time to win")
+  /// Add shipping address
+  public static let titleAddShipping = Localizations.tr("Localizable_en", "title_add_shipping", fallback: "Add shipping address")
   /// Total
   public static let total = Localizations.tr("Localizable_en", "total", fallback: "Total")
   /// Tough people
@@ -466,11 +472,7 @@ public enum Localizations {
 extension Localizations {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg..., fallback value: String) -> String {
     let format = BundleToken.bundle.localizedString(forKey: key, value: value, table: table)
-      let code = UserDefaults.standard.string(forKey: "language") ?? "uz"
-      let bundle = Bundle.init(
-        path: BundleToken.bundle.path(forResource: code, ofType: "lproj") ?? ""
-      ) ?? BundleToken.bundle
-      return NSLocalizedString(key, tableName: table, bundle: bundle, value: value, comment: "")
+    return String(format: format, locale: Locale.current, arguments: args)
   }
 }
 

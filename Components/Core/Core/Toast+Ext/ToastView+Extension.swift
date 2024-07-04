@@ -15,6 +15,11 @@ public enum SwiftMessagesTheme {
     case error
 }
 
+public enum ToastMessage: Equatable {
+    case success(message: String)
+    case error(message: String)
+}
+
 @MainActor
 public enum Snackbar {
     public static func show(message: String, theme: SwiftMessagesTheme) {

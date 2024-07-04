@@ -36,7 +36,6 @@ struct PersonalInfoView: View {
                     }
                 }
             }
-            .padding()
         }
         .navigationBarBackButtonHidden()
     }

@@ -13,9 +13,9 @@
 		52412E6F2C084ABD0052F87E /* WalkScreen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E692C084ABD0052F87E /* WalkScreen1.swift */; };
 		52412E702C084ABD0052F87E /* SelectCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E6A2C084ABD0052F87E /* SelectCountryView.swift */; };
 		52412E712C084ABD0052F87E /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52412E6B2C084ABD0052F87E /* OnBoardingView.swift */; };
-		5249409D2C2A6C2E00642473 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A38B2BBD9AB500843673 /* AssetKit.framework */; };
-		524940A02C2A6C2F00642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A42BBBAA0D00843673 /* Core.framework */; };
-		524940A22C2A6C3100642473 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A82BBBAA1200843673 /* NetworkManager.framework */; };
+		52AE89DF2C348D9F00B46A88 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A38B2BBD9AB500843673 /* AssetKit.framework */; };
+		52AE89E22C348DA000B46A88 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A42BBBAA0D00843673 /* Core.framework */; };
+		52AE89E42C348DA100B46A88 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2A82BBBAA1200843673 /* NetworkManager.framework */; };
 		52FAAF482BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAF472BF26A8C00B5B1A4 /* SuccessRegistratedModel.swift */; };
 		7B03A65C2C052DCC0066D850 /* ExtentionToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03A65B2C052DCC0066D850 /* ExtentionToView.swift */; };
 		7B0C2A262BD414A400284C1C /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0C2A252BD414A400284C1C /* AssetKit.framework */; };
@@ -119,9 +119,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				524940A22C2A6C3100642473 /* NetworkManager.framework in Frameworks */,
-				5249409D2C2A6C2E00642473 /* AssetKit.framework in Frameworks */,
-				524940A02C2A6C2F00642473 /* Core.framework in Frameworks */,
+				52AE89E42C348DA100B46A88 /* NetworkManager.framework in Frameworks */,
+				52AE89E22C348DA000B46A88 /* Core.framework in Frameworks */,
+				52AE89DF2C348D9F00B46A88 /* AssetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

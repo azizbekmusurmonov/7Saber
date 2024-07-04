@@ -58,7 +58,7 @@ struct PersonalInfoList: View {
                 }
             }
             .onTapGesture {
-                showPicker = true
+                showPicker.toggle()
             }
             
             Divider()

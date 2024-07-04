@@ -43,7 +43,7 @@ public class NewCollectionViewModel: ObservableObject {
     @Published var isLoading = false
     
     public init() {
-        startFetchingData()
+//        startFetchingData()
     }
     
     public func startFetchingData() {
