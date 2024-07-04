@@ -56,7 +56,7 @@ struct CartListView: View {
                                     Text(vm.products[index].product.price.display)
                                         .font(.system(size: 14))
                                     
-                                    Text(vm.products[index].product.discount.display)
+                                    Text(vm.products[index].product.discount?.display ?? "")
                                         .strikethrough(true, color: Asset.Color.Text.secondaryCol.swiftUIColor)
                                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                                         .font(.system(size: 11))

@@ -11,10 +11,12 @@ import AssetKit
 
 struct CheckoutNavBar: View {
     // pop
+    let title: String
     let closeAction: () -> ()
+    
     var body: some View {
         HStack {
-            Text("Checkout")
+            Text(title)
                 .font(.sabFont(600, size: 19))
                 .fontWeight(.bold)
                 .padding(.leading, 16)
@@ -39,7 +41,7 @@ struct CheckoutNavBar: View {
 
 struct NavBar_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutNavBar {}
+        CheckoutNavBar(title: "Chekckout") {}
             .previewLayout(.sizeThatFits)
     }
 }

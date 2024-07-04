@@ -101,7 +101,7 @@ public class ShoesViewModel: ObservableObject {
     @Published var isLoading = false
     
     public init() {
-        startFetchingData()
+//        startFetchingData()
     }
     
  

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		521E789A2C2E854800481766 /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E78992C2E854800481766 /* Navigation+Extension.swift */; };
 		521E789C2C2EC76B00481766 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E789B2C2EC76B00481766 /* BottomSheet.swift */; };
+		52378FEF2C35922F00FEF06E /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52378FEE2C35922F00FEF06E /* ConfirmButton.swift */; };
+		52378FF12C35955000FEF06E /* TextFieldMaxLenth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52378FF02C35955000FEF06E /* TextFieldMaxLenth.swift */; };
 		524940932C2A6B9D00642473 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA568B0D2BD7CC3D00B87B59 /* AssetKit.framework */; };
 		526456092BEBCACD00A59849 /* ToastView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526456082BEBCACD00A59849 /* ToastView+Extension.swift */; };
 		5272BACF2BE92E0700EDD0F5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BACE2BE92E0700EDD0F5 /* Font.swift */; };
@@ -17,6 +19,8 @@
 		5281F63B2C32E9850011EA48 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F63A2C32E9850011EA48 /* Int.swift */; };
 		5281F63D2C32E9D70011EA48 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F63C2C32E9D70011EA48 /* UIApplication.swift */; };
 		5281F65E2C3317790011EA48 /* ProfileBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F65D2C3317790011EA48 /* ProfileBundle.swift */; };
+		529C21D12C34967600C9256F /* ApiPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C21D02C34967600C9256F /* ApiPrice.swift */; };
+		529C21D32C34982E00C9256F /* ApiPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C21D22C34982E00C9256F /* ApiPhotos.swift */; };
 		52AE897A2C343C9200B46A88 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89792C343C9200B46A88 /* CartModel.swift */; };
 		52AE897E2C34571C00B46A88 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE897D2C34571C00B46A88 /* AddressModel.swift */; };
 		52AE89812C34775200B46A88 /* MoneyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89802C34775200B46A88 /* MoneyFormatter.swift */; };
@@ -50,6 +54,8 @@
 /* Begin PBXFileReference section */
 		521E78992C2E854800481766 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
 		521E789B2C2EC76B00481766 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		52378FEE2C35922F00FEF06E /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
+		52378FF02C35955000FEF06E /* TextFieldMaxLenth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldMaxLenth.swift; sourceTree = "<group>"; };
 		526456082BEBCACD00A59849 /* ToastView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToastView+Extension.swift"; sourceTree = "<group>"; };
 		5272BACE2BE92E0700EDD0F5 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5272BAD32BE9310700EDD0F5 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
@@ -57,6 +63,8 @@
 		5281F63A2C32E9850011EA48 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		5281F63C2C32E9D70011EA48 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		5281F65D2C3317790011EA48 /* ProfileBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBundle.swift; sourceTree = "<group>"; };
+		529C21D02C34967600C9256F /* ApiPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPrice.swift; sourceTree = "<group>"; };
+		529C21D22C34982E00C9256F /* ApiPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPhotos.swift; sourceTree = "<group>"; };
 		52AE89792C343C9200B46A88 /* CartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		52AE897D2C34571C00B46A88 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		52AE89802C34775200B46A88 /* MoneyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyFormatter.swift; sourceTree = "<group>"; };
@@ -132,6 +140,7 @@
 				52AE898B2C3478D000B46A88 /* TextFormatter */,
 				52AE89802C34775200B46A88 /* MoneyFormatter.swift */,
 				52AE89822C3478A900B46A88 /* SumFormatter.swift */,
+				52378FF02C35955000FEF06E /* TextFieldMaxLenth.swift */,
 			);
 			path = Formatter;
 			sourceTree = "<group>";
@@ -159,6 +168,8 @@
 				52AE89792C343C9200B46A88 /* CartModel.swift */,
 				5281F65D2C3317790011EA48 /* ProfileBundle.swift */,
 				52AE897D2C34571C00B46A88 /* AddressModel.swift */,
+				529C21D02C34967600C9256F /* ApiPrice.swift */,
+				529C21D22C34982E00C9256F /* ApiPhotos.swift */,
 			);
 			path = "Public Models";
 			sourceTree = "<group>";
@@ -205,6 +216,7 @@
 				FAF795722BEAA14100467150 /* BottomSheet */,
 				FAF7956F2BEAA13300467150 /* Text */,
 				FA69E8122BC170EE005113B2 /* Navigationbars */,
+				52378FEE2C35922F00FEF06E /* ConfirmButton.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -379,6 +391,7 @@
 			files = (
 				5281F6392C32DF3F0011EA48 /* ProductView.swift in Sources */,
 				FAEEE03F2C15DEFF00FD39D5 /* Imagepicker.swift in Sources */,
+				529C21D12C34967600C9256F /* ApiPrice.swift in Sources */,
 				FA77A2442BBBA94E00843673 /* Core.docc in Sources */,
 				5281F63B2C32E9850011EA48 /* Int.swift in Sources */,
 				52AE897E2C34571C00B46A88 /* AddressModel.swift in Sources */,
@@ -388,6 +401,7 @@
 				FA69E8142BC17118005113B2 /* BaseNavigationBar.swift in Sources */,
 				FAF795732BEAA14100467150 /* DynamicBottomSheet.swift in Sources */,
 				5272BACF2BE92E0700EDD0F5 /* Font.swift in Sources */,
+				52378FEF2C35922F00FEF06E /* ConfirmButton.swift in Sources */,
 				521E789A2C2E854800481766 /* Navigation+Extension.swift in Sources */,
 				FA77A2532BBBA97500843673 /* Color+Extensions.swift in Sources */,
 				FAD86DD02C076E9C00B45427 /* BottomSheetsNavBar.swift in Sources */,
@@ -402,6 +416,7 @@
 				52AE89912C3478D000B46A88 /* TextNumberUnformatter.swift in Sources */,
 				52AE89902C3478D000B46A88 /* TextNumberFormatter.swift in Sources */,
 				52AE89922C3478D000B46A88 /* TextUnformatter.swift in Sources */,
+				52378FF12C35955000FEF06E /* TextFieldMaxLenth.swift in Sources */,
 				52AE898F2C3478D000B46A88 /* TextInputFormatter.swift in Sources */,
 				7B65D9D32BF4F8680038DA06 /* String.swift in Sources */,
 				FA53395A2C232B850077974E /* LoaderView.swift in Sources */,
@@ -410,6 +425,7 @@
 				52AE89812C34775200B46A88 /* MoneyFormatter.swift in Sources */,
 				52AE89942C34794300B46A88 /* FormattedValue.swift in Sources */,
 				FA53395F2C2355C30077974E /* ViewState.swift in Sources */,
+				529C21D32C34982E00C9256F /* ApiPhotos.swift in Sources */,
 				FAB4226C2BC6D8C2002C7260 /* ProfileTab.swift in Sources */,
 				52AE898C2C3478D000B46A88 /* CaretPositioner.swift in Sources */,
 			);

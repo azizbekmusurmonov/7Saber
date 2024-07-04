@@ -28,6 +28,8 @@ public enum Localizations {
   public static let addPaymentMethod = Localizations.tr("Localizable_en", "add_payment_method", fallback: "Add payment method")
   /// Add pick-up address
   public static let addPickUpAddress = Localizations.tr("Localizable_en", "add_pick_up_address", fallback: "Add pick-up address")
+  /// Add promocode here
+  public static let addPromocodeHere = Localizations.tr("Localizable_en", "add_promocode_here", fallback: "Add promocode here")
   /// Add shipping address to continue the checkout
   public static let addShippingAddress = Localizations.tr("Localizable_en", "add_shipping_address", fallback: "Add shipping address to continue the checkout")
   /// Add to card
@@ -470,11 +472,7 @@ public enum Localizations {
 extension Localizations {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg..., fallback value: String) -> String {
     let format = BundleToken.bundle.localizedString(forKey: key, value: value, table: table)
-      let code = UserDefaults.standard.string(forKey: "language") ?? "uz"
-      let bundle = Bundle.init(
-        path: BundleToken.bundle.path(forResource: code, ofType: "lproj") ?? ""
-      ) ?? BundleToken.bundle
-      return NSLocalizedString(key, tableName: table, bundle: bundle, value: value, comment: "")
+    return String(format: format, locale: Locale.current, arguments: args)
   }
 }
 

@@ -38,10 +38,22 @@ public struct ProductModel: Codable {
     public let name: String
     public let price: PriceModel
     public let gender: String
-    public let discount: DiscountModel
+    public let discount: DiscountModel?
     public let mainImg: MainImgModel
     public let media: String?
     public let attribute: AttributeModel
+    
+   public  init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.price = try container.decode(PriceModel.self, forKey: .price)
+        self.gender = try container.decode(String.self, forKey: .gender)
+        self.discount = try container.decodeIfPresent(DiscountModel.self, forKey: .discount)
+        self.mainImg = try container.decode(MainImgModel.self, forKey: .mainImg)
+        self.media = try container.decodeIfPresent(String.self, forKey: .media)
+        self.attribute = try container.decode(AttributeModel.self, forKey: .attribute)
+    }
 
     public enum CodingKeys: String, CodingKey {
         case id, name, price, gender, discount

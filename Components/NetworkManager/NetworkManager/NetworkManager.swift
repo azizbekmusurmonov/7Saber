@@ -100,7 +100,7 @@ final public class NetworkService {
             return decodedObject
         } catch {
             print(string)
-            print("🛑🛑🛑🛑🛑🛑🛑 DECODE ERROR", error)
+            print("in model, ", T.self, "🛑🛑🛑🛑🛑🛑🛑 DECODE ERROR", error)
             throw error
         }
     }

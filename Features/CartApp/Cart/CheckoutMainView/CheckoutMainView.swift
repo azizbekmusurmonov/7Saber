@@ -18,52 +18,80 @@ public struct CheckoutMainView: View {
     public init() { }
     
     public var body: some View {
-        if vm.isLoading {
-            ProgressView()
-        } else {
-            VStack(spacing: .zero) {
+        VStack {
+            if vm.isLoading {
+                ProgressView()
+            } else {
                 VStack(spacing: .zero) {
-                    CheckoutNavBar {
-                        dismiss()
-                    }
-                    
-                    ScrollView {
-                        VStack(spacing: 2) {
-                            BagView()
-                                .environmentObject(vm)
-                            
-                            CheckoutPersonalInfoView()
-                                .environmentObject(vm)
-                            
-                            ShippingAddressView()
-                                .environmentObject(vm)
-                            
-                            CheckoutPromocodeView()
-                                .environmentObject(vm)
-                            
+                    VStack(spacing: .zero) {
+                        CheckoutNavBar(title: Localizations.checkout) {
+                            dismiss()
                         }
-                        .padding(.horizontal, 20.dpWidth())
-                        .padding(.vertical, 10.dpHeight())
-                        .background(Asset.Color.Button.grayCol.swiftUIColor)
                         
-                        VStack(spacing: 0) {
-                            CheckoutPriceView()
-                                .environmentObject(vm)
-                            
-                            CheckoutConfirmButton()
-                                .environmentObject(vm)
-                            Spacer()
-                            
-                        }.background(Color.white)
+                        ScrollView {
+                            checkoutInfoView
+                            priceView
+                        }
+                    }
+                }
+                .onDisappear {
+                    withAnimation(.spring(duration: 0.3, bounce: 0.3)) {
+                        vm.showBagView = false
+                    }
+                }
+                .sheet(isPresented: $vm.showPromocode) {
+                    if #available(iOS 16.0, *) {
+                        EnterPromocodeView()
+                            .environmentObject(vm)
+                            .presentationDetents([.height(256.dpHeight())])
+                    } else {
+                        EnterPromocodeView()
+                            .environmentObject(vm)
                     }
                 }
             }
-            .onDisappear {
-                withAnimation(.spring(duration: 0.3, bounce: 0.3)) {
-                    vm.showBagView = false
-                }
-            }
+        }.onAppear {
+            vm.fetchAllData()
         }
+    }
+}
+
+extension CheckoutMainView {
+    private var checkoutInfoView: some View {
+        VStack(spacing: 2) {
+            BagView()
+                .environmentObject(vm)
+            
+            CheckoutPersonalInfoView()
+                .environmentObject(vm)
+            
+            ShippingAddressView()
+                .environmentObject(vm)
+            
+            CheckoutPromocodeView()
+                .environmentObject(vm)
+            
+        }
+        .padding(.horizontal, 20.dpWidth())
+        .padding(.vertical, 10.dpHeight())
+        .background(Color.init(hex: "#F6F6F6"))
+    }
+    
+    private var priceView: some View {
+        VStack(spacing: 0) {
+            CheckoutPriceView()
+                .environmentObject(vm)
+            
+            ConfirmButton(
+                title: Localizations.continueToPayment, 
+                icon: Asset.Image.Icons.arrowRight.swiftUIImage,
+                isEnable: $vm.paymentButtonIsEnable
+            ) {
+                // action
+            }
+            Spacer()
+            
+        }.background(Color.white)
     }
 }
 

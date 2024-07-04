@@ -16,16 +16,17 @@ final class CheckoutMainViewModel: ObservableObject {
     @Published var showBagView: Bool = false
     @Published var userName: String = ""
     @Published var message: ShowMessage? = nil
-    @Published var promocode: String = "74FE79G45"
     @Published var paymentButtonIsEnable: Bool = false
     
     @Published var carts: [Product] = []
     @Published var addressess: [AddressData] = []
     @Published var totalBalance: TotalBalanceModel? = nil
     
-    init() {
-        fetchAllData()
-    }
+    // promocode
+    @Published var promocode: String = ""
+    @Published var showPromocode: Bool = false
+    @Published var promocodeIsEnable: Bool = false
+    @Published var didAppliedPromocode = false
     
     public func fetchAllData() {
         
@@ -49,6 +50,33 @@ final class CheckoutMainViewModel: ObservableObject {
                 self.message = .error(message: error.localizedDescription)
                 self.isLoading = false
             }
+        }
+    }
+    
+    func didApplyPromocode() {
+        Task.detached { [weak self] in
+            guard let self else { return }
+            
+            do {
+                let model = try await NetworkService.shared.request(
+                    url: "https://lab.7saber.uz/api/client/promocode/apply",
+                    decode: ApiPromocode.self,
+                    method: .post,
+                    body: ["productIds": carts.map(\.id), "promocode" : promocode]
+                )
+                await MainActor.run {
+                    if let newPromocode = model.promocode?.promocode {
+                        self.promocode = newPromocode
+                        self.message = .success(message: model.message)
+                        self.didAppliedPromocode = true
+                        self.showPromocode = false
+                    }
+                }
+            }
+            catch {
+                message = .error(message: error.localizedDescription)
+            }
+           
         }
     }
 }

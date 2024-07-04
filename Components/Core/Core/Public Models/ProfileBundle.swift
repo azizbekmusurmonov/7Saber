@@ -20,7 +20,6 @@ public struct ProfileBundle: Codable {
     public let gender, birthday: String?
     public let device: [String?]?
     public let isDeleted: Bool
-    public let createdAt, updatedAt: String
     public let role: RoleModule
     public let avatar: AvatarModule
 
@@ -37,8 +36,6 @@ public struct ProfileBundle: Codable {
         self.birthday = try container.decodeIfPresent(String.self, forKey: .birthday)
         self.device = try container.decodeIfPresent([String?].self, forKey: .device)
         self.isDeleted = try container.decode(Bool.self, forKey: .isDeleted)
-        self.createdAt = try container.decode(String.self, forKey: .createdAt)
-        self.updatedAt = try container.decode(String.self, forKey: .updatedAt)
         self.role = try container.decode(RoleModule.self, forKey: .role)
         self.avatar = try container.decode(AvatarModule.self, forKey: .avatar)
     }
@@ -48,8 +45,6 @@ public struct ProfileBundle: Codable {
         case roleID = "roleId"
         case avatarID = "avatarId"
         case fullName, email, phone, gender, birthday, device, isDeleted
-        case createdAt = "created_at"
-        case updatedAt = "updated_at"
         case role, avatar
     }
 }

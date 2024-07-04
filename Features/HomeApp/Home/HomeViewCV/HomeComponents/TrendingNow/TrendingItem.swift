@@ -67,13 +67,11 @@ public struct TrendingItemView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 8)
             
-            if let price = trendingProduct.price["uzs"] ?? trendingProduct.price.values.compactMap({ $0 }).first {
-                Text("\(price) so'm")
+            Text(trendingProduct.price.display)
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(.black)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
-        }
         .padding([.leading, .top], 0)
     }
 }
