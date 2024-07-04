@@ -16,6 +16,7 @@ import Profile
 import AssetKit
 import Registration
 import Core
+import AppResources
 
 struct TabBarView: View {
     
@@ -24,6 +25,7 @@ struct TabBarView: View {
     @StateObject var catalogVM = CatalogViewModel()
     @StateObject var cartVC = CartViewModel()
     @StateObject var profileVM = ProfileViewModel()
+    @StateObject var homeVM = HomeViewModel()
     @EnvironmentObject var registerVM: RegisterMobillAppViewModel
     
     @State var isRegistrated = DataStorage.shared.isRegistrated
@@ -34,12 +36,12 @@ struct TabBarView: View {
                 .edgesIgnoringSafeArea(.all)
             
             TabView {
-                ContentView()
+                HomeView()
                     .tabItem {
                         Image(uiImage: Asset.Image.TabBars.home.image)
                         Text("Home")
                     }
-                // .environmentObject(homeVM)
+                 .environmentObject(homeVM)
                 
                 CatalogView()
                     .environmentObject(catalogVM)
