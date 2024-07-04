@@ -10,12 +10,8 @@
 		524940C32C2A6C5400642473 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3A12BBDA0F600843673 /* AssetKit.framework */; };
 		524940C62C2A6C5500642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20E72BB7EBB900457A3E /* Core.framework */; };
 		524940C82C2A6C5700642473 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20B12BB7E98900457A3E /* NetworkManager.framework */; };
-		524940C92C2A6C5700642473 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20B12BB7E98900457A3E /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		524940CA2C2A6C5800642473 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		524940CB2C2A6C5800642473 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		524940CA2C2A6C5800642473 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		524940CB2C2A6C5800642473 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		524940D92C2A756000642473 /* AVPContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524940D82C2A756000642473 /* AVPContentView.swift */; };
 		529DA8AB2BB7B23000629C86 /* HomeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DA8AA2BB7B23000629C86 /* HomeAppApp.swift */; };
 		529DA8AF2BB7B23000629C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529DA8AE2BB7B23000629C86 /* Assets.xcassets */; };
 		529DA8B22BB7B23000629C86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529DA8B12BB7B23000629C86 /* Preview Assets.xcassets */; };
@@ -71,8 +67,6 @@
 		B57A088C2BFE426700D3BA72 /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57A088B2BFE426700D3BA72 /* ImageUpload.swift */; };
 		B57A088E2BFE428A00D3BA72 /* TabbarCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57A088D2BFE428A00D3BA72 /* TabbarCard.swift */; };
 		B57A08902BFE42A300D3BA72 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57A088F2BFE42A300D3BA72 /* Snack.swift */; };
-		B593DB622C2A72E700D0314A /* AvpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B593DB612C2A72E700D0314A /* AvpViewModel.swift */; };
-		B593DB642C2A731700D0314A /* AVPAPIMANAGER.swift in Sources */ = {isa = PBXBuildFile; fileRef = B593DB632C2A731700D0314A /* AVPAPIMANAGER.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,10 +86,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				524940C92C2A6C5700642473 /* NetworkManager.framework in Embed Frameworks */,
-				524940C42C2A6C5400642473 /* AssetKit.framework in Embed Frameworks */,
 				524940CB2C2A6C5800642473 /* (null) in Embed Frameworks */,
-				524940C72C2A6C5500642473 /* Core.framework in Embed Frameworks */,
 				524940CB2C2A6C5800642473 /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";

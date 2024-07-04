@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import NetworkManager
+import Core
 
 enum ShowMessage: Equatable {
     case success(message: String)
@@ -21,7 +22,7 @@ enum CardDiscount {
 
 public final class CartViewModel: ObservableObject {
     
-    @Published var products: [Cart] = CartMockData.data
+    @Published var products: [CartModel] = []
     
     @Published var qty: Int = 0
     @Published var overallSum: String = ""
@@ -29,7 +30,7 @@ public final class CartViewModel: ObservableObject {
     @Published var message: ShowMessage? = nil
     
     public init() {
-//        getCart()
+        getCart()
     }
     
     func getCart() {
@@ -40,14 +41,14 @@ public final class CartViewModel: ObservableObject {
             do {
                 let model = try await NetworkService.shared.request(
                     url: urlString,
-                    decode: CartModel.self,
+                    decode: [CartModel].self,
                     method: .get,
                     queryParameters: ["page": 1.description, "pageSize": 15.description]
                 )
                 
                 await MainActor.run { [weak self] in
                     self?.message = .success(message: "CART muvaffaqiyatli keldi")
-                    self?.products = model.data
+                    self?.products = model
                     self?.totalSum()
                 }
             } catch {
@@ -76,11 +77,11 @@ public final class CartViewModel: ObservableObject {
                 do {
                     let requestBody: [String: Any] = [
                         "id": product.id,
-                        "productId": product.productID,
+                        "productId": product.product.id,
                         "qty": product.qty,
                         "details": [
-                            "colorId": product.details.colorID,
-                            "size": product.details.size
+                            "colorId": product.product.attribute.colorID,
+                            "size": product.product.attribute.size
                         ]
                     ]
                     
@@ -163,11 +164,9 @@ public final class CartViewModel: ObservableObject {
         var sum = 0
 
         for product in products {
-            if let price = product.product.price["uzs"] as? Int {
-                sum += price * product.qty
-            }
+            sum += product.product.price.value * product.qty
         }
 
-        overallSum = "\(sum)"
+        overallSum = sum.description 
     }
 }

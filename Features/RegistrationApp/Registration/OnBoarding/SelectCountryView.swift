@@ -35,7 +35,7 @@ struct SelectCountryView: View {
                 
                 Picker("", selection: $selection) {
                     ForEach(countries) { country in
-                        Text(country.name)
+                        Text(country.nameEn)
                             .frame(maxWidth: .infinity,alignment: .leading)
                             .font(.system(size: 23,weight: .medium))
                             .tag(country.name)
@@ -86,7 +86,7 @@ struct SelectCountryView: View {
                 let model = try await NetworkService.shared.request(url: url, decode: [CountryModel].self, method: .get)
                 
                 await MainActor.run {
-                    self.countries = model.sorted { $0.name < $1.name }
+                    self.countries = model.sorted { $0.nameEn < $1.nameEn }
                 }
                 
             } catch {

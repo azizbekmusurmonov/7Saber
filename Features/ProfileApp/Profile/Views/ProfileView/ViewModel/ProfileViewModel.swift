@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 import AssetKit
 import NetworkManager
+import Core
 
 public class ProfileViewModel: ObservableObject {
     

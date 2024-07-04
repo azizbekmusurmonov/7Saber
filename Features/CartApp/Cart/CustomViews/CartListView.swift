@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AssetKit
+import Core
 
 struct CartListView: View {
     @EnvironmentObject var vm: CartViewModel
@@ -19,27 +20,14 @@ struct CartListView: View {
                         
                         HStack(alignment: .top, spacing: 0) {
                             ZStack(alignment: .topLeading) {
-                                AsyncImage(url: .init(string: vm.products[index].product.mainImg.src)) { phase in
-                                    switch phase {
-                                    case .empty:
-                                        ProgressView()
-                                            .frame(width: 124, height: 155)
-                                            .clipShape(Circle())
-                                            .padding()
-                                    case .success(let image):
-                                        image.resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .frame(width: 124, height: 155)
-                                            .padding()
-                                    case .failure:
-                                        Image(systemName: "person.circle.fill")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .frame(width: 124, height: 155)
-                                            .padding()
-                                    @unknown default:
-                                        EmptyView()
-                                    }
+                                
+                                AsyncImage(url: .init(string: vm.products[index].product.mainImg.src)) { image in
+                                    image
+                                        .resizable()
+                                        .frame(width: 124.dpWidth(), height: 155.dpHeight())
+                                } placeholder: {
+                                    ProgressView()
+                                        .frame(width: 124.dpWidth(), height: 155.dpHeight())
                                 }
                                 
                                 Text("\(vm.products[index].qty)")
@@ -65,16 +53,14 @@ struct CartListView: View {
                                     }
                                 }
                                 HStack(spacing: 0) {
-                                    Text(vm.products[index].product.price["uzs"]??.description ?? "")
+                                    Text(vm.products[index].product.price.display)
                                         .font(.system(size: 14))
                                     
-                                    if !vm.products[index].product.discount.isEmpty {
-                                        Text("1000000 UZS")
-                                            .strikethrough(true, color: Asset.Color.Text.secondaryCol.swiftUIColor)
-                                            .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
-                                            .font(.system(size: 11))
-                                            .padding(.leading, 10)
-                                    }
+                                    Text(vm.products[index].product.discount?.display ?? "")
+                                        .strikethrough(true, color: Asset.Color.Text.secondaryCol.swiftUIColor)
+                                        .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
+                                        .font(.system(size: 11))
+                                        .padding(.leading, 10)
                                     Spacer()
                                 }
                                 .padding(.top, 4)
@@ -85,7 +71,7 @@ struct CartListView: View {
                                             .font(.system(size: 11))
                                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                                         
-                                        Text(vm.products[index].details.size)
+                                        Text(vm.products[index].product.attribute.size)
                                             .font(.system(size: 11))
                                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                                     }

@@ -44,7 +44,7 @@ struct SelectCountryTextfield: View {
                             viewModel.selectedCountry = viewModel.countries[index]
                             showCountryPicker.toggle() // Close the picker after selection
                         }) {
-                            Text(viewModel.countries[index].name)
+                            Text(viewModel.countries[index].nameEn)
                                 .foregroundColor(Color.black)
                         }
                         Divider()

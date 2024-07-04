@@ -24,16 +24,15 @@ public class AddressesViewModel: ObservableObject {
         viewState = .loading
         Task {
             do {
-                let addresses = try await NetworkService.shared.request(
-                    url: "https://lab.7saber.uz/api/client/address",
-                    decode: AdressShowModel.self,
+                let adresses = try await NetworkService.shared.request(
+                    url: "https://lab.7saber.uz/api/client/address/show/1",
+                    decode: AddressModel.self,
                     method: .get
                 )
-                
-                let items = addresses.data.map { self.mapAddressToItem(address: $0) }
+               // let item = self.mapAddressToItem(address: adresses)
                 await MainActor.run { [weak self] in
-                    self?.items = items
-                    self?.viewState = items.isEmpty ? .empty : .show
+                    self?.items = []
+                    self?.viewState = self?.items?.isEmpty == true ? .empty : .show
                     self?.message = .succes(message: "Sizning manzilingiz muvaffaqqiyatli!")
                 }
             } catch {
@@ -49,7 +48,7 @@ public class AddressesViewModel: ObservableObject {
     private func mapAddressToItem(address: Datum) -> Item {
         return Item(
             title: address.name,
-            location: "\(address.street) st. \(address.building), \(address.city), \(address.country.name)",
+            location: "", // "\(address.) st. \(address.building), \(address.city), \(address.country.name)",
             seeOnMap: "SEE ON MAP"
         )
     }
