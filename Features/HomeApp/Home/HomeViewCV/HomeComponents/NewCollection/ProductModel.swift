@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Core
 
 // MARK: - NewCollection
 struct NewCollection: Codable {
@@ -46,8 +47,8 @@ struct NewCollectionDatum: Codable, Identifiable {
     let descUz, descRu, descEn, specUz: String?
     let specRu, specEn: String?
     let sku: String
-    let discount: [String]
-    let price: [String: Int?]
+    let discount: DiscountModel?
+    let price: ApiPrice
     let gender: String
     let mainImgID: Int
     let mediaID: String?

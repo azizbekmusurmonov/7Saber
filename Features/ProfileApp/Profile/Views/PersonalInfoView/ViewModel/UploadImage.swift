@@ -35,18 +35,22 @@ class UploadImage {
         body.append("Content-Disposition: form-data; name=\"image\"; filename=\"image.png\"\r\n".data(using: .utf8)!)
         body.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
         body.append(imageData)
+        print("imageData", imageData)
         body.append("\r\n".data(using: .utf8)!)
 
         // 4b. Full name data
         body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        print("boundary", boundary)
         body.append("Content-Disposition: form-data; name=\"fullName\"\r\n\r\n".data(using: .utf8)!)
         body.append(fullName.data(using: .utf8)!)
+        print("fullName", fullName)
         body.append("\r\n".data(using: .utf8)!)
 
         // 4c. Gender data
         body.append("--\(boundary)\r\n".data(using: .utf8)!)
         body.append("Content-Disposition: form-data; name=\"gender\"\r\n\r\n".data(using: .utf8)!)
         body.append(gender.data(using: .utf8)!)
+        print("gender", gender)
         body.append("\r\n".data(using: .utf8)!)
 
         // 4d. Birth Date data (formatted as a string)
@@ -57,12 +61,14 @@ class UploadImage {
         body.append("--\(boundary)\r\n".data(using: .utf8)!)
         body.append("Content-Disposition: form-data; name=\"birthDate\"\r\n\r\n".data(using: .utf8)!)
         body.append(birthDateString.data(using: .utf8)!)
+        print("birthDateString", birthDateString)
         body.append("\r\n".data(using: .utf8)!)
 
         // 4e. Email data
         body.append("--\(boundary)\r\n".data(using: .utf8)!)
         body.append("Content-Disposition: form-data; name=\"email\"\r\n\r\n".data(using: .utf8)!)
         body.append(email.data(using: .utf8)!)
+        print("email", email)
         body.append("\r\n".data(using: .utf8)!)
 
         // 4f. End of multipart/form-data
@@ -70,6 +76,13 @@ class UploadImage {
 
         // 5. Set the body of the request
         request.httpBody = body
+        
+        do {
+            let a = try JSONSerialization.jsonObject(with: body)
+            print(a)
+        } catch {
+            print(error)
+        }
         
         print("-------------------------HEADER---------------------------------")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -91,10 +104,14 @@ class UploadImage {
         guard let httpResponse = response as? HTTPURLResponse else {
             throw UploadError.invalidResponse
         }
+        
+        let model = try JSONDecoder().decode(ProfileModel.self, from: data)
+        
+        DataStorage.storage.update(model.token, for: .token)
 
         // Check for successful upload
         if (200..<300).contains(httpResponse.statusCode) {
-            print("Image and data uploaded successfully!")
+            print(try JSONSerialization.jsonObject(with: data))
         } else {
             throw UploadError.uploadFailed(statusCode: httpResponse.statusCode)
         }

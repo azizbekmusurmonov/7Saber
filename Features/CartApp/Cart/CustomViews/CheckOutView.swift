@@ -21,7 +21,7 @@ struct CheckOutView: View {
                     .font(.system(size: 16))
                     .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                 Spacer()
-                Text("\(vm.formattedTotalPrice(vm.totalPrice)) UZS")
+                Text(vm.overallSum)
                     .font(.system(size: 16))
             }
             Button {

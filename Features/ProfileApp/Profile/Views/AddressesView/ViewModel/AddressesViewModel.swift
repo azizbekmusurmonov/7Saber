@@ -8,30 +8,69 @@
 import SwiftUI
 import Combine
 import NetworkManager
+import Core
 
 public class AddressesViewModel: ObservableObject {
     
-    public init() {}
+    public init() {
+        fetchAddresses()
+    }
     
-    @Published var items: [Item] = [
-        Item(title: "MY OFFICE",
-             location: "Mukimiy st. 59, Tashkent, Uzbekistan",
-             seeOnMap: "SEE ON MAP"
-            ),
-        Item(title: "MY OFFICE",
-             location: "Mukimiy st. 59, Tashkent, Uzbekistan",
-             seeOnMap: "SEE ON MAP"
-            )
-    ]
+    @Published var items: [Item]? = nil
+    @Published var viewState: ViewState = .loading
+    @Published var message: MessageShow? = nil
+    
+    public func fetchAddresses() {
+        viewState = .loading
+        Task {
+            do {
+                let adresses = try await NetworkService.shared.request(
+                    url: "https://lab.7saber.uz/api/client/address/show/1",
+                    decode: AddressModel.self,
+                    method: .get
+                )
+               // let item = self.mapAddressToItem(address: adresses)
+                await MainActor.run { [weak self] in
+                    self?.items = []
+                    self?.viewState = self?.items?.isEmpty == true ? .empty : .show
+                    self?.message = .succes(message: "Sizning manzilingiz muvaffaqqiyatli!")
+                }
+            } catch {
+                print("Failed to fetch addresses:", error)
+                await MainActor.run { [weak self] in
+                    self?.viewState = .show
+                    self?.message = .error(message: "Sizning manzilingiz muvaffaqqiyatsiz")
+                }
+            }
+        }
+    }
+    
+    private func mapAddressToItem(address: Datum) -> Item {
+        return Item(
+            title: address.name,
+            location: "", // "\(address.) st. \(address.building), \(address.city), \(address.country.name)",
+            seeOnMap: "SEE ON MAP"
+        )
+    }
 }
 
+
 public class AddressFormViewModel: ObservableObject {
+    
+    @Environment(\.dismiss) var pop
     
     @Published var addressName: String = "" {
         didSet {
             checkToValied()
         }
     }
+    
+    @Published var countries: [CountryModel] = [] {
+        didSet {
+            checkToValied()
+        }
+    }
+    
     @Published var streetAddress: String = "" {
         didSet {
             checkToValied()
@@ -67,9 +106,13 @@ public class AddressFormViewModel: ObservableObject {
             checkToValied()
         }
     }
-    @Published var zipcode: String = ""
+    @Published var zipcode: String = "" {
+        didSet {
+                checkToValied()
+        }
+    }
     @Published var phoneNumber: String = ""
-    
+    @Published var selectedCountry: CountryModel? = nil
     @Published public var isFormValid: Bool = false
     
     @Published var message: MessageShow? = nil
@@ -78,7 +121,9 @@ public class AddressFormViewModel: ObservableObject {
         isFormValid = !addressName.isEmpty && !streetAddress.isEmpty && !city.isEmpty && !stateProvinceRegion.isEmpty
     }
     
-    public init() {}
+    public init() {
+        getCountries()
+    }
     
     func sendAddresses() {
         let urlString = "https://lab.7saber.uz/api/client/address/store"
@@ -87,7 +132,7 @@ public class AddressFormViewModel: ObservableObject {
             guard let self, let url = URL(string: urlString) else { return }
             let adressesData: [String : String] = [
                 "name" : addressName,
-                "countryId" : "1",
+                "countryId" : selectedCountry?.id.description ?? "1",
                 "street" : streetAddress,
                 "building" : building,
                 "appartment" : apartment,
@@ -109,6 +154,7 @@ public class AddressFormViewModel: ObservableObject {
                 
                 print("Address sent successfully: \(responce)")
                 await MainActor.run { [weak self] in
+                    pop()
                     self?.message = .succes(message: "Sizning manzilingiz muvaffaqqiyatli yuborildi")
                 }
             } catch {
@@ -116,6 +162,24 @@ public class AddressFormViewModel: ObservableObject {
                 await MainActor.run { [weak self] in
                     self?.message = .error(message: "Sizning manzilingiz muvaffaqqiyatli yuborilmadi")
                 }
+            }
+        }
+    }
+    
+    private func getCountries() {
+        let url = "https://lab.7saber.uz/api/client/country"
+        Task.detached { [weak self] in
+            guard let self else { return }
+            
+            do {
+                let model = try await NetworkService.shared.request(url: url, decode: [CountryModel].self, method: .get)
+                
+                await MainActor.run {
+                    self.countries = model
+                }
+                
+            } catch {
+                message = .error(message: error.localizedDescription)
             }
         }
     }

@@ -58,7 +58,7 @@ struct PersonalInfoList: View {
                 }
             }
             .onTapGesture {
-                showPicker = true
+                showPicker.toggle()
             }
             
             Divider()
@@ -75,10 +75,7 @@ struct PersonalInfoList: View {
                 SaveCancelButtons(title: "Save",
                                   color: Asset.Color.Button.blackCol.swiftUIColor, textColor: Asset.Color.Text.whiteCol.swiftUIColor,
                                   buttonPressed: {
-                    
-//                    Task {
                         vm.sendPersonalInfo()
-//                    }
                 }, isDisabled: .constant(!vm.isFormValid))
             }
             

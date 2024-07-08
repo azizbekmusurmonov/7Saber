@@ -64,6 +64,10 @@ public enum Asset {
       public static let minusCart = ImageAsset(name: "minusCart")
       public static let plusCart = ImageAsset(name: "plusCart")
     }
+    public enum Checkout {
+      public static let chevronDown = ImageAsset(name: "chevronDown")
+      public static let chevronUp = ImageAsset(name: "chevronUp")
+    }
     public enum Home {
       public static let closeHome = ImageAsset(name: "closeHome")
       public static let locationHome = ImageAsset(name: "locationHome")
@@ -100,6 +104,7 @@ public enum Asset {
       public static let creditCard = ImageAsset(name: "creditCard")
       public static let done = ImageAsset(name: "done")
       public static let doneFilled = ImageAsset(name: "doneFilled")
+      public static let doneFilledWhite = ImageAsset(name: "doneFilledWhite")
       public static let doneGreen = ImageAsset(name: "doneGreen")
       public static let edit = ImageAsset(name: "edit")
       public static let eye = ImageAsset(name: "eye")

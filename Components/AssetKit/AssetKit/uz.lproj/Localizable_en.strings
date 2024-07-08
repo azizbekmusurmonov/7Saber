@@ -5,6 +5,269 @@
   Created by Ismatillokhon on 19/06/24.
   
 */
-"where_are_you_in" = "QAYERDASIZ?";
-"welcome" = "HUSH KELIBSZ";
-"enter_your_phone_or_email" = "Davom etish uchun telefon raqamingizni yoki elektron pochtangizni kiriting";
+// MARK: - Intro
+
+"feel" = "Qulaylikni";
+"the_comfort" = "Har";
+"on" = "Qadamda";
+"every" = "His";
+"step" = "Eting";
+"quantity" = "Soni:";
+"personal_info" = "Shaxsiy ma'lumotlar:";
+"title_add_shipping" = "Yetqazib berish manzilini kiriting";
+"add_promocode_here" = "Promokodni bu yerda kiriting";
+
+"tough_times" = "Qiyin vaqtlar";
+"dont_last" = "Uzoqga bormaydi";
+"but" = "Lekin";
+"tough_people" = "Kuchli insonlar";
+"do" = "Boradi";
+
+"dont" = "Kunlarni";
+"count_the_days" = "Hisoblamang lekin";
+"the_days" = "Kunlar";
+"count" = "Hisoblanadi";
+
+"never" = "Hech qachon";
+"put_an" = "Orzularingizga";
+"age_limit" = "Yosh";
+"on_your" = "Chegarasini";
+"dreams" = "Qo'ymang";
+
+"select_the_country" = "Mamlakatni tanlang";
+"uzbekistan" = "O'zbekiston";
+"russia" = "Rossiya";
+"other_country" = "Boshqa mamlakat";
+"continue" = "Davom eting";
+
+
+//MARK: - Registration
+
+"welcome" = "Xush kelibsiz";
+"enter_your_phone_number_or_email_to_continue" = "Davom etish uchun telefon raqamingiz yoki elektron pochta manzilingizni kiriting";
+"phone_number_or_email" = "Telefon raqami yoki Elektron pochta";
+"next" = "Keyingi";
+"skip" = "O'tkazib yuborish";
+"enter_confirmation_code_to_continue_the_process" = "Jarayonni davom ettirish uchun tasdiqlash kodini kiriting";
+"code" = "Kod";
+"enter" = "Kiritish";
+"we_have_sent_to_your_phone_number" = "Biz sizning telefon raqamingizga %@ 5 raqamli kod yubordik, tasdiqlash uchun shu kodni kiriting";
+"send_again" = "Qayta yuborish";
+
+"it_looks_like_we_dont_have_your_account" = "Bizda sizning hisob qaydnomangiz yo'q.";
+"please_fill_up_the_following_fields_to_continue" = "Davom etish uchun quyidagi maydonlarni to'ldiring";
+"fullname" = "To'liq ism";
+"create_a_password" = "Parol yarating";
+"password" = "Parol";
+"re_type_password" = "Parolni qayta tering";
+
+"privacy_policy" = "Maxfiylik siyosati";
+"terms_and_conditions" = "Foydalanish shartlari";
+
+// MARK: - Main
+
+// Tab bar
+"home" = "Bosh sahifa";
+"catalog" = "Katalog";
+"cart" = "Savatcha";
+"wishlist" = "Istaklar ro'yxati";
+"profile" = "Profil";
+
+// Main page - Categories
+
+"time_to_win" = "G'alaba vaqti";
+
+"categories" = "Kategoriya";
+"men" = "Erkaklar";
+"women" = "Ayollar";
+"kids" = "Bolalar";
+"all" = "Hammasi";
+
+"new_collection" = "Yangi kolleksiya";
+"see_all" = "Barchasini ko'rish";
+
+"trending_now" = "Hozirgi trendlar";
+
+"shoes" = "Poyabzal";
+"there_are_three_types_of_people" = "Sport va biznesda uch xil odamlar bor. Uni amalga oshiradiganlar, kuzatadiganlar va nima bo'lganini tushunmaydiganlar.";
+
+"by_sports" = "Sport turlari bo'yicha";
+"running" = "Yugurish";
+"triathlon" = "Triatlon";
+"swimming" = "Suzish";
+"boxing" = "Boks";
+"judo" = "Dzyudo";
+"others" = "Boshqalar";
+
+"7saber_for_your_family" = "7Saber oilangiz uchun";
+"for_daddy" = "Ota uchun";
+"for_mommy" = "Ona uchun";
+"for_child" = "Bola uchun";
+
+"seasonal_sales" = "%@ savdolar";
+"our_seasonal_collection_is_now_in_stock" = "Bizning %@ kolleksiyamiz endi mavjud";
+
+// MARK: - Catalog
+
+"accessories" = "Aksessuarlar";
+"best_sellers" = "Eng ko'p sotilganlar";
+"tressers_and_pants" = "Shim va shalvarlar";
+"clothes" = "Kiyimlar";
+"t_shirts" = "Futbolkalar";
+"windbreakers_and_bombers" = "Vetrovka va kurtklar";
+"hoodies_and_sweatshirts" = "Hudilar va tolstovkalar";
+"sweaters" = "Sviterlar";
+"jackets_and_vests" = "Kurtkalar va jiletlar";
+"ski_and_snowboard_clothing" = "Chang'i va snoubord kiyimlari";
+"suits" = "Kostyumlar";
+"featured" = "Tavsiya etilganlar";
+"new_arrivals" = "Yangi kelganlar";
+"seasonal_sales_up_to" = "%@ gacha mavsumiy savdolar";
+"filter" = "Filtr";
+"clear_all" = "Hammasini tozalash";
+"sort_by" = "Saralash";
+"newest_first" = "Eng yangilar birinchi";
+"price_low_to_high" = "Narx: pastdan yuqoriga";
+"price_high_to_low" = "Narx: yuqoridan pastga";
+"size" = "O'lcham";
+"color" = "Rang";
+"sale" = "Chegirma";
+"percent_off_and_up" = "%@ va ko'proq chegirma";
+"view_results" = "%@ natijalarni ko'rish";
+"newest" = "Eng yangi";
+"brand" = "Brend";
+"nike" = "Nike";
+"adidas" = "Adidas";
+"puma" = "Puma";
+"under_armour" = "Under Armour";
+
+//MARK: - Filter page:
+
+"turquoise" = "Turkuaz";
+"white" = "Oq";
+"black" = "Qora";
+"grey" = "Kulrang";
+"light_pink" = "Och pushti";
+"blue" = "Ko'k";
+"dark_grey" = "To'q kulrang";
+"orange" = "Apelsinrang";
+"free_standar_shipping_for_7SaberClub_members" = "7SaberClub a'zolari uchun bepul standart yetkazib berish";
+"x_day_free_returns_and_exchange" = "%@ kun bepul qaytarish va almashtirish";
+"express_shipping_service_is_available" = "Ekspress yetkazib berish xizmati mavjud";
+"description" = "Tavsif";
+"product_details" = "Mahsulot tafsilotlari";
+"shipping_and_returns" = "Yetkazib berish va qaytarish";
+"sustainability" = "Barqarorlik";
+"care_instructions" = "Qo'llash bo'yicha ko'rsatmalar";
+"how_others_wearing_7saber" = "7Saber boshqalar qo'lida";
+"upload_yout_photo_or_mention" = "O'z suratlaringizni yuklang yoki Instagramda @7Saber ni belgilash orqali dunyoga tanishtirish imkoniyatiga ega bo'ling";
+"add_your_photo" = "Suratingizni qo'shing, bizdan biriga aylananing";
+"you_may_also_like" = "Sizga ham yoqishi mumkin";
+"complete_the_look" = "Ko'rinishni to'ldiring";
+"7line_leggings" = "7Line legginslari";
+"added_to_bag" = "Savatchaga qo'shildi";
+"view_bag" = "Savatchani ko'rish";
+
+
+// MARK: - Profile
+
+"profile" = "Profil";
+"account" = "Hisob";
+"personal_information" = "Shaxsiy ma'lumotlar";
+"addresses" = "Manzillar";
+"payment_methods" = "To'lov usullari";
+"orders" = "Buyurtmalar";
+"current_orders" = "Joriy buyurtmalar";
+"order_history" = "Buyurtma tarixi";
+"settings" = "Sozlamalar";
+"push_notifications" = "Bildirishnomalari";
+"privacy" = "Maxfiylik";
+"language" = "Til";
+"country_region" = "Mamlakat / Hudud";
+"legal" = "Huquqiy";
+"general_terms_conditions" = "Umumiy shartlar va qoidalar";
+"terms_of_use" = "Foydalanish shartlari";
+"log_out" = "Chiqish";
+"delete_account" = "Hisobni o'chirish";
+"edit_profile" = "Profilni tahrirlash";
+"upload_img" = "Rasm yuklash";
+"full_name" = "To'liq ism";
+"phone" = "Telefon";
+"email" = "Elektron pochta";
+"gender" = "Jins";
+"male" = "Erkak";
+"female" = "Ayol";
+"birthday" = "Tug'ilgan kun";
+"save" = "Saqlash";
+"cancel" = "Bekor qilish";
+"address_name" = "Manzil nomi";
+"select_the_country" = "Mamlakatni tanlang";
+"street_address" = "Ko'cha manzili";
+"building" = "Bino";
+"apartment" = "Kvartira";
+"floor" = "Qavat";
+"house" = "Uy";
+"city" = "Shahar";
+"state_province_region" = "Shtat / Viloyat / Hudud";
+"zipcode" = "Pochta indeksi";
+"phone_number" = "Telefon raqami";
+"add_new_address" = "Yangi manzil qo'shish";
+"you_dont_have_address" = "Sizda manzil yo'q";
+"seems_you_have_not_added_your_address_yet" = "Siz hali manzilingizni qo'shmadingiz";
+"add_payment_method" = "To'lov usulini qo'shish";
+"there_is_no_credit_card" = "Kredit karta yo'q";
+"seems_credit_card_has_not_been_added_yet" = "Kredit karta hali qo'shilmagan";
+"added_credit_card" = "Kredit karta qo'shildi";
+"add_card" = "Karta qo'shish";
+"order_details" = "Buyurtma tafsilotlari";
+"order_id" = "Buyurtma IDsi";
+"total" = "Jami";
+"on_process" = "Jarayonda";
+"order_status" = "Buyurtma holati";
+"ordered_paid" = "Buyurtma qilingan va to'langan";
+"accepted" = "Qabul qilingan";
+"shipped" = "Jo'natilgan";
+"delivered" = "Yetkazilgan";
+"ordered_products" = "Buyurtma qilingan mahsulotlar";
+"buy_it_again" = "Yana sotib olish";
+"show" = "Ko'rsatish";
+"ship_to" = "Manzilga jo'natish";
+
+//MARK: - Wishlist
+
+"your_wishlist_is_empty" = "Sizning istaklar ro'yxatingiz bo'sh";
+"seems_you_have_not_added_any_product_here" = "Siz bu yerga hali hech qanday mahsulot qo'shmagansiz.";
+"product" = "Mahsulot";
+"remove" = "O'chirish";
+"check_out" = "Buyurtma berish";
+"select_size" = "O'lchamni tanlang";
+"add_to_card" = "Savatga qo'shish";
+
+//MARK: - Check out
+
+"my_cart" = "Mening savatcham";
+"checkout" = "Buyurtma berish";
+"in_your_bag" = "Sizning savatchangizda";
+"personal_info" = "Shaxsiy ma'lumot";
+"shipping_address" = "Yetkazib berish manzili";
+"add_shipping_address" = "Buyurtmani davom ettirish uchun yetkazib berish manzilini qo'shing";
+"promocode" = "Promokod";
+"subtotal" = "Jami";
+"promocode_discount" = "Promokod chegirmasi";
+"loyalty_discount" = "Sodiqlik chegirmasi";
+"estimated_tax" = "Taxminiy soliq";
+"continue_to_payment" = "To'lovga o'tish";
+"pay_by_card" = "Karta orqali to'lash";
+"pay_by_cash" = "Naqd pul bilan to'lash";
+"other_method" = "Boshqa usul";
+"pay_order" = "To'lash va buyurtma qilish";
+"shipping" = "Yetkazib berish";
+"pick_up" = "Olib ketish";
+"our_stores" = "Bizning do'konlarimiz";
+"unfortunately" = "Afsuski";
+"seems_there_is_no_our_store_in_china" = "Ko'rinib turibdiki, %@ bizning do'konimiz yo'q, lekin biz buyurtmangizni uyga etkazib beramiz";
+"add_pick_up_address" = "Olib ketish manzilini qo'shish";
+"promocode_applied" = "Promokod qo'llanildi";
+"apply_promocode" = "Promokodni qo'llash";
+"go_to_check_out" = "Buyurtma berishga o'tish";
+"add_card" = "Karta qo'shish";

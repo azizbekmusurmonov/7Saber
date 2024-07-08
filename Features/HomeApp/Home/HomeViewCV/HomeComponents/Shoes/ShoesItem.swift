@@ -68,12 +68,10 @@ public struct ShoesItemView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 8)
             
-            if let price = shoesProduct.price["uzs"] ?? shoesProduct.price.values.compactMap({ $0 }).first {
-                Text("\(price) so'm")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(.black)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
+            Text(shoesProduct.price.display)
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundColor(.black)
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding([.leading, .top], 0)
     }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Core
 
 // MARK: - Trending
 struct Trending: Codable {
@@ -47,8 +48,8 @@ struct TrendingDatum: Codable, Identifiable {
     let descRu: String?
     let descEn, specUz, specRu, specEn: String?
     let sku: String
-    let discount: [String]
-    let price: [String: Int?]
+    let discount: DiscountModel?
+    let price: ApiPrice
     let gender: String
     let mainImgID: Int
     let mediaID: String?

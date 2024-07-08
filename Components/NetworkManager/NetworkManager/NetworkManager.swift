@@ -55,9 +55,9 @@ final public class NetworkService {
             request.setValue(language, forHTTPHeaderField: "Accept-Language")
             print("Accept-Language", language,"\n")
         }
-        if let token = DataStorage.storage.get(from: .token) {
+        if let token = DataStorage.storage.get(from: .token) as? String {
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            print("Authorization", "Bearer", "TOKEN", token == nil ? "NO" : token,"\n")
+            print("Authorization", "Bearer", "TOKEN", token,"\n")
         }
         if !header.isEmpty {
             header.forEach { (key, value) in
@@ -93,14 +93,14 @@ final public class NetworkService {
             string += newLine
             
             string += "\( try JSONSerialization.jsonObject(with: data))"
-            
+            print(try JSONSerialization.jsonObject(with: data))
             let decoder = JSONDecoder()
             let decodedObject = try decoder.decode(T.self, from: data)
             print(string)
             return decodedObject
         } catch {
             print(string)
-            print("🛑🛑🛑🛑🛑🛑🛑 DECODE ERROR", error)
+            print("in model, ", T.self, "🛑🛑🛑🛑🛑🛑🛑 DECODE ERROR", error)
             throw error
         }
     }

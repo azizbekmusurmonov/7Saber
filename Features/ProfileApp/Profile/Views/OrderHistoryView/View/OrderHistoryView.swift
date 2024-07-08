@@ -13,33 +13,45 @@ struct OrderHistoryView: View {
     
     @Environment(\.dismiss) var pop
     
-    @EnvironmentObject var vm: OrderHistoryViewModel
-    @StateObject var data = CurrentViewModel()
-    
-    @State var isTabBottomSheet = false
-    
+    @EnvironmentObject var vm: OrdersViewModel
+        
     public init() { }
     
     var body: some View {
-        VStack(spacing: 0) {
-            navBar
-            Spacer()
-            ScrollView {
-                VStack(spacing: 0) {
-                    ForEach(0..<vm.orderHistoryData.count, id: \.self) { index in
-                        OrderHistorySection(item: vm.orderHistoryData[index])
+        
+        switch vm.viewState {
+        case .show:
+            VStack(spacing: 0) {
+                navBar
+                Spacer()
+                ScrollView {
+                    VStack(spacing: 0) {
+                        ForEach(0..<(vm.ordersData?.count ?? 0), id: \.self) { index in
+                            if let item = vm.ordersData?[index] {
+                                OrderHistorySection(item: item)
+                            }
+                        }
+                        Divider()
                     }
-                    .onTapGesture {
-                        isTabBottomSheet = true
+                    .onChange(of: vm.message) { newValue in
+                        guard let newValue else { return }
+                        switch newValue {
+                        case .succes(message: let message):
+                            Snackbar.show(message: message, theme: .success)
+                        case .error(message: let message):
+                            Snackbar.show(message: message, theme: .error)
+                        }
                     }
-                    .sheet(isPresented: self.$isTabBottomSheet) {
-                        OrderBottomSheetView()
-                            .environmentObject(CurrentBottomViewModel())
-                    }
-                    Divider()
                 }
             }
+        case .loading:
+            LoaderView()
+        case .empty:
+            navBar
+            Spacer()
+            OrderHistoryIsEmpty()
         }
+        
     }
 }
 

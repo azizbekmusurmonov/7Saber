@@ -10,7 +10,7 @@ import Combine
 import NetworkManager
 import Core
 
-enum MessageShow: Equatable {
+public enum MessageShow: Equatable {
     case succes(message: String)
     case error(message: String)
 }
@@ -31,9 +31,17 @@ public class PersonalInfoViewModel: ObservableObject {
             checkToValid()
         }
     }
-    @Published var gender: String = ""
+    @Published var gender: String = "" {
+        didSet {
+            checkToValid()
+        }
+    }
     @Published var birthDate: String = "" 
-    @Published var profileImage: UIImage? = nil
+    @Published var profileImage: UIImage? = nil {
+        didSet {
+            checkToValid()
+        }
+    }
     
     @Published public var isFormValid: Bool = false
     
@@ -42,6 +50,7 @@ public class PersonalInfoViewModel: ObservableObject {
     }
     
     @Published var messageShow: MessageShow? = nil
+    @Published var selectGender: SelectGender? = nil
     
     public init() { }
     

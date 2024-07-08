@@ -7,25 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		524091A62BB7B9E100A75FC0 /* CategoryTarget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9F32BB7B9AF00629C86 /* CategoryTarget.framework */; };
-		524091A72BB7B9E100A75FC0 /* CategoryTarget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9F32BB7B9AF00629C86 /* CategoryTarget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		524091E22BB7BB3D00A75FC0 /* Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524091E12BB7BB3D00A75FC0 /* Cart.framework */; };
-		524091E32BB7BB3D00A75FC0 /* Cart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 524091E12BB7BB3D00A75FC0 /* Cart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		524092302BB7BCC800A75FC0 /* Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5240922F2BB7BCC800A75FC0 /* Catalog.framework */; };
-		524092312BB7BCC800A75FC0 /* Catalog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5240922F2BB7BCC800A75FC0 /* Catalog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5240926C2BB7BEC100A75FC0 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5240926B2BB7BEC100A75FC0 /* Profile.framework */; };
-		5240926D2BB7BEC100A75FC0 /* Profile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5240926B2BB7BEC100A75FC0 /* Profile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5249409B2C2A6BEF00642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2502BBBA94F00843673 /* Core.framework */; };
 		5281032D2BB265BC00F789A4 /* _Saber_mainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281032C2BB265BC00F789A4 /* _Saber_mainApp.swift */; };
 		5281032F2BB265BC00F789A4 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281032E2BB265BC00F789A4 /* TabBarView.swift */; };
 		528103B92BB2681800F789A4 /* AddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528103B82BB2681800F789A4 /* AddCard.swift */; };
-		529DA8F12BB7B30000629C86 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA8EA2BB7B2A300629C86 /* Home.framework */; };
-		529DA8F22BB7B30000629C86 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA8EA2BB7B2A300629C86 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		529DA9432BB7B3A400629C86 /* Wishlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9422BB7B3A400629C86 /* Wishlist.framework */; };
-		529DA9442BB7B3A400629C86 /* Wishlist.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9422BB7B3A400629C86 /* Wishlist.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52AE89BA2C3489CE00B46A88 /* Cart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524091E12BB7BB3D00A75FC0 /* Cart.framework */; };
+		52AE89CC2C348D7500B46A88 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAACC0C62BBE52A8003CCE22 /* AssetKit.framework */; };
+		52AE89CD2C348D7500B46A88 /* AssetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAACC0C62BBE52A8003CCE22 /* AssetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52AE89CF2C348D7700B46A88 /* Cart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 524091E12BB7BB3D00A75FC0 /* Cart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52AE89D02C348D7800B46A88 /* CategoryTarget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9F32BB7B9AF00629C86 /* CategoryTarget.framework */; };
+		52AE89D12C348D7800B46A88 /* CategoryTarget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9F32BB7B9AF00629C86 /* CategoryTarget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52AE89D22C348D7900B46A88 /* Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5240922F2BB7BCC800A75FC0 /* Catalog.framework */; };
+		52AE89D32C348D7900B46A88 /* Catalog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5240922F2BB7BCC800A75FC0 /* Catalog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52AE89D42C348D7B00B46A88 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2502BBBA94F00843673 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52AE89D52C348D7C00B46A88 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA8EA2BB7B2A300629C86 /* Home.framework */; };
+		52AE89D62C348D7C00B46A88 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA8EA2BB7B2A300629C86 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52AE89D72C348D7D00B46A88 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2322BBBA91700843673 /* NetworkManager.framework */; };
+		52AE89D82C348D7D00B46A88 /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2322BBBA91700843673 /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52AE89D92C348D7E00B46A88 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5240926B2BB7BEC100A75FC0 /* Profile.framework */; };
+		52AE89DA2C348D7E00B46A88 /* Profile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5240926B2BB7BEC100A75FC0 /* Profile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52AE89DB2C348D7E00B46A88 /* Registration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2AD2BBBAA6100843673 /* Registration.framework */; };
+		52AE89DC2C348D7E00B46A88 /* Registration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2AD2BBBAA6100843673 /* Registration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52AE89DD2C348D7F00B46A88 /* Wishlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9422BB7B3A400629C86 /* Wishlist.framework */; };
+		52AE89DE2C348D7F00B46A88 /* Wishlist.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 529DA9422BB7B3A400629C86 /* Wishlist.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B569D3952C23D6B3005A1624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B569D3942C23D6B3005A1624 /* Assets.xcassets */; };
 		B569D3982C23D6BE005A1624 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B569D3962C23D6BE005A1624 /* Preview Assets.xcassets */; };
-		FA77A2AE2BBBAA6100843673 /* Registration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2AD2BBBAA6100843673 /* Registration.framework */; };
-		FA77A2AF2BBBAA6100843673 /* Registration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2AD2BBBAA6100843673 /* Registration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,19 +164,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		528103B72BB2676B00F789A4 /* Embed Frameworks */ = {
+		52AE89CE2C348D7500B46A88 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5240926D2BB7BEC100A75FC0 /* Profile.framework in Embed Frameworks */,
-				524092312BB7BCC800A75FC0 /* Catalog.framework in Embed Frameworks */,
-				524091E32BB7BB3D00A75FC0 /* Cart.framework in Embed Frameworks */,
-				524091A72BB7B9E100A75FC0 /* CategoryTarget.framework in Embed Frameworks */,
-				FA77A2AF2BBBAA6100843673 /* Registration.framework in Embed Frameworks */,
-				529DA8F22BB7B30000629C86 /* Home.framework in Embed Frameworks */,
-				529DA9442BB7B3A400629C86 /* Wishlist.framework in Embed Frameworks */,
+				52AE89DC2C348D7E00B46A88 /* Registration.framework in Embed Frameworks */,
+				52AE89D32C348D7900B46A88 /* Catalog.framework in Embed Frameworks */,
+				52AE89D12C348D7800B46A88 /* CategoryTarget.framework in Embed Frameworks */,
+				52AE89CF2C348D7700B46A88 /* Cart.framework in Embed Frameworks */,
+				52AE89D82C348D7D00B46A88 /* NetworkManager.framework in Embed Frameworks */,
+				52AE89D42C348D7B00B46A88 /* Core.framework in Embed Frameworks */,
+				52AE89CD2C348D7500B46A88 /* AssetKit.framework in Embed Frameworks */,
+				52AE89DE2C348D7F00B46A88 /* Wishlist.framework in Embed Frameworks */,
+				52AE89DA2C348D7E00B46A88 /* Profile.framework in Embed Frameworks */,
+				52AE89D62C348D7C00B46A88 /* Home.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,13 +212,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5240926C2BB7BEC100A75FC0 /* Profile.framework in Frameworks */,
-				524092302BB7BCC800A75FC0 /* Catalog.framework in Frameworks */,
-				524091E22BB7BB3D00A75FC0 /* Cart.framework in Frameworks */,
-				524091A62BB7B9E100A75FC0 /* CategoryTarget.framework in Frameworks */,
-				FA77A2AE2BBBAA6100843673 /* Registration.framework in Frameworks */,
-				529DA8F12BB7B30000629C86 /* Home.framework in Frameworks */,
-				529DA9432BB7B3A400629C86 /* Wishlist.framework in Frameworks */,
+				52AE89D22C348D7900B46A88 /* Catalog.framework in Frameworks */,
+				52AE89D02C348D7800B46A88 /* CategoryTarget.framework in Frameworks */,
+				52AE89D52C348D7C00B46A88 /* Home.framework in Frameworks */,
+				52AE89DB2C348D7E00B46A88 /* Registration.framework in Frameworks */,
+				52AE89BA2C3489CE00B46A88 /* Cart.framework in Frameworks */,
+				5249409B2C2A6BEF00642473 /* Core.framework in Frameworks */,
+				52AE89CC2C348D7500B46A88 /* AssetKit.framework in Frameworks */,
+				52AE89DD2C348D7F00B46A88 /* Wishlist.framework in Frameworks */,
+				52AE89D92C348D7E00B46A88 /* Profile.framework in Frameworks */,
+				52AE89D72C348D7D00B46A88 /* NetworkManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,8 +405,8 @@
 				528103252BB265BC00F789A4 /* Sources */,
 				528103262BB265BC00F789A4 /* Frameworks */,
 				528103272BB265BC00F789A4 /* Resources */,
-				528103B72BB2676B00F789A4 /* Embed Frameworks */,
 				521FF62E2C229B03000208DA /* ShellScript */,
+				52AE89CE2C348D7500B46A88 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -788,28 +800,29 @@
 		528103382BB265BD00F789A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"7Saber-main/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K7U4M666S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "-Saber-main-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = Appearance;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Ismatillokhon.-Saber-main";
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.7saber.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -824,28 +837,29 @@
 		528103392BB265BD00F789A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"7Saber-main/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = K7U4M666S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "-Saber-main-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = Appearance;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Ismatillokhon.-Saber-main";
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.7saber.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

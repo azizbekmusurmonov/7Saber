@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Core
 
 // MARK: - Shoes
 struct Shoes: Codable {
@@ -46,12 +47,12 @@ struct ShoesDatum: Codable, Identifiable {
     let descUz, descRu, descEn, specUz: String?
     let specRu, specEn: String?
     let sku: String
-    let discount: [String]
-    let price: [String: Int?]
+    let discount: DiscountModel?
+    let price: ApiPrice
     let gender: String
     let mainImgID: Int
     let mediaID: String?
-    let clientMediaIDS: ShoesClientMediaIDS
+//    let clientMediaIDS: ShoesClientMediaIDS
     let weight, type: Int
     let isActive: Bool
     let additions: [String]
@@ -69,7 +70,7 @@ struct ShoesDatum: Codable, Identifiable {
         case nameUz, nameRu, nameEn, descUz, descRu, descEn, specUz, specRu, specEn, sku, discount, price, gender
         case mainImgID = "mainImgId"
         case mediaID = "mediaId"
-        case clientMediaIDS = "clientMediaIds"
+//        case clientMediaIDS = "clientMediaIds"
         case weight, type, isActive, additions
         case createdAt = "created_at"
         case updatedAt = "updated_at"
@@ -85,7 +86,7 @@ struct ShoesAttribute: Codable {
     let billzID: String
     let barcode, colorID: Int
     let size: String
-    let photos: [String]
+    let photos: ApiPhotos
     let qty: Int
     let createdAt, updatedAt: String
     let color: ShoesColor
@@ -119,9 +120,6 @@ struct ShoesColor: Codable {
     }
 }
 
-enum ShoesClientMediaIDS: String, Codable {
-    case empty = "[]"
-}
 
 // MARK: - MainImg
 struct ShoesMainImg: Codable {

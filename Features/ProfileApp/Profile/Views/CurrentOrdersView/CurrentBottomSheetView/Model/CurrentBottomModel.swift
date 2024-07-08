@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-public class OrderedProductModel: ObservableObject {
-    
-    @Published public var products: [Products] = []
-    public init() { }
-}
-
 public struct Products: Hashable {
     public var id = UUID().uuidString
     public let productName: String 
