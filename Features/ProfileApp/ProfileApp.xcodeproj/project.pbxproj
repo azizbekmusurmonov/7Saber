@@ -31,7 +31,6 @@
 		FA5339692C2445960077974E /* OrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5339682C2445960077974E /* OrdersViewModel.swift */; };
 		FA568B0B2BCC08F200B87B59 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA568B0A2BCC08F200B87B59 /* SectionModel.swift */; };
 		FA568B122BD9101A00B87B59 /* PersonalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA568B112BD9101A00B87B59 /* PersonalInfoViewModel.swift */; };
-		FA568B142BD951C900B87B59 /* AddressesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA568B132BD951C900B87B59 /* AddressesModel.swift */; };
 		FA817FFF2BE1DEB5002ABBFD /* OrderStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA817FFE2BE1DEB5002ABBFD /* OrderStatusView.swift */; };
 		FA8180022BE2737C002ABBFD /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8180012BE2737C002ABBFD /* AddButton.swift */; };
 		FA9F5D462C10803700E81C9C /* StringToExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F5D452C10803700E81C9C /* StringToExtension.swift */; };
@@ -118,7 +117,6 @@
 		FA5339682C2445960077974E /* OrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewModel.swift; sourceTree = "<group>"; };
 		FA568B0A2BCC08F200B87B59 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		FA568B112BD9101A00B87B59 /* PersonalInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewModel.swift; sourceTree = "<group>"; };
-		FA568B132BD951C900B87B59 /* AddressesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesModel.swift; sourceTree = "<group>"; };
 		FA77A3A42BBDA10600843673 /* AssetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AssetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA817FFE2BE1DEB5002ABBFD /* OrderStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusView.swift; sourceTree = "<group>"; };
 		FA8180012BE2737C002ABBFD /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 		FA272F062BF45C7200952AEF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA568B132BD951C900B87B59 /* AddressesModel.swift */,
 				FA53395B2C2342DC0077974E /* AdressShowModel.swift */,
 			);
 			path = Model;
@@ -845,7 +842,6 @@
 				FAC5D4652BE3B205003B61E5 /* ProfileImageAndGmail.swift in Sources */,
 				FA8180022BE2737C002ABBFD /* AddButton.swift in Sources */,
 				FA272F0D2BF45EEB00952AEF /* PaymentMethodViewModel.swift in Sources */,
-				FA568B142BD951C900B87B59 /* AddressesModel.swift in Sources */,
 				524092662BB7BE0300A75FC0 /* ProfileViewModel.swift in Sources */,
 				FAD6A36F2C0BD1520026E317 /* VerticalProgressViewStyle.swift in Sources */,
 				FAF6959A2BEBBEC000BD5CC1 /* PaymentItem.swift in Sources */,

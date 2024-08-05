@@ -23,10 +23,10 @@ public struct CartView: View {
         VStack {
             NavigationBar()
             Spacer()
-//            if vm.products.isEmpty {
-//                CartIsEmpty()
-//                Spacer()
-//            } else {
+            if vm.products.isEmpty {
+                CartIsEmpty()
+                Spacer()
+            } else {
                 CartListView()
                 
                 CheckOutView(action: {
@@ -34,12 +34,12 @@ public struct CartView: View {
                         showCheckout.toggle()
                     }
                 })
-//            }
+            }
         }
         .sheet(isPresented: $showCheckout) {
             if #available(iOS 16.0, *) {
                 CheckoutMainView().environmentObject(checkoutViewModel)
-                    .presentationDetents([.height(600.dpHeight()), .large])
+                    .presentationDetents([.height(checkoutViewModel.viewHeight), .large])
             } else {
                 CheckoutMainView().environmentObject(checkoutViewModel)
             }

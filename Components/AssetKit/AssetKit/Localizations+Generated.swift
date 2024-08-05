@@ -78,6 +78,8 @@ public enum Localizations {
   public static let bySports = Localizations.tr("Localizable_en", "by_sports", fallback: "By sports")
   /// Cancel
   public static let cancel = Localizations.tr("Localizable_en", "cancel", fallback: "Cancel")
+  /// Card number
+  public static let cardNumber = Localizations.tr("Localizable_en", "cardNumber", fallback: "Card number")
   /// Care instructions
   public static let careInstructions = Localizations.tr("Localizable_en", "care_instructions", fallback: "Care instructions")
   /// Cart
@@ -213,6 +215,8 @@ public enum Localizations {
   public static let male = Localizations.tr("Localizable_en", "male", fallback: "Male")
   /// Men
   public static let men = Localizations.tr("Localizable_en", "men", fallback: "Men")
+  /// MM/YY
+  public static let mmyy = Localizations.tr("Localizable_en", "mmyy", fallback: "MM/YY")
   /// My cart
   public static let myCart = Localizations.tr("Localizable_en", "my_cart", fallback: "My cart")
   /// Never
@@ -269,6 +273,8 @@ public enum Localizations {
   public static let payByCash = Localizations.tr("Localizable_en", "pay_by_cash", fallback: "Pay by cash")
   /// Pay & order
   public static let payOrder = Localizations.tr("Localizable_en", "pay_order", fallback: "Pay & order")
+  /// Payment
+  public static let payment = Localizations.tr("Localizable_en", "payment", fallback: "Payment")
   /// Payment methods
   public static let paymentMethods = Localizations.tr("Localizable_en", "payment_methods", fallback: "Payment methods")
   /// %@ Off and Up

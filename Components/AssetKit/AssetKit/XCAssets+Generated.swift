@@ -60,6 +60,13 @@ public enum Asset {
       public static let agrobank = ImageAsset(name: "agrobank")
       public static let masterCard = ImageAsset(name: "masterCard")
     }
+    public enum Card {
+      public static let humoIcon = ImageAsset(name: "humoIcon")
+      public static let masterCardIcon = ImageAsset(name: "masterCardIcon")
+      public static let unionPayIcon = ImageAsset(name: "unionPayIcon")
+      public static let uzcardIcon = ImageAsset(name: "uzcardIcon")
+      public static let visaIcon = ImageAsset(name: "visaIcon")
+    }
     public enum Cart {
       public static let minusCart = ImageAsset(name: "minusCart")
       public static let plusCart = ImageAsset(name: "plusCart")
@@ -97,6 +104,7 @@ public enum Asset {
       public static let chevronLeft = ImageAsset(name: "chevronLeft")
       public static let chevronRight = ImageAsset(name: "chevronRight")
       public static let chevronUp = ImageAsset(name: "chevronUp")
+      public static let circle = ImageAsset(name: "circle")
       public static let clock = ImageAsset(name: "clock")
       public static let closeRed = ImageAsset(name: "closeRed")
       public static let closeX = ImageAsset(name: "closeX")
@@ -171,6 +179,7 @@ public enum Asset {
       public static let closeWish = ImageAsset(name: "closeWish")
       public static let folder = ImageAsset(name: "folder")
     }
+    public static let circleFllIcon = ImageAsset(name: "circleFllIcon")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

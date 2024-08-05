@@ -16,7 +16,7 @@ public class AddressesViewModel: ObservableObject {
         fetchAddresses()
     }
     
-    @Published var items: [Item]? = nil
+    @Published var items: [Item] = []
     @Published var viewState: ViewState = .loading
     @Published var message: MessageShow? = nil
     
@@ -32,7 +32,7 @@ public class AddressesViewModel: ObservableObject {
                // let item = self.mapAddressToItem(address: adresses)
                 await MainActor.run { [weak self] in
                     self?.items = []
-                    self?.viewState = self?.items?.isEmpty == true ? .empty : .show
+                    self?.viewState = self?.items.isEmpty == true ? .empty : .show
                     self?.message = .succes(message: "Sizning manzilingiz muvaffaqqiyatli!")
                 }
             } catch {
@@ -55,7 +55,7 @@ public class AddressesViewModel: ObservableObject {
 }
 
 
-public class AddressFormViewModel: ObservableObject {
+public final class AddressFormViewModel: ObservableObject {
     
     @Environment(\.dismiss) var pop
     
@@ -117,6 +117,8 @@ public class AddressFormViewModel: ObservableObject {
     
     @Published var message: MessageShow? = nil
     
+    @Published public var addedAddress: AddressResponseData?
+    
     public func checkToValied() {
         isFormValid = !addressName.isEmpty && !streetAddress.isEmpty && !city.isEmpty && !stateProvinceRegion.isEmpty
     }
@@ -152,10 +154,10 @@ public class AddressFormViewModel: ObservableObject {
                     body: adressesData
                 )
                 
-                print("Address sent successfully: \(responce)")
                 await MainActor.run { [weak self] in
-                    pop()
+                    self?.pop()
                     self?.message = .succes(message: "Sizning manzilingiz muvaffaqqiyatli yuborildi")
+                    self?.addedAddress = responce.address
                 }
             } catch {
                 print("uplaod error ", error.localizedDescription)

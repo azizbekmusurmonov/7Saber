@@ -8,12 +8,13 @@
 import SwiftUI
 import AssetKit
 import Core
+import Profile
 
 public struct CheckoutMainView: View {
     
     @EnvironmentObject var vm: CheckoutMainViewModel
     @Environment(\.dismiss) var dismiss
-    
+    @StateObject var addressVM = AddressFormViewModel()
     
     public init() { }
     
@@ -34,6 +35,7 @@ public struct CheckoutMainView: View {
                         }
                     }
                 }
+                .navigate(to: CheckoutPaymentView().environmentObject(vm), when: $vm.showPaymentView)
                 .onDisappear {
                     withAnimation(.spring(duration: 0.3, bounce: 0.3)) {
                         vm.showBagView = false
@@ -49,9 +51,19 @@ public struct CheckoutMainView: View {
                             .environmentObject(vm)
                     }
                 }
+                .sheet(isPresented: $vm.showAddressView) {
+                    AddNewAddress()
+                        .environmentObject(addressVM)
+                }
             }
         }.onAppear {
             vm.fetchAllData()
+        }
+        .onChange(of: addressVM.addedAddress) { selectedAddress in
+            guard let selectedAddress else { return }
+            vm.selectedAddress = selectedAddress
+            vm.paymentButtonIsEnable = true
+            vm.checkPrice()
         }
     }
 }
@@ -65,7 +77,9 @@ extension CheckoutMainView {
             CheckoutPersonalInfoView()
                 .environmentObject(vm)
             
-            ShippingAddressView()
+            ShippingAddressView {
+                vm.showAddressView = true
+            }
                 .environmentObject(vm)
             
             CheckoutPromocodeView()
@@ -87,7 +101,10 @@ extension CheckoutMainView {
                 icon: Asset.Image.Icons.arrowRight.swiftUIImage,
                 isEnable: $vm.paymentButtonIsEnable
             ) {
-                // action
+                vm.showPaymentView = true
+                withAnimation {
+                    vm.viewHeight = 470.dpHeight()
+                }
             }
             Spacer()
             

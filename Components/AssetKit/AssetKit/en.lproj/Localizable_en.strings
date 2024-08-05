@@ -249,6 +249,9 @@
 "shipping_address" = "Shipping address";
 "title_add_shipping" = "Add shipping address";
 "add_promocode_here" = "Add promocode here";
+"payment" = "Payment";
+"cardNumber" = "Card number";
+"mmyy" = "MM/YY";
 "add_shipping_address" = "Add shipping address to continue the checkout";
 "promocode" = "Promocode";
 "subtotal" = "Subtotal";

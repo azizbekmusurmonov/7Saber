@@ -45,4 +45,8 @@ struct CheckoutRequest {
             body: ["addressId": addressId, "promocodeId": promocodeId]
         )
     }
+    
+    static func addCard() {
+        
+    }
 }
