@@ -181,7 +181,7 @@ final class CheckoutMainViewModel: ObservableObject {
         }
     }
     
-    func createOrder(with orderType: SelectedPaymentMethod) {
+    func createOrder() {
         guard let addressessId = selectedAddress?.id else { return }
         isLoading = true
         
@@ -189,7 +189,7 @@ final class CheckoutMainViewModel: ObservableObject {
             guard let self else { return }
             do {
                 let totalBalances = try await CheckoutRequest.order(
-                    addressId: addressessId, promocodeID: nil, payMethod: orderType, cardId: 0)
+                    addressId: addressessId, promocodeID: nil, payMethod: selectedPaymentMethod, cardId: 1)
                 
                 await MainActor.run { [weak self] in
 
