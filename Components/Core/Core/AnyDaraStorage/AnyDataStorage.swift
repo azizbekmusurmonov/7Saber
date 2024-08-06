@@ -25,6 +25,8 @@ public final class DataStorage {
     public static let storage: AnyDataStorage = UserDefaults.standard
     
     public let language: AppLanguage = AppLanguage(rawValue: DataStorage.storage.get(from: .language) as? String ?? "uz") ?? .uz
+    
+    public var isUzbekistan: Bool = true
 }
 
 extension UserDefaults: AnyDataStorage {
@@ -51,6 +53,7 @@ public enum StorageKeys: String {
     case isRegistrate
     case token
     case language
+    case selectedCountry
 }
 
 public enum AppLanguage: String, CaseIterable {
