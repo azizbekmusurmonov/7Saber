@@ -177,7 +177,7 @@ public final class AddressFormViewModel: ObservableObject {
                 let model = try await NetworkService.shared.request(url: url, decode: [CountryModel].self, method: .get)
                 
                 await MainActor.run {
-                    self.countries = model
+                    self.countries = model.sorted { $0.nameEn < $1.nameEn }
                 }
                 
             } catch {

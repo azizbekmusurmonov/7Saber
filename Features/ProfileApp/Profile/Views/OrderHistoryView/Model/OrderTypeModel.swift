@@ -35,96 +35,27 @@ struct OrderTypeModel: Codable {
         case prevPageURL = "prev_page_url"
         case to, total
     }
+    
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.currentPage = try container.decode(Int.self, forKey: .currentPage)
+        self.data = try container.decode([String].self, forKey: .data)
+        self.firstPageURL = try container.decode(String.self, forKey: .firstPageURL)
+        self.from = try container.decodeIfPresent(String.self, forKey: .from)
+        self.lastPage = try container.decode(Int.self, forKey: .lastPage)
+        self.lastPageURL = try container.decode(String.self, forKey: .lastPageURL)
+        self.links = try container.decode([Link].self, forKey: .links)
+        self.nextPageURL = try container.decodeIfPresent(String.self, forKey: .nextPageURL)
+        self.path = try container.decode(String.self, forKey: .path)
+        self.perPage = try container.decode(Int.self, forKey: .perPage)
+        self.prevPageURL = try container.decodeIfPresent(String.self, forKey: .prevPageURL)
+        self.to = try container.decodeIfPresent(String.self, forKey: .to)
+        self.total = try container.decode(Int.self, forKey: .total)
+    }
 }
 
 struct Link: Codable {
     let url: String?
     let label: String
     let active: Bool
-}
-
-class JSONAny: Codable {
-    let value: Any
-    
-    static func decodingError(forCodingPath codingPath: [CodingKey]) -> DecodingError {
-        let context = DecodingError.Context(codingPath: codingPath, debugDescription: "Cannot decode JSONAny")
-        return DecodingError.typeMismatch(JSONAny.self, context)
-    }
-    
-    static func encodingError(forValue value: Any, codingPath: [CodingKey]) -> EncodingError {
-        let context = EncodingError.Context(codingPath: codingPath, debugDescription: "Cannot encode JSONAny")
-        return EncodingError.invalidValue(value, context)
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        
-        if let boolValue = try? container.decode(Bool.self) {
-            value = boolValue
-            return
-        }
-        
-        if let intValue = try? container.decode(Int.self) {
-            value = intValue
-            return
-        }
-        
-        if let doubleValue = try? container.decode(Double.self) {
-            value = doubleValue
-            return
-        }
-        
-        if let stringValue = try? container.decode(String.self) {
-            value = stringValue
-            return
-        }
-        
-        if let arrayValue = try? container.decode([JSONAny].self) {
-            value = arrayValue
-            return
-        }
-        
-        if let dictionaryValue = try? container.decode([String: JSONAny].self) {
-            value = dictionaryValue
-            return
-        }
-        
-        throw JSONAny.decodingError(forCodingPath: decoder.codingPath)
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        
-        if let boolValue = value as? Bool {
-            try container.encode(boolValue)
-            return
-        }
-        
-        if let intValue = value as? Int {
-            try container.encode(intValue)
-            return
-        }
-        
-        if let doubleValue = value as? Double {
-            try container.encode(doubleValue)
-            return
-        }
-        
-        if let stringValue = value as? String {
-            try container.encode(stringValue)
-            return
-        }
-        
-        if let arrayValue = value as? [JSONAny] {
-            try container.encode(arrayValue)
-            return
-        }
-        
-        if let dictionaryValue = value as? [String: JSONAny] {
-            try container.encode(dictionaryValue)
-            return
-        }
-        
-        throw JSONAny.encodingError(forValue: value, codingPath: encoder.codingPath)
-    }
 }

@@ -49,4 +49,28 @@ struct CheckoutRequest {
     static func addCard() {
         
     }
+    
+    static func getAllCards() async throws -> [String] {
+        try await NetworkService.shared.request(
+            url: baseUrl + "/client/card",
+            decode: [String].self,
+            method: .get
+        )
+    }
+    
+    static func order(
+        addressId: Int, promocodeID: Int?, payMethod: SelectedPaymentMethod, cardId: Int
+    ) async throws -> String {
+        try await NetworkService.shared.request(
+            url: baseUrl + "/client/order/store",
+            decode: String.self,
+            method: .post,
+            body: [
+                "addressId": addressId,
+                "promocodeId": promocodeID,
+                "payMethod": payMethod.rawValue,
+                "cardId": cardId
+            ]
+        )
+    }
 }

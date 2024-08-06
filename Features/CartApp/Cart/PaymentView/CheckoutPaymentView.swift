@@ -9,7 +9,7 @@ import SwiftUI
 import Core
 import AssetKit
 
-enum SelectedPaymentMethod {
+enum SelectedPaymentMethod: Int {
     case cash
     case card
 }
@@ -22,6 +22,7 @@ struct CheckoutPaymentView: View {
     var body: some View {
         VStack {
             CheckoutNavBar(title: Localizations.payment) {
+                vm.clearAllData()
                 dismiss()
             }
             
@@ -70,7 +71,8 @@ extension CheckoutPaymentView {
                     Spacer()
                     
                     HStack {
-                        Text(Localizations.addCard)
+                        Text(Localizations.addCard.uppercased())
+                            .font(.sabFont(400, size: 13))
                             .padding(.horizontal, 6)
                             .foregroundColor(.black)
                         Asset.Image.Icons.plus.swiftUIImage

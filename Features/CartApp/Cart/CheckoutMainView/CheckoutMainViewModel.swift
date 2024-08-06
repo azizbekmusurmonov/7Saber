@@ -43,6 +43,22 @@ final class CheckoutMainViewModel: ObservableObject {
     
     @Published var viewHeight: CGFloat = 626.dpHeight()
     
+    func clearAllData() {
+        isLoading = false
+        showBagView = false
+        paymentButtonIsEnable = false
+        showAddressView = false
+        showPaymentView = false
+        carts = []
+        totalBalance = nil
+        promocode = ""
+        showPromocode = false
+        promocodeIsEnable = false
+        didAppliedPromocode = false
+        selectedAddress = nil
+        showAddCardView = false
+    }
+    
     public func fetchAllData() {
         
         Task.detached {
@@ -134,6 +150,49 @@ final class CheckoutMainViewModel: ObservableObject {
                 
                 await MainActor.run { [weak self] in
                     self?.totalBalance = totalBalances
+                    self?.isLoading = false
+                }
+            } catch {
+                await MainActor.run { [weak self] in
+                    self?.message = .error(message: error.localizedDescription)
+                    self?.isLoading = false
+                }
+            }
+        }
+    }
+    
+    func getCardsList() {
+        isLoading = true
+        
+        Task.detached { [weak self] in
+            guard let self else { return }
+            do {
+                let totalBalances = try await CheckoutRequest.getAllCards()
+                
+                await MainActor.run { [weak self] in
+                    self?.isLoading = false
+                }
+            } catch {
+                await MainActor.run { [weak self] in
+                    self?.message = .error(message: error.localizedDescription)
+                    self?.isLoading = false
+                }
+            }
+        }
+    }
+    
+    func createOrder(with orderType: SelectedPaymentMethod) {
+        guard let addressessId = selectedAddress?.id else { return }
+        isLoading = true
+        
+        Task.detached { [weak self] in
+            guard let self else { return }
+            do {
+                let totalBalances = try await CheckoutRequest.order(
+                    addressId: addressessId, promocodeID: nil, payMethod: orderType, cardId: 0)
+                
+                await MainActor.run { [weak self] in
+
                     self?.isLoading = false
                 }
             } catch {

@@ -18,6 +18,7 @@ struct EnterPromocodeView: View {
         VStack(alignment: .leading, spacing: 24.dpHeight()) {
             CheckoutNavBar(title: Localizations.promocode) {
                 vm.showPromocode = false
+                vm.clearAllData()
             }
             
             VStack(alignment: .leading, spacing: 8.dpHeight()) {

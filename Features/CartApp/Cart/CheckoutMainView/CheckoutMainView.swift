@@ -26,6 +26,7 @@ public struct CheckoutMainView: View {
                 VStack(spacing: .zero) {
                     VStack(spacing: .zero) {
                         CheckoutNavBar(title: Localizations.checkout) {
+                            vm.clearAllData()
                             dismiss()
                         }
                         

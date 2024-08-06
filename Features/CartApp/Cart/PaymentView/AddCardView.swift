@@ -64,7 +64,7 @@ struct AddCardView: View {
                     .setSize(24)
             }.padding()
             CheckoutNavBar(title: Localizations.addCard) {
-                
+                vm.clearAllData()
             }
         }.background(Color.white)
     }

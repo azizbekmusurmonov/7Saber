@@ -3,4 +3,142 @@
    uuid = "56AAEC53-6A8B-4F45-B2EE-8C478F726DDA"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C95E026-72BE-4A7D-AF01-12F8E77186FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/CartApp/Cart/CheckoutMainView/CheckoutMainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "didApplyPromocode()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8C95E026-72BE-4A7D-AF01-12F8E77186FF - 3fd9fb23cfb6eb02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Cart.CheckoutMainViewModel.didApplyPromocode() -&gt; ()"
+                  moduleName = "Cart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/test/Desktop/7Saber/Features/CartApp/Cart/CheckoutMainView/CheckoutMainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89">
+               </Location>
+               <Location
+                  uuid = "8C95E026-72BE-4A7D-AF01-12F8E77186FF - 82a8d81db8d30f30"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Cart.CheckoutMainViewModel.didApplyPromocode() -&gt; ()"
+                  moduleName = "Cart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/test/Desktop/7Saber/Features/CartApp/Cart/CheckoutMainView/CheckoutMainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89">
+               </Location>
+               <Location
+                  uuid = "8C95E026-72BE-4A7D-AF01-12F8E77186FF - c85d4554f05225a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for closure #1 @Sendable () async -&gt; () in Cart.CheckoutMainViewModel.didApplyPromocode() -&gt; ()"
+                  moduleName = "Cart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/test/Desktop/7Saber/Features/CartApp/Cart/CheckoutMainView/CheckoutMainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89">
+               </Location>
+               <Location
+                  uuid = "8C95E026-72BE-4A7D-AF01-12F8E77186FF - e83f06df956fb2de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Cart.CheckoutMainViewModel.didApplyPromocode() -&gt; ()"
+                  moduleName = "Cart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/test/Desktop/7Saber/Features/CartApp/Cart/CheckoutMainView/CheckoutMainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89">
+               </Location>
+               <Location
+                  uuid = "8C95E026-72BE-4A7D-AF01-12F8E77186FF - a577943f7bde60d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Cart.CheckoutMainViewModel.didApplyPromocode() -&gt; ()"
+                  moduleName = "Cart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/test/Desktop/7Saber/Features/CartApp/Cart/CheckoutMainView/CheckoutMainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7EA26F92-ACD0-49E8-AF28-DBBC49E19D6D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/CartApp/Cart/CheckoutMainView/CheckoutMainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "didApplyPromocode()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E90CF24-341F-43A9-9D52-12DB7236CD6A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/CartApp/Cart/CardsListView/CardsListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "navBar"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DBD4E053-1B29-4C41-BFBB-44323BCA05B4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/CartApp/Cart/PaymentView/AddCardView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "navBar"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
