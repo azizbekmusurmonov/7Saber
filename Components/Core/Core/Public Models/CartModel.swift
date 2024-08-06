@@ -110,12 +110,17 @@ public struct PhotoModel: Codable {
 
 // MARK: - Discount
 public struct DiscountModel: Codable {
-    public let amount: Int
+    public let amount: DiscountAmount
     public let type: String
     public let productPrice, discountPrice: PriceModel
     public var display: String {
         discountPrice.display
     }
+}
+
+public struct DiscountAmount: Codable {
+    public let currency: String
+    public let value: Int
 }
 
 // MARK: - Price

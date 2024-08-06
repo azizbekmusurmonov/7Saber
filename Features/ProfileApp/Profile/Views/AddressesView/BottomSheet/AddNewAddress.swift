@@ -9,13 +9,15 @@ import SwiftUI
 import Core
 import AssetKit
 
-struct AddNewAddress: View {
+public struct AddNewAddress: View {
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: AddressFormViewModel
     @Environment(\.dismiss) var pop
     
-    var body: some View {
+    public init() { }
+    
+    public var body: some View {
         VStack(spacing: .zero) {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(.gray)

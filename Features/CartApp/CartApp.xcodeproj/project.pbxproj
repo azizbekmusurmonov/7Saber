@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520377382C3C29550090C532 /* AddressSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520377372C3C29550090C532 /* AddressSubView.swift */; };
+		52192C7E2C3E97C000412688 /* CheckoutPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52192C7D2C3E97C000412688 /* CheckoutPaymentView.swift */; };
 		521E788F2C2E7D2A00481766 /* CartMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E788E2C2E7D2A00481766 /* CartMockData.swift */; };
 		521E78952C2E815500481766 /* CheckoutMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E78942C2E815500481766 /* CheckoutMainView.swift */; };
 		521E78972C2E815B00481766 /* CheckoutMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E78962C2E815B00481766 /* CheckoutMainViewModel.swift */; };
@@ -25,13 +27,18 @@
 		524940B22C2A6C4300642473 /* AssetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A3952BBDA0C200843673 /* AssetKit.framework */; };
 		524940B52C2A6C4400642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20DE2BB7EB9500457A3E /* Core.framework */; };
 		524940B72C2A6C4600642473 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20A32BB7E97200457A3E /* NetworkManager.framework */; };
+		526F55982C61171000D52382 /* Payze_iOS_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F55972C61171000D52382 /* Payze_iOS_sdk.framework */; };
 		5281F65C2C33142F0011EA48 /* CheckoutPersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F65B2C33142F0011EA48 /* CheckoutPersonalInfoView.swift */; };
 		5281F6602C3326BF0011EA48 /* ShippingAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F65F2C3326BF0011EA48 /* ShippingAddressView.swift */; };
 		5281F6622C332D470011EA48 /* CheckoutPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F6612C332D470011EA48 /* CheckoutPriceView.swift */; };
 		5281F6642C332E270011EA48 /* CheckoutPromocodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F6632C332E270011EA48 /* CheckoutPromocodeView.swift */; };
 		5281F6662C3336E00011EA48 /* CheckoutConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F6652C3336E00011EA48 /* CheckoutConfirmButton.swift */; };
+		529AA6EA2C59600000C5892C /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529AA6E92C59600000C5892C /* AddCardView.swift */; };
+		529AA6EC2C5A2CE100C5892C /* AddCardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529AA6EB2C5A2CE100C5892C /* AddCardExtensions.swift */; };
 		52AE89782C343A7900B46A88 /* CheckoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE89772C343A7900B46A88 /* CheckoutRequest.swift */; };
 		52AE897C2C34540900B46A88 /* CheckotBalanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE897B2C34540900B46A88 /* CheckotBalanceModel.swift */; };
+		52BBE1F62C6118BC008263C4 /* CardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBE1F52C6118BC008263C4 /* CardsListView.swift */; };
+		52D091D52C36D7E400D2A5B1 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D091D42C36D7E400D2A5B1 /* Profile.framework */; };
 		7B49D85B2C15B5B400F9036F /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49D8592C15B56300F9036F /* NavigationBar.swift */; };
 		7B49D85D2C15B91500F9036F /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B49D85C2C15B91500F9036F /* CheckOutView.swift */; };
 		7B7319912C1841EC0057EAA0 /* UpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7319902C1841EC0057EAA0 /* UpdateModel.swift */; };
@@ -50,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		520377372C3C29550090C532 /* AddressSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSubView.swift; sourceTree = "<group>"; };
+		52192C7D2C3E97C000412688 /* CheckoutPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPaymentView.swift; sourceTree = "<group>"; };
 		521E788E2C2E7D2A00481766 /* CartMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartMockData.swift; sourceTree = "<group>"; };
 		521E78942C2E815500481766 /* CheckoutMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutMainView.swift; sourceTree = "<group>"; };
 		521E78962C2E815B00481766 /* CheckoutMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutMainViewModel.swift; sourceTree = "<group>"; };
@@ -66,13 +75,18 @@
 		524091D02BB7BA9100A75FC0 /* Cart.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Cart.docc; sourceTree = "<group>"; };
 		524091DB2BB7BAB300A75FC0 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		524091DD2BB7BACF00A75FC0 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		526F55972C61171000D52382 /* Payze_iOS_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Payze_iOS_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5281F65B2C33142F0011EA48 /* CheckoutPersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPersonalInfoView.swift; sourceTree = "<group>"; };
 		5281F65F2C3326BF0011EA48 /* ShippingAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingAddressView.swift; sourceTree = "<group>"; };
 		5281F6612C332D470011EA48 /* CheckoutPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPriceView.swift; sourceTree = "<group>"; };
 		5281F6632C332E270011EA48 /* CheckoutPromocodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutPromocodeView.swift; sourceTree = "<group>"; };
 		5281F6652C3336E00011EA48 /* CheckoutConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutConfirmButton.swift; sourceTree = "<group>"; };
+		529AA6E92C59600000C5892C /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		529AA6EB2C5A2CE100C5892C /* AddCardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardExtensions.swift; sourceTree = "<group>"; };
 		52AE89772C343A7900B46A88 /* CheckoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutRequest.swift; sourceTree = "<group>"; };
 		52AE897B2C34540900B46A88 /* CheckotBalanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckotBalanceModel.swift; sourceTree = "<group>"; };
+		52BBE1F52C6118BC008263C4 /* CardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListView.swift; sourceTree = "<group>"; };
+		52D091D42C36D7E400D2A5B1 /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B49D8592C15B56300F9036F /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		7B49D85C2C15B91500F9036F /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
 		7B7319902C1841EC0057EAA0 /* UpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateModel.swift; sourceTree = "<group>"; };
@@ -97,7 +111,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				524940B72C2A6C4600642473 /* NetworkManager.framework in Frameworks */,
+				526F55982C61171000D52382 /* Payze_iOS_sdk.framework in Frameworks */,
 				524940B52C2A6C4400642473 /* Core.framework in Frameworks */,
+				52D091D52C36D7E400D2A5B1 /* Profile.framework in Frameworks */,
 				524940B22C2A6C4300642473 /* AssetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +121,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52192C7C2C3E978F00412688 /* PaymentView */ = {
+			isa = PBXGroup;
+			children = (
+				52192C7D2C3E97C000412688 /* CheckoutPaymentView.swift */,
+				529AA6E92C59600000C5892C /* AddCardView.swift */,
+				529AA6EB2C5A2CE100C5892C /* AddCardExtensions.swift */,
+			);
+			path = PaymentView;
+			sourceTree = "<group>";
+		};
 		521E788D2C2E7D1A00481766 /* MockData */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +163,7 @@
 				5281F6632C332E270011EA48 /* CheckoutPromocodeView.swift */,
 				5281F6612C332D470011EA48 /* CheckoutPriceView.swift */,
 				5281F6652C3336E00011EA48 /* CheckoutConfirmButton.swift */,
+				520377372C3C29550090C532 /* AddressSubView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -197,6 +224,8 @@
 		524091CE2BB7BA9100A75FC0 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				52BBE1F42C6118B1008263C4 /* CardsListView */,
+				52192C7C2C3E978F00412688 /* PaymentView */,
 				521E78912C2E813800481766 /* CheckoutMainView */,
 				521E788D2C2E7D1A00481766 /* MockData */,
 				524091CF2BB7BA9100A75FC0 /* Cart.h */,
@@ -216,6 +245,14 @@
 				52AE89772C343A7900B46A88 /* CheckoutRequest.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		52BBE1F42C6118B1008263C4 /* CardsListView */ = {
+			isa = PBXGroup;
+			children = (
+				52BBE1F52C6118BC008263C4 /* CardsListView.swift */,
+			);
+			path = CardsListView;
 			sourceTree = "<group>";
 		};
 		7B49D8582C15B55100F9036F /* CustomViews */ = {
@@ -239,6 +276,8 @@
 		FA4F20A22BB7E97200457A3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				526F55972C61171000D52382 /* Payze_iOS_sdk.framework */,
+				52D091D42C36D7E400D2A5B1 /* Profile.framework */,
 				FA77A3952BBDA0C200843673 /* AssetKit.framework */,
 				FA4F20DE2BB7EB9500457A3E /* Core.framework */,
 				FA4F20A32BB7E97200457A3E /* NetworkManager.framework */,
@@ -378,13 +417,18 @@
 				52AE897C2C34540900B46A88 /* CheckotBalanceModel.swift in Sources */,
 				5281F6602C3326BF0011EA48 /* ShippingAddressView.swift in Sources */,
 				7BEE35F42C1637630042A13A /* CartListView.swift in Sources */,
+				52BBE1F62C6118BC008263C4 /* CardsListView.swift in Sources */,
 				524091DC2BB7BAB300A75FC0 /* CartView.swift in Sources */,
+				529AA6EA2C59600000C5892C /* AddCardView.swift in Sources */,
 				524091D12BB7BA9100A75FC0 /* Cart.docc in Sources */,
 				521E789F2C2ECB8900481766 /* NavBar.swift in Sources */,
 				521E78952C2E815500481766 /* CheckoutMainView.swift in Sources */,
 				521E788F2C2E7D2A00481766 /* CartMockData.swift in Sources */,
 				7B49D85B2C15B5B400F9036F /* NavigationBar.swift in Sources */,
+				52192C7E2C3E97C000412688 /* CheckoutPaymentView.swift in Sources */,
+				529AA6EC2C5A2CE100C5892C /* AddCardExtensions.swift in Sources */,
 				7BC755A82C16DF3B00F24B31 /* CartIsEmpty.swift in Sources */,
+				520377382C3C29550090C532 /* AddressSubView.swift in Sources */,
 				5281F6622C332D470011EA48 /* CheckoutPriceView.swift in Sources */,
 				52AE89782C343A7900B46A88 /* CheckoutRequest.swift in Sources */,
 			);

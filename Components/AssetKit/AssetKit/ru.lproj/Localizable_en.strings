@@ -19,6 +19,9 @@
 "personal_info" = "Личная информация:";
 "title_add_shipping" = "Добавить адрес доставки";
 "add_promocode_here" = "Добавьте промокод здесь";
+"payment" = "Оплата";
+"cardNumber" = "Номер карты";
+"mmyy" = "ММ/ГГ";
 "but" = "Но";
 "tough_people" = "Сильные люди";
 "do" = "Выдерживают";
