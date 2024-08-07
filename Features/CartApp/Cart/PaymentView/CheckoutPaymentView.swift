@@ -36,7 +36,7 @@ struct CheckoutPaymentView: View {
                 icon: Asset.Image.Icons.done.swiftUIImage,
                 isEnable: $vm.paymentButtonIsEnable
             ) {
-                
+                vm.createOrder()
             }
             Spacer()
         }.navigate(to: AddCardView().environmentObject(vm), when: $vm.showAddCardView)

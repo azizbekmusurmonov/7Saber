@@ -63,7 +63,7 @@ struct CheckoutRequest {
     ) async throws -> String {
         try await NetworkService.shared.request(
             url: baseUrl + "/client/order/store",
-            decode: String.self,
+            decode: SuccessModel.self,
             method: .post,
             body: [
                 "addressId": addressId,
@@ -71,6 +71,6 @@ struct CheckoutRequest {
                 "payMethod": payMethod.rawValue,
                 "cardId": cardId
             ]
-        )
+        ).message
     }
 }
