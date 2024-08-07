@@ -25,7 +25,7 @@ public class AddressesViewModel: ObservableObject {
         Task {
             do {
                 let adresses = try await NetworkService.shared.request(
-                    url: "https://lab.7saber.uz/api/client/address/show/1",
+                    url: "https://lab.7saber.uz/api/client/address",
                     decode: AddressModel.self,
                     method: .get
                 )
