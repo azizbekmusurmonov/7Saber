@@ -33,13 +33,13 @@ public struct ProfileView: View {
                                 .environmentObject(vm)
                             
                             ProfileList()
-                            DeleteAndLogOutButton(title: "LOG OUT",
+                            DeleteAndLogOutButton(title: Localizations.logOut,
                                                   icon: Asset.Image.Profile.logOut.image,
                                                   buttonPressed: {
                                 print("log out")
                             })
                             
-                            DeleteAndLogOutButton(title: "DELETE ACOUNT",
+                            DeleteAndLogOutButton(title: Localizations.deleteAccount,
                                                   icon: Asset.Image.Icons.trash2.image,
                                                   buttonPressed: {
                                 print("delete acc")
@@ -67,7 +67,7 @@ extension ProfileView {
     var navigationBar: some View {
         
         VStack(spacing: .zero) {
-            BaseNavigationBar(title: "PROFILE",
+            BaseNavigationBar(title: Localizations.profile,
                               leftImage: Asset.Image.Logo.logoBlack.image,
                               rightImage: Asset.Image.Navigation.cancelNav.image
             )

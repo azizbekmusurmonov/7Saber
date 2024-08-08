@@ -13,7 +13,7 @@ struct PersonalInfoList: View {
     
     @Environment(\.dismiss) var pop
     
-    @State private var header = "Birthday"
+    @State private var header = Localizations.birthday
     @State private var showPicker = false
     @State private var birthDate = Date()
     
@@ -24,17 +24,17 @@ struct PersonalInfoList: View {
             
             FonImage()
             
-            TextFieldView(header: "Full name",
+            TextFieldView(header: Localizations.fullName,
                           titleKey: "Enter your full name",
                           text: $vm.fullNam)
             .padding(.top, 20)
             
-            TextFieldView(header: "Phone number",
+            TextFieldView(header: Localizations.phoneNumber,
                           titleKey: "Enter your phone number",
                           text: $vm.phoneNamber)
             .keyboardType(.phonePad)
             
-            TextFieldView(header: "E-mail",
+            TextFieldView(header: Localizations.email,
                           titleKey: "Enter e-mail",
                           text: $vm.email)
             .keyboardType(.emailAddress)
@@ -65,14 +65,14 @@ struct PersonalInfoList: View {
             
             HStack(spacing: 10) {
                 
-                SaveCancelButtons(title: "Cancel",
+                SaveCancelButtons(title: Localizations.cancel,
                                   color: Asset.Color.Button.grayCol.swiftUIColor,
                                   textColor: Asset.Color.Text.primaryCol.swiftUIColor,
                                   buttonPressed: {
                     pop()
                 }, isDisabled: .constant(false))
                 
-                SaveCancelButtons(title: "Save",
+                SaveCancelButtons(title: Localizations.save,
                                   color: Asset.Color.Button.blackCol.swiftUIColor, textColor: Asset.Color.Text.whiteCol.swiftUIColor,
                                   buttonPressed: {
                         vm.sendPersonalInfo()

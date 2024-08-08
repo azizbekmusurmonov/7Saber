@@ -17,7 +17,7 @@ struct ShipToDataView: View {
         
         HStack(spacing: .zero) {
             VStack(alignment: .leading, spacing: 4) {
-                Text("SHIP TO:")
+                Text(Localizations.shipTo)
                     .font(.system(size: 13, weight: .regular))
                     .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                 Text("Muzaffar Nazarov")

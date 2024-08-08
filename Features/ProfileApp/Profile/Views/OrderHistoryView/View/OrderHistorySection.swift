@@ -23,7 +23,7 @@ struct OrderHistorySection: View {
             ForEach(Array(item.cells.enumerated()), id: \.offset) { index, cell in
                 HStack(spacing: 10) {
                     VStack(alignment: .leading) {
-                        Text("ORDER ID")
+                        Text(Localizations.orderId)
                             .font(.system(size: 11, weight: .regular))
                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                         Text(cell.orderId)
@@ -31,7 +31,7 @@ struct OrderHistorySection: View {
                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     }
                     VStack(alignment: .leading) {
-                        Text("TOTAL")
+                        Text(Localizations.total)
                             .font(.system(size: 11, weight: .regular))
                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                         Text(cell.total)

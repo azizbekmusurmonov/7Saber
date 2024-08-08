@@ -23,12 +23,12 @@ public struct AddNewAddress: View {
                 .foregroundColor(.gray)
                 .frame(width: 36,height: 5)
             
-            BottomSheetsNavBar(title: "ADD NEW ADDRESS")
+            BottomSheetsNavBar(title: Localizations.addNewAddress)
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack (alignment:.leading, spacing: 30) {
                     
-                    AddressTextfields(titleKey: "Address name", text: $viewModel.addressName)
+                    AddressTextfields(titleKey: Localizations.addressName, text: $viewModel.addressName)
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding()
                         .padding(.top, 20)
@@ -37,45 +37,45 @@ public struct AddNewAddress: View {
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding()
                     
-                    AddressTextfields(titleKey: "Street address", text: $viewModel.streetAddress)
+                    AddressTextfields(titleKey: Localizations.streetAddress, text: $viewModel.streetAddress)
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding()
                     
                     HStack(spacing: .zero) {
-                        AddressTextfields(titleKey: "Building", text: $viewModel.building)
+                        AddressTextfields(titleKey: Localizations.building, text: $viewModel.building)
                             .textFieldStyle(PlainTextFieldStyle())
                             .keyboardType(.numberPad)
                             .padding()
-                        AddressTextfields(titleKey: "Appartment", text: $viewModel.apartment)
+                        AddressTextfields(titleKey: Localizations.apartment, text: $viewModel.apartment)
                             .textFieldStyle(PlainTextFieldStyle())
                             .keyboardType(.numberPad)
                             .padding()
                     }
                     
                     HStack(spacing: .zero) {
-                        AddressTextfields(titleKey: "Floor", text: $viewModel.floor)
+                        AddressTextfields(titleKey: Localizations.floor, text: $viewModel.floor)
                             .textFieldStyle(PlainTextFieldStyle())
                             .keyboardType(.numberPad)
                             .padding()
-                        AddressTextfields(titleKey: "House", text: $viewModel.house)
+                        AddressTextfields(titleKey: Localizations.house, text: $viewModel.house)
                             .textFieldStyle(PlainTextFieldStyle())
                             .keyboardType(.numberPad)
                             .padding()
                     }
                     
-                    AddressTextfields(titleKey: "City", text: $viewModel.city)
+                    AddressTextfields(titleKey: Localizations.city, text: $viewModel.city)
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding()
                     
-                    AddressTextfields(titleKey: "State / Province / Region", text: $viewModel.stateProvinceRegion)
+                    AddressTextfields(titleKey: Localizations.stateProvinceRegion, text: $viewModel.stateProvinceRegion)
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding()
                     
-                    AddressTextfields(titleKey: "Zipcode", text: $viewModel.zipcode)
+                    AddressTextfields(titleKey: Localizations.zipcode, text: $viewModel.zipcode)
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding()
                     
-                    AddressTextfields(titleKey: "Phone number", text: $viewModel.phoneNumber)
+                    AddressTextfields(titleKey: Localizations.phoneNumber, text: $viewModel.phoneNumber)
                         .keyboardType(.numberPad)
                         .padding()
                 }
