@@ -15,6 +15,8 @@ struct SelectCountryView: View {
     @State var selection: String = ""
     @State var countries: [CountryModel] = []
     
+    @EnvironmentObject var vm: RegisterMobillAppViewModel
+    
     let didChoosedLanguage: (String) -> ()
     
     var body: some View {
@@ -58,6 +60,12 @@ struct SelectCountryView: View {
                         }
                         DataStorage.storage.save(locale == "ru" ? "ru" : "uz", for: .language)
                         didChoosedLanguage(locale)
+                        
+                        if selection == "Uzbekistan" {
+                            vm.isUzbekistan = true
+                        } else {
+                            vm.isUzbekistan = false
+                        }
                     }
                 } label: {
                     Capsule()
