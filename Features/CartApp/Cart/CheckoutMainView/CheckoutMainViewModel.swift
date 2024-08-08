@@ -12,6 +12,8 @@ import Core
 
 final class CheckoutMainViewModel: ObservableObject {
     
+    @Published var showCheckout: Bool = false
+    
     @Published var isLoading: Bool = true
     @Published var showBagView: Bool = false
     @Published var userName: String = ""
@@ -44,6 +46,7 @@ final class CheckoutMainViewModel: ObservableObject {
     @Published var viewHeight: CGFloat = 626.dpHeight()
     
     func clearAllData() {
+        viewHeight = 626.dpHeight()
         isLoading = false
         showBagView = false
         paymentButtonIsEnable = false
@@ -57,6 +60,7 @@ final class CheckoutMainViewModel: ObservableObject {
         didAppliedPromocode = false
         selectedAddress = nil
         showAddCardView = false
+        showCheckout = false
     }
     
     public func fetchAllData() {
@@ -202,6 +206,10 @@ final class CheckoutMainViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    deinit {
+        print("view module is deinitialized")
     }
 }
 

@@ -12,6 +12,7 @@ import Core
 struct CardsListView: View {
     
     @EnvironmentObject var vm: CheckoutMainViewModel
+    @Environment(\.dismiss) private var dismiss
     
     @State var mockCards: [String] = ["String", "String", "String"]
     
@@ -45,6 +46,7 @@ struct CardsListView: View {
                     .setSize(24)
             }.padding()
             CheckoutNavBar(title: Localizations.addCard) {
+                dismiss()
                 vm.clearAllData()
             }
         }.background(Color.white)

@@ -12,6 +12,7 @@ import Core
 struct AddCardView: View {
     
     @EnvironmentObject var vm: CheckoutMainViewModel
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
@@ -64,6 +65,7 @@ struct AddCardView: View {
                     .setSize(24)
             }.padding()
             CheckoutNavBar(title: Localizations.addCard) {
+                dismiss()
                 vm.clearAllData()
             }
         }.background(Color.white)

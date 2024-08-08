@@ -11,7 +11,6 @@ import Core
 
 public struct CartView: View {
     
-    @StateObject var checkoutViewModel = CheckoutMainViewModel()
     @EnvironmentObject var vm: CartViewModel
     
     @State private var showCheckout: Bool = false
@@ -36,12 +35,15 @@ public struct CartView: View {
                 })
             }
         }
+        .onAppear(perform: {
+            vm.getCart()
+        })
         .sheet(isPresented: $showCheckout) {
             if #available(iOS 16.0, *) {
-                CheckoutMainView().environmentObject(checkoutViewModel)
-                    .presentationDetents([.height(checkoutViewModel.viewHeight), .large])
+                CheckoutMainView()
+                    .presentationDetents([.height(vm.checkoutHeight), .large])
             } else {
-                CheckoutMainView().environmentObject(checkoutViewModel)
+                CheckoutMainView()
             }
         }
     }

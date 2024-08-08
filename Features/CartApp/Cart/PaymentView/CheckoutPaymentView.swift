@@ -32,7 +32,7 @@ struct CheckoutPaymentView: View {
                 .environmentObject(vm)
             
             ConfirmButton(
-                title: Localizations.continueToPayment,
+                title: Localizations.payOrder,
                 icon: Asset.Image.Icons.done.swiftUIImage,
                 isEnable: $vm.paymentButtonIsEnable
             ) {
