@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AssetKit
+import Core
 
 struct CheckOutView: View {
     
@@ -17,18 +18,18 @@ struct CheckOutView: View {
         VStack() {
             Divider()
             HStack {
-                Text("Total:")
+                Text(Localizations.total)
                     .font(.system(size: 16))
                     .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                 Spacer()
-                Text(vm.overallSum)
+                Text(MoneyFormatter().formatted(text: vm.overallSum))
                     .font(.system(size: 16))
             }
             Button {
                 action()
             } label: {
                 HStack() {
-                    Text("CHECK OUT")
+                    Text(Localizations.checkout.uppercased())
                         .padding(.leading, 12)
                     Spacer()
                     Image(systemName: "arrow.right")

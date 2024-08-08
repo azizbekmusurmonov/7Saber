@@ -28,6 +28,7 @@ public final class CartViewModel: ObservableObject {
     @Published var overallSum: String = ""
     @Published var totalPrice: Int = 0
     @Published var message: ShowMessage? = nil
+    @Published var checkoutHeight: CGFloat = 625.dpHeight()
     
     public init() {
         getCart()

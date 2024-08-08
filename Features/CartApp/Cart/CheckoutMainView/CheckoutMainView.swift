@@ -12,9 +12,9 @@ import Profile
 
 public struct CheckoutMainView: View {
     
-    @EnvironmentObject var vm: CheckoutMainViewModel
     @Environment(\.dismiss) var dismiss
     @StateObject var addressVM = AddressFormViewModel()
+    @StateObject var vm = CheckoutMainViewModel()
     
     public init() { }
     
@@ -96,7 +96,7 @@ extension CheckoutMainView {
         VStack(spacing: 0) {
             CheckoutPriceView()
                 .environmentObject(vm)
-            
+            Spacer()
             ConfirmButton(
                 title: Localizations.continueToPayment, 
                 icon: Asset.Image.Icons.arrowRight.swiftUIImage,

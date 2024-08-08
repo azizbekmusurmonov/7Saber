@@ -76,6 +76,8 @@ final public class NetworkService {
             
             string += "body: \(body)"
             string += newLine
+        } else {
+            print("BODY IS EMPTY", url)
         }
         
         do {
