@@ -19,7 +19,7 @@ struct SelectCountryTextfield: View {
         VStack(spacing: .zero) {
             HStack(spacing: 10) {
                 VStack(alignment: .leading) {
-                    TextField("Select the country", text: viewModel.selectedCountry == nil ? .constant("") : .constant(viewModel.selectedCountry?.name ?? ""))
+                    TextField(Localizations.selectTheCountry, text: viewModel.selectedCountry == nil ? .constant("") : .constant(viewModel.selectedCountry?.name ?? ""))
                         .textFieldStyle(PlainTextFieldStyle())
                         .disabled(true)
                 }

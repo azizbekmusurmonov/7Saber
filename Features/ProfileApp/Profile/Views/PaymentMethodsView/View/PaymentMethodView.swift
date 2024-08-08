@@ -39,7 +39,7 @@ struct PaymentMethodView: View {
                     }
                 }
             }
-            AddButton(title: "ADD PAYMENT METHOD",
+            AddButton(title: Localizations.addPaymentMethod,
                       buttonPressed: {
                 self.isSheetViewActive.toggle()
                 
@@ -69,7 +69,7 @@ extension PaymentMethodView {
     
     var navBar: some View {
         VStack(spacing: .zero) {
-            BaseNavigationBar(title: "PAYMENT METHODS ",
+            BaseNavigationBar(title: Localizations.paymentMethods,
                               leftImage: Asset.Image.Navigation.arrowLeftNav.image,
                               leftButtonPressed: {
                 print("leftButtonPressed")

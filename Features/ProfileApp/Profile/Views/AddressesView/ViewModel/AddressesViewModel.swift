@@ -24,14 +24,14 @@ public class AddressesViewModel: ObservableObject {
         viewState = .loading
         Task {
             do {
-                let adresses = try await NetworkService.shared.request(
+                let addresses = try await NetworkService.shared.request(
                     url: "https://lab.7saber.uz/api/client/address",
                     decode: AddressModel.self,
                     method: .get
                 )
-               // let item = self.mapAddressToItem(address: adresses)
+                let items = self.mapAddressToItem(address: addresses.data)
                 await MainActor.run { [weak self] in
-                    self?.items = []
+                    self?.items = items
                     self?.viewState = self?.items.isEmpty == true ? .empty : .show
                     self?.message = .succes(message: "Sizning manzilingiz muvaffaqqiyatli!")
                 }
@@ -45,12 +45,40 @@ public class AddressesViewModel: ObservableObject {
         }
     }
     
-    private func mapAddressToItem(address: Datum) -> Item {
-        return Item(
-            title: address.name,
-            location: "", // "\(address.) st. \(address.building), \(address.city), \(address.country.name)",
-            seeOnMap: "SEE ON MAP"
-        )
+    public func deleteAddress(item: Item) {
+        let addressId = item.id 
+        
+        let urlString = "https://lab.7saber.uz/api/client/address/destroy/1"
+        
+        Task {
+            do {
+                let message = try await NetworkService.shared.request(
+                    url: urlString,
+                    decode: AddressResponse.self,
+                    method: .delete
+                )
+                
+                await MainActor.run { [weak self] in
+                    self?.items.removeAll { $0.id == addressId }
+                    self?.message = .succes(message: message.message)
+                }
+            } catch {
+                print("Failed to delete address:", error)
+                await MainActor.run { [weak self] in
+                    self?.message = .error(message: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    private func mapAddressToItem(address: [AddressData]) -> [Item] {
+        return address.map { address in
+            Item(
+                title: address.name ?? "",
+                location:   "\(address.street ?? "") st. \(address.building ?? ""), \(address.city ?? ""), \(address.country?.name ?? "")",
+                seeOnMap: "SEE ON MAP"
+            )
+        }
     }
 }
 
@@ -108,7 +136,7 @@ public final class AddressFormViewModel: ObservableObject {
     }
     @Published var zipcode: String = "" {
         didSet {
-                checkToValied()
+            checkToValied()
         }
     }
     @Published var phoneNumber: String = ""

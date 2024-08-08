@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AssetKit
 
 struct CardDateView: View {
     
@@ -13,7 +14,7 @@ struct CardDateView: View {
     
     var body: some View {
         VStack(spacing: .zero) {
-            TextField("MM / YY", text: $text)
+            TextField(Localizations.mmyy, text: $text)
                 .onChange(of: text) { newValue in
                     formatCardDate(&text)
                 }

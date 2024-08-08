@@ -15,7 +15,7 @@ struct PaymentAddCardView: View {
     
     var body: some View {
         VStack(spacing: .zero) {
-            BottomSheetsNavBar(title: "ADDED CREDIT CARD")
+            BottomSheetsNavBar(title: Localizations.addedCreditCard)
             PaymentCardView(bankLogo: Asset.Image.BankImage.agrobank.image,
                             cardNumber: $vm.cardNumber,
                             expirationDate: $vm.expirationDate,
@@ -23,7 +23,7 @@ struct PaymentAddCardView: View {
                             cvvCard: $vm.cvvCard)
             .cornerRadius(10)
             .padding()
-            AddButton(title: "ADD CARD",  buttonPressed: {
+            AddButton(title: Localizations.addCard,  buttonPressed: {
                 print("add card")
             }, isDisabled: .constant(!vm.isFormValied))
         }

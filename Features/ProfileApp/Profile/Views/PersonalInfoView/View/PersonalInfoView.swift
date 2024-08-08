@@ -45,7 +45,7 @@ extension PersonalInfoView {
     
     var navBar: some View {
         VStack(spacing: .zero) {
-            BaseNavigationBar(title: "PERSONAL INFORMATION", leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed:  {
+            BaseNavigationBar(title: Localizations.personalInformation, leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed:  {
                 print("leftButtonPressed")
                 pop()
             })

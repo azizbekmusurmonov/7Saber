@@ -16,7 +16,7 @@ struct OrderedProductsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: .zero) {
             HStack(spacing: .zero) {
-                Text("ORDERED PRODUCTS ")
+                Text(Localizations.orderedProducts)
                     .font(.sabFont(600, size: 19))
                     .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                 Text("(\(vm.products?.count ?? 0) items)")
