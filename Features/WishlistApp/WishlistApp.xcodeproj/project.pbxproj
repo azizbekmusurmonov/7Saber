@@ -11,7 +11,6 @@
 		524940BF2C2A6C4F00642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20E42BB7EBAD00457A3E /* Core.framework */; };
 		524940C12C2A6C5000642473 /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4F20AD2BB7E97E00457A3E /* NetworkManager.framework */; };
 		5272BAC92BE92C2400EDD0F5 /* WishlistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BAC82BE92C2400EDD0F5 /* WishlistDetailView.swift */; };
-		5272BACB2BE92C7800EDD0F5 /* WishlistDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BACA2BE92C7800EDD0F5 /* WishlistDetailVM.swift */; };
 		5272BAD72BE9330E00EDD0F5 /* DetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272BAD62BE9330E00EDD0F5 /* DetailInfoView.swift */; };
 		529DA91A2BB7B36C00629C86 /* WishlistAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529DA9192BB7B36C00629C86 /* WishlistAppApp.swift */; };
 		529DA91E2BB7B36D00629C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529DA91D2BB7B36D00629C86 /* Assets.xcassets */; };
@@ -44,7 +43,6 @@
 /* Begin PBXFileReference section */
 		5272BAC12BE929D200EDD0F5 /* Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5272BAC82BE92C2400EDD0F5 /* WishlistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistDetailView.swift; sourceTree = "<group>"; };
-		5272BACA2BE92C7800EDD0F5 /* WishlistDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistDetailVM.swift; sourceTree = "<group>"; };
 		5272BAD62BE9330E00EDD0F5 /* DetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoView.swift; sourceTree = "<group>"; };
 		529DA9162BB7B36C00629C86 /* WishlistApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishlistApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		529DA9192BB7B36C00629C86 /* WishlistAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistAppApp.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				5272BAC82BE92C2400EDD0F5 /* WishlistDetailView.swift */,
-				5272BACA2BE92C7800EDD0F5 /* WishlistDetailVM.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -354,7 +351,6 @@
 				5272BAD72BE9330E00EDD0F5 /* DetailInfoView.swift in Sources */,
 				529DA9482BB7B3ED00629C86 /* WishlistViewModel.swift in Sources */,
 				7B10A91A2C65466C009D5470 /* GetWishlistModel.swift in Sources */,
-				5272BACB2BE92C7800EDD0F5 /* WishlistDetailVM.swift in Sources */,
 				845CD3F02BD7FF940059BD4F /* NavigationBar.swift in Sources */,
 				8405CE5B2BECC13100147FCD /* Size picker.swift in Sources */,
 			);

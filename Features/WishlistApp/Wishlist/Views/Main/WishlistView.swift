@@ -11,14 +11,14 @@ import AssetKit
 
 public struct WishlistView: View {
     
-    @StateObject private var wishlistDetailVM = WishlistDetailVM()
     @EnvironmentObject var vm: WishlistViewModel
     
     @State private var presentSheet = false
     @State private var detentHeight: CGFloat = .zero
+    @State private var selectedItem: GetWishlistModel? = nil
     
     public init() { }
-
+    
     public var body: some View {
         VStack {
             NavigationBar()
@@ -44,6 +44,7 @@ public struct WishlistView: View {
                         ForEach(vm.items) { item in
                             HStack(spacing: .zero) {
                                 ItemRow(item: item, selectSizeTapHandler: {
+                                    selectedItem = item
                                     presentSheet = true
                                 })
                             }
@@ -53,19 +54,21 @@ public struct WishlistView: View {
                     .padding()
                 }
                 .sheet(isPresented: $presentSheet) {
-                    if #available(iOS 16.0, *) {
-                        WishlistDetailView()
-                            .environmentObject(wishlistDetailVM)
-                            .readHeight()
-                            .onPreferenceChange(HeightPreferenceKey.self) { height in
-                                if let height {
-                                    detentHeight = height
+                    if let selectedItem = selectedItem {
+                        if #available(iOS 16.0, *) {
+                            WishlistDetailView(item: selectedItem)
+                                .environmentObject(vm)
+                                .readHeight()
+                                .onPreferenceChange(HeightPreferenceKey.self) { height in
+                                    if let height {
+                                        detentHeight = height
+                                    }
                                 }
-                            }
-                            .presentationDetents([.height(detentHeight)])
-                    } else {
-                        WishlistDetailView()
-                            .environmentObject(wishlistDetailVM)
+                                .presentationDetents([.height(detentHeight)])
+                        } else {
+                            WishlistDetailView(item: selectedItem)
+                                .environmentObject(vm)
+                        }
                     }
                 }
             }
