@@ -69,7 +69,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
                     withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                         isCodeViewPresented = true
                     }
-                } else if numberText.contains("+"), isUzbekistan {
+                } else if numberText.contains("+"), !isUzbekistan {
                     await getUser(by: .phone)
                     
                     if userExists {
