@@ -7,12 +7,20 @@
 		<key>Registration.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
+			<integer>16</integer>
+=======
 			<integer>10</integer>
+>>>>>>> 1fd53d72164ebe47c2162b82295efb3e2d57f01e
 		</dict>
 		<key>RegistrationApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
+			<integer>14</integer>
+=======
 			<integer>8</integer>
+>>>>>>> 1fd53d72164ebe47c2162b82295efb3e2d57f01e
 		</dict>
 	</dict>
 </dict>

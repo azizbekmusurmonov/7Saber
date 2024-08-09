@@ -26,7 +26,10 @@ struct AnimatedCircleProgressView: View {
                 .stroke(circleColor, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round))
                 .frame(width: 70, height: 70)
                 .rotationEffect(.degrees(-10))
-                .animation(Animation.linear(duration: animationDuration).repeatForever(autoreverses: false))
+                .animation(
+                    Animation.linear(duration: animationDuration).repeatForever(autoreverses: false),
+                    value: progress
+                )
         }
         .onAppear {
             withAnimation {

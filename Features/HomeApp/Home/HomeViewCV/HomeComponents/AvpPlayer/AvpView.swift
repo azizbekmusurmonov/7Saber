@@ -41,6 +41,7 @@ struct VideoPlayerView: View {
         case .uz: return apiManager.playerData?.titleUz ?? ""
         case .ru: return apiManager.playerData?.titleRu ?? ""
         case .en: return apiManager.playerData?.titleEn ?? ""
+        default: return apiManager.playerData?.titleEn ?? ""
         }
     }
 }
