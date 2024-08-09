@@ -21,6 +21,10 @@
 		5281F63B2C32E9850011EA48 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F63A2C32E9850011EA48 /* Int.swift */; };
 		5281F63D2C32E9D70011EA48 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F63C2C32E9D70011EA48 /* UIApplication.swift */; };
 		5281F65E2C3317790011EA48 /* ProfileBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281F65D2C3317790011EA48 /* ProfileBundle.swift */; };
+		52933E072C64BA6B00E85BCC /* CheckoutNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52933E062C64BA6B00E85BCC /* CheckoutNavBar.swift */; };
+		52933E0B2C64BB3400E85BCC /* AddCardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52933E092C64BB3400E85BCC /* AddCardExtensions.swift */; };
+		52933E0C2C64BB3400E85BCC /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52933E0A2C64BB3400E85BCC /* AddCardView.swift */; };
+		52933E0E2C64BBC200E85BCC /* AddCardViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52933E0D2C64BBC200E85BCC /* AddCardViewModule.swift */; };
 		529AA6EE2C5A5E4800C5892C /* CreditCardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529AA6ED2C5A5E4800C5892C /* CreditCardFormatter.swift */; };
 		529C21D12C34967600C9256F /* ApiPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C21D02C34967600C9256F /* ApiPrice.swift */; };
 		529C21D32C34982E00C9256F /* ApiPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C21D22C34982E00C9256F /* ApiPhotos.swift */; };
@@ -69,6 +73,10 @@
 		5281F63A2C32E9850011EA48 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		5281F63C2C32E9D70011EA48 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		5281F65D2C3317790011EA48 /* ProfileBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBundle.swift; sourceTree = "<group>"; };
+		52933E062C64BA6B00E85BCC /* CheckoutNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutNavBar.swift; sourceTree = "<group>"; };
+		52933E092C64BB3400E85BCC /* AddCardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardExtensions.swift; sourceTree = "<group>"; };
+		52933E0A2C64BB3400E85BCC /* AddCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		52933E0D2C64BBC200E85BCC /* AddCardViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModule.swift; sourceTree = "<group>"; };
 		529AA6ED2C5A5E4800C5892C /* CreditCardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFormatter.swift; sourceTree = "<group>"; };
 		529C21D02C34967600C9256F /* ApiPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPrice.swift; sourceTree = "<group>"; };
 		529C21D22C34982E00C9256F /* ApiPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPhotos.swift; sourceTree = "<group>"; };
@@ -140,6 +148,16 @@
 				5281F6382C32DF3F0011EA48 /* ProductView.swift */,
 			);
 			path = ProductView;
+			sourceTree = "<group>";
+		};
+		52933E082C64BB0900E85BCC /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				52933E092C64BB3400E85BCC /* AddCardExtensions.swift */,
+				52933E0A2C64BB3400E85BCC /* AddCardView.swift */,
+				52933E0D2C64BBC200E85BCC /* AddCardViewModule.swift */,
+			);
+			path = AddCard;
 			sourceTree = "<group>";
 		};
 		52AE897F2C34774A00B46A88 /* Formatter */ = {
@@ -222,6 +240,7 @@
 		FA69E8112BC170DE005113B2 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				52933E082C64BB0900E85BCC /* AddCard */,
 				5281F6372C32DF370011EA48 /* ProductView */,
 				FA5339582C232B7A0077974E /* Loader */,
 				FAF795722BEAA14100467150 /* BottomSheet */,
@@ -235,6 +254,7 @@
 		FA69E8122BC170EE005113B2 /* Navigationbars */ = {
 			isa = PBXGroup;
 			children = (
+				52933E062C64BA6B00E85BCC /* CheckoutNavBar.swift */,
 				FAD86DCE2C076DF900B45427 /* BottomSheetsNavBar.swift */,
 				FA69E8132BC17118005113B2 /* BaseNavigationBar.swift */,
 				FAB4226B2BC6D8C2002C7260 /* ProfileTab.swift */,
@@ -401,15 +421,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52933E072C64BA6B00E85BCC /* CheckoutNavBar.swift in Sources */,
 				5281F6392C32DF3F0011EA48 /* ProductView.swift in Sources */,
 				FAEEE03F2C15DEFF00FD39D5 /* Imagepicker.swift in Sources */,
 				529C21D12C34967600C9256F /* ApiPrice.swift in Sources */,
 				FA77A2442BBBA94E00843673 /* Core.docc in Sources */,
 				5281F63B2C32E9850011EA48 /* Int.swift in Sources */,
 				2EB454382C66122300ACA252 /* View+Extensions.swift in Sources */,
+				52933E0E2C64BBC200E85BCC /* AddCardViewModule.swift in Sources */,
 				52AE897E2C34571C00B46A88 /* AddressModel.swift in Sources */,
 				52192C682C3E620E00412688 /* AddressesModel.swift in Sources */,
 				FAD86DD12C076ED200B45427 /* BaseText.swift in Sources */,
+				52933E0B2C64BB3400E85BCC /* AddCardExtensions.swift in Sources */,
 				52AE89832C3478A900B46A88 /* SumFormatter.swift in Sources */,
 				526456092BEBCACD00A59849 /* ToastView+Extension.swift in Sources */,
 				FA69E8142BC17118005113B2 /* BaseNavigationBar.swift in Sources */,
@@ -444,6 +467,7 @@
 				529C21D32C34982E00C9256F /* ApiPhotos.swift in Sources */,
 				FAB4226C2BC6D8C2002C7260 /* ProfileTab.swift in Sources */,
 				52AE898C2C3478D000B46A88 /* CaretPositioner.swift in Sources */,
+				52933E0C2C64BB3400E85BCC /* AddCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

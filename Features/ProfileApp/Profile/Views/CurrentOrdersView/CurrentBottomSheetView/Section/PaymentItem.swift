@@ -17,7 +17,7 @@ struct PaymentItem: View {
         VStack(spacing: .zero) {
             HStack(spacing: .zero) {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("PAYMENT METHOD")
+                    Text(Localizations.paymentMethods)
                         .font(.system(size: 13, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     Text("Credit card **9860")
@@ -26,7 +26,7 @@ struct PaymentItem: View {
                 }
                 Spacer()
                 VStack(alignment: .trailing, spacing: 4) {
-                    Text("TOTAL")
+                    Text(Localizations.total)
                         .font(.system(size: 13, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     Text("2 375 000 UZS")

@@ -54,7 +54,9 @@ public struct RegisterMobillAppView: View {
                         .frame(width: UIScreen.main.bounds.width)
                     TextFieldNextButton(nextButtonPressed: {
                         if !vm.numberText.isEmpty {
-                            vm.getEmailOrNumberButtonPressed()
+                            Task {
+                                await vm.getEmailOrNumberButtonPressed()
+                            }
                         }
                     })
                         .environmentObject(vm)
@@ -63,18 +65,26 @@ public struct RegisterMobillAppView: View {
                 } else {
                     ZStack {
                         if vm.isLoading {
-                            
-                            if (vm.numberText.contains("@gmail.com") || vm.numberText.contains("@icloud.com")) {
-                                EnterPasswordView()
+                            if vm.isUzbekistan {
+                                if vm.numberText.contains("+998") && vm.numberText.count == 13 {
+                                    CodeViewAccountExists(skipButtonTapped: {
+                                        
+                                    })
                                     .environmentObject(vm)
                                     .opacity(vm.userExists ? 1 : 0)
-                            } else if vm.numberText.contains("+998") && vm.numberText.count == 13 {
-                                CodeViewAccountExists(skipButtonTapped: {
-                                    
-                                })
-                                    .environmentObject(vm)
-                                    .opacity(vm.userExists ? 1 : 0)
+                                }
+                            } else {
+                                if vm.numberText.contains("@gmail.com") || vm.numberText.contains("@icloud.com") {
+                                    EnterPasswordView()
+                                        .environmentObject(vm)
+                                        .opacity(vm.userExists ? 1 : 0)
+                                } else if vm.numberText.contains("+"), vm.userExists {
+                                    EnterPasswordView()
+                                        .environmentObject(vm)
+                                        .opacity(vm.userExists ? 1 : 0)
+                                }
                             }
+                            
                             CodeViewAccountNotExists(skipButtonTapped: {
                                 
                             })

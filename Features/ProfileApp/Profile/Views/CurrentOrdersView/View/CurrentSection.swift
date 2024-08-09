@@ -27,7 +27,7 @@ struct CurrentSection: View {
                 VStack {
                     HStack(spacing: 10) {
                         VStack(alignment: .leading) {
-                            Text("ORDER ID")
+                            Text(Localizations.orderId)
                                 .font(.system(size: 11, weight: .regular))
                                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                             Text(cell.orderId)
@@ -35,7 +35,7 @@ struct CurrentSection: View {
                                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         }
                         VStack(alignment: .leading) {
-                            Text("TOTAL")
+                            Text(Localizations.total)
                                 .font(.system(size: 11, weight: .regular))
                                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                             Text(cell.total)

@@ -1,10 +1,3 @@
-//
-//  AddressView.swift
-//  Profile
-//
-//  Created by Azizbek Musurmonov   on 12/04/24.
-//
-
 import SwiftUI
 import Core
 import AssetKit
@@ -23,37 +16,35 @@ struct AddressView: View {
         switch vm.viewState {
         case .show:
             VStack(spacing: .zero) {
-                
                 navBar
                 Spacer()
-           
-                    ScrollView {
-                        VStack(spacing: .zero) {
-                            
-                            ForEach(vm.items, id: \.self) { item in
-                                AddressItemView(item: item)
-                                Divider()
-                            }
-                            .padding()
+                if #available(iOS 16.0, *) {
+                    List {
+                        ForEach($vm.items, id: \.self) { $item in
+                            AddressItemView(item: item, onDelete: {})
                         }
-                        .onChange(of: vm.message) { newValue in
-                            guard let newValue else { return }
-                            switch newValue {
-                            case .succes(message: let message):
-                                Snackbar.show(message: message, theme: .success)
-                            case .error(message: let message):
-                                Snackbar.show(message: message, theme: .error)
-                            }
+                        .onDelete(perform: delete)
+                    }
+                    .listStyle(.plain)
+                    .onChange(of: vm.message) { newValue in
+                        guard let newValue else { return }
+                        switch newValue {
+                        case .succes(message: let message):
+                            Snackbar.show(message: message, theme: .success)
+                        case .error(message: let message):
+                            Snackbar.show(message: message, theme: .error)
                         }
                     }
+                } else {
+                    VStack{}
                 }
-                AddButton(title: "ADD NEW ADDRESS", buttonPressed:{
-                    addLocationView = true
-                }, isDisabled: $addressFromViewModel.isFormValid )
-                .sheet(isPresented: $addLocationView) {
-                    AddNewAddress()
-                        .environmentObject(addressFromViewModel)
-                
+            }
+            AddButton(title: Localizations.addNewAddress, buttonPressed:{
+                addLocationView = true
+            }, isDisabled: $addressFromViewModel.isFormValid )
+            .sheet(isPresented: $addLocationView) {
+                AddNewAddress()
+                    .environmentObject(addressFromViewModel)
             }
             .navigationBarBackButtonHidden()
         case .loading:
@@ -66,12 +57,20 @@ struct AddressView: View {
             EmptyView()
         }
     }
+    
+    func delete(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let item = vm.items[index]
+            vm.deleteAddress(item: item)
+        }
+        vm.items.remove(atOffsets: offsets)
+    }
 }
 
 extension AddressView {
     var navBar: some View {
         VStack(spacing: .zero) {
-            BaseNavigationBar(title: "ADDRESSES ", leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed: {
+            BaseNavigationBar(title: Localizations.addresses, leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed: {
                 print("leftButtonPressed")
                 self.pop()
             })

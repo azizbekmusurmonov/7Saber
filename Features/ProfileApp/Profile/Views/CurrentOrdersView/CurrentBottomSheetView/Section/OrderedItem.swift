@@ -28,7 +28,7 @@ struct OrderedItem: View {
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     HStack(spacing: 10) {
                         VStack(alignment: .leading,spacing: 4) {
-                            Text("Size:")
+                            Text("\(Localizations.size) :")
                                 .font(.sabFont(400, size: 9))
                                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                             Text(product.size)
@@ -36,7 +36,7 @@ struct OrderedItem: View {
                                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         }
                         VStack(alignment: .leading,spacing: 4) {
-                            Text("Color:")
+                            Text("\(Localizations.color) :")
                                 .font(.sabFont(400, size: 9))
                                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                             Text(product.color)
@@ -46,7 +46,7 @@ struct OrderedItem: View {
                     }
                     HStack(spacing: 10) {
                         VStack(alignment: .leading,spacing: 4) {
-                            Text("Quantity:")
+                            Text("\(Localizations.quantity) :")
                                 .font(.sabFont(400, size: 9))
                                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                             Text(product.quantity)
@@ -66,7 +66,7 @@ struct OrderedItem: View {
                     Button(action: {
                         buttonPressed()
                     }) {
-                        Text("BUY IT AGAIN")
+                        Text(Localizations.buyItAgain)
                             .font(.sabFont(400, size: 13))
                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         Image(uiImage: Asset.Image.Icons.repeat04.image)

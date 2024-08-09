@@ -11,16 +11,17 @@ import AssetKit
 
 public struct WishlistDetailView: View {
     
-    @EnvironmentObject public var vm: WishlistDetailVM
+    @EnvironmentObject public var vm: WishlistViewModel
     
     @State var selectedColorIndex: Int = .zero
+    
+    let item: GetWishlistModel
     
     public var body: some View {
         VStack(alignment: .leading, spacing: .zero) {
             BottomSheetsNavBar(title: "SELECT SIZE")
-            VStack {
-                DetailInfoView(imageURL: "https://images.uzum.uz/cof0s4a1om4pepe05dsg/original.jpg", title: "T-shirt Basic", price: "375 000 UZS")
-            }.padding(.top, 10)
+            DetailInfoView(item: item)
+                .padding(.top, 10)
             
             VStack {
                 

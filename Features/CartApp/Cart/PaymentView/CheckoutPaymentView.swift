@@ -22,7 +22,6 @@ struct CheckoutPaymentView: View {
     var body: some View {
         VStack {
             CheckoutNavBar(title: Localizations.payment) {
-                vm.clearAllData()
                 dismiss()
             }
             
@@ -32,14 +31,18 @@ struct CheckoutPaymentView: View {
                 .environmentObject(vm)
             
             ConfirmButton(
-                title: Localizations.continueToPayment,
+                title: Localizations.payOrder,
                 icon: Asset.Image.Icons.done.swiftUIImage,
                 isEnable: $vm.paymentButtonIsEnable
             ) {
                 vm.createOrder()
             }
             Spacer()
-        }.navigate(to: AddCardView().environmentObject(vm), when: $vm.showAddCardView)
+        }.navigate(to: AddCardView {
+            dismiss()
+        } pop:  {
+            vm.showAddCardView = false
+        }.environmentObject(vm), when: $vm.showAddCardView)
         .background(Color.init(hex: "#F6F6F6"))
     }
 }

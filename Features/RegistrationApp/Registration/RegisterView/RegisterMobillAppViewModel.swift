@@ -35,37 +35,51 @@ public class RegisterMobillAppViewModel: ObservableObject {
     @Published var isPasswordViewPresent: Bool = false
     @Published var forcelyOpenTabBar: Bool = false
     @Published var isLoading: Bool = false
+    @Published var isUzbekistan: Bool = false
+    @Published var userNumberExist: Bool = false
     
     @Published var message: ShowMessage? = nil
     
     public init () { }
     
-    func getEmailOrNumberButtonPressed() {
+    func getEmailOrNumberButtonPressed() async {
         remainingSeconds = 60
         if !numberText.isEmpty {
-            if (numberText.contains("@gmail.com") || numberText.contains("@icloud.com")) {
-                getUser(by: .email)
-                
-                if userExists {
+            if isUzbekistan {
+                if numberText.contains("+998") && numberText.count == 13 {
+                    await getUser(by: .phone)
+                    sendCode(by: .phone)
                     
+                    withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                        isCodeViewPresented = true
+                    }
+                } else if numberText.isNumber && numberText.count == 9 {
+                    message = .error(message: "Please enter your phone number with +998")
                 } else {
-                    sendCode(by: .email)
+                    message = .error(message: "Please enter phone")
                 }
-                
-                withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-                    isCodeViewPresented = true
-                }
-            } else if numberText.contains("+998") && numberText.count == 13 {
-                getUser(by: .phone)
-                sendCode(by: .phone)
-                
-                withAnimation(.easeInOut(duration: .animationDuration.normal)) {
-                    isCodeViewPresented = true
-                }
-            } else if numberText.isNumber && numberText.count == 9 {
-                message = .error(message: "Please enter your phone number with +998")
             } else {
-                message = .error(message: "Please enter phone or mail")
+                if (numberText.contains("@gmail.com") || numberText.contains("@icloud.com")) {
+                    await getUser(by: .email)
+                    
+                    if userExists == false {
+                        sendCode(by: .email)
+                    }
+                    
+                    withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                        isCodeViewPresented = true
+                    }
+                } else if numberText.contains("+"), !isUzbekistan {
+                    await getUser(by: .phone)
+                    
+                    if userExists {
+                        withAnimation(.easeInOut(duration: .animationDuration.normal)) {
+                            isCodeViewPresented = true
+                        }
+                    }
+                } else {
+                    message = .error(message: "Please enter phone or mail")
+                }
             }
         }
     }
@@ -97,32 +111,32 @@ public class RegisterMobillAppViewModel: ObservableObject {
         }
     }
     
-    func getUser(by type: SendCodeType) {
+    func getUser(by type: SendCodeType) async {
         let url = "https://lab.7saber.uz/api/auth/get-user"
         
-        Task.detached { [weak self] in
-            guard let self else { return }
-            do {
-                let model = try await NetworkService.shared.request(
-                    url: url,
-                    decode: UserModel.self,
-                    method: .post,
-                    body:  [type.rawValue: numberText]
-                )
+        do {
+            let model = try await NetworkService.shared.request(
+                url: url,
+                decode: GetUserModel.self,
+                method: .post,
+                body:  [type.rawValue: numberText]
+            )
             
-                await MainActor.run { [weak self] in
-                    self?.userExists = true
-                    self?.isLoading = true
-                }
-            } catch {
-                await MainActor.run {
-                    self.isLoading = true
-                    self.userExists = false
-                }
-                print("Ошибка при получении пользователя:  ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ ", error.localizedDescription)
+            await MainActor.run {
+                self.userExists = true
+                self.isLoading = true
+                self.userNumberExist = (model.phone != nil)
             }
+        } catch {
+            await MainActor.run {
+                self.isLoading = true
+                self.userExists = false
+                self.userNumberExist = false
+            }
+            print("Ошибка при получении пользователя: ", error.localizedDescription)
         }
     }
+
     
     func checkCode() {
         let url = "https://lab.7saber.uz/api/auth/check-code-email"
@@ -287,4 +301,8 @@ public class RegisterMobillAppViewModel: ObservableObject {
         timer = nil
     }
     
+    func isPasswordValid(_ password: String) -> Bool {
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[!@#$%^&*])[A-Za-z\\d!@#$%^&*]{8,}$"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
+    }
 }

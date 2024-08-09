@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AssetKit
+import Core
 
 struct TextFieldNextButton: View {
     
@@ -19,11 +20,22 @@ struct TextFieldNextButton: View {
             HStack {
                 VStack(alignment: .leading) {
                     
-                    PrimeryTextField(
-                        textFiledText: $vm.numberText,
-                        keyboardType: .constant(.emailAddress),
-                        placeholderText: "Phone number or Email"
-                    )
+                    if let country = DataStorage.storage.get(from: .selectedCountry) as? String {
+                        if country == "uz" {
+                            PrimeryTextField(
+                                textFiledText: $vm.numberText,
+                                keyboardType: .constant(.emailAddress),
+                                placeholderText: "Phone number",
+                                isUzekistan: true
+                            )
+                        } else {
+                            PrimeryTextField(
+                                textFiledText: $vm.numberText,
+                                keyboardType: .constant(.emailAddress),
+                                placeholderText: "Phone number or Email"
+                            )
+                        }
+                    }
                     
                     PrimeryButton(
                         buttonBacround: vm.numberText.isEmpty ? .constant(.gray) : .constant(.black),

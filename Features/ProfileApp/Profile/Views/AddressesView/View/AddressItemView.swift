@@ -13,6 +13,7 @@ import Core
 struct AddressItemView: View {
     
     var item: Item
+    var onDelete: () -> ()
     
     var body: some View {
         VStack(spacing: .zero) {
@@ -38,6 +39,14 @@ struct AddressItemView: View {
                     
                 }
             }
+        }
+        .swipeActions(edge: .leading) {
+            Button(action: {
+               onDelete()
+            }) {
+                Label("Delete", systemImage: "trash")
+            }
+            .tint(.red)
         }
     }
 }

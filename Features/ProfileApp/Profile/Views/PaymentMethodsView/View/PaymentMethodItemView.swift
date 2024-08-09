@@ -31,7 +31,7 @@ struct PaymentMethodItemView: View {
                 Button(action: {
                     isExpiryDateHidden.toggle()
                 }) {
-                    Text(isExpiryDateHidden ? "SHOW" : "HIDE")
+                    Text(isExpiryDateHidden ? Localizations.show : "HIDE")
                         .font(.system(size: 13, weight: .medium))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                 }

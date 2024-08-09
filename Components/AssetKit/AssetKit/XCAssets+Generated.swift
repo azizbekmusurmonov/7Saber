@@ -140,6 +140,7 @@ public enum Asset {
       public static let settings = ImageAsset(name: "settings")
       public static let share = ImageAsset(name: "share")
       public static let shoppingBag = ImageAsset(name: "shoppingBag")
+      public static let successIcon = ImageAsset(name: "successIcon")
       public static let trash = ImageAsset(name: "trash")
       public static let trash2 = ImageAsset(name: "trash2")
       public static let whiteCheck = ImageAsset(name: "whiteCheck")

@@ -56,10 +56,14 @@ struct CreatePasswordView: View {
                         buttonBacround: vm.userPassword.isEmpty || vm.userRetryPassword.isEmpty ? .constant(.gray) : .constant(.black),
                         buttonText: "ENTER",
                         action: {
-                            if vm.userPassword == vm.userRetryPassword {
-                                vm.emailRegistration()
+                            if vm.isPasswordValid(vm.userPassword) {
+                                if vm.userPassword == vm.userRetryPassword {
+                                    vm.emailRegistration()
+                                } else {
+                                    vm.message = .error(message: "Пароли не совпадают.")
+                                }
                             } else {
-                                vm.message = .error(message: "Parol bir biriga mos emas")
+                                vm.message = .error(message: "Ваш пароль должен состоять не менее чем из 8 символов и содержать комбинацию букв, цифр и специальных символов (например, !, @, #).")
                             }
                         }
                     )
@@ -79,3 +83,4 @@ struct CreatePasswordView: View {
 #Preview {
     CreatePasswordView(skipButtonTapped: {})
 }
+

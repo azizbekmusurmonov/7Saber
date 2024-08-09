@@ -12,6 +12,8 @@ import Core
 
 final class CheckoutMainViewModel: ObservableObject {
     
+    @Published var showCheckout: Bool = false
+    
     @Published var isLoading: Bool = true
     @Published var showBagView: Bool = false
     @Published var userName: String = ""
@@ -31,6 +33,7 @@ final class CheckoutMainViewModel: ObservableObject {
     @Published var promocodeIsEnable: Bool = false
     @Published var didAppliedPromocode = false
     var selectedAddress: AddressResponseData?
+    var promocodeObject: PromocodeModel?
     
     @Published var showAddCardView: Bool = false
     @Published var enteredCardNumber: String = ""
@@ -40,25 +43,7 @@ final class CheckoutMainViewModel: ObservableObject {
     @Published var canAddCard: Bool = false
     
     @Published var selectedPaymentMethod: SelectedPaymentMethod = .cash
-    
-    @Published var viewHeight: CGFloat = 626.dpHeight()
-    
-    func clearAllData() {
-        isLoading = false
-        showBagView = false
-        paymentButtonIsEnable = false
-        showAddressView = false
-        showPaymentView = false
-        carts = []
-        totalBalance = nil
-        promocode = ""
-        showPromocode = false
-        promocodeIsEnable = false
-        didAppliedPromocode = false
-        selectedAddress = nil
-        showAddCardView = false
-    }
-    
+        
     public func fetchAllData() {
         
         Task.detached {
@@ -96,8 +81,9 @@ final class CheckoutMainViewModel: ObservableObject {
                     body: ["productIds": carts.map(\.id), "promocode" : promocode]
                 )
                 await MainActor.run {
-                    if let newPromocode = model.promocode?.promocode {
-                        self.promocode = newPromocode
+                    if let newPromocode = model.promocode {
+                        self.promocode = newPromocode.promocode ?? ""
+                        self.promocodeObject = newPromocode
                         self.message = .success(message: model.message)
                         self.didAppliedPromocode = true
                         self.showPromocode = false
@@ -145,7 +131,7 @@ final class CheckoutMainViewModel: ObservableObject {
             do {
                 let totalBalances = try await CheckoutRequest.getTotalBalance(
                     addressId: selectedAddress?.id?.description,
-                    promocodeId: promocode
+                    promocodeId: promocodeObject?.id?.description
                 )
                 
                 await MainActor.run { [weak self] in
@@ -188,8 +174,8 @@ final class CheckoutMainViewModel: ObservableObject {
         Task.detached { [weak self] in
             guard let self else { return }
             do {
-                let totalBalances = try await CheckoutRequest.order(
-                    addressId: addressessId, promocodeID: nil, payMethod: selectedPaymentMethod, cardId: 1)
+                let _ = try await CheckoutRequest.order(
+                    addressId: addressessId, promocodeID: promocodeObject?.id, payMethod: selectedPaymentMethod, cardId: 1)
                 
                 await MainActor.run { [weak self] in
 
@@ -203,11 +189,8 @@ final class CheckoutMainViewModel: ObservableObject {
             }
         }
     }
-}
-
-// MARK: Card
-extension CheckoutMainViewModel {
-    func addCardPressed() {
-        
+    
+    deinit {
+        print("view module is deinitialized")
     }
 }

@@ -11,11 +11,11 @@ import Core
 
 public struct CartView: View {
     
-    @StateObject var checkoutViewModel = CheckoutMainViewModel()
     @EnvironmentObject var vm: CartViewModel
     
     @State private var showCheckout: Bool = false
     @State private var showFullSheet: Bool = true
+    @State var checkoutViewHeight: CGFloat = 625.dpHeight()
     
     public init() { }
     
@@ -36,12 +36,16 @@ public struct CartView: View {
                 })
             }
         }
+        .onAppear(perform: {
+            vm.getCart()
+        })
         .sheet(isPresented: $showCheckout) {
             if #available(iOS 16.0, *) {
-                CheckoutMainView().environmentObject(checkoutViewModel)
-                    .presentationDetents([.height(checkoutViewModel.viewHeight), .large])
+                CheckoutMainView(viewHeight: $checkoutViewHeight)
+                    .presentationDetents([.height(checkoutViewHeight), .large])
+                
             } else {
-                CheckoutMainView().environmentObject(checkoutViewModel)
+                CheckoutMainView(viewHeight: .constant(625))
             }
         }
     }

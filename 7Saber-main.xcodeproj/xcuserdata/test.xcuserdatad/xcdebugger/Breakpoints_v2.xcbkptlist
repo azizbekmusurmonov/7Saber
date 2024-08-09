@@ -7,13 +7,14 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8C95E026-72BE-4A7D-AF01-12F8E77186FF"
+            uuid = "78A904F0-FC19-4816-95D1-715D6BFFCE49"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Features/CartApp/Cart/CheckoutMainView/CheckoutMainViewModel.swift"
+            filePath = "Features/CartApp/Cart/CheckoutMainView/CheckotBalanceModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "89"
             endingLineNumber = "89"
             landmarkName = "didApplyPromocode()"
@@ -88,10 +89,75 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
                   endingLineNumber = "89">
+=======
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "init(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3AE6276A-9E26-4D7B-A03C-9F6D1B9578C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Features/CartApp/Cart/CheckoutMainView/Request/CheckoutRequest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getTotalBalance(addressId:promocodeId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3AE6276A-9E26-4D7B-A03C-9F6D1B9578C2 - 906c46699c4c6642"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static Cart.CheckoutRequest.getTotalBalance(addressId: Swift.Optional&lt;Swift.String&gt;, promocodeId: Swift.Optional&lt;Swift.String&gt;) async throws -&gt; Cart.TotalBalanceModel"
+                  moduleName = "Cart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/test/Desktop/7Saber/Features/CartApp/Cart/CheckoutMainView/Request/CheckoutRequest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41">
+               </Location>
+               <Location
+                  uuid = "3AE6276A-9E26-4D7B-A03C-9F6D1B9578C2 - e2d3259d66d3daa4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for static Cart.CheckoutRequest.getTotalBalance(addressId: Swift.Optional&lt;Swift.String&gt;, promocodeId: Swift.Optional&lt;Swift.String&gt;) async throws -&gt; Cart.TotalBalanceModel"
+                  moduleName = "Cart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/test/Desktop/7Saber/Features/CartApp/Cart/CheckoutMainView/Request/CheckoutRequest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41">
+               </Location>
+               <Location
+                  uuid = "3AE6276A-9E26-4D7B-A03C-9F6D1B9578C2 - 391e14de83652ac8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static Cart.CheckoutRequest.getTotalBalance(addressId: Swift.Optional&lt;Swift.String&gt;, promocodeId: Swift.Optional&lt;Swift.String&gt;) async throws -&gt; Cart.TotalBalanceModel"
+                  moduleName = "Cart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/test/Desktop/7Saber/Features/CartApp/Cart/CheckoutMainView/Request/CheckoutRequest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45">
+>>>>>>> 1fd53d72164ebe47c2162b82295efb3e2d57f01e
                </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+<<<<<<< HEAD
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
@@ -140,5 +206,7 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+=======
+>>>>>>> 1fd53d72164ebe47c2162b82295efb3e2d57f01e
    </Breakpoints>
 </Bucket>
