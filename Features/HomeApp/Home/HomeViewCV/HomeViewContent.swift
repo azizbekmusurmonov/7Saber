@@ -78,7 +78,7 @@ public struct ContentView: View {
                         leftImage: Asset.Image.Logo.logoBlack.image,
                         rightImage: Asset.Image.Home.searchHome.image
                     )
-                    .frame(width: UIApplication.shared.screenFrame.width)
+                    .frame(width: UIApplication.shared.screenFrame.width, height: 44)
                     .presentationCompactAdaptation(horizontal: .fullScreenCover, vertical: .automatic)
                     .background(Blur(style: .light).opacity(0.5))
                 }
