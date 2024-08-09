@@ -28,7 +28,7 @@ struct PromocodeModel: Codable {
     let isActive: Bool?
     let limit: Int?
     let productId: String?
-    let promocode: String?
+    var promocode: String?
     let qty: Int?
     let titleEn: String?
     let titleRu: String?

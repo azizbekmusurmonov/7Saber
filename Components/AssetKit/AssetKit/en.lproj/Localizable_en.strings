@@ -253,6 +253,7 @@
 "payment" = "Payment";
 "cardNumber" = "Card number";
 "mmyy" = "MM/YY";
+"CONGRATULATIONS" = "CONGRATULATIONS";
 "add_shipping_address" = "Add shipping address to continue the checkout";
 "promocode" = "Promocode";
 "subtotal" = "Subtotal";

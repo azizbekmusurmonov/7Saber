@@ -7,9 +7,8 @@
 
 import SwiftUI
 import AssetKit
-import Core
 
-extension String {
+public extension String {
     enum CardType {
         case visa
         case mastercard

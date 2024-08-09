@@ -7,15 +7,14 @@
 
 import Foundation
 
-struct StartPaymentResponse: Codable {
-    let success: Bool
-    let url: String?
-    let threeDSIsPresent: Bool
-    
-    private enum CodingKeys: String, CodingKey {
+public struct StartPaymentResponse: Codable {
+   public let success: Bool
+   public let url: String?
+   public let threeDSIsPresent: Bool
+   
+    public enum CodingKeys: String, CodingKey {
         case success = "success"
         case url = "url"
         case threeDSIsPresent = "threeDSIsPresent"
-        
     }
 }

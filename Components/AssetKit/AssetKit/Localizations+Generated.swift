@@ -104,6 +104,8 @@ public enum Localizations {
   public static let color = Localizations.tr("Localizable_en", "color", fallback: "Color")
   /// Complete the look
   public static let completeTheLook = Localizations.tr("Localizable_en", "complete_the_look", fallback: "Complete the look")
+  /// CONGRATULATIONS
+  public static let congratulations = Localizations.tr("Localizable_en", "CONGRATULATIONS", fallback: "CONGRATULATIONS")
   /// Continue
   public static let `continue` = Localizations.tr("Localizable_en", "continue", fallback: "Continue")
   /// Continue to payment
@@ -481,11 +483,7 @@ public enum Localizations {
 extension Localizations {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg..., fallback value: String) -> String {
     let format = BundleToken.bundle.localizedString(forKey: key, value: value, table: table)
-      return String(
-        format: format,
-        locale: Locale.init(identifier: UserDefaults.standard.string(forKey: "language") ?? "uz"),
-        arguments: args
-      )
+    return String(format: format, locale: Locale.current, arguments: args)
   }
 }
 

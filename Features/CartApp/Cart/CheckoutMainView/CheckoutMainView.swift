@@ -9,6 +9,8 @@ import SwiftUI
 import AssetKit
 import Core
 import Profile
+import Payze_iOS_sdk
+import NetworkManager
 
 public struct CheckoutMainView: View {
     
@@ -16,7 +18,11 @@ public struct CheckoutMainView: View {
     @StateObject var addressVM = AddressFormViewModel()
     @StateObject var vm = CheckoutMainViewModel()
     
-    public init() { }
+    @Binding var viewHeight: CGFloat
+    
+    public init(viewHeight: Binding<CGFloat>) {
+        self._viewHeight = viewHeight
+    }
     
     public var body: some View {
         VStack {
@@ -26,7 +32,6 @@ public struct CheckoutMainView: View {
                 VStack(spacing: .zero) {
                     VStack(spacing: .zero) {
                         CheckoutNavBar(title: Localizations.checkout) {
-                            vm.clearAllData()
                             dismiss()
                         }
                         
@@ -104,7 +109,7 @@ extension CheckoutMainView {
             ) {
                 vm.showPaymentView = true
                 withAnimation {
-                    vm.viewHeight = 470.dpHeight()
+                    viewHeight = 470.dpHeight()
                 }
             }
             Spacer()

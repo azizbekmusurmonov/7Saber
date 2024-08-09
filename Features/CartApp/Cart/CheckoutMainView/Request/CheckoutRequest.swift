@@ -59,7 +59,7 @@ struct CheckoutRequest {
     }
     
     static func order(
-        addressId: Int, promocodeID: Int?, payMethod: SelectedPaymentMethod, cardId: Int
+        addressId: Int, promocodeID: Int?, payMethod: SelectedPaymentMethod, cardId: Int?
     ) async throws -> String {
         try await NetworkService.shared.request(
             url: baseUrl + "/client/order/store",
