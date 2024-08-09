@@ -8,12 +8,22 @@
 import SwiftUI
 import AssetKit
 import Core
+import AssetKit
 
 struct TextFieldNextButton: View {
     
     @EnvironmentObject var vm: RegisterMobillAppViewModel
     
     let nextButtonPressed: () -> Void
+    
+    let phoneOrEmail: String
+    let next: String
+    
+    init(nextButtonPressed: @escaping () -> Void, phoneOrEmail: String = Localizations.phoneNumberOrEmail, next: String = Localizations.next) {
+        self.nextButtonPressed = nextButtonPressed
+        self.phoneOrEmail = phoneOrEmail
+        self.next = next
+    }
     
     var body: some View {
         ZStack {
@@ -25,23 +35,22 @@ struct TextFieldNextButton: View {
                             PrimeryTextField(
                                 textFiledText: $vm.numberText,
                                 keyboardType: .constant(.emailAddress),
-                                placeholderText: "Phone number",
+                                placeholderText: "Telefon raqamingiz",
                                 isUzekistan: true
                             )
                         } else {
                             PrimeryTextField(
                                 textFiledText: $vm.numberText,
                                 keyboardType: .constant(.emailAddress),
-                                placeholderText: "Phone number or Email"
+                                placeholderText: phoneOrEmail
                             )
                         }
                     }
                     
                     PrimeryButton(
                         buttonBacround: vm.numberText.isEmpty ? .constant(.gray) : .constant(.black),
-                        buttonText: "NEXT",
+                        buttonText: next,
                         action: {
-                            print("Button Tapped")
                             
                             nextButtonPressed()
                         }

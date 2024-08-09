@@ -12,6 +12,7 @@ import AssetKit
 
 public struct RegisterMobillAppView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var vm: RegisterMobillAppViewModel
     @State private var isShowRegistrView: Bool = false
     
@@ -39,8 +40,10 @@ public struct RegisterMobillAppView: View {
                     
                     // NAV BAR
                     NavigationBar(
-                        showButton: vm.isCodeViewPresented,
-                        leftButtonAction: { },
+                        showButton: true,
+                        leftButtonAction: {
+                            presentationMode.wrappedValue.dismiss()
+                        },
                         skipButtonAction: {
                             skipButtonTapped()
                             DataStorage.storage.save(true, for: .isRegistrate)
@@ -59,8 +62,8 @@ public struct RegisterMobillAppView: View {
                             }
                         }
                     })
-                        .environmentObject(vm)
-                        .padding(.top, 40)
+                    .environmentObject(vm)
+                    .padding(.top, 40)
                     Spacer()
                 } else {
                     ZStack {
@@ -88,11 +91,11 @@ public struct RegisterMobillAppView: View {
                             CodeViewAccountNotExists(skipButtonTapped: {
                                 
                             })
-                                .environmentObject(vm)
-                                .opacity(vm.userExists ? 0 : 1)
+                            .environmentObject(vm)
+                            .opacity(vm.userExists ? 0 : 1)
                         } else {
                             iOSSpinner()
-//                                .padding(.top, 150)
+                            //                                .padding(.top, 150)
                         }
                     }
                 }
@@ -111,9 +114,8 @@ public struct RegisterMobillAppView: View {
                     skipButtonTapped()
                 }
             }
-            }
         }
-    
+    }
 }
 
 

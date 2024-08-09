@@ -6,10 +6,17 @@
 //
 
 import SwiftUI
+import AssetKit
 
 struct SendAgainButton: View {
     
     @EnvironmentObject var vm: RegisterMobillAppViewModel
+    
+    let sendAgain: String
+    
+    init(sendAgain: String = Localizations.sendAgain) {
+        self.sendAgain = sendAgain
+    }
     
     var body: some View {
         Button(action: { // sendAgain Button
@@ -29,7 +36,7 @@ struct SendAgainButton: View {
                 .resizable()
                 .frame(width: 18, height: 18, alignment: .leading)
                 .foregroundColor(.black)
-            Text("SEND AGAIN")
+            Text(sendAgain)
                 .font(.system(size: 13))
                 .foregroundColor(.black)
         }

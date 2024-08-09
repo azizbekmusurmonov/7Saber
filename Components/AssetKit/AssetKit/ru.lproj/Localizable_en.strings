@@ -47,6 +47,7 @@
 //MARK: - Registration
 
 "welcome" = "Добро пожаловать";
+"enter_your_password" = "Введите свой пароль";
 "enter_your_phone_number_or_email_to_continue" = "Введите свой номер телефона или электронную почту, чтобы продолжить";
 "phone_number_or_email" = "Номер телефона или Электронная почта";
 "next" = "Далее";

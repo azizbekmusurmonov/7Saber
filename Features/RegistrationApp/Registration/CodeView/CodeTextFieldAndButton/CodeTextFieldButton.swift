@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import AssetKit
 
 struct CodeTextFieldButton: View {
     
     @EnvironmentObject var vm: RegisterMobillAppViewModel
     
     var enterButtonAction: () -> ()
+    
+    let code: String
+    
+    init(enterButtonAction: @escaping () -> Void, code: String = Localizations.code) {
+        self.enterButtonAction = enterButtonAction
+        self.code = code
+    }
     
     var body: some View {
         ZStack {
@@ -21,7 +29,7 @@ struct CodeTextFieldButton: View {
                     PrimeryTextField(
                         textFiledText: $vm.codeText,
                         keyboardType: .constant(.numberPad),
-                        placeholderText: "Code"
+                        placeholderText: code
                     )
                     
                     Text("We have sent to your phone number \(vm.numberText) \na 5-digit number, please enter that code to confirm.") // numberText

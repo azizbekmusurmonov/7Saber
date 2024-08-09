@@ -7,12 +7,22 @@
 
 import SwiftUI
 import Core
+import AssetKit
 
 struct CodeViewAccountNotExists: View {
     
     @EnvironmentObject var vm: RegisterMobillAppViewModel
     
     let skipButtonTapped: () -> ()
+    
+    let welcome: String
+    let enterCode: String
+    
+    init(skipButtonTapped: @escaping () -> Void, welcome: String = Localizations.welcome, enterCode: String = Localizations.enterConfirmationCodeToContinueTheProcess) {
+        self.skipButtonTapped = skipButtonTapped
+        self.welcome = welcome
+        self.enterCode = enterCode
+    }
     
     var body: some View {
         ZStack {
@@ -37,7 +47,7 @@ struct CodeViewAccountNotExists: View {
                         }
                     )
                     
-                    WelcomeView(welcome: "WELCOME", welcomeText: "Enter confirmation code to \ncontinue the proccess")
+                    WelcomeView(welcome: welcome, welcomeText: enterCode)
                         .padding(.top, 150)
                     CodeTextFieldButton(enterButtonAction: {
                         if !vm.codeText.isEmpty {

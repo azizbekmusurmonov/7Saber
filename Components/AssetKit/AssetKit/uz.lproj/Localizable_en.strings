@@ -46,6 +46,7 @@
 //MARK: - Registration
 
 "welcome" = "Xush kelibsiz";
+"enter_your_password" = "Parolingizni kiriting";
 "enter_your_phone_number_or_email_to_continue" = "Davom etish uchun telefon raqamingiz yoki elektron pochta manzilingizni kiriting";
 "phone_number_or_email" = "Telefon raqami yoki Elektron pochta";
 "next" = "Keyingi";
