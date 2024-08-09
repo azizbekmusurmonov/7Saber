@@ -7,12 +7,26 @@
 
 import SwiftUI
 import Core
+import AssetKit
 
 struct CreatePasswordView: View {
     
     @EnvironmentObject var vm: RegisterMobillAppViewModel
     
     let skipButtonTapped: () -> ()
+    
+    let creatPassword: String
+    let password: String
+    let retryPassword: String
+    let enter: String
+    
+    init(skipButtonTapped: @escaping () -> Void, creatPassword: String = Localizations.createAPassword, password: String = Localizations.password, retryPassword: String = Localizations.reTypePassword, enter: String = Localizations.enter) {
+        self.skipButtonTapped = skipButtonTapped
+        self.creatPassword = creatPassword
+        self.password = password
+        self.retryPassword = retryPassword
+        self.enter = enter
+    }
     
     var body: some View {
         ZStack {
@@ -31,7 +45,7 @@ struct CreatePasswordView: View {
                     }
                 )
                 
-                WelcomeView(welcomeText: "Create a password")
+                WelcomeView(welcomeText: creatPassword)
                     .padding(.top, 150)
                 
                 VStack(spacing: 20) {
@@ -39,7 +53,7 @@ struct CreatePasswordView: View {
                     PrimeryTextField(
                         textFiledText: $vm.userPassword,
                         keyboardType: .constant(.emailAddress),
-                        placeholderText: "Password",
+                        placeholderText: password,
                         imageIsHidden: true
                     )
                     .padding(.leading, 40)
@@ -47,14 +61,14 @@ struct CreatePasswordView: View {
                     PrimeryTextField(
                         textFiledText: $vm.userRetryPassword,
                         keyboardType: .constant(.emailAddress),
-                        placeholderText: "Re-type password",
+                        placeholderText: retryPassword,
                         imageIsHidden: true
                     )
                     .padding(.leading, 40)
                     
                     PrimeryButton(
                         buttonBacround: vm.userPassword.isEmpty || vm.userRetryPassword.isEmpty ? .constant(.gray) : .constant(.black),
-                        buttonText: "ENTER",
+                        buttonText: enter,
                         action: {
                             if vm.isPasswordValid(vm.userPassword) {
                                 if vm.userPassword == vm.userRetryPassword {

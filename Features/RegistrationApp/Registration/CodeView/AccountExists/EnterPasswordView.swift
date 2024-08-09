@@ -7,10 +7,21 @@
 
 import SwiftUI
 import Core
+import AssetKit
 
 struct EnterPasswordView: View {
     
     @EnvironmentObject var vm: RegisterMobillAppViewModel
+    
+    let enterPassword: String
+    let password: String
+    let enter: String
+    
+    init(enterPassword: String = Localizations.enterPassword, password: String = Localizations.password, enter: String = Localizations.enter) {
+        self.enterPassword = enterPassword
+        self.password = password
+        self.enter = enter
+    }
     
     var body: some View {
         ZStack {
@@ -29,7 +40,7 @@ struct EnterPasswordView: View {
                     }
                 )
                 
-                WelcomeView(welcomeText: "Enter your password")
+                WelcomeView(welcomeText: enterPassword)
                     .padding(.top, 150)
                 
                 VStack(spacing: 20) {
@@ -37,14 +48,14 @@ struct EnterPasswordView: View {
                     PrimeryTextField(
                         textFiledText: $vm.userPassword,
                         keyboardType: .constant(.emailAddress),
-                        placeholderText: "Password",
+                        placeholderText: password,
                         imageIsHidden: true
                     )
                     .padding(.leading, 40)
                     
                     PrimeryButton(
                         buttonBacround: vm.numberText.isEmpty ? .constant(.gray) : .constant(.black),
-                        buttonText: "ENTER",
+                        buttonText: enter,
                         action: {
                             vm.isLoading = true
                             vm.loginForEmail()

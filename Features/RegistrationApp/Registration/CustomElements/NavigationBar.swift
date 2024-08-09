@@ -10,13 +10,15 @@ import AssetKit
 
 struct NavigationBar: View {
     
+    let skip: String
     var showButton: Bool
     var leftButtonAction: () -> Void
     var skipButtonAction: () -> Void
     let hasSkipButton: Bool
     @EnvironmentObject var vm: RegisterMobillAppViewModel
     
-    init(showButton: Bool, leftButtonAction: @escaping () -> Void, skipButtonAction: @escaping () -> Void, hasSkipButton: Bool = true) {
+    init(skip: String = Localizations.skip,showButton: Bool, leftButtonAction: @escaping () -> Void, skipButtonAction: @escaping () -> Void, hasSkipButton: Bool = true) {
+        self.skip = skip
         self.showButton = showButton
         self.leftButtonAction = leftButtonAction
         self.skipButtonAction = skipButtonAction
@@ -43,7 +45,7 @@ struct NavigationBar: View {
                         
                         skipButtonAction()
                     }, label: {
-                        Text("SKIP")
+                        Text(skip)
                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     })
                     .frame(height: 40)

@@ -451,6 +451,9 @@ public enum Localizations {
   }
   /// Welcome
   public static let welcome = Localizations.tr("Localizable_en", "welcome", fallback: "Welcome")
+    
+  /// Enter password
+    public static let enterPassword = Localizations.tr("Localizable_en", "enter_your_password", fallback: "Enter your password")
   /// White
   public static let white = Localizations.tr("Localizable_en", "white", fallback: "White")
   /// Windbreakers and sweatshirts

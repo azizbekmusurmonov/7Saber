@@ -40,6 +40,7 @@
 //MARK: - Registration
 
 "welcome" = "Welcome";
+"enter_your_password" = "Enter your password";
 "enter_your_phone_number_or_email_to_continue" = "Enter your phone number or email to continue";
 "phone_number_or_email" = "Phone number or Email";
 "next" = "Next";

@@ -37,6 +37,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isUzbekistan: Bool = false
     @Published var userNumberExist: Bool = false
+    @Published var selectCountryView: Bool = false
     
     @Published var message: ShowMessage? = nil
     
@@ -91,7 +92,6 @@ public class RegisterMobillAppViewModel: ObservableObject {
             guard self != nil else { return }
             
             do {
-                // Используем копию urlComponents
                 let model = try await NetworkService.shared.request(
                     url: urlString,
                     decode: SendCodeModel.self,
