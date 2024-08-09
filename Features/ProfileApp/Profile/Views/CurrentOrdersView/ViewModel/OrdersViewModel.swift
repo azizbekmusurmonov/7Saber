@@ -12,7 +12,7 @@ import NetworkManager
 import AssetKit
 
 final class OrdersViewModel: ObservableObject {
-        
+    
     @Published var ordersData: [OrdersModel]? = nil
     @Published var products: [Products]? = nil
     @Published var viewState: ViewState = .loading
@@ -33,7 +33,10 @@ final class OrdersViewModel: ObservableObject {
                 )
                 
                 await MainActor.run { [weak self] in
-//                    self?.ordersData = data.orders
+                    let orders = data.data.map { string in
+                        return OrdersModel(headertitle: string, cells: [])
+                    }
+                    self?.ordersData = orders
                     self?.viewState = .show
                     self?.message = .succes(message: "Muvaffaqqiyatli")
                 }
@@ -46,8 +49,6 @@ final class OrdersViewModel: ObservableObject {
             }
         }
     }
-    
-    
 }
 
 enum Progresses {

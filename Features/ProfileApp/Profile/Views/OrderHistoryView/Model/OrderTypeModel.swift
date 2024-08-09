@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Core
 
 struct OrderTypeModel: Codable {
     let currentPage: Int

@@ -36,7 +36,7 @@ public class PersonalInfoViewModel: ObservableObject {
             checkToValid()
         }
     }
-    @Published var birthDate: String = "" 
+    @Published var birthDate: Date = Date()
     @Published var profileImage: UIImage? = nil {
         didSet {
             checkToValid()
@@ -54,26 +54,91 @@ public class PersonalInfoViewModel: ObservableObject {
     
     public init() { }
     
-    func sendPersonalInfo() {
+//    func sendPersonalInfo() {
+//        let urlString = "https://lab.7saber.uz/api/client/user/update"
+//        print(profileImage?.pngData())
+//        Task.detached { [weak self] in
+//            guard let self, let url = URL(string: urlString), let imageData = profileImage?.pngData() else { return }
+//            
+//            do {
+//                try await UploadImage.uploadImage(image: profileImage!, fullName: fullNam, gender: gender, birthDate: .init(), email: email, toURL: url)
+//                
+//                await MainActor.run { [weak self] in
+//                    self?.messageShow = .succes(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli yuborildi")
+//                }
+//            } catch {
+//                print("uplaod error ", error.localizedDescription)
+//                await MainActor.run { [weak self] in
+//                    self?.messageShow = .error(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli yuborilmadi")
+//                }
+//            }
+//        }
+//    }
+    
+    func sendPersonalInfo(fullName: String, phone: String, email: String, gender: String, avatar: UIImage) {
         let urlString = "https://lab.7saber.uz/api/client/user/update"
-        print(profileImage?.pngData())
-        Task.detached { [weak self] in
-            guard let self, let url = URL(string: urlString), let imageData = profileImage?.pngData() else { return }
-            
+        
+        Task.detached {
             do {
-                try await UploadImage.uploadImage(image: profileImage!, fullName: fullNam, gender: gender, birthDate: .init(), email: email, toURL: url)
+                let boundary = UUID().uuidString
+                guard let url = URL(string: urlString) else {
+                    print("Invalid URL")
+                    return
+                }
+                
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+                request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+                
+                var data = Data()
+                
+                func appendFormData(name: String, value: String) {
+                    data.append("--\(boundary)\r\n".data(using: .utf8)!)
+                    data.append("Content-Disposition: form-data; name=\"\(name)\"\r\n\r\n".data(using: .utf8)!)
+                    data.append("\(value)\r\n".data(using: .utf8)!)
+                }
+                
+                appendFormData(name: "fullName", value: fullName)
+                print("fullName", fullName)
+                appendFormData(name: "phone", value: phone)
+                print("phone", phone)
+                appendFormData(name: "email", value: email)
+                print("email", email)
+                appendFormData(name: "gender", value: gender)
+                
+                if let imageData = avatar.jpegData(compressionQuality: 0.7) {
+                    data.append("--\(boundary)\r\n".data(using: .utf8)!)
+                    data.append("Content-Disposition: form-data; name=\"avatar\"; filename=\"avatar.jpg\"\r\n".data(using: .utf8)!)
+                    data.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+                    data.append(imageData)
+                    print("imageData", imageData)
+                    data.append("\r\n".data(using: .utf8)!)
+                }
+                
+                data.append("--\(boundary)--\r\n".data(using: .utf8)!)
+                
+                let (responseData, response) = try await URLSession.shared.upload(for: request, from: data)
+                
+                if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                    let decoder = JSONDecoder()
+                    let model = try decoder.decode(PersonalInfoModel.self, from: responseData)
+                    print("Update successful: \(model)")
+                } else {
+                    print("Failed with response: \(response)")
+                }
                 
                 await MainActor.run { [weak self] in
                     self?.messageShow = .succes(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli yuborildi")
                 }
             } catch {
-                print("uplaod error ", error.localizedDescription)
+                print("Error: \(error.localizedDescription)")
                 await MainActor.run { [weak self] in
-                    self?.messageShow = .error(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli yuborilmadi")
+                    self?.messageShow = .error(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli yuborilmadi: \(error.localizedDescription)")
                 }
             }
         }
     }
+
 }
 
 

@@ -16,7 +16,7 @@ struct ProfileImageView: View {
     var body: some View {
         VStack(spacing: .zero) {
             HStack(spacing: .zero) {
-                if let url = URL(string: vm.profileData?.avatar.src ?? "") {
+                if let url = URL(string: vm.profileData?.user.avatar.src ?? "") {
                     AsyncImage(url: url) { phase in
                         switch phase {
                         case .empty:
@@ -54,11 +54,11 @@ struct ProfileImageView: View {
                 Divider()
                 VStack(spacing: .zero) {
                     Spacer()
-                    Text(vm.profileData?.fullName ?? "")
+                    Text(vm.profileData?.user.fullName ?? "")
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         .padding(2)
-                    Text(vm.profileData?.email ?? "")
+                    Text(vm.profileData?.user.email ?? "")
                         .font(.system(size: 13, weight: .regular))
                         .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                     

@@ -34,7 +34,7 @@ public class ProfileViewModel: ObservableObject {
                 await MainActor.run { [weak self] in
                     self?.profileData = profile
                     self?.isLoading = false
-                    self?.message = .succes(message: "Sizning ma'lumotlaringiz muvaffaqqiyatli keldi!")
+                    self?.message = .succes(message: Localizations.yourInformationHasComeSuccessful)
                 }
                 
             } catch {

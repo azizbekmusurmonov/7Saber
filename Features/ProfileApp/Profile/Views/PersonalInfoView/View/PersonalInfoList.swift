@@ -75,7 +75,7 @@ struct PersonalInfoList: View {
                 SaveCancelButtons(title: Localizations.save,
                                   color: Asset.Color.Button.blackCol.swiftUIColor, textColor: Asset.Color.Text.whiteCol.swiftUIColor,
                                   buttonPressed: {
-                        vm.sendPersonalInfo()
+                    vm.sendPersonalInfo(fullName: vm.fullNam, phone: vm.phoneNamber, email: vm.email, gender: vm.gender, avatar: vm.profileImage!)
                 }, isDisabled: .constant(!vm.isFormValid))
             }
             

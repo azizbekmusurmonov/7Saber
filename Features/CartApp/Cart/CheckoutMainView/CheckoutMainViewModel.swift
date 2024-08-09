@@ -70,7 +70,7 @@ final class CheckoutMainViewModel: ObservableObject {
                 
                 let (user, carts, addresses, totalBalance) = try await (userData, cartData, address, totalBalances)
                 await MainActor.run { [weak self] in
-                    self?.userName = user.role.name
+                    self?.userName = user.user.fullName
                     self?.carts = carts.map { $0.getProduct }
                     self?.addressess = addresses.data
                     self?.totalBalance = totalBalance

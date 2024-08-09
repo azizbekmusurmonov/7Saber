@@ -41,9 +41,9 @@ struct PersonSexDataView: View {
                 }) {
                     Image(uiImage: Asset.Image.Icons.chevronDown.image)
                         .resizable()
-                        .frame(width: 10, height: 4.65)
+                        .frame(width: 20, height: 20)
                 }
-                .padding(.trailing, 10)
+                .padding(.trailing, 5)
             }
             Divider()
         }

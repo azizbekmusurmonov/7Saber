@@ -465,6 +465,8 @@ public enum Localizations {
   public static let youDontHaveAddress = Localizations.tr("Localizable_en", "you_dont_have_address", fallback: "You don't have address")
   /// You may also like
   public static let youMayAlsoLike = Localizations.tr("Localizable_en", "you_may_also_like", fallback: "You may also like")
+  /// Your information has come successful
+  public static let yourInformationHasComeSuccessful = Localizations.tr("Localizable_en", "your_information_has_come_successful", fallback: "Your information has come successful")
   /// Your wishlist is empty
   public static let yourWishlistIsEmpty = Localizations.tr("Localizable_en", "your_wishlist_is_empty", fallback: "Your wishlist is empty")
   /// Zipcode
