@@ -15,6 +15,8 @@ struct SelectCountryView: View {
     @State var selection: String = ""
     @State var countries: [CountryModel] = []
     
+    @EnvironmentObject var vm: RegisterMobillAppViewModel
+    
     let didChoosedLanguage: (String) -> ()
     
     var body: some View {
@@ -35,10 +37,10 @@ struct SelectCountryView: View {
                 
                 Picker("", selection: $selection) {
                     ForEach(countries) { country in
-                        Text(country.nameEn)
+                        Text(country.safeName)
                             .frame(maxWidth: .infinity,alignment: .leading)
                             .font(.system(size: 23,weight: .medium))
-                            .tag(country.name)
+                            .tag(country.safeName)
                     }
                 }
                 .pickerStyle(.inline)
@@ -46,13 +48,25 @@ struct SelectCountryView: View {
                 Spacer()
                 
                 Button {
-                    guard let locale = Languages(rawValue: selection)?.getLocale else {
-                        didChoosedLanguage("en")
-                        DataStorage.storage.save("en", for: .language)
-                        return
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        guard !selection.isEmpty else { return }
+                        print("Selected country: \(selection)")
+                        
+                        guard let locale = Languages(rawValue: selection)?.getLocale else {
+                            didChoosedLanguage("en")
+                            DataStorage.storage.save("en", for: .language)
+                            return
+                        }
+                        DataStorage.storage.save(locale == "ru" ? "ru" : "uz", for: .language)
+                        didChoosedLanguage(locale)
+                        
+                        if selection == "Uzbekistan" {
+                            vm.isUzbekistan = true
+                        } else {
+                            vm.isUzbekistan = false
+                        }
                     }
-                    DataStorage.storage.save(locale == "ru" ? "ru" : "uz", for: .language)
-                    didChoosedLanguage(locale)
                 } label: {
                     Capsule()
                         .frame(maxWidth: .infinity)

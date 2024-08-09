@@ -17,7 +17,7 @@ struct OrderStatusProgress: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("ORDER STATUS")
+            Text(Localizations.orderStatus)
                 .font(.system(size: 19, weight: .semibold))
                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
             HStack(spacing: 16) {
@@ -30,7 +30,7 @@ struct OrderStatusProgress: View {
                         Image(uiImage: Asset.Image.Icons.receiptCheck.image)
                             .resizable()
                             .setSize(24)
-                        Text("Ordered & Paid")
+                        Text(Localizations.orderedPaid)
                             .font(.sabFont(500, size: 13))
                             .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                         if progress == 0.25 {
@@ -44,7 +44,7 @@ struct OrderStatusProgress: View {
                         Image(uiImage: Asset.Image.Icons.checkCircleBroken.image)
                             .resizable()
                             .setSize(24)
-                        Text("Accepted")
+                        Text(Localizations.accepted)
                             .font(.sabFont(500, size: 13))
                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                         if progress == 0.5 {
@@ -58,7 +58,7 @@ struct OrderStatusProgress: View {
                         Image(uiImage: Asset.Image.Icons.fastShopping.image)
                             .resizable()
                             .setSize(24)
-                        Text("Shipped")
+                        Text(Localizations.shipped)
                             .font(.sabFont(500, size: 13))
                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                         if progress == 0.75 {
@@ -72,7 +72,7 @@ struct OrderStatusProgress: View {
                         Image(uiImage: Asset.Image.Icons.done.image)
                             .resizable()
                             .setSize(20)
-                        Text("Delivered")
+                        Text(Localizations.delivered)
                             .font(.sabFont(500, size: 13))
                             .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
                         if progress == 1.0 {

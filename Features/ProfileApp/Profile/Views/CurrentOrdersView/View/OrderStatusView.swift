@@ -30,7 +30,7 @@ struct OrderStatusView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("ORDER STATUS")
+            Text(Localizations.orderStatus)
                 .font(.system(size: 13, weight: .bold))
                 .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
            
@@ -42,7 +42,7 @@ struct OrderStatusView: View {
                     .frame(width: 24, height: 24)
                 
                 VStack(spacing: .zero) {
-                    Text("Ordered & Paid")
+                    Text(Localizations.orderedPaid)
                         .font(.system(size: 13, weight: .bold))
                         .foregroundColor(Asset.Color.Text.primaryCol.swiftUIColor)
                     Text("08/02/2024 | 12:56")

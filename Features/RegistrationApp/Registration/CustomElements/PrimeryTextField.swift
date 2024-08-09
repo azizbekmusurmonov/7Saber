@@ -36,6 +36,7 @@ struct PrimeryTextField: View {
     @State var imageName: String = "eye"
     @State var imageIsHidden: Bool = false
     @State var eyeSeeOrNotSee: Bool = true
+    @State var isUzekistan: Bool = false
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -59,6 +60,11 @@ struct PrimeryTextField: View {
                 .frame(width: UIScreen.main.bounds.width - 80, height: 48)
                 .keyboardType(keyboardType.getKeyboardType)
                 .hideKeyboardOnTap()
+                .onAppear {
+                    if isUzekistan && textFiledText.isEmpty {
+                        textFiledText = "+998"
+                    }
+                }
             }
             .overlay(
                 Rectangle()

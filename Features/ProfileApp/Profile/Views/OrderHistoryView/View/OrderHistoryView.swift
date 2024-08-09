@@ -60,7 +60,7 @@ extension OrderHistoryView {
     
     var navBar: some View {
         VStack(spacing: .zero) {
-            BaseNavigationBar(title: "ORDER HISTORY ",
+            BaseNavigationBar(title: Localizations.orderHistory,
                               leftImage: Asset.Image.Navigation.arrowLeftNav.image, leftButtonPressed: {
                 self.pop()
             })

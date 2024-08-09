@@ -7,32 +7,46 @@
 
 import Foundation
 
-struct GetUserModel: Codable {
-    let id: Int
-    let roleId: Int
-    let avatarId: Int
-    let fullName: String?
-    let email: String?
-    let phone: String
-    let gender: String?
+public struct GetUserModel: Codable {
+    let id, roleID, avatarID: Int?
+    public let fullName, email, phone, gender: String?
     let birthday: String?
-    let isDeleted: Bool
-    let created_at: String
-    let updated_at: String
-    let role: Role
-    let avatar: Avatar
+    let device: [String?]
+    let isDeleted: Bool?
+    let createdAt, updatedAt: String?
+    let role: Role?
+    let avatar: Avatar?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case roleID = "roleId"
+        case avatarID = "avatarId"
+        case fullName, email, phone, gender, birthday, device, isDeleted
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case role, avatar
+    }
 }
 
-struct Role: Codable {
-    let id: Int
-    let name: String
-    let permissions: [String] 
-    let isActive: Bool
-    let created_at: String
-    let updated_at: String
-}
-
+// MARK: - Avatar
 struct Avatar: Codable {
-    let id: Int
-    let src: String
+    let id: Int?
+    let baseName: String?
+    let src: String?
+    let type: String?
+}
+
+// MARK: - Role
+struct Role: Codable {
+    let id: Int?
+    let name: String?
+    let permissions: [String?]
+    let isActive: Bool?
+    let createdAt, updatedAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, permissions, isActive
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+    }
 }

@@ -70,7 +70,7 @@ struct ProfileImageView: View {
                     Button(action: {
                         
                     }) {
-                        Text("EDIT PROFILE")
+                        Text(Localizations.editProfile)
                             .font(.system(size: 13, weight: .regular))
                         
                         Image(uiImage: Asset.Image.Icons.edit.image)

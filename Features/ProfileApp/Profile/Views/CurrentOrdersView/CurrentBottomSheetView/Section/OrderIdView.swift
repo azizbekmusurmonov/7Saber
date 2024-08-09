@@ -16,7 +16,7 @@ struct OrderIdView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("ORDER ID")
+            Text(Localizations.orderId)
                 .font(.system(size: 13, weight: .regular))
                 .foregroundColor(Asset.Color.Text.secondaryCol.swiftUIColor)
             HStack(spacing: .zero) {

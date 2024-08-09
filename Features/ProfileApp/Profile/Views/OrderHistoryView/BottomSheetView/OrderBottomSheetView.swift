@@ -15,7 +15,7 @@ struct OrderBottomSheetView: View {
     
     var body: some View {
         VStack(spacing: .zero) {
-            BottomSheetsNavBar(title: "ORDER DETAILS")
+            BottomSheetsNavBar(title: Localizations.orderDetails)
             ScrollView {
 //                    OrderIdView()
                     ShipToDataView()
