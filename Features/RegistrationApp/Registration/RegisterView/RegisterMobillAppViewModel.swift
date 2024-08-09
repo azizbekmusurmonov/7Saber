@@ -69,7 +69,7 @@ public class RegisterMobillAppViewModel: ObservableObject {
                     withAnimation(.easeInOut(duration: .animationDuration.normal)) {
                         isCodeViewPresented = true
                     }
-                } else if numberText.contains("+"), isUzbekistan {
+                } else if numberText.contains("+"), !isUzbekistan {
                     await getUser(by: .phone)
                     
                     if userExists {
@@ -299,4 +299,8 @@ public class RegisterMobillAppViewModel: ObservableObject {
         timer = nil
     }
     
+    func isPasswordValid(_ password: String) -> Bool {
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[!@#$%^&*])[A-Za-z\\d!@#$%^&*]{8,}$"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
+    }
 }
