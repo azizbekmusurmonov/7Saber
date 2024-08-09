@@ -6,15 +6,26 @@
 //
 
 import SwiftUI
-import Core
 import AssetKit
 
-struct CheckoutNavBar: View {
+public enum CheckoutNavBarType {
+    case checkout
+    case cart
+}
+
+public struct CheckoutNavBar: View {
     // pop
-    let title: String
-    let closeAction: () -> ()
+    public let title: String
+    public let closeAction: () -> ()
+    public let mode: CheckoutNavBarType
     
-    var body: some View {
+    public init(title: String, mode: CheckoutNavBarType = .checkout, closeAction: @escaping () -> ()) {
+        self.title = title
+        self.closeAction = closeAction
+        self.mode = mode
+    }
+    
+    public var body: some View {
         HStack {
             Text(title)
                 .font(.sabFont(600, size: 19))
@@ -36,12 +47,5 @@ struct CheckoutNavBar: View {
             }
         }.cornerRadius(10)
         .background(Color.white)
-    }
-}
-
-struct NavBar_Previews: PreviewProvider {
-    static var previews: some View {
-        CheckoutNavBar(title: "Chekckout") {}
-            .previewLayout(.sizeThatFits)
     }
 }

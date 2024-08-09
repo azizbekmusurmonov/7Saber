@@ -7,14 +7,19 @@
 
 import SwiftUI
 import AssetKit
-import Core
 
-struct AddCardView: View {
+public struct AddCardView: View {
     
-    @EnvironmentObject var vm: CheckoutMainViewModel
-    @Environment(\.dismiss) private var dismiss
+    @StateObject var vm = AddCardViewModule()
+    public let dismiss: () -> ()
+    public let pop: () -> ()
     
-    var body: some View {
+    public init(dismiss: @escaping () -> Void, pop: @escaping () -> Void) {
+        self.dismiss = dismiss
+        self.pop = pop
+    }
+    
+    public var body: some View {
         VStack {
             navBar
             VStack(alignment: .leading) {
@@ -58,7 +63,7 @@ struct AddCardView: View {
     private var navBar: some View {
         HStack {
             Button(action: {
-                vm.showAddCardView = false
+                pop()
             }) {
                 Asset.Image.Icons.arrowLeft.swiftUIImage
                     .resizable()
@@ -66,7 +71,6 @@ struct AddCardView: View {
             }.padding()
             CheckoutNavBar(title: Localizations.addCard) {
                 dismiss()
-                vm.clearAllData()
             }
         }.background(Color.white)
     }
@@ -132,11 +136,4 @@ struct AddCardView: View {
         vm.canAddCard = vm.enteredCardNumber.count > 15 && vm.enteredExpiredDate.count == 5
         //&& (vm.selctedCardType?.isForiegnCard == true && vm.enteredCVV.count == 3)
     }
-}
-
-#Preview {
-    AddCardView()
-        .environmentObject(CheckoutMainViewModel())
-        .previewLayout(.fixed(width: 375, height: 200.dpHeight()))
-    
 }

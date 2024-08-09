@@ -107,43 +107,42 @@ final public class NetworkService {
         }
     }
     
-    public func request2<T: Decodable>(
-        url: String,
-        decode: T.Type,
-        method: HTTPMethod,
-        queryParameters: [String: String]? = nil,
-        param: [String: Any]? = nil
-    ) async throws -> T {
-        
-        let urlString = "https://lab.7saber.uz/api/auth/registration"
-        var request = URLRequest(url: URL(string: urlString)!)
-        
-        // set header
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        // set HTTP Method
-        request.httpMethod = "POST"
-        
-        // set body parameters
-        request.httpBody = param?.percentEncoded()
-        
-        do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-
-            
-            guard let response = response as? HTTPURLResponse, (200 ... 299) ~= response.statusCode else {
-                print("⛔️⛔️⛔️⛔️⛔️⛔️⛔️ status error", (response as? HTTPURLResponse)?.statusCode ?? .zero, print(response))
-                throw NetworkError.incorrectStatusCode((response as? HTTPURLResponse)?.statusCode ?? .zero)
+    public func getTransactionID(transaction: @escaping(TransactionModel) -> ()) {
+        Task.detached {
+            do {
+                let success = try await self.request(
+                    url: "https://lab.7saber.uz/api/client/card/store",
+                    decode: TransactionModel.self,
+                    method: .get
+                )
+                
+                await MainActor.run {
+                    transaction(success)
+                }
+            } catch {
+                print("ERROR on getting Transaction", error.localizedDescription)
             }
-            
-            let model = try JSONDecoder().decode(T.self, from: data)
-            
-            return model
-        } catch {
-            throw error
         }
     }
 }
 
+public struct TransactionModel: Codable {
+    public let paymentID, requesterID: Int
+    public let transactionID, token, type: String
+    public let amount: Int
+    public let currency, status, language, createdDate: String
+    public let paymentURL: String
+    public let lastModifiedDate: String
+
+    public enum CodingKeys: String, CodingKey {
+        case paymentID = "paymentId"
+        case requesterID = "requesterId"
+        case transactionID = "transactionId"
+        case token, type, amount, currency, status, language, createdDate
+        case paymentURL = "paymentUrl"
+        case lastModifiedDate
+    }
+}
 
 extension Dictionary {
     public func percentEncoded() -> Data? {
