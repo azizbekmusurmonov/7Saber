@@ -22,7 +22,6 @@ struct CheckoutPaymentView: View {
     var body: some View {
         VStack {
             CheckoutNavBar(title: Localizations.payment) {
-                vm.clearAllData()
                 dismiss()
             }
             
@@ -39,7 +38,11 @@ struct CheckoutPaymentView: View {
                 vm.createOrder()
             }
             Spacer()
-        }.navigate(to: AddCardView().environmentObject(vm), when: $vm.showAddCardView)
+        }.navigate(to: AddCardView {
+            dismiss()
+        } pop:  {
+            vm.showAddCardView = false
+        }.environmentObject(vm), when: $vm.showAddCardView)
         .background(Color.init(hex: "#F6F6F6"))
     }
 }

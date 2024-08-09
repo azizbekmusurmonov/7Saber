@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct PaymentDetails {
-    var number: String = ""
-    var cardHolder: String = ""
-    var expirationDate: String = ""
-    var securityNumber: String = ""
-    var transactionId: String = ""
-    var billingAddress: String? = ""
-    static let defaultBillingAddress: String = ""
+public struct PaymentDetails {
+    public var number: String = ""
+    public var cardHolder: String = ""
+    public var expirationDate: String = ""
+    public var securityNumber: String = ""
+    public var transactionId: String = ""
+    public var billingAddress: String? = ""
+    public static let defaultBillingAddress: String = ""
     
-    init?(number: String?,cardHolder: String?,expirationDate: String?,securityNumber: String?,transactionId: String?, billingAddress: String?) {
+    public init?(number: String?,cardHolder: String?,expirationDate: String?,securityNumber: String?,transactionId: String?, billingAddress: String?) {
         
         guard let number = number else { return nil }
         guard let cardHolder = cardHolder else { return nil }

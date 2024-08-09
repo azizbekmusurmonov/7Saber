@@ -15,6 +15,7 @@ public struct CartView: View {
     
     @State private var showCheckout: Bool = false
     @State private var showFullSheet: Bool = true
+    @State var checkoutViewHeight: CGFloat = 625.dpHeight()
     
     public init() { }
     
@@ -40,10 +41,11 @@ public struct CartView: View {
         })
         .sheet(isPresented: $showCheckout) {
             if #available(iOS 16.0, *) {
-                CheckoutMainView()
-                    .presentationDetents([.height(vm.checkoutHeight), .large])
+                CheckoutMainView(viewHeight: $checkoutViewHeight)
+                    .presentationDetents([.height(checkoutViewHeight), .large])
+                
             } else {
-                CheckoutMainView()
+                CheckoutMainView(viewHeight: .constant(625))
             }
         }
     }
