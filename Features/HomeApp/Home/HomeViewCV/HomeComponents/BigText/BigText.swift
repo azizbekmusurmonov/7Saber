@@ -30,4 +30,6 @@ struct BigText: View {
     }
 }
 
-
+#Preview {
+    BigText()
+}

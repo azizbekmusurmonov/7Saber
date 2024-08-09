@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftUI
 
 struct CategoryView: View {
-    @ObservedObject var viewModel: CategoryViewModel
+    @StateObject var viewModel: CategoryViewModel = CategoryViewModel()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -82,7 +82,7 @@ struct CategoryItemView: View {
     let category: CategoryElement
     
     var body: some View {
-        VStack(alignment: .leading) {
+        ZStack(alignment: .leading) {
             AsyncImage(url: URL(string: category.bg.src)) { image in
                 image
                     .resizable()
@@ -91,17 +91,42 @@ struct CategoryItemView: View {
                     .clipShape(Circle())
             } placeholder: {
                 ProgressView()
-                    .frame(width: 120, height: 120)
                     .clipShape(Circle())
+                    .frame(width: 120, height: 120)
+
             }
+            .background(Circle())
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text(category.nameEn)
+            Text(category.name)
                 .font(.system(size: 25))
+                .multilineTextAlignment(.leading)
                 .fontWeight(.light)
-                .lineLimit(1)
+                .lineLimit(2)
                 .foregroundColor(.black)
-                .padding(.top, -30)
+                .horizontal(alignment: .leading)
+                .vertical(alignment: .bottom)
+        }
+        .frame(width: 120, height: 120)
+
+    }
+}
+
+extension CategoryElement {
+    var language: String {
+        UserDefaults.standard.string(forKey: "language") ?? "en"
+    }
+    
+    var name: String {
+        switch language {
+        case "uz":
+            return nameUz
+        case "ru":
+            return nameRu
+        case "en":
+            return nameEn
+        default:
+            return nameEn
         }
     }
 }

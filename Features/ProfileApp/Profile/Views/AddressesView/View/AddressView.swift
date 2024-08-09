@@ -16,7 +16,6 @@ struct AddressView: View {
         switch vm.viewState {
         case .show:
             VStack(spacing: .zero) {
-                
                 navBar
                 Spacer()
                 if #available(iOS 16.0, *) {
@@ -54,6 +53,8 @@ struct AddressView: View {
             navBar
             Spacer()
             AddressesIsEmpty()
+        default:
+            EmptyView()
         }
     }
     

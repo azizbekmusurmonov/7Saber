@@ -18,7 +18,6 @@ struct OrderHistoryView: View {
     public init() { }
     
     var body: some View {
-        
         switch vm.viewState {
         case .show:
             VStack(spacing: 0) {
@@ -50,6 +49,8 @@ struct OrderHistoryView: View {
             navBar
             Spacer()
             OrderHistoryIsEmpty()
+        default:
+            EmptyView()
         }
         
     }

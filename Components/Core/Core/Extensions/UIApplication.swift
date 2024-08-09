@@ -9,12 +9,20 @@ import Foundation
 import UIKit
 
 public extension UIApplication {
+    private var activeWindow: UIWindow? {
+        guard let activeView = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first else {
+            return nil
+        }
+        
+        return activeView
+    }
+    
     var firstWindow: UIWindow? {
         connectedScenes.first.flatMap { $0 as? UIWindowScene }?.windows.first { $0.isKeyWindow }
     }
 
     var firstKeyWindow: UIWindow? {
-        windows.first { $0.isKeyWindow }
+        activeWindow
     }
 
     func topViewController() -> UIViewController? {
@@ -33,8 +41,13 @@ public extension UIApplication {
         firstWindow?.windowScene?.statusBarManager?.statusBarFrame ?? .zero
     }
     
-    func dismissKeyboard() {
-        self.topViewController()?.view.endEditing(true)
+    @discardableResult
+    func dismissKeyboard() -> Bool {
+        if activeWindow?.endEditing(true) ?? false {
+            return true
+        }
+        
+        return self.topViewController()?.view.endEditing(true) ?? false
     }
 
     var userInterfaceStyle: UIUserInterfaceStyle? {
@@ -68,5 +81,33 @@ public extension UIApplication {
         } else {
             visibleController?.navigationController?.popToRootViewController(animated: animated)
         }
+    }
+    
+    var safeArea: UIEdgeInsets {
+        guard let activeView = activeWindow else {
+            return .zero
+        }
+        
+        return activeView.safeAreaInsets
+    }
+    
+    var screenFrame: CGRect {
+        guard let activeView = activeWindow else {
+            return .zero
+        }
+        
+        return activeView.frame
+    }
+    
+    var safeAreaFrame: CGRect {
+        guard let activeView = activeWindow else {
+            return .zero
+        }
+        
+        return activeView.safeAreaLayoutGuide.layoutFrame
+    }
+    
+    var hasDynamicIsland: Bool {
+        safeArea.top > 51
     }
 }

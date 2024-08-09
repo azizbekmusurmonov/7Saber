@@ -19,9 +19,7 @@ struct ProfileList: View {
                     .font(.system(size: 23, weight: .bold))
                     .bold()
                 
-                ForEach(0..<sections[index].cells.count) { cellIndex in
-                    let destinationView = sections[index].cells[cellIndex].pushToView // Explicitly define destination view
-                    
+                ForEach(0..<sections[index].cells.count, id: \.self) { cellIndex in
                     NavigationLink(
                         destination: sections[index].cells[cellIndex].pushToView,
                         label: {

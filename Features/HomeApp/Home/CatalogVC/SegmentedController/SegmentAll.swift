@@ -30,7 +30,7 @@ struct SegmentedControlHeader2: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 0) {
-                ForEach(0..<segments.count) { index in
+                ForEach(0..<segments.count, id: \.self) { index in
                     SegmentedControlItem2(title: segments[index], isSelected: selectedSegmentIndex == index)
                         .onTapGesture {
                             withAnimation {
@@ -71,7 +71,7 @@ struct SegmentedControlIndicator2: View {
                 .fill(Color.black)
                 .frame(width: geometry.size.width / CGFloat(segments.count), height: 3)
                 .offset(x: CGFloat(selectedSegmentIndex) * geometry.size.width / CGFloat(segments.count))
-                .animation(.easeInOut)
+                .animation(.easeInOut, value: selectedSegmentIndex)
         }
     }
 }

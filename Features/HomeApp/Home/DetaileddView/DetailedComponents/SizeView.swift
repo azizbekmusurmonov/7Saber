@@ -29,7 +29,7 @@ struct ImageSlide2: View {
                                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                                 .clipped()
                                 .scaleEffect(index == currentIndex ? 1 : 1) // Scale the current image to 100%, others to 80%
-                                .animation(.default)
+                                .animation(.default, value: currentIndex)
                                 .onTapGesture {
                                     withAnimation {
                                         self.currentIndex = index
@@ -42,7 +42,7 @@ struct ImageSlide2: View {
                 .edgesIgnoringSafeArea(.all)
                 .offset(x: -CGFloat(currentIndex) * UIScreen.main.bounds.width)
                 .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-                .animation(.default)
+                .animation(.default, value: currentIndex)
                 
                 HStack {
                     Spacer()

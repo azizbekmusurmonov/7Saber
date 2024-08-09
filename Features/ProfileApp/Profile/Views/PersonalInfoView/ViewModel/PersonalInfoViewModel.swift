@@ -56,9 +56,8 @@ public class PersonalInfoViewModel: ObservableObject {
     
     func sendPersonalInfo() {
         let urlString = "https://lab.7saber.uz/api/client/user/update"
-        print(profileImage?.pngData())
         Task.detached { [weak self] in
-            guard let self, let url = URL(string: urlString), let imageData = profileImage?.pngData() else { return }
+            guard let self, let url = URL(string: urlString) else { return }
             
             do {
                 try await UploadImage.uploadImage(image: profileImage!, fullName: fullNam, gender: gender, birthDate: .init(), email: email, toURL: url)

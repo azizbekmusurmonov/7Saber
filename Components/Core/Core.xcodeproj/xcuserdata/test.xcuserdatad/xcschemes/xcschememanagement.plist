@@ -7,7 +7,11 @@
 		<key>Core.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
+			<integer>5</integer>
+=======
 			<integer>18</integer>
+>>>>>>> 1fd53d72164ebe47c2162b82295efb3e2d57f01e
 		</dict>
 	</dict>
 </dict>

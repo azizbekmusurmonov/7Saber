@@ -38,9 +38,9 @@ public struct BottomSheetView: View {
                     .background(Color.white)
                     .cornerRadius(10)
                     .padding(.horizontal)
-                    .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom)
+                    .padding(.bottom, UIApplication.shared.safeArea.bottom)
                     .offset(y: isPresented ? 0 : UIScreen.main.bounds.height)
-                    .animation(.spring())
+                    .animation(.spring(), value: isPresented)
                     .edgesIgnoringSafeArea(.all)
                 }
             }
