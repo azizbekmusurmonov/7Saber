@@ -17,6 +17,10 @@ struct CheckoutPriceView: View {
             if let subtotal = vm.totalBalance?.subtotal, let currency = vm.totalBalance?.currency {
                 makeInfoView(title: Localizations.subtotal, price: subtotal, currency: currency)
             }
+            if let _ = vm.promocodeObject?.promocode, let promAmount = vm.totalBalance?.promocode, 
+                let currency = vm.totalBalance?.currency {
+                makeInfoView(title: Localizations.promocodeDiscount, price: promAmount, currency: currency)
+            }
             if let shipping = vm.totalBalance?.shipping, let currency = vm.totalBalance?.currency {
                 makeInfoView(title: Localizations.shipping, price: shipping, currency: currency)
             }

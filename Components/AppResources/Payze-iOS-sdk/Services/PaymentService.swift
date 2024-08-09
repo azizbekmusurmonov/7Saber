@@ -106,6 +106,8 @@ public final class PaymentService: NSObject, PaymentServiceProtocol {
             self.popUpView = MyWebView(url: iframeUrl)
             self.popUpView!.webDelegate = self
             let rootVC = UIApplication.shared.windows.first?.rootViewController
+            
+//            rootVC?.present(self, animated: true)
             rootVC?.view.addSubview(self.popUpView!)
         }
         

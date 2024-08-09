@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import Core
 import UIKit
 
 final public class NetworkService {
@@ -51,11 +50,11 @@ final public class NetworkService {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         print("Content-Type", "application/json","\n")
         request.setValue("iOS", forHTTPHeaderField: "Accept-Device")
-        if let language = DataStorage.storage.get(from: .language) as? String {
+        if let language = UserDefaults.standard.string(forKey: "language") {
             request.setValue(language, forHTTPHeaderField: "Accept-Language")
             print("Accept-Language", language,"\n")
         }
-        if let token = DataStorage.storage.get(from: .token) as? String {
+        if let token = UserDefaults.standard.string(forKey: "token") {
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
             print("Authorization", "Bearer", "TOKEN", token,"\n")
         }

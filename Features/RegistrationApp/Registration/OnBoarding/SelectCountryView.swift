@@ -37,10 +37,10 @@ struct SelectCountryView: View {
                 
                 Picker("", selection: $selection) {
                     ForEach(countries) { country in
-                        Text(country.safeName)
+                        Text(country.name)
                             .frame(maxWidth: .infinity,alignment: .leading)
                             .font(.system(size: 23,weight: .medium))
-                            .tag(country.safeName)
+                            .tag(country.name)
                     }
                 }
                 .pickerStyle(.inline)
@@ -121,7 +121,6 @@ struct SelectCountryView: View {
 enum Languages: String, Hashable, CaseIterable {
     case Russia
     case Uzbekistan
-    case OTHER
     
     var getLocale: String {
         switch self {
@@ -129,8 +128,6 @@ enum Languages: String, Hashable, CaseIterable {
             return "ru"
         case .Uzbekistan:
             return "uz"
-        case .OTHER:
-            return "en"
         }
     }
 }

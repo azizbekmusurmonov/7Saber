@@ -15,6 +15,7 @@ public extension String {
         case unionPay
         case humo
         case uzcard
+        case unknown
         
         var icon: Image {
             switch self {
@@ -28,6 +29,8 @@ public extension String {
                 return Asset.Image.Card.humoIcon.swiftUIImage
             case .uzcard:
                 return Asset.Image.Card.uzcardIcon.swiftUIImage
+            case .unknown:
+                return Asset.Image.Icons.creditCard.swiftUIImage
             }
         }
         
@@ -50,7 +53,7 @@ public extension String {
         } else if self.contains("8600") {
             return .uzcard
         }
-        return nil
+        return isEmpty ? nil : .unknown
     }
     
     var formatExpirationDate: String {

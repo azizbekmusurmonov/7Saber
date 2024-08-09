@@ -27,33 +27,39 @@ public struct AddCardView: View {
                 Spacer()
                 cardNumberField
                 
+                cardNameTextField
+                
                 HStack {
                     expiredDateField
                     Spacer()
                     cvvField
                 }
             }
-            .padding(16)
-            .frame(width: UIScreen.main.bounds.width - 32, height: 200.dpHeight())
+            .padding(16.dpHeight())
+            .frame(width: UIScreen.main.bounds.width - 32, height: 230.dpHeight())
+            .cornerRadius(10)
             .background(Color.white)
             .border(Color.init(uiColor: .systemGray5))
-            .cornerRadius(10)
             
-            Button(action: {
-                
-            }) {
-                ZStack {
-                    Capsule()
-                        .foregroundColor(vm.canAddCard ? .black : .gray)
-                        
-                        .frame(height: 56)
+            
+            VStack(spacing: .zero) {
+                Button(action: {
                     
-                    Text(Localizations.addCard)
-                        .foregroundStyle(.white)
+                }) {
+                    ZStack {
+                        Capsule()
+                            .foregroundColor(vm.canAddCard ? .black : .gray)
+                            
+                            .frame(height: 56.dpHeight())
+                        
+                        Text(Localizations.addCard)
+                            .foregroundStyle(.white)
+                    }
                 }
+                .padding(.horizontal, 16.dpHeight())
+                .padding(.vertical, 12.dpHeight())
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
+            .background(Color.white)
            
             
             Spacer()
@@ -67,7 +73,7 @@ public struct AddCardView: View {
             }) {
                 Asset.Image.Icons.arrowLeft.swiftUIImage
                     .resizable()
-                    .setSize(24)
+                    .setSize(24.dpHeight())
             }.padding()
             CheckoutNavBar(title: Localizations.addCard) {
                 dismiss()
@@ -79,7 +85,7 @@ public struct AddCardView: View {
         VStack {
             vm.selctedCardType?.icon
                 .resizable()
-                .frame(width: 36, height: 36, alignment: .leading)
+                .frame(width: 36.dpWidth(), height: 36.dpHeight(), alignment: .leading)
                 .padding(.leading, 4)
         }
     }
@@ -99,6 +105,22 @@ public struct AddCardView: View {
         }
     }
     
+    private var cardNameTextField: some View {
+        VStack {
+            TextField(Localizations.nameOfTheCard, text: $vm.enteredCardName)
+
+            Divider()
+                .background(Color.init(
+                    uiColor: vm.enteredCardName.isEmpty ? .systemGray5 : .black)
+                )
+        }
+        .onChange(of: vm.enteredExpiredDate) { newValue in
+            vm.enteredExpiredDate = newValue.formatExpirationDate
+            checkState()
+        }
+        .padding(.top, 20.dpHeight())
+    }
+    
     private var expiredDateField: some View {
         VStack {
             TextField(Localizations.mmyy, text: $vm.enteredExpiredDate)
@@ -113,6 +135,7 @@ public struct AddCardView: View {
             vm.enteredExpiredDate = newValue.formatExpirationDate
             checkState()
         }
+        .padding(.top, 20.dpHeight())
     }
     
     private var cvvField: some View {
@@ -124,16 +147,32 @@ public struct AddCardView: View {
                     uiColor: vm.enteredCVV.isEmpty ? .systemGray5 : .black)
                 )
         }
-        .frame(width: 100)
+        .frame(width: 100.dpHeight())
         .onChange(of: vm.enteredCVV) { newValue in
             vm.enteredCVV = String(newValue.prefix(3))
             checkState()
         }
+        .padding(.top, 20.dpHeight())
         .opacity(vm.selctedCardType?.isForiegnCard == true ? 1 : 0)
     }
     
     func checkState() {
-        vm.canAddCard = vm.enteredCardNumber.count > 15 && vm.enteredExpiredDate.count == 5
-        //&& (vm.selctedCardType?.isForiegnCard == true && vm.enteredCVV.count == 3)
+        guard let type = vm.enteredCardNumber.checkCardNumber() else { return }
+       
+        if type.isForiegnCard {
+            vm.canAddCard = vm.enteredCardNumber.count > 15 && !vm.enteredCardName.isEmpty 
+            && vm.enteredExpiredDate.count == 5 && vm.enteredCVV.count == 3
+        } else {
+            vm.canAddCard = vm.enteredCardNumber.count > 15 && !vm.enteredCardName.isEmpty && vm.enteredExpiredDate.count == 5
+        }
     }
+}
+
+#Preview {
+    AddCardView {
+        
+    } pop: {
+        
+    }
+
 }

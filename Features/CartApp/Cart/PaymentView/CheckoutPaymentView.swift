@@ -18,12 +18,12 @@ struct CheckoutPaymentView: View {
     
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var vm: CheckoutMainViewModel
+    let backAction: () -> ()
+    let dismissAction: () -> ()
     
     var body: some View {
         VStack {
-            CheckoutNavBar(title: Localizations.payment) {
-                dismiss()
-            }
+            navBar
             
             selectedPaymentiew
             
@@ -38,17 +38,36 @@ struct CheckoutPaymentView: View {
                 vm.createOrder()
             }
             Spacer()
-        }.navigate(to: AddCardView {
-            dismiss()
+        }.onAppear {
+            self.vm.getCardsList()
+        }
+        .navigate(to: AddCardView {
+            dismissAction()
         } pop:  {
             vm.showAddCardView = false
         }.environmentObject(vm), when: $vm.showAddCardView)
         .background(Color.init(hex: "#F6F6F6"))
     }
+    
+    private var navBar: some View {
+        HStack {
+            Button(action: {
+                vm.showPaymentView = false
+                backAction()
+            }) {
+                Asset.Image.Icons.arrowLeft.swiftUIImage
+                    .resizable()
+                    .setSize(24)
+            }.padding()
+            CheckoutNavBar(title: Localizations.addCard) {
+                dismissAction()
+            }
+        }.background(Color.white)
+    }
 }
 
 #Preview {
-    CheckoutPaymentView().environmentObject(CheckoutMainViewModel())
+    CheckoutPaymentView(backAction: { }, dismissAction: { }).environmentObject(CheckoutMainViewModel())
 }
 
 

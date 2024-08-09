@@ -221,6 +221,8 @@ public enum Localizations {
   public static let mmyy = Localizations.tr("Localizable_en", "mmyy", fallback: "MM/YY")
   /// My cart
   public static let myCart = Localizations.tr("Localizable_en", "my_cart", fallback: "My cart")
+  /// Name of the card
+  public static let nameOfTheCard = Localizations.tr("Localizable_en", "nameOfTheCard", fallback: "Name of the card")
   /// Never
   public static let never = Localizations.tr("Localizable_en", "never", fallback: "Never")
   /// New arrivals
@@ -476,11 +478,14 @@ public enum Localizations {
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
 
 // MARK: - Implementation Details
-
+// Users/test/Desktop/7Saber/Components/AssetKit/AssetKit/en.lproj
 extension Localizations {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg..., fallback value: String) -> String {
-    let format = BundleToken.bundle.localizedString(forKey: key, value: value, table: table)
-    return String(format: format, locale: Locale.current, arguments: args)
+    let locale = UserDefaults.standard.string(forKey: "language") ?? "en"
+    let path = BundleToken.bundle.path(forResource: locale, ofType: "lproj")
+    let bundle = Bundle (path: path!)
+    
+      return bundle?.localizedString(forKey: key, value: value, table: nil) ?? value
   }
 }
 

@@ -32,7 +32,7 @@ struct CardsListView: View {
 
             Spacer()
         }.onAppear {
-            vm.getCardsList()
+//            vm.getCardsList()
         }
     }
     

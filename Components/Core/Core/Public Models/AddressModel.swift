@@ -83,34 +83,12 @@ public struct CountryModel: Codable, Identifiable {
     public let nameUz, nameRu, nameEn, code: String
     public let currencies: String?
     public let queue: String?
-    public let name: String?
-    
-    public var safeName: String {
-        name ?? ""
-    }
-//    let children: [JSONAny]
-    
-    public init(from decoder: any Decoder) throws {
-        let container = try? decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container?.decode(Int.self, forKey: .id) ?? .zero
-        self.parentID = try container?.decodeIfPresent(Int.self, forKey: .parentID) ?? .zero
-        self.nameUz = try container?.decode(String.self, forKey: .nameUz) ?? ""
-        self.nameRu = try container?.decode(String.self, forKey: .nameRu) ?? ""
-        self.nameEn = try container?.decode(String.self, forKey: .nameEn) ?? ""
-        self.code = try container?.decode(String.self, forKey: .code) ?? ""
-        self.currencies = try container?.decodeIfPresent(String.self, forKey: .currencies)
-        self.queue = try container?.decodeIfPresent(String.self, forKey: .queue)
-//        self.createdAt = try container?.decode(String.self, forKey: .createdAt) ?? ""
-//        self.updatedAt = try container?.decode(String.self, forKey: .updatedAt) ?? ""
-        self.name = try container?.decodeIfPresent(String.self, forKey: .name) ?? ""
-    }
+    public let name: String
 
     enum CodingKeys: String, CodingKey {
         case id
         case parentID = "parentId"
         case nameUz, nameRu, nameEn, code, currencies, queue
-//        case createdAt = "created_at"
-//        case updatedAt = "updated_at"
         case name // children
     }
 }

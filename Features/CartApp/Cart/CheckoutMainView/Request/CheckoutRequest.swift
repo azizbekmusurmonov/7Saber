@@ -50,10 +50,10 @@ struct CheckoutRequest {
         
     }
     
-    static func getAllCards() async throws -> [String] {
+    static func getAllCards() async throws -> GetAllCardsModel {
         try await NetworkService.shared.request(
             url: baseUrl + "/client/card",
-            decode: [String].self,
+            decode: GetAllCardsModel.self,
             method: .get
         )
     }

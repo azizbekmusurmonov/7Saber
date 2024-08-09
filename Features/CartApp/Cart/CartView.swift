@@ -31,6 +31,7 @@ public struct CartView: View {
                 
                 CheckOutView(action: {
                     withAnimation(.spring(duration: 0.3, bounce: 0.3)) {
+                        checkoutViewHeight = 625.dpHeight()
                         showCheckout.toggle()
                     }
                 })

@@ -41,7 +41,13 @@ public struct CheckoutMainView: View {
                         }
                     }
                 }
-                .navigate(to: CheckoutPaymentView().environmentObject(vm), when: $vm.showPaymentView)
+                .navigate(to: CheckoutPaymentView(backAction: {
+                    withAnimation(.spring(duration: 0.3, bounce: 0.3)) {
+                        viewHeight = 625.dpHeight()
+                    }
+                }, dismissAction: {
+                    dismiss()
+                }).environmentObject(vm), when: $vm.showPaymentView)
                 .onDisappear {
                     withAnimation(.spring(duration: 0.3, bounce: 0.3)) {
                         vm.showBagView = false
@@ -108,7 +114,7 @@ extension CheckoutMainView {
                 isEnable: $vm.paymentButtonIsEnable
             ) {
                 vm.showPaymentView = true
-                withAnimation {
+                withAnimation(.spring(duration: 0.3, bounce: 0.3)) {
                     viewHeight = 470.dpHeight()
                 }
             }

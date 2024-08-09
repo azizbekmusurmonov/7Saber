@@ -148,7 +148,6 @@ final class CheckoutMainViewModel: ObservableObject {
     }
     
     func getCardsList() {
-        isLoading = true
         
         Task.detached { [weak self] in
             guard let self else { return }
@@ -156,7 +155,7 @@ final class CheckoutMainViewModel: ObservableObject {
                 let totalBalances = try await CheckoutRequest.getAllCards()
                 
                 await MainActor.run { [weak self] in
-                    self?.isLoading = false
+                    
                 }
             } catch {
                 await MainActor.run { [weak self] in

@@ -24,6 +24,9 @@
 		52933E0B2C64BB3400E85BCC /* AddCardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52933E092C64BB3400E85BCC /* AddCardExtensions.swift */; };
 		52933E0C2C64BB3400E85BCC /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52933E0A2C64BB3400E85BCC /* AddCardView.swift */; };
 		52933E0E2C64BBC200E85BCC /* AddCardViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52933E0D2C64BBC200E85BCC /* AddCardViewModule.swift */; };
+		52933E102C65D8E500E85BCC /* GetAllCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52933E0F2C65D8E500E85BCC /* GetAllCardsModel.swift */; };
+		52933E122C661DD900E85BCC /* NetworkManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52933E112C661DD900E85BCC /* NetworkManager.framework */; };
+		52933E132C661DD900E85BCC /* NetworkManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52933E112C661DD900E85BCC /* NetworkManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		529AA6EE2C5A5E4800C5892C /* CreditCardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529AA6ED2C5A5E4800C5892C /* CreditCardFormatter.swift */; };
 		529C21D12C34967600C9256F /* ApiPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C21D02C34967600C9256F /* ApiPrice.swift */; };
 		529C21D32C34982E00C9256F /* ApiPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C21D22C34982E00C9256F /* ApiPhotos.swift */; };
@@ -58,6 +61,20 @@
 		FAF795732BEAA14100467150 /* DynamicBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF795712BEAA14100467150 /* DynamicBottomSheet.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		52933E142C661DDA00E85BCC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				52933E132C661DD900E85BCC /* NetworkManager.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		52192C672C3E620E00412688 /* AddressesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesModel.swift; sourceTree = "<group>"; };
 		521E78992C2E854800481766 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
@@ -75,6 +92,8 @@
 		52933E092C64BB3400E85BCC /* AddCardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardExtensions.swift; sourceTree = "<group>"; };
 		52933E0A2C64BB3400E85BCC /* AddCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		52933E0D2C64BBC200E85BCC /* AddCardViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModule.swift; sourceTree = "<group>"; };
+		52933E0F2C65D8E500E85BCC /* GetAllCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCardsModel.swift; sourceTree = "<group>"; };
+		52933E112C661DD900E85BCC /* NetworkManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		529AA6ED2C5A5E4800C5892C /* CreditCardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFormatter.swift; sourceTree = "<group>"; };
 		529C21D02C34967600C9256F /* ApiPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPrice.swift; sourceTree = "<group>"; };
 		529C21D22C34982E00C9256F /* ApiPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPhotos.swift; sourceTree = "<group>"; };
@@ -116,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52933E122C661DD900E85BCC /* NetworkManager.framework in Frameworks */,
 				524940932C2A6B9D00642473 /* AssetKit.framework in Frameworks */,
 				FAA5CDAE2C09DCFF004E6AAF /* SwiftMessages in Frameworks */,
 			);
@@ -197,6 +217,7 @@
 				529C21D02C34967600C9256F /* ApiPrice.swift */,
 				529C21D22C34982E00C9256F /* ApiPhotos.swift */,
 				52FF68432C621B9900D81526 /* SuccessModel.swift */,
+				52933E0F2C65D8E500E85BCC /* GetAllCardsModel.swift */,
 			);
 			path = "Public Models";
 			sourceTree = "<group>";
@@ -220,6 +241,7 @@
 		FA568B0C2BD7CC3D00B87B59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52933E112C661DD900E85BCC /* NetworkManager.framework */,
 				FA568B0D2BD7CC3D00B87B59 /* AssetKit.framework */,
 			);
 			name = Frameworks;
@@ -355,6 +377,7 @@
 				FA77A23B2BBBA94E00843673 /* Sources */,
 				FA77A23C2BBBA94E00843673 /* Frameworks */,
 				FA77A23D2BBBA94E00843673 /* Resources */,
+				52933E142C661DDA00E85BCC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,6 +472,7 @@
 				5272BAD42BE9310700EDD0F5 /* Size.swift in Sources */,
 				521E789C2C2EC76B00481766 /* BottomSheet.swift in Sources */,
 				52AE89912C3478D000B46A88 /* TextNumberUnformatter.swift in Sources */,
+				52933E102C65D8E500E85BCC /* GetAllCardsModel.swift in Sources */,
 				52AE89902C3478D000B46A88 /* TextNumberFormatter.swift in Sources */,
 				52AE89922C3478D000B46A88 /* TextUnformatter.swift in Sources */,
 				52378FF12C35955000FEF06E /* TextFieldMaxLenth.swift in Sources */,
