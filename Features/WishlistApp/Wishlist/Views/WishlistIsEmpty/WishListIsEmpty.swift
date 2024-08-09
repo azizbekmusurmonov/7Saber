@@ -9,6 +9,15 @@ import SwiftUI
 import AssetKit
 
 struct WishListIsEmpty: View {
+    
+    let wishlistEmpty: String
+    let seemsProduct: String
+    
+    init(wishlistEmpty: String = Localizations.yourWishlistIsEmpty, seemsProduct: String = Localizations.seemsYouHaveNotAddedAnyProductHere) {
+        self.wishlistEmpty = wishlistEmpty
+        self.seemsProduct = seemsProduct
+    }
+    
     var body: some View {
         ZStack {
             HStack {
@@ -18,11 +27,11 @@ struct WishListIsEmpty: View {
                         .frame(width: 32, height: 32)
                         .padding(.top, 258)
                         .padding(.leading, 16)
-                    Text("YOUR WISHLIST IS EMPTY")
+                    Text(wishlistEmpty)
                         .padding(.leading, 16)
                         .padding(.top, 8)
                         .font(.system(size: 16))
-                    Text("Seems you have not added \nany product here.")
+                    Text(seemsProduct)
                         .padding(.leading, 16)
                         .padding(.top, 2)
                         .foregroundColor(.gray)
