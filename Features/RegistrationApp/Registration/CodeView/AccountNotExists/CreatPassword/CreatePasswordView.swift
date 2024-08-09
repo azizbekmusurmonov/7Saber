@@ -20,6 +20,9 @@ struct CreatePasswordView: View {
     let retryPassword: String
     let enter: String
     
+    @State var presentCreteriText: Bool = false
+    @State var presentReTypeText: Bool = false
+    
     init(skipButtonTapped: @escaping () -> Void, creatPassword: String = Localizations.createAPassword, password: String = Localizations.password, retryPassword: String = Localizations.reTypePassword, enter: String = Localizations.enter) {
         self.skipButtonTapped = skipButtonTapped
         self.creatPassword = creatPassword
@@ -58,6 +61,18 @@ struct CreatePasswordView: View {
                     )
                     .padding(.leading, 40)
                     
+                    if presentCreteriText == true {
+                        HStack {
+                            Text("8 character 1 lowercase, 1 uppercase, 1 symbol, 1 number.")
+                                .font(.system(size: 11))
+                                .lineLimit(2)
+                                .padding(.leading, 40)
+                                .padding(.trailing, 40)
+                                .foregroundColor(Asset.Color.Text.Status.canceledCol.swiftUIColor)
+                            Spacer()
+                        }
+                    }
+                    
                     PrimeryTextField(
                         textFiledText: $vm.userRetryPassword,
                         keyboardType: .constant(.emailAddress),
@@ -65,6 +80,18 @@ struct CreatePasswordView: View {
                         imageIsHidden: true
                     )
                     .padding(.leading, 40)
+                    
+                    if presentReTypeText {
+                        HStack {
+                            Text("Re-type password")
+                                .font(.system(size: 11))
+                                .lineLimit(2)
+                                .padding(.leading, 40)
+                                .padding(.trailing, 40)
+                                .foregroundColor(Asset.Color.Text.Status.canceledCol.swiftUIColor)
+                            Spacer()
+                        }
+                    }
                     
                     PrimeryButton(
                         buttonBacround: vm.userPassword.isEmpty || vm.userRetryPassword.isEmpty ? .constant(.gray) : .constant(.black),
@@ -74,10 +101,17 @@ struct CreatePasswordView: View {
                                 if vm.userPassword == vm.userRetryPassword {
                                     vm.emailRegistration()
                                 } else {
-                                    vm.message = .error(message: "Пароли не совпадают.")
+                                    withAnimation(.easeInOut) {
+                                        presentReTypeText.toggle()
+                                    }
+                                    withAnimation(.easeInOut) {
+                                        presentCreteriText = false
+                                    }
                                 }
                             } else {
-                                vm.message = .error(message: "Ваш пароль должен состоять не менее чем из 8 символов и содержать комбинацию букв, цифр и специальных символов (например, !, @, #).")
+                                withAnimation(.easeInOut) {
+                                    presentCreteriText = true
+                                }
                             }
                         }
                     )
