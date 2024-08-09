@@ -9,37 +9,26 @@ import SwiftUI
 
 public struct DetailInfoView: View {
     
-    public let imageURL: String
-    public let title: String
-    public let price: String
-    
-    public init(imageURL: String, title: String, price: String) {
-        self.imageURL = imageURL
-        self.title = title
-        self.price = price
-    }
+    let item: GetWishlistModel
     
     public var body: some View {
         HStack {
-            AsyncImage(
-                url: URL(string: imageURL),
-                transaction: Transaction(),
-                content: { phase in
-                    if let image = phase.image { image
-                        .resizable()
-                           .aspectRatio(contentMode: .fit)
-                           .frame(width: 124, height: 155)
-                    }
-                    else { ProgressView() }
-                }
-            )
+            AsyncImage(url: URL(string: item.product?.mainImg?.src ?? "")) { image in
+                image
+                    .resizable()
+                    .frame(width: 124.dpWidth(), height: 155.dpHeight())
+            } placeholder: {
+                ProgressView()
+                    .frame(width: 124.dpWidth(), height: 155.dpHeight())
+            }
             
             VStack(alignment: .leading,spacing: 0) {
-                Text(title)
+                Text(item.product?.name ?? "")
                     .font(.system(size: 13))
                 
-                Text(price)
+                Text(item.product?.price?.value?.description ?? "")
                     .font(.system(size: 16))
+                
                 
                 Spacer()
             }
