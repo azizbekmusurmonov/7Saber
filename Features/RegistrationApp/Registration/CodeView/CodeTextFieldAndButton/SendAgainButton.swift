@@ -37,7 +37,11 @@ struct SendAgainButton: View {
         .background(Color(red: 246/255, green: 246/255, blue: 246/255))
         .cornerRadius(100)
         .opacity((vm.remainingSeconds != 0) ? 0 : 1)
-        .animation(.easeInOut(duration: .animationDuration.normal))
         .padding(.top, 21)
     }
+}
+
+#Preview {
+    SendAgainButton()
+        .environmentObject(RegisterMobillAppViewModel())
 }

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import WebKit
+import Core
 
 
 protocol PaymentServiceProtocol {
@@ -105,7 +106,7 @@ public final class PaymentService: NSObject, PaymentServiceProtocol {
             guard let self = self else { return }
             self.popUpView = MyWebView(url: iframeUrl)
             self.popUpView!.webDelegate = self
-            let rootVC = UIApplication.shared.windows.first?.rootViewController
+            let rootVC = UIApplication.shared.firstWindow?.rootViewController
             rootVC?.view.addSubview(self.popUpView!)
         }
         

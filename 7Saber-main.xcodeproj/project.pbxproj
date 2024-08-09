@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EB454312C638BAF00ACA252 /* Payze_iOS_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522849E02C6116ED001C9376 /* Payze_iOS_sdk.framework */; };
+		2EB454322C638BAF00ACA252 /* Payze_iOS_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 522849E02C6116ED001C9376 /* Payze_iOS_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5249409B2C2A6BEF00642473 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA77A2502BBBA94F00843673 /* Core.framework */; };
 		5281032D2BB265BC00F789A4 /* _Saber_mainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281032C2BB265BC00F789A4 /* _Saber_mainApp.swift */; };
 		5281032F2BB265BC00F789A4 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281032E2BB265BC00F789A4 /* TabBarView.swift */; };
@@ -177,6 +179,7 @@
 				52AE89D82C348D7D00B46A88 /* NetworkManager.framework in Embed Frameworks */,
 				52AE89D42C348D7B00B46A88 /* Core.framework in Embed Frameworks */,
 				52AE89CD2C348D7500B46A88 /* AssetKit.framework in Embed Frameworks */,
+				2EB454322C638BAF00ACA252 /* Payze_iOS_sdk.framework in Embed Frameworks */,
 				52AE89DE2C348D7F00B46A88 /* Wishlist.framework in Embed Frameworks */,
 				52AE89DA2C348D7E00B46A88 /* Profile.framework in Embed Frameworks */,
 				52AE89D62C348D7C00B46A88 /* Home.framework in Embed Frameworks */,
@@ -219,6 +222,7 @@
 				52AE89BA2C3489CE00B46A88 /* Cart.framework in Frameworks */,
 				5249409B2C2A6BEF00642473 /* Core.framework in Frameworks */,
 				52AE89CC2C348D7500B46A88 /* AssetKit.framework in Frameworks */,
+				2EB454312C638BAF00ACA252 /* Payze_iOS_sdk.framework in Frameworks */,
 				52AE89DD2C348D7F00B46A88 /* Wishlist.framework in Frameworks */,
 				52AE89D92C348D7E00B46A88 /* Profile.framework in Frameworks */,
 				52AE89D72C348D7D00B46A88 /* NetworkManager.framework in Frameworks */,
@@ -730,7 +734,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -787,7 +791,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -805,7 +809,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"7Saber-main/Preview Content\"";
-				DEVELOPMENT_TEAM = K7U4M666S7;
+				DEVELOPMENT_TEAM = 84D2TM7KGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "-Saber-main-Info.plist";
@@ -816,7 +820,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -842,7 +846,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"7Saber-main/Preview Content\"";
-				DEVELOPMENT_TEAM = K7U4M666S7;
+				DEVELOPMENT_TEAM = 84D2TM7KGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "-Saber-main-Info.plist";
@@ -853,7 +857,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

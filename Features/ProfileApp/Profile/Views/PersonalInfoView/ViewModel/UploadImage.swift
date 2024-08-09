@@ -94,7 +94,7 @@ class UploadImage {
         }
         if let token = DataStorage.storage.get(from: .token) {
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            print("Authorization", "Bearer", "TOKEN", token == nil ? "NO" : token,"\n")
+            print("Authorization", "Bearer", token)
         }
 
         // 6. Create a task with URLSession
@@ -107,7 +107,7 @@ class UploadImage {
         
         let model = try JSONDecoder().decode(ProfileModel.self, from: data)
         
-        DataStorage.storage.update(model.token, for: .token)
+        DataStorage.storage.update(model.token ?? "", for: .token)
 
         // Check for successful upload
         if (200..<300).contains(httpResponse.statusCode) {

@@ -26,8 +26,6 @@ struct Bg: Codable {
 
 typealias Categoryy = [CategoryElement]
 
-
-
 import Foundation
 import Combine
 

@@ -22,7 +22,7 @@ struct CheckoutPromocodeView: View {
             Spacer()
             
             if vm.didAppliedPromocode{
-                Text(vm.promocode ?? "")
+                Text(vm.promocode)
                     .font(.sabFont(400, size: 16))
                     .padding(16.dpHeight())
             } else {

@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftUI
 
 struct CategoryView: View {
-    @ObservedObject var viewModel: CategoryViewModel
+    @StateObject var viewModel: CategoryViewModel = CategoryViewModel()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -94,14 +94,34 @@ struct CategoryItemView: View {
                     .frame(width: 120, height: 120)
                     .clipShape(Circle())
             }
+            .background(Circle())
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text(category.nameEn)
+            Text(category.name)
                 .font(.system(size: 25))
                 .fontWeight(.light)
                 .lineLimit(1)
                 .foregroundColor(.black)
                 .padding(.top, -30)
+        }
+    }
+}
+
+extension CategoryElement {
+    var language: String {
+        UserDefaults.standard.string(forKey: "language") ?? "en"
+    }
+    
+    var name: String {
+        switch language {
+        case "uz":
+            return nameUz
+        case "ru":
+            return nameRu
+        case "en":
+            return nameEn
+        default:
+            return nameEn
         }
     }
 }

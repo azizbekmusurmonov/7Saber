@@ -21,7 +21,7 @@ public struct LoaderView: View {
                     .stroke(Asset.Color.Text.primaryCol.swiftUIColor, lineWidth: 5)
                     .rotationEffect(.degrees(isAnimating ? 360 : 0))
                     .frame(width: geometry.size.width, height: geometry.size.height)
-                    .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
+                    .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false), value: isAnimating)
                     .onAppear {
                         self.isAnimating = true
                     }
@@ -29,4 +29,8 @@ public struct LoaderView: View {
         }
         .frame(width: 50, height: 50)
     }
+}
+
+#Preview {
+    LoaderView()
 }

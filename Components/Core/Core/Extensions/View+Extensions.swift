@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
+
+public extension View {
+    func scrollable(axis: Axis.Set = .vertical) -> ScrollView<Self> {
+        ScrollView(axis) {
+            self
+        }
+    }
+}

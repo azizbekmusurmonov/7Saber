@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EB454382C66122300ACA252 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB454372C66122300ACA252 /* View+Extensions.swift */; };
 		52192C682C3E620E00412688 /* AddressesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52192C672C3E620E00412688 /* AddressesModel.swift */; };
 		521E789A2C2E854800481766 /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E78992C2E854800481766 /* Navigation+Extension.swift */; };
 		521E789C2C2EC76B00481766 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E789B2C2EC76B00481766 /* BottomSheet.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EB454372C66122300ACA252 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		52192C672C3E620E00412688 /* AddressesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesModel.swift; sourceTree = "<group>"; };
 		521E78992C2E854800481766 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
 		521E789B2C2EC76B00481766 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				7B65D9D22BF4F8680038DA06 /* String.swift */,
 				5281F63A2C32E9850011EA48 /* Int.swift */,
 				5281F63C2C32E9D70011EA48 /* UIApplication.swift */,
+				2EB454372C66122300ACA252 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				529C21D12C34967600C9256F /* ApiPrice.swift in Sources */,
 				FA77A2442BBBA94E00843673 /* Core.docc in Sources */,
 				5281F63B2C32E9850011EA48 /* Int.swift in Sources */,
+				2EB454382C66122300ACA252 /* View+Extensions.swift in Sources */,
 				52AE897E2C34571C00B46A88 /* AddressModel.swift in Sources */,
 				52192C682C3E620E00412688 /* AddressesModel.swift in Sources */,
 				FAD86DD12C076ED200B45427 /* BaseText.swift in Sources */,
@@ -578,7 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K7U4M666S7;
+				DEVELOPMENT_TEAM = 84D2TM7KGZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -616,7 +620,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K7U4M666S7;
+				DEVELOPMENT_TEAM = 84D2TM7KGZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

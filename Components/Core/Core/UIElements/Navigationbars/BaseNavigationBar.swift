@@ -8,7 +8,6 @@
 import SwiftUI
 
 public struct BaseNavigationBar: View {
-    
     public let title: String
     public let leftImage: UIImage
     public let rightImage: UIImage?
@@ -28,12 +27,13 @@ public struct BaseNavigationBar: View {
     public var body: some View {
         VStack(spacing: .zero) {
             Divider()
+                
             HStack(spacing: .zero) {
                 
                 leftImageView
                 
                 Divider()
-                
+                    
                 if isSearchMode {
                     
                 } else {
@@ -41,6 +41,7 @@ public struct BaseNavigationBar: View {
                     
                     Text(title)
                         .font(.system(size: 19, weight: .medium))
+                    
                     Spacer()
                 }
                 
@@ -52,13 +53,12 @@ public struct BaseNavigationBar: View {
                         Image(uiImage: rightImage) //right Image
                             .resizable()
                             .frame(width: 20, height: 20)
-                            .padding(12)
+                            .padding(.horizontal, 6)
                     }
                 }
             }
             Divider()
         }
-        .frame(height: 60)
     }
 }
 
@@ -72,13 +72,13 @@ extension BaseNavigationBar {
                     Image(uiImage: leftImage) //left image
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .padding(12)
+                        .padding(.horizontal, 8)
                 }
             } else {
                 Image(uiImage: leftImage)
                     .resizable()
-                    .frame(width: 32, height: 32)
-                    .padding(12)
+                    .frame(width: 24, height: 24)
+                    .padding(.horizontal, 8)
             }
         }
     }

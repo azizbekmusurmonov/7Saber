@@ -30,7 +30,7 @@ struct AddressView: View {
                     ScrollView {
                         VStack(spacing: .zero) {
                             
-                            ForEach(vm.items ?? [], id: \.self) { item in
+                            ForEach(vm.items, id: \.self) { item in
                                 AddressItemView(item: item)
                                 Divider()
                             }
@@ -62,6 +62,8 @@ struct AddressView: View {
             navBar
             Spacer()
             AddressesIsEmpty()
+        default:
+            EmptyView()
         }
     }
 }

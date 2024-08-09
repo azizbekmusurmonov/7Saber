@@ -272,10 +272,12 @@ public class RegisterMobillAppViewModel: ObservableObject {
     func startTimer() {
         stopTimer()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            if self.remainingSeconds > 0 {
-                self.remainingSeconds -= 1
-            } else {
-                self.stopTimer()
+            withAnimation(.easeInOut(duration: .animationDuration.short)) {
+                if self.remainingSeconds > 0 {
+                    self.remainingSeconds -= 1
+                } else {
+                    self.stopTimer()
+                }
             }
         }
     }
